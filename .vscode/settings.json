@@ -1,0 +1,24 @@
+{
+    "markdownlint.config": {
+        "require-author-tag": true,
+        "MD033": {
+            "allowed_elements": ["s", "u", "details", "summary"] // allowed html elements
+        },
+        "MD034": false, // disable no bare urls rule
+        "MD047": false // disable requiring a newline as the end of the file
+    },
+    "markdownlint.customRules": [
+        // Add any custom linter rules here
+        "./.vscode/markdownlint-rules/require-author-tag.js"
+  ],
+    "markdownlint.lintWorkspaceGlobs": [
+        "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+        "!**/*.code-search",
+        "!**/bower_components",
+        "!**/node_modules",
+        "!**/.git",
+        "!**/vendor",
+        "!**/_*.md"    // make the linter ignore any files starting with _
+    ],
+    "markdownlint.run": "onSave"
+}

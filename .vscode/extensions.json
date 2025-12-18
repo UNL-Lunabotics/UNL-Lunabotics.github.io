@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "yzhang.dictionary-completion",
+        "hediet.vscode-drawio",
+        "github.vscode-pull-request-github",
+        "yzhang.markdown-all-in-one",
+        "shd101wyy.markdown-preview-enhanced",
+        "davidanson.vscode-markdownlint",
+        "mushan.vscode-paste-image",
+        "jebbs.plantuml",
+        "valentjn.vscode-ltex"
+    ]
+}

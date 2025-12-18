@@ -1,0 +1,5 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QFor example, we can make an object named RobotArm and give it a property like length and say it can do the action move_up.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QYou can follow along with the turtlebot examples if that would help you, but feel free to just read through the sections\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QBeginner: CLI Tools\nConfiguring environment\nUsing turtlesim, ros2, and rqt\nUnderstanding nodes\nUnderstanding topics\nUnderstanding services\nUnderstanding parameters\nUnderstanding actions\nUsing rqt_console to view logs\nLaunching nodes\nRecording and playing back data\\E$"}
+{"rule":"POSSESSIVE_APOSTROPHE","sentence":"^\\QFor example, if I wanted to install the Python extension, I would navigate to the extensions menu on the left hand sidebar and enter 'Python' into the search bar.\\E$"}
+{"rule":"A_INSTALL","sentence":"^\\QAfter it finishes loading, I would select the extension called Python with the publisher Microsoft and click the blue install button.\\E$"}
