@@ -1,0 +1,22 @@
+<html>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentTheme = localStorage.getItem("theme");
+
+            setTheme(currentTheme == "dark" ? "dark" : "light" || "light");
+        });
+
+        function setTheme(theme) {
+            jtd.setTheme(theme);
+            localStorage.setItem("theme", theme);
+            document.documentElement.setAttribute("data-theme", theme);
+        }
+        
+        function toggleTheme()
+        {
+            let currentTheme = localStorage.getItem("theme");
+
+            setTheme(currentTheme == "dark" ? "light" : "dark" || "dark");
+        }
+    </script>
+</html>

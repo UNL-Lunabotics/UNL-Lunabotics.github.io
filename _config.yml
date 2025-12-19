@@ -11,11 +11,21 @@ defaults:
     values:
       layout: "default"
 
-color_scheme: dark
+color_scheme: light
 
-# Footer last edited timestamp
-last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
-last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+favicon: favicon.ico
+
+aux_links:
+  "Toggle Light/Dark Theme":
+    - "javascript:toggleTheme()"
+  "UNL-Lunabotics on GitHub":
+    - "//github.com/unl-lunabotics"
+
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/unl-lunabotics/unl-lunabotics.github.io"
+gh_edit_branch: "main"
+gh_edit_view_mode: "tree"
 
 callouts_level: loud
 callouts:

@@ -6,7 +6,7 @@ nav_order: 1
 
 # VSCode Setup
 
-I think that it is significantly easier to edit this Github Pages in VSCode than it is in the browser. I have set up the repository to be VSCode friendly and even set up some custom settings, a linter, and GitHub Pull Request support
+I think that it is significantly easier to edit this GitHub Pages in VSCode than it is in the browser. I have set up the repository to be VSCode friendly and even set up some custom settings, a linter, and GitHub Pull Request support
 
 You can clone the repository locally with `git clone https://github.com/UNL-Lunabotics/unl-lunabotics.github.io`
 
