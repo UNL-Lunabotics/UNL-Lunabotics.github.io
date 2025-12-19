@@ -12,10 +12,14 @@ To do this, open Finder and navigate to where the script is. You should be a new
 
 The initial setup will take a while. On my machine it took ~20 minutes to fully configure. This is because it is installing needed packages and applications on the fly when it's run for the first time. The VM will restart and configure some more things. Eventually, you shoud be met with a login screen.
 
+After everything is configured, starting the virtual machine should only take ~30 seconds.
+
 The default password for the user `workstation` is `unlrobot123`. If you changed this in script, the password will be whatever you set.
 
 {: .note}
-If you ran this on Ubuntu 22.04, some items don't get configured right away. Instead, manually restart the virtual machine. This will trigger some items to be installed.
+If you ran this on Ubuntu 22.04, some items don't get configured, even after it goes to the login screen. Instead, manually restart the virtual machine. This will trigger some items to be installed.
+
+The last thing to do is to go into `Settings > Display` and change the Resolution to `3456x2160` (default). I also like the scale set to `200%`. To change the resolution setting, see [Changing Display Resolution](#changing-display-resolution)
 
 ## Applications
 
@@ -55,7 +59,7 @@ There are various items we can configure in the virtual machine.
 
 By default, the virtual machine is configured to display at `3456x2160`, the resolution of my 2024 MacBook Pro 16-inch. Look up your specific Mac model and find your display resolution. If they don't match, you'll have to change it in the virtual machine.
 
-To do this, start the virtual machine and log in. Then type the following in a terminal: `sudo nano /etc/default/grub`. Type in the password (`unlrobot123` by default), then find the line that says `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=3456x2160@120"`. Use your arrow keys to change the location of your cursor, and replace the `3456x2160` to your resolution. You **MUST** keep the `@120`.
+To do this, start the virtual machine and log in. Then type the following in a terminal: `sudo nano /etc/default/grub`. Type in the password (`unlrobot123` by default), then find the line that says `GRUB_CMDLINE_LINUX_DEFAULT="console=tty0 video=3456x2160@120"`. Use your arrow keys to change the location of your cursor, and replace the `3456x2160` to your resolution. You **MUST** keep the `@120`.
 
 To save the configuration file, you'll do `Ctrl+X`, and `Enter` to save. Then, to load your new changes, type `sudo update-grub`, and then `sudo reboot`.
 
