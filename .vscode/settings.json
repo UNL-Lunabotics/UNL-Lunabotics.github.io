@@ -5,7 +5,8 @@
             "allowed_elements": ["s", "u", "details", "summary"] // allowed html elements
         },
         "MD034": false, // disable no bare urls rule
-        "MD047": false // disable requiring a newline as the end of the file
+        "MD047": false, // disable requiring a newline as the end of the file
+        "MD025": false  // disable requiring a header at the beginning of the document
     },
     "markdownlint.customRules": [
         // Add any custom linter rules here

@@ -1,6 +1,4 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 title: Home
 nav_order: 0
 layout: home
@@ -10,7 +8,7 @@ layout: home
 
 ## What and Why?
 
-Welcome to the lunabotics documentation wiki! This was started in 2025 over the summer as our subteams' first big push towards proper documentation.
+Welcome to the lunabotics documentation Github Pages! This was started in 2025 over the summer as our subteams' first big push towards proper documentation.
 
 In the 2024-2025 competition season, programming ran into a LOT of issues. In the past, the programming subteam had basically just been one guy doing everything and communicating nothing to anyone. Because of this, that year we were essentially a brand-new programming team and all of our members were starting from scratch. This caused massive issues with getting things up and running and contributed to our robot not moving at UCF.
 
@@ -26,9 +24,9 @@ This repository is split into subsections with a specific purpose and specific a
 
 ## How to Edit
 
-It is HIGHLY recommended doing any writing more complicated than grammar or spelling edits within VSCode rather than the browser editor. Firstly, it is just easier to navigate and edit a lot of files in VSCode rather than the browser. You can work on multiple pages at once before having to do one commit and the GitHub repository includes folder organization for convenience (the folders do not display on wiki). Additionally, VSCode will also include the recommended extensions for this repository, <u>including the linter that we use and some convenience features for editing in Markdown</u>
+It is HIGHLY recommended doing any writing more complicated than grammar or spelling edits within VSCode rather than the browser editor. Firstly, it is just easier to navigate and edit a lot of files in VSCode rather than the browser. You can work on multiple pages at once before having to do one commit and the GitHub repository includes folder organization for convenience. Additionally, VSCode will also include the recommended extensions for this repository, <u>including the linter that we use and some convenience features for editing in Markdown</u>
 
-If you would like to learn how to set up VSCode to edit this repository, please see [VSCode Setup](https://github.com/UNL-Lunabotics/lunabotics-documentation/wiki/VSCode-Setup)
+If you would like to learn how to set up VSCode to edit this repository, please see [VSCode Setup]({% link docs/Administrative/VSCode-Setup.md %})
 
 ## Subsection Breakdown
 
@@ -44,4 +42,4 @@ If you would like to learn how to set up VSCode to edit this repository, please 
 
 - **Administrative**: This section contains information needed to maintain this repository as well as the team as a whole. It will include subteam lead responsibilities, criteria for selecting an apprentice, and how to maintain things like our virtual machines, Google Docs, and this documentation. Likely only the lead and the lead apprentice will frequent this section
 
-> Author: Ella Moody (https://github.com/TheThingKnownAsKit)
+> Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
