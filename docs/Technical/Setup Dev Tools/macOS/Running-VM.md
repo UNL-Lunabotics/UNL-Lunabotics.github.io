@@ -79,4 +79,4 @@ If you find you need to share files/folders across your VM and macOS, follow the
 
 That's it! Everything else works just like Ubuntu Linux. You are able to develop just as you would on native hardware.
 
-> Author: Aiden Kimmerling (https://github.com/TheKing349)
+> Author: Aiden Kimmerling (<https://github.com/TheKing349>)
