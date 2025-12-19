@@ -27,7 +27,7 @@ gh_edit_repository: "https://github.com/unl-lunabotics/unl-lunabotics.github.io"
 gh_edit_branch: "main"
 gh_edit_view_mode: "tree"
 
-callouts_level: loud
+callouts_level: normal
 callouts:
   highlight:
     color: yellow
