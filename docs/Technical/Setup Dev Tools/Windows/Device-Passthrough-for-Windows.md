@@ -23,23 +23,24 @@ Type `wsl` to verify Ubuntu installed correctly, then type `exit` to exit from W
 
 ## Set up the Custom Kernel
 
-{: .warning}
-The custom kernel is not finalized yet, and therefore cannot be downloaded (I need to make changes to it on GitHub). Please check back later to download it.
+Download [this](https://github.com/TheKing349/WSL2-Linux-Kernel/releases/latest/download/vmlinux+modules.zip) file, which is a modified kernel of WSL. It is open-sourced as a [fork](https://github.com/TheKing349/WSL2-Linux-Kernel) of the WSL2-kernel source code to include controller support.
 
-Download [this](LINK_HERE) file, which is a modified kernel of WSL. It is open-sourced as a [fork](https://github.com/atticusrussell/WSL2-Linux-Kernel) of the WSL2-kernel source code to include controller support.
+Next, unzip the downloaded `vmlinux+modules.zip` file.
+Then, create a new folder at `C:\Users\[YOUR_USER]\wsl`, where `[YOUR_USER]` is replaced with your username.
 
-Next, put the downloaded `vmlinux` to this folder: `C:\Users\[YOUR_USER]\`, where `[YOUR_USER]` is replaced with your username.
+Then, put the `vmlinux` and `modules.vhdx` files to this folder: `C:\Users\[YOUR_USER]\wsl`
 
 Then, make a new configuration file located here: `C:\Users\[YOUR_USER]\.wsl.config`. Put the following inside the file:
 
 ```conf
 [wsl2]
-kernel=C:\\Users\\[YOUR_USER]\\vmlinux
+kernel=C:\\Users\\[YOUR_USER]\\wsl\\vmlinux
+kernelModules=C:\\Users\\[YOUR_USER]\\wsl\\modules.vhdx
 ```
 
 To load the kernel, you'll need to restart WSL: `wsl --shutdown` and wait 30 seconds. Then type `wsl` to load WSL again.
 
-Then, verify the kernel is loaded: type `uname -r`. If the result starts with `5.15` and ends with `joystick+`, it is loaded successfully. You can now `exit` from WSL.
+Then, verify the kernel is loaded: type `uname -r`.  If the result has `theking349-joystick`, it is loaded successfully. You can now `exit` from WSL.
 
 ## Set up Device Passthrough
 
@@ -91,6 +92,6 @@ If `evtest` failed to give you a number, then you do not have the correct permis
 
 ## References
 
-This was possible due to an issue on [Microsoft's WSL GitHub Page](https://github.com/microsoft/WSL/issues/7747), and the [fork of WSL2-kernel source code](https://github.com/atticusrussell/WSL2-Linux-Kernel).
+This was possible due to an issue on [Microsoft's WSL GitHub Page](https://github.com/microsoft/WSL/issues/7747), and the original [fork of WSL2-kernel source code](https://github.com/atticusrussell/WSL2-Linux-Kernel).
 
 > Author: Aiden Kimmerling (<https://github.com/TheKing349>)
