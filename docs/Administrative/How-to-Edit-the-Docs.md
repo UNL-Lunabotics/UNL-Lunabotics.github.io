@@ -59,7 +59,9 @@ Instead, we use the following syntax:
 
 ## Testing Locally
 
-To test changes locally, enter the following in the VSCode terminal(if one is not opened, enter the keybind ``Ctrl+Shift+` ``):
+To test changes locally you'll need to install jekyll. Follow the [docs](https://jekyllrb.com/docs/) on how to do so.
+
+Then enter the following in the VSCode terminal(if one is not opened, enter the keybind ``Ctrl+Shift+` ``):
 
 ```console
 bundle install
