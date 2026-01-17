@@ -38,4 +38,4 @@ Xacro, a conjunction of the phrase "XML Macro" is a format for breaking up XML f
 
 [Using Xacro to clean up your code](https://docs.ros.org/en/jazzy/Tutorials/Intermediate/URDF/Using-Xacro-to-Clean-Up-a-URDF-File.html)
 
-> Author: Jesse Mills (https://github.com/JesseMills0)
+> Author: Jesse Mills (<https://github.com/JesseMills0>)
