@@ -32,16 +32,16 @@ nav_order: 4
 # ACTUAL Documentation here
 ```
 
-In this example, the name or `title` of the page is "My Awesome Documentation. This name shows on the Sidebar.
+In this example, the name or `title` of the page is "My Awesome Documentation". This name shows on the Sidebar.
 
 Then, it has a `parent` of "Administrative". This means it will render **underneath** the `Administrative` Sidebar entry.
 
 Lastly, it has a `nav_order` of 4. This means it will be the 4th entry under "Administrative"
 
-A documentation page does not **need** a `parent` or `nav_order`. At the very least, provide a `title` so it gets rendered as a separate entry in Sidebar.
+A documentation page does not **need** a `parent` or `nav_order`. At the very least, provide a `title`, so it gets rendered as a separate entry in Sidebar.
 
 {: .important }
-The folder name or structure does not matter. It exists for repository organization. The names will all tie back to `title`. So in our previous example, if we changed the `title` entry of `index.md`, the Sidebar name would've changed.<br>Likewise, just because a markdown file exists in a folder does **not** mean it will be a child in the Sidebar. You **must** use the `parent` tag for that.
+The folder name or structure does not matter. It exists for repository organization. The names will all tie back to `title`. So in our previous example, if we changed the `title` entry of `index.md`, the Sidebar name would've changed.<br> Likewise, just because a markdown file exists in a folder does **not** mean it will be a child in the Sidebar. You **must** use the `parent` tag for that.
 
 ## Adding Links to Another Doc Page
 
