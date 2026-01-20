@@ -1,7 +1,7 @@
 ---
 title: Installing Ubuntu 24.04 On Jetsons
 parent: Software Installation Guides
-nav_order: 1
+nav_order: 2
 ---
 
 # Installing Ubuntu24.04 On Jetsons
