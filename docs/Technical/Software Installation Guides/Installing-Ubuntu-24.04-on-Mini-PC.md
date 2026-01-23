@@ -57,10 +57,25 @@ Now Ubuntu will start booting, and you'll need to press Enter to select `Try or 
 
 ## Installing Ubuntu
 
-The installation is almost fully preconfigured, with only needing a valid network connection. Once Ubuntu boots up and finishes preparing, you will see a prompt that reads 'Connect to the Internet'. Select the option 'Connect to a Wi-Fi network' and choose a connection. Click Connect and enter the password. Once connected click Next and then Install to install Ubuntu onto the Mini PC.
+The installation is almost fully preconfigured, with only needing a valid network connection. Once Ubuntu boots up and finishes preparing, you will see a prompt that reads 'Connect to the Internet'.
 
-{: .note}
-The Mini PC will likely not connect to eduroam or most UNL access points. You can either register a [UNL IoT Device](https://nusupport.nebraska.edu/TDClient/33/Portal/KB/ArticleDet?ID=21) or use a phone hotspot.
+### Connecting to eduroam
+
+Connect to NU-Guest, and a notification will prompt you to open the captive portal. Click the notification. Then click the button that reads "Connect wirelessly to eduroam".
+
+Then, press the Windows Key and type 'Terminal', and Enter. In the terminal, type the following commands:
+
+```bash
+cd Downloads
+chmod +x SecureW2_JoinNow.run
+./SecureW2_JoinNow.run
+```
+
+Then sign in with your @huskers.unl.edu email and password.
+
+Once the terminal says 'Connected', go back to the installer, click Next and then Install to install Ubuntu onto the Mini PC.
+
+### Finishing the Installation
 
 Ubuntu and other packages (ROS2, VSCode, etc.) will now install which may take a while.
 
