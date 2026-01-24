@@ -1,5 +1,5 @@
 ---
-title: Installing RPLidar Software on Jetson
+title: Installing RPLidar Software
 parent: Jetson-Specific
 nav_order: 3
 ---

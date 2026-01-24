@@ -1,10 +1,10 @@
 ---
-title: Installing Ubuntu 24.04 + ROS2 on Mini PC
+title: Installing Ubuntu 24.04 + ROS2
 parent: Mini PC
 nav_order: 1
 ---
 
-# Installing Ubuntu 24.04 + ROS2 on Mini PC
+# Installing Ubuntu 24.04 + ROS2
 
 This guide goes through setting up a new Mini PC with Ubuntu 24, ROS2 and various development tools.
 

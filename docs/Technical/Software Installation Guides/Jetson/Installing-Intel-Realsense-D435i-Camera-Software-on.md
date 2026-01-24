@@ -1,10 +1,10 @@
 ---
-title: Installing Intel REalsense D435i Camera Software on Jetson
+title: Installing Intel REalsense D435i Camera Software
 parent: Jetson-Specific
 nav_order: 2
 ---
 
-# Installing Intel REalsense D435i Camera Software on Jetson
+# Installing Intel REalsense D435i Camera Software
 
 ## Setup
 

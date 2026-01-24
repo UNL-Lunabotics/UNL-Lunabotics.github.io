@@ -1,10 +1,10 @@
 ---
-title: Installing Ubuntu 24.04 On Jetsons
+title: Installing Ubuntu 24.04
 parent: Jetson-Specific
 nav_order: 1
 ---
 
-# Installing Ubuntu24.04 On Jetsons
+# Installing Ubuntu24.04
 
 ## Prerequisites
 
