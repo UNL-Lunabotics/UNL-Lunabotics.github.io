@@ -1,6 +1,6 @@
 ---
 title: Installing Ubuntu 24.04 + ROS2 on Mini PC
-parent: Software Installation Guides
+parent: Mini PC
 nav_order: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Installing Intel REalsense D435i Camera Software on Jetson
-parent: Software Installation Guides
-nav_order: 3
+parent: Jetson-Specific
+nav_order: 2
 ---
 
 # Installing Intel REalsense D435i Camera Software on Jetson

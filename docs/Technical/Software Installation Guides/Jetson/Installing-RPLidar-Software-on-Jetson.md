@@ -1,7 +1,7 @@
 ---
 title: Installing RPLidar Software on Jetson
-parent: Software Installation Guides
-nav_order: 4
+parent: Jetson-Specific
+nav_order: 3
 ---
 
 # RPLidar Initial Setup (no Docker)
