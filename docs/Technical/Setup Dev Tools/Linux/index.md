@@ -1,7 +1,7 @@
 ---
 title: Linux Setup
 parent: Development Tools Setup
-nav_order: 3
+nav_order: 4
 ---
 
 # Linux Setup
