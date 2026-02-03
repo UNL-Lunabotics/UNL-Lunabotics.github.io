@@ -45,4 +45,4 @@ Apart from just closing VNC client, you'll also need to stop the script, which s
 
 That's it! You are able to connect and develop on the Mini PC remotely! Have fun developing!
 
-> Author: TheKing349 (<https://github.com/TheKing349>)
+> Author: Aiden Kimmerling (<https://github.com/TheKing349>)
