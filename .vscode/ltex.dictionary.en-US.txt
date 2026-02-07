@@ -11,3 +11,4 @@ RPLidar
 Xacro
 Tailscale
 keybind
+RViz
