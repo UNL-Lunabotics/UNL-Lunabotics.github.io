@@ -19,7 +19,8 @@
         "!**/node_modules",
         "!**/.git",
         "!**/vendor",
-        "!**/_*.md"    // make the linter ignore any files starting with _
+        "!**/_*.md",    // make the linter ignore any files starting with _
+        "!**/index.md"  // ignore any index.md files
     ],
     "markdownlint.run": "onSave"
 }
