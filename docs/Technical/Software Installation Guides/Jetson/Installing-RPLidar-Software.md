@@ -4,17 +4,17 @@ parent: Jetson-Specific
 nav_order: 3
 ---
 
-# RPLidar Initial Setup (no Docker)
+## RPLidar Initial Setup (no Docker)
 
-## Model: `RPLidar A3M1-R3`
+### Model: `RPLidar A3M1-R3`
 
 Baud Rate: 256,000
 
-## Model: `RPLidar S2M1-R2L`
+### Model: `RPLidar S2M1-R2L`
 
 Baud Rate: 1,000,000
 
-## Setup Steps
+### Docker Setup Steps
 
 Ensure Jetson Orin is on Ubuntu 22.04, or that a Linux machine is being used
 
@@ -74,11 +74,11 @@ theta:  10.72 Dist: 0214.75 Q:47
 ...
 ```
 
-# RPLidar Setup With ROS2 and RViz2 (with Docker)
+## RPLidar Setup With ROS2 and RViz2 (with Docker)
 
 An `RPLidar S2M1-R2L` was used for this portion of the setup.
 
-## Initial Check
+### Initial Check
 
 ***DISCLAIMER:** This setup assumes you are using a Docker container to run the Lidar in RViz. If you are not using Docker, the setup will be similar, but you will need to run most of the commands in the dockerfile manually*
 
@@ -98,7 +98,7 @@ If your LiDAR appears on one of the ports, you may proceed
 
 ***WRITE THIS PORT DOWN!** it will be important when giving priveleges when running the docker container*
 
-## Setup Steps
+### Setup Steps
 
 1. Plug in the LiDAR to the Orin via USB. If you are using the `RPLidar S2M1-R2`, there will be a UART to Serial bridge (likely a CP2102) that you will need to connect the LiDAR to first before plugging the USB end of the bridge into the Orin. Drivers for the bridge should be automatically installed on recent Linux Kernels. This setup does not account for plugging the LiDAR directly into the Orin's GPIO pins.
 

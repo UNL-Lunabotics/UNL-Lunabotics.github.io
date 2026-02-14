@@ -4,15 +4,15 @@ parent: Remote Setup
 nav_order: 1
 ---
 
-# Tailscale Setup
+## Tailscale Setup
 
 Tailscale is a special VPN that allows one computer to gain access to another computer remotely, through a dedicated IP Address. This is used to connect your computer to the Mini PC.
 
-## Download
+### Download
 
 Download Tailscale onto your computer using [this](https://tailscale.com/download) link.
 
-## Log in
+### Log in
 
 Once installed, a window should pop up saying "Join your network". Click "Sign in to your network". If on Linux, you'll instead type `sudo tailscale login` into a terminal and open the link.
 
@@ -20,7 +20,7 @@ Once at the login page, click "Sign in with Google." Then go to the Lunabotics G
 
 Once signed in with the Google account, click the blue "Connect".
 
-## Using Tailscale
+### Using Tailscale
 
 On Windows or macOS there should now be a system tray entry for Tailscale. Open it (on Windows you have to right-click), and you should see a menu pop up. Hover over and navigate to `Network Devices > Tagged Devices > mini-pc-1`. Click on `mini-pc-1`. This should copy an IP Address to your clipboard. You will need this later on.
 

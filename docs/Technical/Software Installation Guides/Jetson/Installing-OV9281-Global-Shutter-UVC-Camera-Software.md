@@ -4,11 +4,11 @@ parent: Jetson-Specific
 nav_order: 4
 ---
 
-# Installing OV9281 Global Shutter UVC Camera Software
+## Installing OV9281 Global Shutter UVC Camera Software
 
-## Setup Steps
+### Setup Steps
 
-Additional Documentation for this camera can be found here: https://docs.arducam.com/UVC-Camera/Appilcation-Note/External-Trigger-Mode/OV9281-Global-Shutter/
+Additional Documentation for this camera can be found here: <https://docs.arducam.com/UVC-Camera/Appilcation-Note/External-Trigger-Mode/OV9281-Global-Shutter/>
 
 1. Plug the camera into the Jetson Orin via USB
 2. Install v4l utility packages
@@ -38,7 +38,7 @@ Additional Documentation for this camera can be found here: https://docs.arducam
 Video stream from `guvcview` should look something like this:
 ![image]({% link attachments/Camera-Software-Video-Stream.png %})
 
-## Working with Rviz2
+### Working with Rviz2
 
 Make sure that ROS2 is installed first!!
 

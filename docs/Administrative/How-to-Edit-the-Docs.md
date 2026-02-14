@@ -4,21 +4,21 @@ parent: Administrative
 nav_order: 2
 ---
 
-# How to Edit the Docs
+## How to Edit the Docs
 
 This will be a *basic* overview on how Just-the-Docs works. For a more in-depth look, view their [documentation](https://just-the-docs.com)
 
-## Project Structure
+### Project Structure
 
 There is a lot going on in this repo, so let's break it down.
 
-### The `docs` Folder
+#### The `docs` Folder
 
 This is the main part of this repo, and where you will likely be spending the most time in. Within the docs folder, there's a specific structure we follow:
 
 Each "Section" will have a folder associated with it. Within each folder, there are markdown files. The `index.md` is the main file and will create an entry in the Sidebar. Other files inside the folder will be treated as "children" of the Sidebar entry, and rendered **underneath** it.
 
-## YAML Tags
+### YAML Tags
 
 When you create a new file, you must use a special format for the Sidebar to know where the documentation file goes:
 
@@ -41,9 +41,11 @@ Lastly, it has a `nav_order` of 4. This means it will be the 4th entry under "Ad
 A documentation page does not **need** a `parent` or `nav_order`. At the very least, provide a `title`, so it gets rendered as a separate entry in Sidebar.
 
 {: .important }
-The folder name or structure does not matter. It exists for repository organization. The names will all tie back to `title`. So in our previous example, if we changed the `title` entry of `index.md`, the Sidebar name would've changed.<br> Likewise, just because a markdown file exists in a folder does **not** mean it will be a child in the Sidebar. You **must** use the `parent` tag for that.
+The folder name or structure does not matter. It exists for repository organization. The names will all tie back to `title`. So in our previous example, if we changed the `title` entry of `index.md`, the Sidebar name would've changed.
 
-## Adding Links to Another Doc Page
+Likewise, just because a markdown file exists in a folder does **not** mean it will be a child in the Sidebar. You **must** use the `parent` tag for that.
+
+### Adding Links to Another Doc Page
 
 If we needed to reference another documentation page, say the [Administrative]({% link docs/Administrative/index.md %}) page, we don't link the URL.
 
@@ -57,7 +59,7 @@ Instead, we use the following syntax:
 
 {% endraw %}
 
-## Testing Locally
+### Testing Locally
 
 To test changes locally you'll need to install jekyll. Follow the [docs](https://jekyllrb.com/docs/) on how to do so.
 

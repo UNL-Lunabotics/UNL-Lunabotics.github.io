@@ -4,7 +4,7 @@ parent: Administrative
 nav_order: 1
 ---
 
-# VSCode Setup
+## VSCode Setup
 
 I think that it is significantly easier to edit this GitHub Pages in VSCode than it is in the browser. I have set up the repository to be VSCode friendly and even set up some custom settings, a linter, and GitHub Pull Request support
 

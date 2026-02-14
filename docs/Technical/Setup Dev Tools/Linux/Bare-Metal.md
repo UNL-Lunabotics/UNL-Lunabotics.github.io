@@ -4,11 +4,11 @@ parent: Linux Setup
 nav_order: 2
 ---
 
-# Bare Metal Setup
+## Bare Metal Setup
 
 If you do not want to use a DevContainer, you can try running everything on your installation of Linux itself. Note that this is not the recommended way to develop and mileage may vary.
 
-## Installing ROS2
+### Installing ROS2
 
 Follow the [ROS2 Install](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) guide, and make sure to select the correct version of ROS2. At the time of writing, we are using `ROS2 Jazzy`, but this may change. You will also want to install the desktop variant of ROS2.
 
@@ -31,7 +31,7 @@ sudo apt-get install -y python3 python3-pip ros-dev-tools \
     joystick jstest-gtk evtest ros-${ROS_CODENAME}-slam-toolbox libserial-dev \
 ```
 
-## Cloning the Repository
+### Cloning the Repository
 
 If comfortable with `git` and the terminal (recommended), sign into GitHub and type `git clone https://github.com/UNL-Lunabotics/terrence_2.0`
 

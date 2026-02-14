@@ -4,15 +4,15 @@ parent: Windows Setup
 nav_order: 3
 ---
 
-# Setting up the DevContainer
+## Setting up the DevContainer
 
 DevContainers will use Docker to create the virtual environment mentioned before.
 
-## Cloning the Repository
+### Cloning the Repository
 
 Open VSCode and click on "Clone Git Repository". Sign in with GitHub, and clone the `UNL-Lunabotics/terrence_2.0` repo.
 
-## Notes
+### Notes
 
 Make sure Docker Desktop is running **before** launching the DevContainer, otherwise VSCode will error out.
 
@@ -30,7 +30,7 @@ Before starting the DevContainer, add the following lines of code to `.devContai
     },
 ```
 
-## Starting the DevContainer
+### Starting the DevContainer
 
 Then do `Ctr+Shift+P` and type `Rebuild and Reopen in Container`. This will launch the DevContainer.
 

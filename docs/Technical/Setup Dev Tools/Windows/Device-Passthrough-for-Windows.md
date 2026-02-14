@@ -4,11 +4,11 @@ parent: Windows Setup
 nav_order: 4
 ---
 
-# Enabling Device Passthrough for Windows
+## Enabling Device Passthrough for Windows
 
 Enabling Device Passthrough will allow you to pass a USB device, such as a controller, to the DevContainer. Note that this requires modifying the WSL kernel, which is fairly technical.
 
-## Install Ubuntu
+### Install Ubuntu
 
 Install Ubuntu on WSL using this command:
 `wsl --install Ubuntu`
@@ -21,7 +21,7 @@ Then, set it as the default:
 
 Type `wsl` to verify Ubuntu installed correctly, then type `exit` to exit from WSL.
 
-## Set up the Custom Kernel
+### Set up the Custom Kernel
 
 Download [this](https://github.com/TheKing349/WSL2-Linux-Kernel/releases/latest/download/vmlinux+modules.zip) file, which is a modified kernel of WSL. It is open-sourced as a [fork](https://github.com/TheKing349/WSL2-Linux-Kernel) of the WSL2-kernel source code to include controller support.
 
@@ -42,7 +42,7 @@ To load the kernel, you'll need to restart WSL: `wsl --shutdown` and wait 30 sec
 
 Then, verify the kernel is loaded: type `uname -r`.  If the result has `theking349-joystick`, it is loaded successfully. You can now `exit` from WSL.
 
-## Set up Device Passthrough
+### Set up Device Passthrough
 
 After that, download [usbipd-win](https://github.com/dorssel/usbipd-win/releases/latest). This will act as the bridge to allow device activity onto WSL.
 
@@ -62,7 +62,7 @@ In a terminal (does **not** have to be admin), type `usbipd list` again to make 
 
 This will 'connect' your controller to WSL, which should allow input to work inside the DevContainer.
 
-## Test Device Passthrough
+### Test Device Passthrough
 
 Restart the DevContainer (`Ctrl+Shift+P` and `Reopen in DevContainer`).
 
@@ -90,7 +90,7 @@ Finally, type `evtest` (install if needed: `sudo apt update && sudo apt install 
 
 If `evtest` failed to give you a number, then you do not have the correct permissions on `/dev/input`.
 
-## References
+### References
 
 This was possible due to an issue on [Microsoft's WSL GitHub Page](https://github.com/microsoft/WSL/issues/7747), and the original [fork of WSL2-kernel source code](https://github.com/atticusrussell/WSL2-Linux-Kernel).
 

@@ -4,9 +4,9 @@ parent: Non-Programmer Friendly Zone
 nav_order: 4
 ---
 
-# Glossary
+## Glossary
 
-## Table of Contents
+### Table of Contents
 
 - [Glossary](#glossary)
   - [Table of Contents](#table-of-contents)
@@ -37,7 +37,7 @@ nav_order: 4
   - [Y](#y)
   - [Z](#z)
 
-## A
+### A
 
 Abstraction
 API
@@ -45,13 +45,13 @@ Asynchronous
 Agile
 Action [ROS2]
 
-## B
+### B
 
 Bit
 Byte
 Build
 
-## C
+### C
 
 Compiler
 Class
@@ -61,19 +61,19 @@ Client-Side
 Command-Line Interface (CLI)
 Callback
 
-## D
+### D
 
 Declare
 
-## E
+### E
 
 Encapsulation
 
-## F
+### F
 
 Function
 
-## G
+### G
 
 GUI
 Git
@@ -82,11 +82,11 @@ Garbage collection
 GCC
 Gazebo
 
-## H
+### H
 
 High level language
 
-## I
+### I
 
 IDE
 Inheritance
@@ -94,29 +94,29 @@ Interpreter
 Instance
 IntelliSense
 
-## J
+### J
 
-## K
+### K
 
-## L
+### L
 
 Low level language
 Lambda function
 
-## M
+### M
 
 Multi-threading
 
-## N
+### N
 
 Node [ROS2]
 Nav2
 
-## O
+### O
 
 Object
 
-## P
+### P
 
 Paradigm
 Parameter
@@ -127,16 +127,16 @@ Pipeline
 Pseudocode
 Publisher [ROS2]
 
-## Q
+### Q
 
-## R
+### R
 
 ROS2
 Runtime
 Race condition
 ROS2 Control
 
-## S
+### S
 
 Script
 SDK
@@ -146,29 +146,29 @@ SSH
 Subscriber [ROS2]
 Service [ROS2]
 
-## T
+### T
 
-## U
+### U
 
 URDF
 
-## V
+### V
 
 Virtual machine (VM)
 
-## W
+### W
 
 Workspace [ROS2]
 
-## X
+### X
 
 XML
 Xacro
 
-## Y
+### Y
 
 YAML
 
-## Z
+### Z
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)

@@ -4,27 +4,27 @@ nav_order: 0
 layout: home
 ---
 
-# Home
+## Home
 
-## What and Why?
+### What and Why?
 
 Welcome to the lunabotics documentation GitHub Pages! This was started in 2025 over the summer as our subteams' first big push towards proper documentation.
 
 In the 2024-2025 competition season, programming ran into a LOT of issues. In the past, the programming subteam had basically just been one guy doing everything and communicating nothing to anyone. Because of this, that year we were essentially a brand-new programming team and all of our members were starting from scratch. This caused massive issues with getting things up and running and contributed to our robot not moving at UCF.
 
-## How to Navigate
+### How to Navigate
 
-<u>You will navigate via the sidebar on the left side of the screen</u>
+**You will navigate via the sidebar on the left side of the screen**.
 
 This repository is split into subsections with a specific purpose and specific audience it is written for, the details of which are specified below. The first page in every section is a more in depth introduction as well as table of contents for the section, and it is recommended that if you are new to this documentation, you should start there whenever looking through a subsection.
 
-<u>If you are familiar with programming</u>, basically all of the subsections will be accessible to you
+**If you are familiar with programming**, basically all of the subsections will be accessible to you
 
-<u>If you are NOT familiar with programming</u>, you should mainly stay in the Non-Programmer Friendly Zone. This is specifically written for that purpose, though you should also be able to navigate the Systems Engineering subsection as well.
+**If you are NOT familiar with programming**, you should mainly stay in the Non-Programmer Friendly Zone. This is specifically written for that purpose, though you should also be able to navigate the Systems Engineering subsection as well.
 
 ## How to Edit
 
-It is HIGHLY recommended doing any writing more complicated than grammar or spelling edits within VSCode rather than the browser editor. Firstly, it is just easier to navigate and edit a lot of files in VSCode rather than the browser. You can work on multiple pages at once before having to do one commit and the GitHub repository includes folder organization for convenience. Additionally, VSCode will also include the recommended extensions for this repository, <u>including the linter that we use and some convenience features for editing in Markdown</u>
+It is HIGHLY recommended doing any writing more complicated than grammar or spelling edits within VSCode rather than the browser editor. Firstly, it is just easier to navigate and edit a lot of files in VSCode rather than the browser. You can work on multiple pages at once before having to do one commit and the GitHub repository includes folder organization for convenience. Additionally, VSCode will also include the recommended extensions for this repository, **including the linter that we use and some convenience features for editing in Markdown**.
 
 If you would like to learn how to set up VSCode to edit this repository, please see [VSCode Setup]({% link docs/Administrative/VSCode-Setup.md %})
 

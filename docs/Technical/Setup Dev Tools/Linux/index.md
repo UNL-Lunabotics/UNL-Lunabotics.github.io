@@ -4,7 +4,7 @@ parent: Development Tools Setup
 nav_order: 4
 ---
 
-# Linux Setup
+## Linux Setup
 
 Here you will find how to get set up with development tools for Linux.
 

@@ -4,13 +4,13 @@ parent: Jetson-Specific
 nav_order: 2
 ---
 
-# Installing Intel REalsense D435i Camera Software
+## Installing Intel RealSense D435i Camera Software
 
-## Setup
+### Setup
 
 To install librealsense2, follow the instructions on this [website](https://jetsonhacks.com/2025/03/20/jetson-orin-realsense-in-5-minutes/?utm_source=chatgpt.com)
 
-## Setup Steps
+### Setup Steps
 
 All information taken from the [JetsonHacks librealsense repository](https://github.com/jetsonhacks/jetson-orin-librealsense), authored by the creators of the guide linked above in the **Setup** section.
 

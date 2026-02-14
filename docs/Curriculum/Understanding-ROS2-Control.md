@@ -4,7 +4,7 @@ parent: Curriculum
 nav_order: 4
 ---
 
-# Understanding ROS2 Control
+## Understanding ROS2 Control
 
 hi
 

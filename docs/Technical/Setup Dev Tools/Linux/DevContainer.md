@@ -4,11 +4,11 @@ parent: Linux Setup
 nav_order: 1
 ---
 
-# DevContainer Setup
+## DevContainer Setup
 
 This is the recommended way to develop for Linux.
 
-## Installing Docker
+### Installing Docker
 
 Docker will let us create a virtual environment to use when developing for ROS2. This is recommended so ROS2 has a stable, isolated environment that won't break your Linux Installation.
 
@@ -16,11 +16,11 @@ Follow the [Docker Guide](https://docs.docker.com/engine/install/) to install Do
 
 If you get an error saying `Got permission denied while trying to connect to the Docker daemon socket` then view the [Post-Installation Guide](https://docs.docker.com/engine/install/linux-postinstall) provided by Docker.
 
-## Setting up the DevContainer
+### Setting up the DevContainer
 
 DevContainers will use Docker to create the virtual environment mentioned before.
 
-### Cloning the Repository
+#### Cloning the Repository
 
 If comfortable with `git` and the terminal (recommended), sign into GitHub and type `git clone https://github.com/UNL-Lunabotics/terrence_2.0`
 
@@ -29,7 +29,7 @@ You may need to use `gh` and type `gh auth login` to gain access to cloning into
 
 Otherwise, open VSCode and click on "Clone Git Repository". Sign in with GitHub, and clone the `UNL-Lunabotics/terrence_2.0` repo.
 
-### Starting the DevContainer
+#### Starting the DevContainer
 
 Once the repository is cloned, open VSCode and point it to the repo.
 

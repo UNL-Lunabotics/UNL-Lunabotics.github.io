@@ -4,7 +4,7 @@ parent: Technical
 nav_order: 1
 ---
 
-# Development Tools Setup
+## Development Tools Setup
 
 Here you will find how to get set up with the development tools used for developing in ROS2.
 

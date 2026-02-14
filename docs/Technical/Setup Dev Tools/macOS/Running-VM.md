@@ -4,7 +4,7 @@ parent: macOS Setup
 nav_order: 2
 ---
 
-# Runing the Ubuntu Virtual Machine
+## Runing the Ubuntu Virtual Machine
 
 Now that the virtual machine is created, we need to actually run it.
 
@@ -21,7 +21,7 @@ If you ran this on Ubuntu 22.04, some items don't get configured, even after it 
 
 The last thing to do is to go into `Settings > Display` and change the Resolution to `3456x2160` (default). I also like the scale set to `200%`. To change the resolution setting, see [Changing Display Resolution](#changing-display-resolution)
 
-## Applications
+### Applications
 
 Once you are logged in, you will see a few apps on the sidebar. The first one is [Zen](https://zen-browser.app/), which is my preferred browser. Of course, are able to install a different one if you so choose.
 
@@ -31,7 +31,7 @@ You will also see [VSCode](https://code.visualstudio.com/), which is the IDE of 
 
 To clone any `UNL-Lunabotics` repository, I recommend using `gh auth login` and signing in with your GitHub account. Then, use `git clone [REPOSITORY_HERE]` where `[REPOSITORY_HERE]` is the URL of the `UNL-Lunabotics` GitHub page. You can also clone using VSCode if you want.
 
-## Virtual Machine Quirks
+### Virtual Machine Quirks
 
 Because you are on a "separate" operating system, some keybinds have changed.
 
@@ -41,21 +41,21 @@ Instead, the `Control` key is what you use, like you would on a Windows computer
 
 However, `Cmd+Q` **will** still force-quit the application, forcibly shutting down the Virtual Machine.
 
-## Closing the Virtual Machine
+### Closing the Virtual Machine
 
 To safely quit the virtual machine, you'll do a soft-shutdown inside the VM. To do this, click the System Menu on the very top-right corner, with the volume and power icons. Then, click the Power icon, and click "Power off".
 
 Avoid using `Cmd+Q` or the Power button on UTM itself, unless the virtual machine is unresponsive. This is because the virtual machine may get corrupted if doing important tasks (i.e. running a command, etc.)
 
-## Changing Username or Password
+### Changing Username or Password
 
 If you want to change the username or password, go into `Settings > System > Users` and press "Unlock" on the top-right. Enter the password of `unlrobot123`. Now, change the username or password.
 
-## Configuring the Virtual Machine
+### Configuring the Virtual Machine
 
 There are various items we can configure in the virtual machine.
 
-### Changing Display Resolution
+#### Changing Display Resolution
 
 By default, the virtual machine is configured to display at `3456x2160`, the resolution of my 2024 MacBook Pro 16-inch. Look up your specific Mac model and find your display resolution. If they don't match, you'll have to change it in the virtual machine.
 
@@ -65,7 +65,7 @@ To save the configuration file, you'll do `Ctrl+X`, and `Enter` to save. Then, t
 
 Log in again, go into `Settings > Displays` and locate your resolution in the `Resolution` dropdown. I also recommend doing `200%` scale. Then click "Apply" in the top-right corner.
 
-### Changing VM Resources
+#### Changing VM Resources
 
 As discussed before, the VM will use more battery as it is a full operating system. To fix this, you can give the VM less of your computer resources, at the cost of performance.
 
@@ -73,11 +73,11 @@ To do this, go into the main UTM app, and right-click on the VM and click "Edit"
 
 To reduce power consumption, lower these numbers. To increase performance on the VM, increase those numbers.
 
-### Passing a USB device through
+#### Passing a USB device through
 
 To pass a USB device, first plug in the controller, and turn on the VM if you haven't already. Then, in the top-right corner on UTM's Menu Bar, there should be a USB icon. Click on it, find your device, and click "Connect". Try running `evtest` or launch `jstest-gtk` and verify it works.
 
-### Enabling a Shared Directory
+#### Enabling a Shared Directory
 
 If you find you need to share files/folders across your VM and macOS, follow the official UTM [guide](https://docs.getutm.app/guest-support/linux/#virtfs). Note that it is a little technical but should be doable.
 

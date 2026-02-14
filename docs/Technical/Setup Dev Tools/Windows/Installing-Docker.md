@@ -4,7 +4,7 @@ parent: Windows Setup
 nav_order: 1
 ---
 
-# Installing Docker
+## Installing Docker
 
 Docker will let us create a virtual environment to use when developing for ROS2. This is because ROS2 **requires** base Ubuntu to run.
 

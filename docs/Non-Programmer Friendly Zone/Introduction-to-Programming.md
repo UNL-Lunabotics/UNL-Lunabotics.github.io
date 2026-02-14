@@ -4,13 +4,13 @@ parent: Non-Programmer Friendly Zone
 nav_order: 1
 ---
 
-# Introduction to Programming
+## Introduction to Programming
 
 This guide will give a basic introduction to the major concepts of programming, go over some simple examples, and then redirect you to more comprehensive sources for learning more if you would like to continue exploring program. The main purpose of this guide is to equip you with enough information to be able to communicate with a programmer, not to teach you how to program
 
 If you would like to learn more about the terms used here, please reference the [glossary]({% link docs/Non-Programmer Friendly Zone/Glossary.md %})
 
-## Programming Concepts
+### Programming Concepts
 
 Programming is essentially just various ways to tell a computer what to do. You write instructions in a programming language of choice and something called a compiler takes those instructions and translates it into machine code that the computer then executes
 
@@ -23,7 +23,7 @@ There's another way to classify programming languages: low level and high level.
 
 Lastly, there are yet more ways to categorize programming languages based on their paradigms. This basically means how does the language choose to write its instructions. This can get a little confusing, and we are only using one paradigm, so I am only going to explain that one but know that there are many more you can look into if you want. The programming subteam on Lunabotics uses an object-orientated paradigm. This means that the way we represent information in our code is through objects. For example, we can make an object named RobotArm and give it a property like length and say it can do the action move_up. More specifics on how this works will be explained during the examples section
 
-## Programming Examples
+### Programming Examples
 
 It can be really hard to learn programming without examples, so here are two code blocks of equivalent Python and C++ code (the two languages that Lunabotics uses). They do the exact same thing and output the same stuff, and both of them are object-orientated, but one of them is low level (C++) and the other is high level (Python)
 
@@ -167,19 +167,19 @@ Final pose = (7.00, 3.00), θ=0°
 
 If all of that was a little confusing, that's okay! This section isn't really about teaching you how to program, but just giving an example of what some code could look like and some basic differences between C++ and Python. Notice how Python reads much more closely to regular English instructions while C++ has a lot of weird things going on that don't really make sense if you don't know C++. This is the difference between high and low level programming languages
 
-## Learning How to Program
+### Learning How to Program
 
 A full programming lesson is outside the scope of this guide, but there are some great resources out there for you. There is nothing about programming that you can't learn from free resources out there on the internet. I have a few big recommendations:
 
-If you would like to learn Python, W3Schools has a pretty solid Python programming course. This one is really nice because you can program in the browser for the exercises and not have to download anything. If you just want to dip your toes into the world of programming, I recommend starting here at W3Schools: https://www.w3schools.com/python/python_intro.asp
+If you would like to learn Python, W3Schools has a pretty solid Python programming course. This one is really nice because you can program in the browser for the exercises and not have to download anything. If you just want to dip your toes into the world of programming, I recommend starting here at W3Schools: <https://www.w3schools.com/python/python_intro.asp>
 
-If you would like to learn C++, I would actually recommend that you learn C first and then learn C++ after that. C++ is a bit of a nightmare while C is both incredibly useful to know and largely transferrable to C++. C is an extremely foundational programming language that a lot of people recommend you learn as your first language. It is on the lower level side, so if you want to start getting into robotics programming as a hobby or seriously, I recommend you start here, otherwise just learn Python. The computer science professor who teaches the introductory C course at UNL actually records all of his lectures and uploads them for free on YouTube, and he is a really good professor. CSCE-155E is the course, and here is the link to the Fall 2024 playlist: https://www.youtube.com/watch?v=mD5EQXzdn98&list=PL4IH6CVPpTZWhIUrPho27zNE3-Ut4D0Jk
+If you would like to learn C++, I would actually recommend that you learn C first and then learn C++ after that. C++ is a bit of a nightmare while C is both incredibly useful to know and largely transferrable to C++. C is an extremely foundational programming language that a lot of people recommend you learn as your first language. It is on the lower level side, so if you want to start getting into robotics programming as a hobby or seriously, I recommend you start here, otherwise just learn Python. The computer science professor who teaches the introductory C course at UNL actually records all of his lectures and uploads them for free on YouTube, and he is a really good professor. CSCE-155E is the course, and here is the link to the Fall 2024 playlist: <https://www.youtube.com/watch?v=mD5EQXzdn98&list=PL4IH6CVPpTZWhIUrPho27zNE3-Ut4D0Jk>
 
-After you learn C, here is the W3Schools link for C++, though I personally find that this particular set of tutorials does not go in depth enough: https://www.w3schools.com/cpp/default.asp
+After you learn C, here is the W3Schools link for C++, though I personally find that this particular set of tutorials does not go in depth enough: <https://www.w3schools.com/cpp/default.asp>
 
 **The best way to learn how to program is to do projects.** I can almost guarantee you that none of this will really set in unless you actually put it into practice. If you really want to learn programming very well and don't just want a vague idea of how it works, you should decide on a simple project that sounds fun to you and just do it. Pick something like programming pong in Python or something simple like that. Google is your friend and there is nothing you can't learn from forum posts and guides people have already made. Don't be afraid of not doing things the best way, just do it and learn from it
 
-## Where to Go Next
+### Where to Go Next
 
 Now that you have a basic understanding of programming, you can really go anywhere in the Non Programmer Friendly Zone. Specific questions that people have asked programming to explain will be listed in here, though for next steps I recommend going to [Introduction to ROS2]({% link docs/Non-Programmer Friendly Zone/Introduction-to-ROS2.md %})
 

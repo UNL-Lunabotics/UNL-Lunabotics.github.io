@@ -6,7 +6,8 @@
     },
     "MD034": false,
     "MD047": false,
-    "MD025": false
+    "MD025": false,
+    "MD059": false,
   },
   "customRules": [
     "./.vscode/markdownlint-rules/require-author-tag.js"
