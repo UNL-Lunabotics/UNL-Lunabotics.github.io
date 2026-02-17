@@ -62,7 +62,7 @@ Next, you need to declare the robot tag and import xacro. The robot tag is kind 
 
 Optionally, you can give the robot a name. This isn't really important at all but you can if you want to. It would just change the line to `<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Robot Name">`.
 
-#### Example: robotname.urdf.xacro
+### Example: robotname.urdf.xacro
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -94,7 +94,7 @@ Optionally, you can give the robot a name. This isn't really important at all bu
 </robot>
 ```
 
-#### Example: robotname_core.xacro
+### Example: robotname_core.xacro
 
 Notably, this example also works if you split the robot core into separate files (for example, one of chassis and multiple for manipulators). Basically, any comment block in the below example could be its own file if you wanted. **Keep the chassis in robotname_core.xacro**.
 
@@ -111,7 +111,7 @@ Notably, this example also works if you split the robot core into separate files
 </robot>
 ```
 
-#### Example: sensors.xacro
+### Example: sensors.xacro
 
 This is basically identical to `robotname_core.xacro`. You should view the specific documentation (there is a separate page) on specifically how to define sensors.
 
@@ -124,7 +124,7 @@ This is basically identical to `robotname_core.xacro`. You should view the speci
 </robot>
 ```
 
-#### Example: ros2_control.xacro
+### Example: ros2_control.xacro
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -168,7 +168,7 @@ This is basically identical to `robotname_core.xacro`. You should view the speci
 </robot>
 ```
 
-#### Example: gazebo.xacro
+### Example: gazebo.xacro
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -213,7 +213,7 @@ This is basically identical to `robotname_core.xacro`. You should view the speci
 </robot>
 ```
 
-#### Example: sensor.xacro
+### Example: sensor.xacro
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
