@@ -62,6 +62,8 @@ Next, you need to declare the robot tag and import xacro. The robot tag is kind 
 
 Optionally, you can give the robot a name. This isn't really important at all but you can if you want to. It would just change the line to `<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Robot Name">`.
 
+If you want to read more about the technical details for how to implement link/joint pairs by hand (which you shouldn't have to do since we use an exporter), then the best documentation is available at the [Nav2 URDF Setup Guide](https://docs.nav2.org/setup_guides/urdf/setup_urdf.html).
+
 ### Example: robotname.urdf.xacro
 
 ```XML
@@ -75,7 +77,8 @@ Optionally, you can give the robot a name. This isn't really important at all bu
 
 
     <!-- Define base_link -->
-    <link name="base_link"/>        <!-- You could also declare base_sensor here if you decide to use that -->
+    <link name="base_link"/>
+    <!-- There are other base links like base_footprint or base_laser that could go here -->
 
 
 
@@ -150,19 +153,19 @@ This is basically identical to `robotname_core.xacro`. You should view the speci
     <xacro:if value="$(arg use_sim)">
         <ros2_control name="name" type="system">
 
-        <hardware>
-            <plugin>gz_ros2_control/GazeboSimSystem</plugin>
-        </hardware>
+            <hardware>
+                <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+            </hardware>
 
-        <!-- Define all joints and their command/state interfaces necessary for sim -->
+            <!-- Define all joints and their command/state interfaces necessary for sim -->
+
+        </ros2_control>
 
         <gazebo>
             <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="libgz_ros2_control-system.so">
                 <parameters>$(find control)/config/controllersname.yaml</parameters>
             </plugin>
         </gazebo>
-
-        </ros2_control>
     </xacro:if>
 
 </robot>
@@ -174,7 +177,7 @@ This is basically identical to `robotname_core.xacro`. You should view the speci
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <!-- Add any relevant data to links/joints including color and friction values -->
+    <!-- Add any Gazebo references to links/joints including color and friction values -->
     <gazebo reference="chassis_link">
         <material>Gazebo/White</material>
     </gazebo>
