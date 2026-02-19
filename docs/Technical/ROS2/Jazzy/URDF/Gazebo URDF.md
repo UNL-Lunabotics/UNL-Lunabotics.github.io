@@ -142,8 +142,18 @@ The recommended tag to use for a LiDAR is "gpu_lidar" (there is just a plain "li
 
 
 
+<!-- Declare optical link/joint here... -->
+<!-- If you don't understand, see the next section -->
+<joint type="fixed" name="camera_optical_joint">
+    <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
+    <child link="camera_optical_link"/>
+    <parent link="camera_link"/>
+</joint>
+
+<link name="camera_optical_link"/>
+
 <!-- RGB and Depth camera example with some common values -->
-<gazebo reference="camera_example_link">
+<gazebo reference="camera_optical_link">
     <sensor name="rgbd_camera" type="rgbd_camera">
         <pose>0 0 0 0 0 0</pose>
         <always_on>true</always_on>
@@ -153,7 +163,7 @@ The recommended tag to use for a LiDAR is "gpu_lidar" (there is just a plain "li
         <gz_frame_id>camera_link</gz_frame_id>  <!-- must match the links name in URDF -->
 
         <!-- These values will have to be taken from manufacturer specifications per camera -->
-        <camera name="camera_example_link">
+        <camera name="camera_optical_link">
             <horizontal_fov>${69.4 * pi / 180}</horizontal_fov>
             <image>
                 <width>640</width>
@@ -182,6 +192,18 @@ The recommended tag to use for a LiDAR is "gpu_lidar" (there is just a plain "li
 </gazebo>
 ```
 
-These are not the only values that a camera or LiDAR can have, and you can view the rest at the [SDF Sensor Specifications](https://sdformat.org/spec/1.11/sensor/).
+These are not the only values that a camera or LiDAR can have, and you can view the rest at the [SDF Sensor Specifications](https://sdformat.org/spec/1.11/sensor/). A full guid on RGBD cameras for Gazebo Harmonic can be found in the [MOGI ROS Week 5/6 Repo](https://github.com/MOGI-ROS/Week-5-6-Gazebo-sensors?tab=readme-ov-file#rgbd-camera).
+
+However, **there is a major issue with cameras that need to be solved in Gazebo. Please see the following section on optical links.**
+
+## Gazebo Optical Links/Joints
+
+You may be wondering, what and why is an optical link. This is yet another mismatch between Gazebo and ROS, but this one is more of a conflicting standards issue. The official ROS standards use a right-hand coordinate system, meaning X forward, Y left, and Z up. Vision systems (not just Gazebo) follow a different standard of Z forward, X to the right, and Y down.
+
+The optical link is just a child of the regular camera link and all it does is rotate the URDF version a little bit so it's aligned with what Gazebo expects. That is it. Keep it in mind when using cameras and Gazebo.
+
+![Articulated Robotics Example](../../../../../attachments/ros_vs_gazebo_coords.png)
+
+[Image credit](https://articulatedrobotics.xyz/tutorials/mobile-robot/hardware/camera/#coordinate-frames)
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
