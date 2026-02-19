@@ -1,7 +1,7 @@
 ---
 title: Gazebo in URDF
 parent: URDF
-nav_order: 1
+nav_order: 4
 ---
 
 ## Introducing the Gazebo Headache
