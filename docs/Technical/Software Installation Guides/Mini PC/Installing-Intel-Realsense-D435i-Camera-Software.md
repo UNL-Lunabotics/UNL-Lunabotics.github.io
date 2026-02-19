@@ -1,5 +1,5 @@
 ---
-title: Installing Intel REalsense D435i Camera Software
+title: Installing Intel Realsense D435i Camera Software
 parent: Mini PC
 nav_order: 2
 ---

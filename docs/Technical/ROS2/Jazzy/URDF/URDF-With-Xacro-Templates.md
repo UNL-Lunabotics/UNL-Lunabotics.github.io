@@ -1,5 +1,5 @@
 ---
-title: URDF with Xacro
+title: URDF with Xacro Templates
 parent: URDF
 nav_order: 1
 ---
