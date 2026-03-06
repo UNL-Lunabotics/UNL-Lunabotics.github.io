@@ -101,7 +101,6 @@ namespace robot_controller
         config.type = controller_interface::interface_configuration_type::INDIVIDUAL;
         config.names = {
             left_wheel_joint_name_ + "/velocity",
-            right_wheel_joint_name_ + "/velocity",
             claw_joint_name_ + "/position"
         };
 
@@ -116,8 +115,6 @@ namespace robot_controller
         config.names = {
             left_wheel_joint_name_ + "/position",
             left_wheel_joint_name_ + "/velocity",
-            right_wheel_joint_name_ + "/position",
-            right_wheel_joint_name_ + "/velocity",
             claw_joint_name_ + "/position"
         };
 
@@ -155,6 +152,7 @@ namespace robot_controller
         {
             // This is where you would put other variables
             auto_declare<std::string>("left_wheel_joint_name", "left_wheel_Joint");
+            auto_declare<std::string>("claw_joint_name", "claw_joint_name");
             auto_declare<double>("wheel_radius_m", 0.05);
 
             // These should ALWAYS be here for every bot
@@ -177,6 +175,126 @@ namespace robot_controller
 
 ### The on_configure() Function
 
+This function executes after initialization and is when the local variables, pub/subs, real-time nonsense, and everything is set up. It basically does all the configuration stuff that isn't setting node parameters.
 
+This function looks really intimidating, and it's mostly because of how verbose C++ is. Basically all this is doing is what is said in the comments. The long types are just the boilerplate for ROS2 Control. This function can vary a lot depending on what you're trying to implement, so I added some comments with some optional stuff you could add.
+
+```cpp
+// File is named robot_controller.cpp
+#ifndef ROBOT_CONTROLLER_CPP
+#define ROBOT_CONTROLLER_CPP
+
+#include
+
+namespace robot_controller
+{
+    controller_interface::CallbackReturn TerrenceController::on_configure(const rclcpp_lifecycle::State &)
+    {
+        // Set local variables to the node parameter values
+        left_wheel_joint_name_ = get_node()->get_parameter("left_wheel_joint_name").as_string();
+        claw_joint_name_ = get_node()->get_parameter("claw_joint_name").as_string();
+        wheel_radius_m_ = get_node()->get_parameter("wheel_radius_m").as_double();
+
+        // Remember these should always be here
+        odom_topic_ = get_node()->get_parameter("odom_topic").as_string();
+        odom_frame_id_ = get_node()->get_parameter("odom_frame_id").as_string();
+        base_frame_id_ = get_node()->get_parameter("base_frame_id").as_string();
+        publish_odom_tf_ = get_node()->get_parameter("publish_odom_tf").as_bool();
+
+
+
+        // Initialize the realtime buffers if you have any
+
+
+
+        // The pub/subs look really ugly but this is just how you declare them it's really messy
+        // ROS subscriptions
+        cmd_vel_sub_ = get_node()->create_subscription<geometry_msgs::msg::Twist>(
+            "/cmd_vel", rclcpp::SystemDefaultsQoS(),
+            [this](const geometry_msgs::msg::Twist & msg) { cmdVelCb(msg); });
+        
+        // ROS publishers
+        auto odom_pub = get_node()->create_publisher<nav_msgs::msg::Odometry>(
+            odom_topic_, rclcpp::SystemDefaultsQoS());
+
+        odom_pub_rt_ = std::make_shared<realtime_tools::RealtimePublisher<nav_msgs::msg::Odometry>>(
+            odom_pub);
+
+        tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(get_node());
+
+
+
+        // Do other things like set modes or fault latched state
+
+
+
+        RCLCPP_INFO(get_node()->get_logger(), "Configured TerrenceController.");
+        
+        return controller_interface::CallbackReturn::SUCCESS;
+    }
+} // namespace robot_controller
+
+#endif // ROBOT_CONTROLLER_CPP
+```
+
+### The on_activate() Function
+
+```cpp
+// File is named robot_controller.cpp
+#ifndef ROBOT_CONTROLLER_CPP
+#define ROBOT_CONTROLLER_CPP
+
+#include
+
+namespace robot_controller
+{
+    controller_interface::CallbackReturn TerrenceController::on_configure(const rclcpp_lifecycle::State &)
+    {
+        // Set local variables to the node parameter values
+        left_wheel_joint_name_ = get_node()->get_parameter("left_wheel_joint_name").as_string();
+        claw_joint_name_ = get_node()->get_parameter("claw_joint_name").as_string();
+        wheel_radius_m_ = get_node()->get_parameter("wheel_radius_m").as_double();
+
+        // Remember these should always be here
+        odom_topic_ = get_node()->get_parameter("odom_topic").as_string();
+        odom_frame_id_ = get_node()->get_parameter("odom_frame_id").as_string();
+        base_frame_id_ = get_node()->get_parameter("base_frame_id").as_string();
+        publish_odom_tf_ = get_node()->get_parameter("publish_odom_tf").as_bool();
+
+
+
+        // Initialize the realtime buffers if you have any
+
+
+
+        // The pub/subs look really ugly but this is just how you declare them it's really messy
+        // ROS subscriptions
+        cmd_vel_sub_ = get_node()->create_subscription<geometry_msgs::msg::Twist>(
+            "/cmd_vel", rclcpp::SystemDefaultsQoS(),
+            [this](const geometry_msgs::msg::Twist & msg) { cmdVelCb(msg); });
+        
+        // ROS publishers
+        auto odom_pub = get_node()->create_publisher<nav_msgs::msg::Odometry>(
+            odom_topic_, rclcpp::SystemDefaultsQoS());
+
+        odom_pub_rt_ = std::make_shared<realtime_tools::RealtimePublisher<nav_msgs::msg::Odometry>>(
+            odom_pub);
+
+        tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(get_node());
+
+
+
+        // Do other things like set modes or fault latched state
+
+
+
+        RCLCPP_INFO(get_node()->get_logger(), "Configured TerrenceController.");
+        
+        return controller_interface::CallbackReturn::SUCCESS;
+    }
+} // namespace robot_controller
+
+#endif // ROBOT_CONTROLLER_CPP
+```
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
