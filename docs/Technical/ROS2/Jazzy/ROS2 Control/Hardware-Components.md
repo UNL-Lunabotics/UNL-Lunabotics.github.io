@@ -1,7 +1,7 @@
 ---
 title: Hardware Components
 parent: ROS2 Control
-nav_order: 4
+nav_order: 3
 ---
 
 ## Hardware Components
