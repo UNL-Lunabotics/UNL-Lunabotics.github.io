@@ -6,7 +6,7 @@ nav_order: 2
 
 ## ROS2 Control
 
-This folder will contain all the information necessary for getting ROS2 Control up and running (both on a real robot and in Gazebo).
+This folder will contain all the information necessary for getting ROS2 Control up and running (both on a real robot and in Gazebo). These guides will not explain the URDF aspect of implementing ROS2 Control, there is a dedicated folder to that. These guides will mention when to do something with URDF. These guides assume you are writing custom everything unless otherwise specified.
 
 TODO:
 1. Overview
