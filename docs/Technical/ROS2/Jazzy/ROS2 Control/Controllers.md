@@ -88,10 +88,8 @@ The source file for a controller is far too large to talk about in one section, 
 
 ```cpp
 // File is named robot_controller.cpp
-#ifndef ROBOT_CONTROLLER_CPP
-#define ROBOT_CONTROLLER_CPP
 
-#include
+// Includes here
 
 namespace robot_controller
 {
@@ -121,8 +119,6 @@ namespace robot_controller
         return config;
     }
 } // namespace robot_controller
-
-#endif // ROBOT_CONTROLLER_CPP
 ```
 
 Basically, this is just where you just claim the state and command interfaces declared in the [ROS2 Control URDF]({% link docs/Technical/ROS2/Jazzy/URDF/ROS2-Control-URDF.md %}). All of this is boiler plate except the names of the joints you are claiming, those will have to be changed.
@@ -139,10 +135,6 @@ Besides that, there is not much else going on. This all runs in a try/catch loop
 
 ```cpp
 // File is named robot_controller.cpp
-#ifndef ROBOT_CONTROLLER_CPP
-#define ROBOT_CONTROLLER_CPP
-
-#include
 
 namespace robot_controller
 {
@@ -169,8 +161,6 @@ namespace robot_controller
         return controller_interface::CallbackReturn::SUCCESS;
     }
 } // namespace robot_controller
-
-#endif // ROBOT_CONTROLLER_CPP
 ```
 
 ### The on_configure() Function
@@ -181,10 +171,6 @@ This function looks really intimidating, and it's mostly because of how verbose 
 
 ```cpp
 // File is named robot_controller.cpp
-#ifndef ROBOT_CONTROLLER_CPP
-#define ROBOT_CONTROLLER_CPP
-
-#include
 
 namespace robot_controller
 {
@@ -233,68 +219,72 @@ namespace robot_controller
         return controller_interface::CallbackReturn::SUCCESS;
     }
 } // namespace robot_controller
-
-#endif // ROBOT_CONTROLLER_CPP
 ```
 
-### The on_activate() Function
+### The on_activate() and on_deactivate() Function
+
+This one is really easy. Just make sure that the interfaces have been claimed correctly. Check that all of them are accounted for and error out if they aren't. Sometimes interfaces don't get claimed and we want to error that so we notice.
 
 ```cpp
 // File is named robot_controller.cpp
-#ifndef ROBOT_CONTROLLER_CPP
-#define ROBOT_CONTROLLER_CPP
-
-#include
 
 namespace robot_controller
 {
-    controller_interface::CallbackReturn TerrenceController::on_configure(const rclcpp_lifecycle::State &)
+    controller_interface::CallbackReturn TerrenceController::on_activate(const rclcpp_lifecycle::State &)
     {
-        // Set local variables to the node parameter values
-        left_wheel_joint_name_ = get_node()->get_parameter("left_wheel_joint_name").as_string();
-        claw_joint_name_ = get_node()->get_parameter("claw_joint_name").as_string();
-        wheel_radius_m_ = get_node()->get_parameter("wheel_radius_m").as_double();
+        // Make sure that the command interfaces are present
 
-        // Remember these should always be here
-        odom_topic_ = get_node()->get_parameter("odom_topic").as_string();
-        odom_frame_id_ = get_node()->get_parameter("odom_frame_id").as_string();
-        base_frame_id_ = get_node()->get_parameter("base_frame_id").as_string();
-        publish_odom_tf_ = get_node()->get_parameter("publish_odom_tf").as_bool();
+        // Make sure that the state interfaces are present
 
+        // Safety outputs
 
-
-        // Initialize the realtime buffers if you have any
-
-
-
-        // The pub/subs look really ugly but this is just how you declare them it's really messy
-        // ROS subscriptions
-        cmd_vel_sub_ = get_node()->create_subscription<geometry_msgs::msg::Twist>(
-            "/cmd_vel", rclcpp::SystemDefaultsQoS(),
-            [this](const geometry_msgs::msg::Twist & msg) { cmdVelCb(msg); });
-        
-        // ROS publishers
-        auto odom_pub = get_node()->create_publisher<nav_msgs::msg::Odometry>(
-            odom_topic_, rclcpp::SystemDefaultsQoS());
-
-        odom_pub_rt_ = std::make_shared<realtime_tools::RealtimePublisher<nav_msgs::msg::Odometry>>(
-            odom_pub);
-
-        tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(get_node());
-
-
-
-        // Do other things like set modes or fault latched state
-
-
-
-        RCLCPP_INFO(get_node()->get_logger(), "Configured TerrenceController.");
-        
+        RCLCPP_INFO(get_node()->get_logger(), "Activated TerrenceController.");
         return controller_interface::CallbackReturn::SUCCESS;
     }
 } // namespace robot_controller
+```
 
-#endif // ROBOT_CONTROLLER_CPP
+The on_deactivate() function is even easier, just make sure all outputs are set to 0. The robot is not moving.
+
+```cpp
+// File is named robot_controller.cpp
+
+namespace robot_controller
+{
+    controller_interface::CallbackReturn TerrenceController::on_deactivate(const rclcpp_lifecycle::State &)
+    {
+        // Stop any sort of command outputs
+        // If you're using a state machine, set mode to IDLE
+
+        RCLCPP_INFO(get_node()->get_logger(), "Deactivated TerrenceController.");
+        return controller_interface::CallbackReturn::SUCCESS;
+    }
+} // namespace robot_controller
+```
+
+### The update() Function
+
+I am not actually going to put a filled in update function here. This is where ALL of the actual runtime logic will go, so it would be way too long to include here.
+
+```cpp
+// File is named robot_controller.cpp
+
+namespace robot_controller
+{
+    controller_interface::return_type TerrenceController::update(const rclcpp::Time & time, const rclcpp::Duration & period)
+    {
+        // Stuff goes here
+    }
+} // namespace robot_controller
+```
+
+### Plugin Export
+
+You NEED to put this at the end of the controller file. If you do not, the ROS2 framework will not know this controller even exists. Make sure to replace robot with your bot name. You have to handle state machines, reading state interfaces, writing command interfaces, doing all of the behavior logic, etc. Just go look at some code from actual bots.
+
+```cpp
+PLUGINLIB_EXPORT_CLASS(robot_controller::RobotController,
+                       controller_interface::ControllerInterface)
 ```
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
