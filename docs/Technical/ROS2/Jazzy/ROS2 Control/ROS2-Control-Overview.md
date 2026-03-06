@@ -12,7 +12,11 @@ Firstly, read this documentation page starting at [Architecture](https://control
 
 Basically, there's three main parts of ROS2 Control that are relevant for our purposes: Controllers, interfaces, and hardware components. All of these parts are managed by the Controller Manager, which is mostly relevant for writing launch files. This documentation aims to inform you just enough to be able to write ROS2 Control code, but not enough to understand the intricate workings of it. There are some parts of the ROS2 Control feature base that you can only really understand by looking at the source code, so a comprehensive explanation of features is not feasible.
 
+These guides will not explain the URDF aspect of implementing ROS2 Control, there is a dedicated folder to that. These guides will mention when to do something with URDF.
+
 ## Interfaces
+
+
 
 ## Controllers
 
