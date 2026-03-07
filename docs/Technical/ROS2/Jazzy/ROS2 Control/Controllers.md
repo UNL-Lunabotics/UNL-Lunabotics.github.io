@@ -82,7 +82,7 @@ namespace robot_controller
 
 **1.6:** This is where things can vary the most from the templates. Typically, the main thing that will go into the private section is state machine structs, helper functions, subs and pubs, parameters from the URDF, and any other local variables.
 
-## Interface Configuration Functions
+### Interface Configuration Functions
 
 The source file for a controller is far too large to talk about in one section, so from now on **all of these subsections will be about one (or a few) functions inside robot_controller.cpp**.
 
@@ -93,7 +93,7 @@ The source file for a controller is far too large to talk about in one section, 
 
 namespace robot_controller
 {
-    controller_interface::InterfaceConfiguration TerrenceController::command_interface_configuration() const
+    controller_interface::InterfaceConfiguration RobotController::command_interface_configuration() const
     {
         controller_interface::InterfaceConfiguration config;
         config.type = controller_interface::interface_configuration_type::INDIVIDUAL;
@@ -105,7 +105,7 @@ namespace robot_controller
         return config;
     }
 
-    controller_interface::InterfaceConfiguration TerrenceController::state_interface_configuration() const
+    controller_interface::InterfaceConfiguration RobotController::state_interface_configuration() const
     {
         controller_interface::InterfaceConfiguration config;
         config.type = controller_interface::interface_configuration_type::INDIVIDUAL;
@@ -138,7 +138,7 @@ Besides that, there is not much else going on. This all runs in a try/catch loop
 
 namespace robot_controller
 {
-    controller_interface::CallbackReturn TerrenceController::on_init()
+    controller_interface::CallbackReturn RobotController::on_init()
     {
         try
         {
@@ -174,7 +174,7 @@ This function looks really intimidating, and it's mostly because of how verbose 
 
 namespace robot_controller
 {
-    controller_interface::CallbackReturn TerrenceController::on_configure(const rclcpp_lifecycle::State &)
+    controller_interface::CallbackReturn RobotController::on_configure(const rclcpp_lifecycle::State &)
     {
         // Set local variables to the node parameter values
         left_wheel_joint_name_ = get_node()->get_parameter("left_wheel_joint_name").as_string();
@@ -214,7 +214,7 @@ namespace robot_controller
 
 
 
-        RCLCPP_INFO(get_node()->get_logger(), "Configured TerrenceController.");
+        RCLCPP_INFO(get_node()->get_logger(), "Configured RobotController.");
         
         return controller_interface::CallbackReturn::SUCCESS;
     }
@@ -230,7 +230,7 @@ This one is really easy. Just make sure that the interfaces have been claimed co
 
 namespace robot_controller
 {
-    controller_interface::CallbackReturn TerrenceController::on_activate(const rclcpp_lifecycle::State &)
+    controller_interface::CallbackReturn RobotController::on_activate(const rclcpp_lifecycle::State &)
     {
         // Make sure that the command interfaces are present
 
@@ -238,7 +238,7 @@ namespace robot_controller
 
         // Safety outputs
 
-        RCLCPP_INFO(get_node()->get_logger(), "Activated TerrenceController.");
+        RCLCPP_INFO(get_node()->get_logger(), "Activated RobotController.");
         return controller_interface::CallbackReturn::SUCCESS;
     }
 } // namespace robot_controller
@@ -251,12 +251,12 @@ The on_deactivate() function is even easier, just make sure all outputs are set 
 
 namespace robot_controller
 {
-    controller_interface::CallbackReturn TerrenceController::on_deactivate(const rclcpp_lifecycle::State &)
+    controller_interface::CallbackReturn RobotController::on_deactivate(const rclcpp_lifecycle::State &)
     {
         // Stop any sort of command outputs
         // If you're using a state machine, set mode to IDLE
 
-        RCLCPP_INFO(get_node()->get_logger(), "Deactivated TerrenceController.");
+        RCLCPP_INFO(get_node()->get_logger(), "Deactivated RobotController.");
         return controller_interface::CallbackReturn::SUCCESS;
     }
 } // namespace robot_controller
@@ -271,7 +271,7 @@ I am not actually going to put a filled in update function here. This is where A
 
 namespace robot_controller
 {
-    controller_interface::return_type TerrenceController::update(const rclcpp::Time & time, const rclcpp::Duration & period)
+    controller_interface::return_type RobotController::update(const rclcpp::Time & time, const rclcpp::Duration & period)
     {
         // Stuff goes here
         // Generally, first read states, second calculate kinematics, third write commands
@@ -295,11 +295,14 @@ Here are some quick do's and don'ts for the update function:
 - **DO split the update() function into helper functions**. You are allowed to use helper functions to make the update() function less of a mess, and this is encouraged. Remember that any function update calls is still part of update, so any helper functions must comply with these constraints as well.
 - **DO read states first, calculate second, and write commands third**. That should be the basic structure of your update function
 
-### Plugin Export
+### Class Registration Macro
 
 You NEED to put this at the end of the controller file. If you do not, the ROS2 framework will not know this controller even exists. Make sure to replace robot with your bot name. You have to handle state machines, reading state interfaces, writing command interfaces, doing all of the behavior logic, etc. Just go look at some code from actual bots.
 
 ```cpp
+// Note that somewhere in the includes you have to include the actual plugin export function
+#include <pluginlib/class_list_macros.hpp>
+
 PLUGINLIB_EXPORT_CLASS(robot_controller::RobotController,
                        controller_interface::ControllerInterface)
 ```
@@ -317,7 +320,7 @@ Putting all of that together, you get the following starter code. You can also a
 
 namespace robot_controller
 {
-    controller_interface::InterfaceConfiguration TerrenceController::command_interface_configuration() const
+    controller_interface::InterfaceConfiguration RobotController::command_interface_configuration() const
     {
         controller_interface::InterfaceConfiguration config;
         config.type = controller_interface::interface_configuration_type::INDIVIDUAL;
@@ -329,7 +332,7 @@ namespace robot_controller
     }
 
 
-    controller_interface::InterfaceConfiguration TerrenceController::state_interface_configuration() const
+    controller_interface::InterfaceConfiguration RobotController::state_interface_configuration() const
     {
         controller_interface::InterfaceConfiguration config;
         config.type = controller_interface::interface_configuration_type::INDIVIDUAL;
@@ -342,7 +345,7 @@ namespace robot_controller
     }
 
 
-    controller_interface::CallbackReturn TerrenceController::on_init()
+    controller_interface::CallbackReturn RobotController::on_init()
     {
         try
         {
@@ -357,7 +360,7 @@ namespace robot_controller
     }
 
 
-    controller_interface::CallbackReturn TerrenceController::on_configure(const rclcpp_lifecycle::State &)
+    controller_interface::CallbackReturn RobotController::on_configure(const rclcpp_lifecycle::State &)
     {
         // Set local variables to the node parameter values
 
@@ -369,13 +372,13 @@ namespace robot_controller
 
         // Do other things like set modes or fault latched state
 
-        RCLCPP_INFO(get_node()->get_logger(), "Configured TerrenceController.");
+        RCLCPP_INFO(get_node()->get_logger(), "Configured RobotController.");
         
         return controller_interface::CallbackReturn::SUCCESS;
     }
 
 
-    controller_interface::CallbackReturn TerrenceController::on_activate(const rclcpp_lifecycle::State &)
+    controller_interface::CallbackReturn RobotController::on_activate(const rclcpp_lifecycle::State &)
     {
         // Make sure that the command interfaces are present
 
@@ -383,21 +386,21 @@ namespace robot_controller
 
         // Safety outputs
 
-        RCLCPP_INFO(get_node()->get_logger(), "Activated TerrenceController.");
+        RCLCPP_INFO(get_node()->get_logger(), "Activated RobotController.");
         return controller_interface::CallbackReturn::SUCCESS;
     }
    
    
-    controller_interface::CallbackReturn TerrenceController::on_deactivate(const rclcpp_lifecycle::State &)
+    controller_interface::CallbackReturn RobotController::on_deactivate(const rclcpp_lifecycle::State &)
     {
         // Stop any sort of command outputs
         // If you're using a state machine, set mode to IDLE
 
-        RCLCPP_INFO(get_node()->get_logger(), "Deactivated TerrenceController.");
+        RCLCPP_INFO(get_node()->get_logger(), "Deactivated RobotController.");
         return controller_interface::CallbackReturn::SUCCESS;
     }
 
-    controller_interface::return_type TerrenceController::update(const rclcpp::Time & time, const rclcpp::Duration & period)
+    controller_interface::return_type RobotController::update(const rclcpp::Time & time, const rclcpp::Duration & period)
     {
         // Stuff goes here
         // Generally, first read states, second calculate kinematics, third write commands
@@ -409,5 +412,35 @@ namespace robot_controller
 PLUGINLIB_EXPORT_CLASS(robot_controller::RobotController,
                        controller_interface::ControllerInterface)
 ```
+
+## Exporting the Controller
+
+There are three things you need in order to export a controller, so the controller manager will be able to find it: the plugin descriptor file, the CMake export function, and the class registration macro. If you don't have all three of these things done, the controller manager won't be able to launch your controller.
+
+The **plugin descriptor file** is a very simple XML file that describes what part of the cpp code is the actual controller. It will probably live at `control/config/robot_controller.xml`, but you can put it wherever you want as long as the control package will be able to find it during build, so it is just easier to put it inside the control package. It is basically all boilerplate with very little you have to change. The below code block is the entire XML file.
+
+```xml
+<library path="robot_controller">
+  <class
+    name="robot_controller/RobotController"
+    type="robot_controller::RobotController"
+    base_class_type="controller_interface::ControllerInterface">
+    <description>
+      Robot supervisor controller with mode gating (IDLE/DRIVE/DIG/DUMP/FAULT).
+    </description>
+  </class>
+</library>
+```
+
+The things you need to change include:
+
+- The library path. This path is kind of confusing because it's not referencing the file path, it's referencing the path once colcon build is run and everything's in the install directory. Declaring the library path as robot_controller means it assumes that the controller file will be installed into the robot_controller directory using something similar to this code `add_library(robot_controller SHARED src/robot_controller.cpp)`
+- The name and type should both just match namespace / or :: ClassName.
+- The base class type should ALWAYS be controller interface.
+- The description is whatever.
+
+The **CMake export function** will go in the `CMakeLists.txt` file. Somewhere in the CMake file, you have to export the plugin descriptor file using this command: `pluginlib_export_plugin_description_file(controller_interface config/robot_controller.xml)`. This command does use the file path and assumes that you put the XML in control/config/.
+
+The **class registration macro** is something we have already talked about. It goes at the very end of the `robot_controller.cpp` file and registers the class and allows ROS2 Control to do all the background work necessary to load it as a plugin.
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
