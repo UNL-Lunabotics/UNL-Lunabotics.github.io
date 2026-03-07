@@ -278,6 +278,22 @@ namespace robot_controller
 } // namespace robot_controller
 ```
 
+The update function needs a lot of thought put into it. Keep in mind that this function can be run hundreds of times per second as it is the main control loop of the program. If it is too slow or causes any sort of hangup, the entire control for the robot can start falling apart. It needs to be real-time compliant, which means everything follows a strict schedule and has to take a determinable amount of time.
+
+Here are some quick do's and don'ts for the update function:
+
+- **DON'T allocate memory**. This is slow and takes an unpredictable amount of time. Use the header file to declare any needed variables. Never use the new keyword.
+- **DON'T resize containers**. This shouldn't come up that much since it's C++, but if you are presented with the opportunity to resize any sort of container, do not do it.
+- **DON'T create or modify strings**. Creating or modifying strings is just memory allocation under the hood, avoid it.
+- **DON'T use standard logging**. Writing to the console or by using RCLCPP_INFO both block the thread until it completes, throttling the program. Logging is acceptable in error paths, but not the hot path. If you use logging, use RCLCPP_WARN_THROTTLE or RCLCPP_INFO_THROTTLE
+- **DON'T use any sort of waits or pauses**. For obvious reasons.
+- **DON'T use standard pub/subs/broadcasters/etc**. Standard ROS2 pub/subs use thread locks and allocate memory. When you publish odom or transforms or anything, use `realtime_tools::RealtimePublisher` or broadcaster
+- **DO use realtime_tools**. This will help make sure everything runs on a strict control schedule.
+- **DO check for NaNs and invalid data**. It happens so often that some mild misconfiguration somewhere else in the code will generate NaN values and crash the entire controller. Add safeguards.
+- **DO keep the math as efficient as possible**. There is some complicated kinematics going on, keep it as optimal as possible (most of these have solved best equations available to find on the internet)
+- **DO split the update() function into helper functions**. You are allowed to use helper functions to make the update() function less of a mess, and this is encouraged. Remember that any function update calls is still part of update, so any helper functions must comply with these constraints as well.
+- **DO read states first, calculate second, and write commands third**. That should be the basic structure of your update function
+
 ### Plugin Export
 
 You NEED to put this at the end of the controller file. If you do not, the ROS2 framework will not know this controller even exists. Make sure to replace robot with your bot name. You have to handle state machines, reading state interfaces, writing command interfaces, doing all of the behavior logic, etc. Just go look at some code from actual bots.
