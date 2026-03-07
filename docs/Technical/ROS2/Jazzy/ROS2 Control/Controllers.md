@@ -274,6 +274,7 @@ namespace robot_controller
     controller_interface::return_type TerrenceController::update(const rclcpp::Time & time, const rclcpp::Duration & period)
     {
         // Stuff goes here
+        // Generally, first read states, second calculate kinematics, third write commands
     }
 } // namespace robot_controller
 ```
@@ -299,6 +300,112 @@ Here are some quick do's and don'ts for the update function:
 You NEED to put this at the end of the controller file. If you do not, the ROS2 framework will not know this controller even exists. Make sure to replace robot with your bot name. You have to handle state machines, reading state interfaces, writing command interfaces, doing all of the behavior logic, etc. Just go look at some code from actual bots.
 
 ```cpp
+PLUGINLIB_EXPORT_CLASS(robot_controller::RobotController,
+                       controller_interface::ControllerInterface)
+```
+
+This goes outside of the robot controller namespace.
+
+### Final Controller Source File Format
+
+Putting all of that together, you get the following starter code. You can also add whatever helper functions you need anywhere you think works, these are just the REQUIRED functions. Remember to alter the header file as needed.
+
+```cpp
+// File is named robot_controller.cpp
+
+// Includes here
+
+namespace robot_controller
+{
+    controller_interface::InterfaceConfiguration TerrenceController::command_interface_configuration() const
+    {
+        controller_interface::InterfaceConfiguration config;
+        config.type = controller_interface::interface_configuration_type::INDIVIDUAL;
+        config.names = {
+            // claim joints with a command interface
+        };
+
+        return config;
+    }
+
+
+    controller_interface::InterfaceConfiguration TerrenceController::state_interface_configuration() const
+    {
+        controller_interface::InterfaceConfiguration config;
+        config.type = controller_interface::interface_configuration_type::INDIVIDUAL;
+
+        config.names = {
+            // claim joints with a state interface
+        };
+
+        return config;
+    }
+
+
+    controller_interface::CallbackReturn TerrenceController::on_init()
+    {
+        try
+        {
+            // Pass params to nodes
+        }
+        catch(const std::exception& e)
+        {
+            RCLCPP_ERROR(get_node()->get_logger(), "on_init exception: %s", e.what());
+            return controller_interface::CallbackReturn::ERROR;
+        }
+        return controller_interface::CallbackReturn::SUCCESS;
+    }
+
+
+    controller_interface::CallbackReturn TerrenceController::on_configure(const rclcpp_lifecycle::State &)
+    {
+        // Set local variables to the node parameter values
+
+        // Initialize the realtime buffers if you have any
+
+        // ROS subscriptions
+        
+        // ROS publishers
+
+        // Do other things like set modes or fault latched state
+
+        RCLCPP_INFO(get_node()->get_logger(), "Configured TerrenceController.");
+        
+        return controller_interface::CallbackReturn::SUCCESS;
+    }
+
+
+    controller_interface::CallbackReturn TerrenceController::on_activate(const rclcpp_lifecycle::State &)
+    {
+        // Make sure that the command interfaces are present
+
+        // Make sure that the state interfaces are present
+
+        // Safety outputs
+
+        RCLCPP_INFO(get_node()->get_logger(), "Activated TerrenceController.");
+        return controller_interface::CallbackReturn::SUCCESS;
+    }
+   
+   
+    controller_interface::CallbackReturn TerrenceController::on_deactivate(const rclcpp_lifecycle::State &)
+    {
+        // Stop any sort of command outputs
+        // If you're using a state machine, set mode to IDLE
+
+        RCLCPP_INFO(get_node()->get_logger(), "Deactivated TerrenceController.");
+        return controller_interface::CallbackReturn::SUCCESS;
+    }
+
+    controller_interface::return_type TerrenceController::update(const rclcpp::Time & time, const rclcpp::Duration & period)
+    {
+        // Stuff goes here
+        // Generally, first read states, second calculate kinematics, third write commands
+    }
+
+} // namespace robot_controller
+
+
 PLUGINLIB_EXPORT_CLASS(robot_controller::RobotController,
                        controller_interface::ControllerInterface)
 ```
