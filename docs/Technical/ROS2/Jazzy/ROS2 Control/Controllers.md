@@ -349,7 +349,7 @@ namespace robot_controller
     {
         try
         {
-            // Pass params to nodes
+            // Get params from the controller yaml
         }
         catch(const std::exception& e)
         {

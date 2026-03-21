@@ -60,7 +60,7 @@ Next, you need to declare the robot tag and import xacro. The robot tag is kind 
 </robot>
 ```
 
-Optionally, you can give the robot a name. This isn't really important at all but you can if you want to. It would just change the line to `<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Robot Name">`.
+It is REQUIRED to give the robot a name. You only need to do it in one file, but you can optionally include the name in every file if you want. It is recommended to put the name in the main xacro file.
 
 If you want to read more about the technical details for how to implement link/joint pairs by hand (which you shouldn't have to do since we use an exporter), then the best documentation is available at the [Nav2 URDF Setup Guide](https://docs.nav2.org/setup_guides/urdf/setup_urdf.html).
 
@@ -68,7 +68,7 @@ If you want to read more about the technical details for how to implement link/j
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="placeholder" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <!-- Declare any variables (including ones set by launch files) -->
     <xacro:arg name="use_sim" default="false"/>
@@ -212,18 +212,6 @@ This is basically identical to `robotname_core.xacro`. You should view the speci
             <gz_frame_id>laser_frame</gz_frame_id>
         </sensor>
     </gazebo>
-
-</robot>
-```
-
-### Example: sensor.xacro
-
-```XML
-<?xml version="1.0" encoding="utf-8"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-
-    <!-- Define the joint/link for all the sensors -->
-    <!-- Specific sensor implementation details are in a separate page -->
 
 </robot>
 ```
