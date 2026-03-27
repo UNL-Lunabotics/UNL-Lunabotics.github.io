@@ -79,7 +79,7 @@ Once the terminal says 'Connected', go back to the installer, click Next and the
 
 Ubuntu and other packages (ROS2, VSCode, etc.) will now install which may take a while.
 
-Once installed, click 'Reboot' and the PC will reboot into Ubuntu. There should be a user created named `workstation` and has the password of `unlrobot123`.
+Once installed, click 'Reboot' and the PC will reboot into Ubuntu. There should be a user created named `workstation` and has the password of `INSERTUNL'SDEFAULTPASSWORDASKIFYOUDONTKNOWIT`.
 
 Log in and ensure ROS2 is installed correctly. Go to a terminal and type `ros2`. If installed, there should be text displayed.
 
