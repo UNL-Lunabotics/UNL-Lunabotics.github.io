@@ -1,5 +1,5 @@
 ---
-title: Installing the Phoenix6 API
+title: Installing the Phoenix6 C++ API
 parent: Mini PC
 nav_order: 3
 ---
