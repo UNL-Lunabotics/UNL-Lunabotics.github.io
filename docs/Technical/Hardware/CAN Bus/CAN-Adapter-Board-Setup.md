@@ -48,4 +48,7 @@ Once you have ran this command, run `ip a` or `ip link` again. You should see th
 ```
 You should also see that a solid blue light has lit up on the board itself. This indicates that the board is up and ready to communicate! If this blue light is ever off, you will know that the can0 network interface is not up, and the adapter will not be able to communicate. A blinking blue light means the CAN adapter is transmitting data. Right now, all three lights (red, blue, and green) should be glowing solid.
 
+{: .note}
+Each time your PC/computer gets turned off and back on, or each time the adapter gets unplugged and the replugged in, it will not get the `can0` interface up by default (only the red and green lights will be solid. This means that you **MUST** run the command above after each time the computer turns back on or the adapter is replugged in! It may be wise to include this command in a .bashrc script or as a service on startup.
+
 You are now ready to use the adapter to communicate with the devices on your CAN bus!
