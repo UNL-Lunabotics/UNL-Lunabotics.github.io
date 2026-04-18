@@ -16,7 +16,7 @@ To install the API, follow this [CTR Electronics Phoenix6 installation guide](ht
 
 ```bash
 sudo curl -s --compressed -o /usr/share/keyrings/ctr-pubkey.gpg "https://deb.ctr-electronics.com/ctr-pubkey.gpg"
-sudo curl -s --compressed -o /etc/apt/sources.list.d/ctr<year>.list "https://deb.ctr-electronics.com/ctr$<year>.list"
+sudo curl -s --compressed -o /etc/apt/sources.list.d/ctr<year>.list "https://deb.ctr-electronics.com/ctr<year>.list"
 ```
 
 And once you open the .list file:
