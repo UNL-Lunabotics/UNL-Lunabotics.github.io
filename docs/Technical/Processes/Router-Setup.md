@@ -27,7 +27,19 @@ Ensure the router is configured to the specifications of [WiFi Requirements]({% 
 4. You can find the IP by doing `ip a` and finding either the wlp3s0, wlan, wlp, wlp2s0, or similar connection and looking at the inet address. **Note that the IP address of the computer while connected to the router and while connected to eduroam or something will be different.**
 5. The username will just be the username you see when running commands in the terminal. Terminal commands follow the format `<user>@<computername>:~$`.
 
-## Router Use During Competition
+## Router + Antenna Use During Competition
+
+**The Mini PC's do not like to use the wifi antenna by default and it is required by NASA regulations to use the external antenna.** Because of this you need to manually check beforehand if it is using the correct device or not. You can use SSH or a monitor + keyboard + mouse combo to do this. It is recommended to use monitor/keyboard/mouse since this messes with wifi connection.
+
+Setting up the Antenna:
+
+1. You can run the command `nmcli device` in the Mini PC terminal to see what device it is using. Ones that say connected are currently in use. The built-in Beelink SER5 Max device is named wlp3s0 and the antenna's will be something like wlx<hex>. The wlx device should be the one connected and wlp3s0 should be disconnected. If it is, you can stop here. If it is not, continue.
+2. Disable the internal wifi card with `sudo nmcli device disconnect wlp3s0`. This is undone by a PC reboot. These are all temporary commands.
+3. Enable the antenna as the wifi device with `sudo nmcli device wifi connect "Team_##" password "wifipassword" ifname <antenna_device_name>`. Replace ## with the actual wifi band name, replace the wifi password with the real password, and replace the antenna device name with the name found in step 1.
+   1. If you're wondering why we can't just connect the antenna device without the wifi specifications, it's because the previous wifi saved profiles are really weird. It might connect to another wifi network on accident instead of what was previously connected to. This is just safer and more reliable.
+4. Run the command `nmcli device` again and verify that the antenna is the connected device now.
+
+Setting up the Router:
 
 1. Plug the router into power.
 2. Ensure the WiFi Antenna is attached to the Mini PC.
