@@ -43,4 +43,89 @@ Note: UNL Lunabotics already has a Foxglove account set up. If you are working o
 
    The purpose of `foxglove_bridge` is to automatically subscribe to all of the topics in your ROS2 system, and make them available via a localhost connection. This is how Foxglove Studio receives the topics for visualization.
 
-4. 
+4. Include the `foxglove_bridge` node in your ROS2 launch file:  
+   To make foxglove_bridge launch when the rest of your nodes start, include this block of code in your launch file:
+
+   ```python
+   from launch import LaunchDescription
+   from launch_ros.actions import Node
+
+   # define robot nodes...
+
+   foxglove_bridge = Node(
+      package='foxglove_bridge',
+      executable='foxglove_bridge',
+      name='foxglove_bridge',
+   ),
+
+   return LaunchDescription([
+
+      # list nodes...
+
+      foxglove_bridge,
+   ])
+   ```
+
+5. This step is completely optional. If you want Foxglove Studio to automatically start when you execute your ROS2 launch file, include one of the following code blocks in your launch file. If you are not interested in this, move on to step 6.  
+
+   If you are using the downloadable application, include this code:
+
+   ```python
+   from launch import LaunchDescription
+   from launch_ros.actions import Node
+   # imports...
+
+   def generate_launch_description():
+
+      # define robot nodes...
+      # foxglove_bridge
+
+      foxglove_studio = ExecuteProcess(
+         cmd=['foxglove-studio'],
+         output='screen',
+      ),
+
+      return LaunchDescription([
+
+         # list nodes...
+
+         foxglove_studio,
+      ])
+   ```
+
+   If you are using the web app, include this code:  
+   Note: If you are (somehow) using Windows or MacOS, `'xdg-open'` will need to be replaced with the browser command corresponding to your operating system.  
+   For Windows, use `'start'`. For MacOS, use `'open'`  
+   TODO: Test how this works in Docker
+
+   ```python
+   from launch import LaunchDescription
+   from launch_ros.actions import Node
+   from launch.actions import ExecuteProcess
+   # imports...
+
+   def generate_launch_description():
+
+      # define robot nodes...
+      # foxglove_bridge
+
+      foxglove_studio_web = ExecuteProcess(
+         cmd=['xdg-open', 'https://foxglove.dev'],
+         output='screen',
+      ),
+
+      return LaunchDescription([
+
+         # list nodes...
+
+         foxglove_studio_web,
+      ])
+   ```
+
+6. Run your launch file to verify everything works.  
+   If you did not add an autostart node, you will need to manually start foxglove once your ROS2 launch file is executing.
+
+Contrats! You should now have foxglove set up and ready to begin using.  
+The next section will go over some basic usage of the Foxglove User Interface, since it can be a little bit overwhelming to get used to.
+
+> Author: Jesse Mills (<https://github.com/JesseMills0>)
