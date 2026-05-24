@@ -274,3 +274,5 @@ Surgical instrument actuators
 - Easier to validate for medical device certification
 - Surgeon feels consistent haptic feedback regardless of complexity below
 - Force limits are explicitly enforced at a specific layer
+
+> Author: Raegan Scheet (<https://github.com/raedotzip>)
