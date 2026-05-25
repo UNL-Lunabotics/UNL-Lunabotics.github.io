@@ -1,7 +1,7 @@
 ---
 title: Foxglove Setup and Usage
-parent: Launch
-nav_order: 3
+parent: Foxglove
+nav_order: 1
 ---
 
 ## Foxglove Setup  
