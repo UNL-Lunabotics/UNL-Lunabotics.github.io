@@ -1,5 +1,5 @@
 ---
-title: Foxglove Setup and Usage
+title: Foxglove Setup
 parent: Foxglove
 nav_order: 1
 ---
