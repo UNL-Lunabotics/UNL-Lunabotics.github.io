@@ -4,6 +4,8 @@ parent: Launch
 nav_order: 3
 ---
 
+## Foxglove Setup  
+
 This page will go over the basics of what Foxglove is, how to set it up with your project.
 Note: In this text and in other documentation online, the terms "Foxglove" and "Foxglove Studio" are used largely interchangeably. They effectively mean the same thing.
 
