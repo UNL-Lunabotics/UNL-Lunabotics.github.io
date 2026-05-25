@@ -18,5 +18,11 @@
     "**/vendor",
     "**/_*.md",
     "**/index.md"
+  ],
+  "cSpell.words": [
+    "Lunabotics",
+    "Rviz",
+    "Snapcraft",
+    "Zenoh"
   ]
 }
