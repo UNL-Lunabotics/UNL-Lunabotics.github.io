@@ -50,6 +50,20 @@ If you want to close one of the panels you have pulled up, you can simply do so 
 
 ![image]({% link attachments/foxglove/Remove-Panel.png %})
 
+## Import/Export Layouts
+
+Now lets say you have a panel layout you like and want to save it for later use. You can do this by saving the layout configuration, and even downloading it as a JSON file for use on other systems. To do this, click on the dropdown menu in the top right corner of the screen and select "Manage layouts".  
+
+![image]({% link attachments/foxglove/Manage-Layouts.png %})
+
+This should bring you to the layout manager. Here you can configure layouts for yourself and your organization. To configure a particular layout, click on the vertical line of 3 dots to the far right of the layout you want to modify. For this tutorial, we are simply going to download the layout so we can import it in the future. To do so, click the "Download" button in the menu, and save the resulting JSON file to your PC wherever you like.
+
+![image]({% link attachments/foxglove/Download-Layout.png %})
+
+Later, if you want to import the layout you saved, you can do so from the main panels screen, by clicking the "Import from file" button in the same dropdown menu you used to access the layout manager. You can then simply select the JSON file you previously saved, and it will load the corresponding layout.
+
+![image]({% link attachments/foxglove/Import-Layout.png %})
+
 This concludes our basic overview of how to navigate and utilize Foxglove. It is important to mention once again that this is nowhere near everything Foxglove is capable of visualizing, as there are dozens of panels available for both sending and receiving data from your robot. For a much more detailed overview of each available panel in Foxglove and how they work, I recommend looking at the [official documentation](https://docs.foxglove.dev/docs/visualization/panels).  
 
 > Author: Jesse Mills (<https://github.com/JesseMills0>)
