@@ -23,6 +23,9 @@
     "Lunabotics",
     "Rviz",
     "Snapcraft",
+    "URDF",
+    "Xacro",
+    "Xacros",
     "Zenoh"
   ]
 }
