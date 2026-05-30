@@ -14,8 +14,8 @@ The robot model you will construct in this guide is heavily based on a [video tu
 
 By the end of this guide, you should have a basic model of a robot in URDF format. If you visualize your URDF, either using a VSCode extension, running your ROS2 package with a launch file, or some other means, you should get a 3D model that looks something like this:
 
-![Render of Finished URDF]({% link attachments/urdf/TootleFinished.png %}){: width="49%" }
-![Top-down Render of Finished URDF]({% link attachments/urdf/TootleFinishedTop.png %}){: width="49%" style="margin-left:1%;" }
+![Render of Finished URDF]({% link attachments/urdf/Tootles-Finished.png %}){: width="49%" }
+![Top-down Render of Finished URDF]({% link attachments/urdf/Tootles-Finished-Top.png %}){: width="49%" style="margin-left:1%;" }
 
 > Note: I am using Foxglove Studio to render the URDF for this tutorial, if you are using something else, your model may look slightly different, but it should maintain the same core shapes.
 
@@ -27,17 +27,67 @@ The URDF file is also used to specify the location of any cameras and sensors on
 
 ## Structure of a URDF
 
-URDF files use Markup Language syntax (similar to languages like XML and HTML) to define a series of elements that go on to define components of your robot, with each individual element defining a different "part" of the robot (i.e. wheels, chassis, a robotic arm, cameras, sensors, etc.). Each element has its own configurations, and its own specified placement in the final model. Each of these elements come together when ROS2 builds your URDF to define a complete model of your robot, either for the purposes of simulation in software such as Gazebo or MuJoCo, or for use in managing an actual robot.
+URDF files are effectively highly specialized XML files. They define a series of elements that go on to define components of your robot, with each individual element defining a different "part" of the robot (i.e. wheels, chassis, a robotic arm, cameras, sensors, etc.). Each element has its own configurations, and its own specified placement in the final model. Each of these elements come together when ROS2 builds your URDF to define a complete model of your robot, either for the purposes of simulation in software such as Gazebo or MuJoCo, or for use in managing an actual robot.
 
-TODO: Parent/Child relationship, incest
+All components of your robot specified in your URDF must follow a parent-child relationship. Basically, when you define a new element in your URDF, you need to specify what other part of the robot you "attach" it to. The URDF also treats the parent of a component as the origin for that component, so if you need to calculate coordinate displacement of a component, it needs to be done with reference to the component's parent. The only element in your URDF that is not a child of another component is the `base_link`. This is because the `base_link` is defined with the express purpose as acting as the parent to all other components in the URDF.
 
-While you can place all of your components into one large URDF file, this is generally not good practice, as they can get very large and difficult to manage relatively quickly. Instead, its a good idea to use Xacro (XML Macros) to split your URDF into multiple smaller files that can be compiled together using special tags. For a detailed look at how to integrate xacro into your URDF, see [URDF with xacro Templates]({% link docs/Technical/ROS2/Jazzy/URDF/URDF-With-Xacro-Templates.md %}). For an extensive look at the additional features xacro provides, see [URDF with xacro Features]({% link docs/Technical/ROS2/Jazzy/URDF/URDF-With-Xacro-Features.md %}).
+If you are struggling to visualize this concept, try thinking of it like a tree. The root of the tree is `base_link`, and every other part of the robot branches off from `base_link`.  
+
+```mermaid
+graph TD
+    base_link --> chassis_joint
+    base_link --> front_left_wheel_joint
+    base_link --> front_right_wheel_joint
+    base_link --> back_left_wheel_joint
+    base_link --> back_right_wheel_joint
+
+    chassis_joint --> chassis_link
+    chassis_link --> laser_joint
+    chassis_link --> camera_joint
+
+    laser_joint --> laser_link
+    camera_joint --> camera_link
+
+    front_left_wheel_joint --> front_left_wheel_link
+    front_right_wheel_joint --> front_right_wheel_link
+    back_left_wheel_joint --> back_left_wheel_link
+    back_right_wheel_joint --> back_right_wheel_link
+```
+
+The tree visualization also helps clarify one of the most important (and limiting) rules about URDF: While a parent can have as many children as necessary, a child can have *only one* parent. This makes any closed loop system, such as a four-bar linkage or tank treads, impossible to accurately simulate with a URDF.
+
+<!-- markdownlint-disable MD031 -->
+```mermaid
+graph TD
+    base_link --> left_arm_joint
+    base_link --> right_arm_joint
+
+    left_arm_joint --> left_arm_link
+    right_arm_joint --> right_arm_link
+
+    left_arm_link --> left_pivot_joint
+    right_arm_link --> right_pivot_joint
+    
+
+    left_pivot_joint -.-> coupler_link
+    right_pivot_joint -.-> coupler_link
+    
+    style coupler_link stroke:#ff0000
+```
+{: .text-center }
+<!-- markdownlint-enable MD031 -->
+
+> This "tree" visualization of a four-point linkage shows how it's not possible for one child (`coupler_link`), to have multiple parents (`left_pivot_joint` and `right_pivot_joint`).
+
+## Links and Joints
 
 ## Building your URDF
 
 To get started with actually constructing your URDF, you must first do something very important. You need to give your robot a name! This name *must* be listed in the "main" URDF file. You can place it in our other files as well, but it is not necessary. For this tutorial, I named this robot "Tootles". The name is completely arbitrary. It doesn't matter what you choose, but you will want to keep it in mind for organizational purposes.  
 
-Now, to actually get started constructing the robot model, I like to first create the xacro files I will need, so that I can build the main URDF xacro. Every robot following this convention will have at least two xacro files. The first, `robotName.urdf.xacro` (replace `robotName` with the name you chose for your robot), will effectively serve as the location where you combine all of your xacro files together using `include` tags. You will also include your `base_link` in the main URDF file, but I will explain that more later on. The second file, `robotName_core.xacro`, is where you will define the core body of your robot. For our purposes, this will just consist of the robot's chassis, and the wheels, but for more complex robots, this file can easily grow quite large. If this is the case, you can further break up your core file into smaller xacro files, but this will not be necessary for this tutorial.  
+While you can place all of your components into one large URDF file, this is generally not good practice, as they can get very large and difficult to manage relatively quickly. Instead, its a good idea to use Xacro (XML Macros) to split your URDF into multiple smaller files that can be compiled together using special tags. For a detailed look at how to integrate xacro into your URDF, see [URDF with xacro Templates]({% link docs/Technical/ROS2/Jazzy/URDF/URDF-With-Xacro-Templates.md %}). For an extensive look at the additional features xacro provides, see [URDF with xacro Features]({% link docs/Technical/ROS2/Jazzy/URDF/URDF-With-Xacro-Features.md %}).
+
+Now, to actually get started constructing the robot model, I like to first create the xacro files I will need, so that I can build the main URDF xacro. Every robot following this convention will have at least two xacro files. The first, `robotName.urdf.xacro` (replace `robotName` with the name you chose for your robot), will effectively serve as the location where you combine all of your xacro files together using `include` tags. You will also include your `base_link` in the main URDF file. The second file, `robotName_core.xacro`, is where you will define the core body of your robot. For our purposes, this will just consist of the robot's chassis, and the wheels, but for more complex robots, this file can easily grow quite large. If this is the case, you can further break up your core file into smaller xacro files, but this will not be necessary for this tutorial.  
 
 Optionally, you can also include xacro files for various other aspects of your robot, or anything inside your ROS2 package that requires URDF components to function. If you want to simulate your robot in Gazebo, you will need to include SDF references in your URDF (see [Gazebo in URDF]({% link docs/Technical/ROS2/Jazzy/URDF/Gazebo-URDF.md %})). If you want to integrate ros2_control into your robot, either for simulation or actual control, you will need URDF components for each of the joints you want to send or receive information from (see [ROS2 Control in URDF]({% link docs/Technical/ROS2/Jazzy/URDF/ROS2-Control-URDF.md %})). Both of these should generally be done in their own xacro file, named `gazebo.xacro` and `ros2_control.xacro` respectively. For this project, I will be including one additional file, called `colors.xacro` that simply contains a few colors I can assign to different parts of the robot. Feel free to copy these for use in your own design, as I won't spend too much time going over them.  
 
