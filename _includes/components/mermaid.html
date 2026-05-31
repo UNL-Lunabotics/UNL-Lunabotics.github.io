@@ -40,7 +40,9 @@ If a user is using a custom mermaid file and doesn't specify a version, we defau
               el.removeAttribute('data-processed');
             }
           });
-          mermaid.run({ querySelector: '.language-mermaid' });
+          setTimeout(function () {
+            mermaid.run({ querySelector: '.language-mermaid' });
+          }, 100);
         }
       });
     });
