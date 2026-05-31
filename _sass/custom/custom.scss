@@ -7,27 +7,27 @@
 
 // Mermaid Diagram Edge Labels Light Mode
 [data-theme="light"] .edgeLabel {
-  background-color: #e8e8e8 !important;
+  background-color: #ececff !important;
   color: #333333 !important;
   font-family: Verdana, sans-serif !important;
 }
 
 [data-theme="light"] .edgeLabel span {
   color: #333333 !important;
-  background-color: #e8e8e8 !important;
+  background-color: #ececff !important;
   font-family: Verdana, sans-serif !important;
 }
 
 // Mermaid Diagram Edge Labels Dark Mode
 [data-theme="dark"] .edgeLabel {
-  background-color: #2d2d2d !important;
-  color: #e0e0e0 !important;
+  background-color: #27262b !important;
+  color: white !important;
   font-family: Verdana, sans-serif !important;
 }
 
 [data-theme="dark"] .edgeLabel span {
-  color: #e0e0e0 !important;
-  background-color: #2d2d2d !important;
+  color: white !important;
+  background-color: #27262b !important;
   font-family: Verdana, sans-serif !important;
 }
 
