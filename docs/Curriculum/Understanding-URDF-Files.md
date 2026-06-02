@@ -97,7 +97,8 @@ As stated previously, the `<joint>` is used to define the type of connection bet
 
 ![Common Joint Types]({% link attachments/urdf/URDF-Joints.png %})
 
-> Image & Definitions sourced from [Articulated Robotics](https://articulatedrobotics.xyz/tutorials/ready-for-ros/urdf)
+{: style="text-align: center;" }
+*Image & Definitions sourced from [Articulated Robotics](https://articulatedrobotics.xyz/tutorials/ready-for-ros/urdf)*
 
 When we build our robot model, we will only be using `fixed` and `continuous` joints in our URDF. It's also worth noting that two other kinds of joints exist: `planar` and `floating`, but you will rarely (if ever) see these in use. To learn more, visit the [ROS Documentation](https://wiki.ros.org/urdf/XML/joint) (while this website is for ROS 1, the URDF information should still be mostly accurate).
 
@@ -129,9 +130,7 @@ Before we start, its important to note that while you can place all of your comp
 
 To get started with actually constructing your URDF, the first step is choosing a name for your robot. This name *must* be listed in the "main" URDF file. You can place it in our other files as well, but it is not necessary. For this tutorial, I named this robot "Tootles". The name is completely arbitrary. It doesn't matter what you choose, but you will want to keep it in mind for organizational purposes.  
 
-Now, to actually get started constructing the robot model, I like to first create the xacro files I will need, so that I can build the main URDF xacro. Every robot following this convention will have at least two xacro files. The first, `robotName.urdf.xacro` (replace `robotName` with the name you chose for your robot), will effectively serve as the location where you combine all of your xacro files together using `include` tags. This is also where you will define your robot's name and the `base_link`. The second file, `robotName_core.xacro`, is where you will define the core body of your robot. For our purposes, this will just consist of the robot's chassis, and the wheels, but for more c   <xacro:inertial_box mass="0.5" x="0.4" y = "0.3" z="0.15">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-    </xacro:inertial_box>omplex robots, this file can easily grow quite large. If this is the case, you can further break up your core file into smaller xacro files, but this will not be necessary for this tutorial.  
+Now, to actually get started constructing the robot model, I like to first create the xacro files I will need, so that I can build the main URDF xacro. Every robot following this convention will have at least two xacro files. The first, `robotName.urdf.xacro` (replace `robotName` with the name you chose for your robot), will effectively serve as the location where you combine all of your xacro files together using `include` tags. This is also where you will define your robot's name and the `base_link`. The second file, `robotName_core.xacro`, is where you will define the core body of your robot. For our purposes, this will just consist of the robot's chassis, and the wheels, but for more complex robots, this file can easily grow quite large. If this is the case, you can further break up your core file into smaller xacro files, but this will not be necessary for this tutorial.  
 
 Optionally, you can also include xacro files for various other aspects of your robot, or anything inside your ROS2 package that requires URDF components to function. If you want to simulate your robot in Gazebo, you will need to include SDF references in your URDF (see [Gazebo in URDF]({% link docs/Technical/ROS2/Jazzy/URDF/Gazebo-URDF.md %})). If you want to integrate ros2_control into your robot, either for simulation or actual control, you will need URDF components for each of the joints you want to send or receive information from (see [ROS2 Control in URDF]({% link docs/Technical/ROS2/Jazzy/URDF/ROS2-Control-URDF.md %})). Both of these should generally be done in their own xacro file, named `gazebo.xacro` and `ros2_control.xacro` respectively. For this project, I will be including two additional files. The first, called `colors.xacro` simply contains a few colors I can assign to different parts of the robot. Feel free to copy these or [download]({% link attachments/urdf/colors.xacro %}) the file for use in your own design, as I won't spend too much time going over them.  
 
@@ -279,4 +278,86 @@ If you have no plans on doing any kind of simulation, you can safely ignore the 
 
 If you go ahead and preview your URDF, either using a previewer or your ROS2 package, you should see something like this:  
 
-![Tootles Chassis Visualization]({% link attachments/urdf/Tootles-Chassis.png %}){: style="width: 75%"}  
+![Tootles Chassis Visualization]({% link attachments/urdf/Tootles-Chassis.png %}){: style="width: 60%; display: block; margin: 0 auto;" }
+
+This simple box will serve as the main body of our robot. If we visualize the origin of `base_link`, we can see that it lies along where we will put the back wheels of the robot.
+
+![Tootles Chassis / base_link relationship]({% link attachments/urdf/Tootles-Chassis-Base-Link.png %}){: style="width: 60%; display: block; margin: 0 auto;" }
+
+> For Reference: The red arrow represents the X axis, the green arrow represents the Y axis, and the blue arrow (not shown here) represents the Z axis.
+
+Speaking of wheels, that will be the next thing we work on. The links and joints of every wheel will be identical, with the only difference being the way we rotate them and the coordinate offset from `base_link`. We will start by going over how to do the front left wheel, then I will provide the unique values that you will use to make the other three.
+
+Defining the joint for the front left wheel only has a few notable differences from when you defined `chassis_joint`. First, since we will be defining the wheel as a cylinder, and cylinders in URDF lay flat by default, you will need to rotate the cylinder 90 degrees in one direction to make it stand like a wheel. This is done inside the `<origin>` tag by modifying the `rpy` (roll, pitch, yaw) value. For our left wheels, we will want to rotate the wheel by `-π/2` radians in the roll direction, so that the z-axis faces outward and the x-axis matches the x-axis matches `base_link`. For the right wheels, we will need to rotate them in the opposite direction (`π/2` radians) to achieve the same effect.
+
+![Wheel Rotation Illustration]({% link attachments/urdf/Wheel-Rotation.png %}){: style="width: 75%; display: block; margin: 0 auto;" }
+
+{: style="text-align: center;" }
+*Image sourced from [Articulated Robotics](https://articulatedrobotics.xyz/tutorials/mobile-robot/concept-design/concept-urdf)*
+
+Second, you will want to set the `type` to `continuous`, as we need our wheels to be able to spin indefinitely. Next, you need to specify the offset. For the front left wheel, the offset with reference to its parent (`base_link`) should be `xyz="0.25 0.175 0"`. This will place the wheel just next to the chassis on the front half. Finally, you will need to define the`<axis>` on which the wheel is allowed to rotate. This tag takes in an `xyz` string, just like the `<origin>` tag, so you will simply set the axis you want the wheel to rotate on to `1`, and set the rest to`0`. For the right wheels you will use `-1` instead. Once you have all of this information defined, you should have a joint similar to this:
+
+```xml
+<joint name="front_left_wheel_joint" type="continuous">
+  <parent link="base_link"/>
+  <child link="front_left_wheel_link"/>
+  <origin xyz="0.25 0.175 0" rpy="-${pi/2} 0 0"/>
+  <axis xyz="0 0 1"/>
+</joint>
+```
+
+Note that we could have made the `chassis_link` the parent, and a lot of robots will do this, we are using `base_link` since the back wheels will be aligned with `base_link`, and we want all of our wheels to be defined consistently. Also note that we again used the `something_joint` naming convention. This should be used for all of the links and joints you define.
+
+Now we will define `front_left_joint_link`. This will look almost completely identical to `chassis_link` with the exception of the naming differences, the geometry defining a cylinder (radius `0.05` and length `0.04`) instead of a box, and the inertial macro values being different. We are also using a unique color for the wheels to keep them visually distinct.
+
+```xml
+<link name="front_left_wheel_link">
+  <visual>
+    <geometry>
+      <cylinder radius="0.05" length="0.04"/>
+    </geometry>
+    <material name="blue"/>
+  </visual>
+  <collision>
+    <geometry>
+      <sphere radius="0.05"/>
+    </geometry>
+  </collision>
+  <xacro:inertial_cylinder mass="0.1" length="0.04" radius="0.05">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:inertial_cylinder>
+</link>
+```
+
+Something unusual I have done here that you might notice is that instead of making the `<collision>` tag an exact copy of `<visual>`, I instead made the wheel hitbox a `sphere`  with the same radius. This is because when running the robot in a physics simulator (or at least in Gazebo), using cylinder collision can create some weird traction issues that cause the robot to move at a different rate from what open-loop odometry reports. This issue is minimized by using spheres instead.
+
+The rest of the wheels will follow the exact same format as the one we went over. The parent link, inertial values, shape and dimensions (visual and collision) will remain the same for all wheels. The links for all of the wheels are exactly the same, except their name. You should now define the rest of your wheels using the information provided below:
+
+`back_left_wheel_joint`
+
+- Child Link: `back_left_wheel_link`
+- Origin: `xyz="0 0.175 0" rpy="-${pi/2} 0 0"`
+- Axis: `xyz="0 0 1"`
+
+`front_right_wheel_joint`
+
+- Child Link: `front_right_wheel_link`
+- Origin: `xyz="0.25 -0.175 0" rpy="${pi/2} 0 0"`
+- Axis: `xyz="0 0 -1"`
+
+`back_right_wheel_joint`
+
+- Child Link: `back_right_wheel_link`
+- Origin: `xyz="0 -0.175 0" rpy="${pi/2} 0 0"`
+- Axis: `xyz="0 0 -1"`
+
+Once you have defined all of your wheels, your robot should now be visualized with four blue cylinders representing wheels:
+
+![Tootles with Wheels]({% link attachments/urdf/Tootles-With-Wheels.png %}){: width="49%" }
+![Top-down Render of Tootles with Wheels]({% link attachments/urdf/Tootles-With-Wheels-Top.png %}){: width="49%" style="margin-left:1%;" }
+
+If you don't have any plans to try and run this robot in a physics simulator (I strongly recommend you do, its good experience), then you can go ahead and skip to the Exporter section.
+
+TODO: Link Exporter section.
+
+Now we will work on creating basic shapes to represent two sensors our robot might use in a real environment. These are needed if you want to simulate the sensors in something like Gazebo, because you will have to tell the simulator where on the robot the sensor data is coming from.
