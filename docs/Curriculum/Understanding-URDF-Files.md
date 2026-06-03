@@ -203,6 +203,8 @@ For all joints, we will follow the naming convention `partName_joint`, and for a
 
 Now that we have set up the main URDF file, we will move on to defining the actual visual structure of the robot. Open up your "core" xacro file (for me its `tootles_core.xacro`), add the XML and encoding versions, and declare your `robot` tag. These first steps should look identical to the first couple steps in your main URDF file, with the exception of the name declaration not being necessary.  
 
+### Chassis
+
 Now it is time to write the links and joints that will make up our robot. Generally speaking, it is a good idea to create a link-joint pair for the following situations:
 
 - Any parts of your robot that move in relation to another part, such as segments of a robotic arm or wheels  
@@ -218,7 +220,7 @@ For the robot we are building, the only moving parts in our model will be the wh
 
 We set `chassis_joint` to `fixed` because we never want the chassis to move independently of the rest of the robot.
 
-Now we can work on the properties within `chassis_joint`. Because this is a `fixed` joint, we only need to specify the `<parent>`, `<child>`, and the `<origin>`. The parent is `base_link`, since we want the chassis to be oriented relative to the robot's origin. The child is `chassis_link`, which we will define next. The origin of `chassis_joint` depends on what you want your `base_link` to represent. A lot of the time the `base_link` will just represent the center of the robot, in which case the origin of `chassis_joint` is simply `xyz="0 0 0"`. 
+Now we can work on the properties within `chassis_joint`. Because this is a `fixed` joint, we only need to specify the `<parent>`, `<child>`, and the `<origin>`. The parent is `base_link`, since we want the chassis to be oriented relative to the robot's origin. The child is `chassis_link`, which we will define next. The origin of `chassis_joint` depends on what you want your `base_link` to represent. A lot of the time the `base_link` will just represent the center of the robot, in which case the origin of `chassis_joint` is simply `xyz="0 0 0"`.
 
 For this robot, however, we will be using `base_link` to represent the axis of rotation of the robot. Because the robot is intended to rotate using the two back wheels, we need the chassis to be offset so that `base_link` is in line with where the back wheels will be placed. If you are making your own design, you might have to experiment with this, but for Tootles, the origin offset is `xyz="0.125 0 0.075"`. Using all of this information, we can finish defining `chassis_joint`:
 
@@ -286,7 +288,9 @@ This simple box will serve as the main body of our robot. If we visualize the or
 
 > For Reference: The red arrow represents the X axis, the green arrow represents the Y axis, and the blue arrow (not shown here) represents the Z axis.
 
-Speaking of wheels, that will be the next thing we work on. The links and joints of every wheel will be identical, with the only difference being the way we rotate them and the coordinate offset from `base_link`. We will start by going over how to do the front left wheel, then I will provide the unique values that you will use to make the other three.
+### Wheels
+
+Now we will add wheels to our robot. The links and joints of every wheel will be identical, with the only difference being the way we rotate them and the coordinate offset from `base_link`. We will start by going over how to do the front left wheel, then I will provide the unique values that you will use to make the other three.
 
 Defining the joint for the front left wheel only has a few notable differences from when you defined `chassis_joint`. First, since we will be defining the wheel as a cylinder, and cylinders in URDF lay flat by default, you will need to rotate the cylinder 90 degrees in one direction to make it stand like a wheel. This is done inside the `<origin>` tag by modifying the `rpy` (roll, pitch, yaw) value. For our left wheels, we will want to rotate the wheel by `-π/2` radians in the roll direction, so that the z-axis faces outward and the x-axis matches the x-axis matches `base_link`. For the right wheels, we will need to rotate them in the opposite direction (`π/2` radians) to achieve the same effect.
 
@@ -360,4 +364,8 @@ If you don't have any plans to try and run this robot in a physics simulator (I 
 
 TODO: Link Exporter section.
 
+### Sensors
+
 Now we will work on creating basic shapes to represent two sensors our robot might use in a real environment. These are needed if you want to simulate the sensors in something like Gazebo, because you will have to tell the simulator where on the robot the sensor data is coming from.
+
+Just like every other part of our robot, we will need to decalre 
