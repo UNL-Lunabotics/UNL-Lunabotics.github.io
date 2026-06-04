@@ -366,6 +366,57 @@ TODO: Link Exporter section.
 
 ### Sensors
 
-Now we will work on creating basic shapes to represent two sensors our robot might use in a real environment. These are needed if you want to simulate the sensors in something like Gazebo, because you will have to tell the simulator where on the robot the sensor data is coming from.
+Now we will work on creating basic shapes to represent two sensors our robot might use in a real environment. These are needed if you want to simulate the sensors in something like Gazebo, because you will have to tell the simulator where on the robot the sensor data is coming from. You will want to define these parts in a new file, named something like `sensors.xacro`, and make sure to include this new file in your main `RobotName.urdf.xacro` file. If your bot has a lot of sensors, you might consider creating individual files for each kind of sensor you use, but for our purposes one file will be enough.
 
-Just like every other part of our robot, we will need to decalre 
+Just like every other part of our robot, we will need to declare a link-joint pair for each of our sensors. For this tutorial, we will create models to represent two types of sensors, those being a 2D LiDAR and a camera. Both of these will be represented using very simple shapes. The LiDAR will be represented by a `cylinder` sitting on top of the chassis, and the camera will be a small `box` mounted on the front of the chassis. Since neither of these components need to move, they will both be `fixed`.
+
+If you have made it this far, you should be fairly familiar with the process of creating new parts for your model, so I will just provide you with the necessary values to build your components. If you get lost at any point, refer back to the examples earlier in the tutorial, as the process should look nearly identical.
+
+`lidar_joint`
+
+- Parent: `chassis_link`
+- Child: `lidar_link`
+- Origin: `xyz="0 0 0.1" rpy="0 0 0"`
+
+Note that because we want the LiDAR cylinder to lay on its side, we are not rotating it at all in the `<origin>` tag.
+
+`lidar_link`
+
+- Visual Geometry: `cylinder` with length and radius of `0.05`
+- Material: `red` (or another color you defined)
+- Collision Geometry: Same as Visual Geometry
+- Inertial: Identical to Wheels, but update length and radius to `0.05`
+
+`camera_joint`
+
+- Parent: `chassis_link`
+- Child: `camera_link`
+- Origin: `xyz="0.205 0 0" rpy="0 0 0"`
+
+`camera_link`
+
+- Visual Geometry: `box` with size `"0.010 0.03 0.03"`
+- Material: `red` (or another color you defined)
+- Collision Geometry: Same as Visual Geometry
+- Inertial: Identical to chassis, but `mass="0.001"`, `x="0.010"`, `y = "0.03"`, `z="0.03"`
+
+Once you have constructed these parts your robot should look similar to the one you saw at the very beginning of this guide.
+
+![Render of Finished URDF]({% link attachments/urdf/Tootles-Finished.png %}){: width="49%" }
+![Top-down Render of Finished URDF]({% link attachments/urdf/Tootles-Finished-Top.png %}){: width="49%" style="margin-left:1%;" }
+
+Good work! You have now made it through the entire process of writing a robot model URDF from scratch! You may have noticed now how and why these files become long and convoluted after a while, and the thought of building anything much more complex than what we made here might seem intimidating. If this is the case, I have excellent news.  
+
+## Exporters
+
+The *vast* majority of the time, you will not have to write your URDF from scratch. This is because almost every 3d modeling/CAD software out there has some way to convert your design to URDF. Some of them, like SolidWorks, require an external exporter to do this, while others, like Onshape, support URDF exporting natively. Even open source modeling softwares like FreeCAD and Blender have ways of exporting as a URDF. This is incredibly helpful when you have a large and/or very detailed system you need to work with. It is worth noting, however, that not all of these exporters are perfect.
+
+So then, you might ask, why did you have to go through this entire guide before learning about this? Well, there are a couple big reasons. 
+
+First, not all of these exporters are perfect. The URDF exporter for SolidWorks, for example, hasn't been updated since 2021, and gets a lot of values wrong when exporting the file, many times not even producing a functional URDF. Because of this, if you do use this exporter, as we have in the past, you will have to go in and make a significant amount of changes to make the URDF function as intended. On the opposite end of the field, because Onshape supports URDF natively, you get the entire, fully detailed model when you export. This might cause you to wind up with an enormous file containing a bunch of assets you don't necessarily need for your robot to be properly visualized. Rendering these in your visualizer can cause significant performance issues. If this happens, you may need to experiment with removing certain models from your robot to improve performance.
+
+Another common issue is that many of these exporters will not (or cannot) split up your URDF using Xacro. This means your entire robot might be defined one sprawling XML file, which can be very difficult to parse through, especially if you do need to make changes. If you use an exporter, it will almost certainly be worthwhile to manually split your resulting URDF up into smaller Xacro files.
+
+Finally, there is the subject of sensor placement. If you don't render your sensors in your modeling software, and you plan on using your URDF to simulate your robot in a physics engine, you will need to go in and manually create assets that you can assign your simulated sensors to. This can fairly easily be done with basic shapes like we did in this guide, but you may also find better models online that you can use, like the RealSense camera models available on the [realsense-ros](https://github.com/realsenseai/realsense-ros) Github.
+
+> Author: Jesse Mills (<https://github.com/JesseMills0>)
