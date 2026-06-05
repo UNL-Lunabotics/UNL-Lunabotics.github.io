@@ -13,6 +13,7 @@
 }
 
 // Makes the "Important" callouts match the color of links for light and dark mode.
+// Colors might not be super accurate since i just used the Firefox eye dropper tool.
 [data-theme="light"] p.important,
 [data-theme="light"] blockquote.important {
   border-left-color: #7e62ee !important;
@@ -34,3 +35,7 @@
 [data-theme="dark"] blockquote.important::before {
   color: #5a9af1 !important;
 }
+
+// TODO (Maybe):
+// I want to increase the contrast of the codeblocks in light mode to make them stand out a little more, 
+// but I can't figure out how to do it without it looking really messed up
