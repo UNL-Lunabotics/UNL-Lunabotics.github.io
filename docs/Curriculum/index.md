@@ -2,7 +2,7 @@
 title: Curriculum
 ---
 
-## Curriculum Introduction
+## Curriculum
 
 If you are brand new to the programming subteam, it will be best to start at [Learning ROS2]({% link docs/Curriculum/Learning-ROS2.md %})
 
