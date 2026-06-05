@@ -4,3 +4,10 @@
     width: calc((70% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
   }
 }
+
+// Makes the body text color black in light mode.
+[data-theme="light"] .main-content p,
+[data-theme="light"] .main-content li,
+[data-theme="light"] .main-content td {
+  color: #000000 !important;
+}
