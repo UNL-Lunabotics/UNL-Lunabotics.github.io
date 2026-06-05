@@ -11,3 +11,26 @@
 [data-theme="light"] .main-content td {
   color: #000000 !important;
 }
+
+// Makes the "Important" callouts match the color of links for light and dark mode.
+[data-theme="light"] p.important,
+[data-theme="light"] blockquote.important {
+  border-left-color: #7e62ee !important;
+  border-color: #7e62ee !important;
+}
+
+[data-theme="light"] p.important::before,
+[data-theme="light"] blockquote.important::before {
+  color: #7e62ee !important;
+}
+
+[data-theme="dark"] p.important,
+[data-theme="dark"] blockquote.important {
+  border-left-color: #5a9af1 !important;
+  border-color: #5a9af1 !important;
+}
+
+[data-theme="dark"] p.important::before,
+[data-theme="dark"] blockquote.important::before {
+  color: #5a9af1 !important;
+}
