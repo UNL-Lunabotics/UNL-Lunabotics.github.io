@@ -1,5 +1,5 @@
 ---
-title: VSCode Setup
+title: (OLD REMOVE LATER) VSCode Setup
 parent: Administrative
 nav_order: 1
 ---

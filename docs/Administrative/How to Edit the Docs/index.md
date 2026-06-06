@@ -6,4 +6,4 @@ nav_order: 2
 
 ## How to Edit the Docs
 
-This serves as a guide to get started on editing these docs.
+This serves as a guide for editing these docs. Follow the Table of Contents to get started.
