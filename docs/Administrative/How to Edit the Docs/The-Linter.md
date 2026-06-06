@@ -1,7 +1,7 @@
 ---
 title: The Linter
-parent: Administrative
-nav_order: 3
+parent: How to Edit the Docs
+nav_order: 6
 ---
 
 ## The Linter

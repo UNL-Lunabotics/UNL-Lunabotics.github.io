@@ -1,7 +1,7 @@
 ---
-title: How to Edit the Docs
+title: (OLD REMOVE LATER) How to Edit the Docs
 parent: Administrative
-nav_order: 2
+nav_order: 3
 ---
 
 ## How to Edit the Docs
