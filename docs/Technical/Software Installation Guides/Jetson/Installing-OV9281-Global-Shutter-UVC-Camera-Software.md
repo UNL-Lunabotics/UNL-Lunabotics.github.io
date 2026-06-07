@@ -8,7 +8,7 @@ nav_order: 4
 
 ### Setup Steps
 
-Additional Documentation for this camera can be found here: <https://docs.arducam.com/UVC-Camera/Appilcation-Note/External-Trigger-Mode/OV9281-Global-Shutter/>
+Additional Documentation for this camera can be found on the [Arducam Wiki](https://docs.arducam.com/UVC-Camera/Appilcation-Note/External-Trigger-Mode/OV9281-Global-Shutter/).
 
 1. Plug the camera into the Jetson Orin via USB
 2. Install v4l utility packages
