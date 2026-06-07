@@ -55,7 +55,7 @@ If you want to change the username or password, go into `Settings > System > Use
 
 There are various items we can configure in the virtual machine.
 
-### Changing Display Resolution
+#### Changing Display Resolution
 
 By default, the virtual machine is configured to display at `3456x2160`, the resolution of my 2024 MacBook Pro 16-inch. Look up your specific Mac model and find your display resolution. If they don't match, you'll have to change it in the virtual machine.
 
@@ -65,7 +65,7 @@ To save the configuration file, you'll do `Ctrl+X`, and `Enter` to save. Then, t
 
 Log in again, go into `Settings > Displays` and locate your resolution in the `Resolution` dropdown. I also recommend doing `200%` scale. Then click "Apply" in the top-right corner.
 
-### Changing VM Resources
+#### Changing VM Resources
 
 As discussed before, the VM will use more battery as it is a full operating system. To fix this, you can give the VM less of your computer resources, at the cost of performance.
 
@@ -73,11 +73,11 @@ To do this, go into the main UTM app, and right-click on the VM and click "Edit"
 
 To reduce power consumption, lower these numbers. To increase performance on the VM, increase those numbers.
 
-### Passing a USB device through
+#### Passing a USB device through
 
 To pass a USB device, first plug in the controller, and turn on the VM if you haven't already. Then, in the top-right corner on UTM's Menu Bar, there should be a USB icon. Click on it, find your device, and click "Connect". Try running `evtest` or launch `jstest-gtk` and verify it works.
 
-### Enabling a Shared Directory
+#### Enabling a Shared Directory
 
 If you find you need to share files/folders across your VM and macOS, follow the official UTM [guide](https://docs.getutm.app/guest-support/linux/#virtfs). Note that it is a little technical but should be doable.
 

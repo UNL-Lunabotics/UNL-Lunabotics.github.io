@@ -22,7 +22,7 @@ The basics concepts of ROS2 have shockingly good documentation that would be dif
 
 Below are the links for the sections you should go through **IN ORDER**. The sub bullet points are the specific tutorials you should do.
 
-### Beginning Concepts
+#### Beginning Concepts
 
 The links below will teach you the basics concepts of ROS2. You can follow along with the turtlebot examples if that would help you, but feel free to just read through the sections
 
@@ -36,7 +36,7 @@ The links below will teach you the basics concepts of ROS2. You can follow along
   - [Understanding actions](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Actions/Understanding-ROS2-Actions.html)
   - [Launching nodes](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Launching-Multiple-Nodes/Launching-Multiple-Nodes.html)
 
-### Coding the Basic Concepts
+#### Coding the Basic Concepts
 
 These tutorials are when you actually start to get into programming these things. It is HIGHLY recommended that you set up a temporary repository and follow along with creating all this code. I personally recommend typing out the code yourself and adding more comments as you go rather than copy/pasting.
 

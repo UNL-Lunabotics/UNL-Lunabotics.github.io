@@ -12,23 +12,23 @@ In robotics, Docker is a very useful tool that allows developers to run the same
 
 Docker is a tool that allows you to run loosely isolated environments called "containers." You can have multiple containers running on one OS, each not interfering with one another. Containers contain all the packages, dependencies, and necessary software to run whatever is in the container, meaning you don't need to install packages and dependencies directly onto the host OS.
 
-### What is a Container?
+#### What is a Container?
 
 A container is an isolated process that contains all the packages, dependencies, and files that it needs to run. Unlike a virtual machine, it doesn't run an entire new operating system, but rather uses the kernel of the host OS.
 
-### What is an Image?
+#### What is an Image?
 
 According to the official Docker documentation, "a container image is a standardized package that includes all of the files, binaries, libraries, and configurations to run a container." So, a Docker image is like a blueprint for a container. Images are immutable, which means that once they have been "built," any containers based off of that image cannot be changed if the image is changed. If you would like to change an image and the containers based off of that image, you must edit the image, rebuild it, and then restart the desired containers to be based off of the new version of the image.
 
 More information about images can be found at [What is an Image?](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/).
 
-### What is a Dockerfile?
+#### What is a Dockerfile?
 
 A Dockerfile is a text file that is used to describe how to build a container image. It describes all the relevant commands to run, files to edit, and packages to install when the container image is built.
 
 More information about Dockerfiles can be found at [Writing a Dockerfile](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/).
 
-### How do I Install Docker?
+#### How do I Install Docker?
 
 For windows, see [Installing Docker]({% link docs/Technical/Setup Dev Tools/Windows/Installing-Docker.md %}).
 

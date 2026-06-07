@@ -12,7 +12,7 @@ This will be a *basic* overview on how Just-the-Docs works. For a more in-depth 
 
 There is a lot going on in this repo, so let's break it down.
 
-### The `docs` Folder
+#### The `docs` Folder
 
 This is the main part of this repo, and where you will likely be spending the most time in. Within the docs folder, there's a specific structure we follow:
 
