@@ -9,7 +9,7 @@
 [data-theme="light"] .main-content p,
 [data-theme="light"] .main-content li,
 [data-theme="light"] .main-content td {
-  color: #000000 !important;
+  color: #323232 !important;
 }
 
 // TODO (Maybe):
@@ -17,36 +17,36 @@
 // but I can't figure out how to do it without it looking really messed up
 
 // Changes the colors of the callout boxes to make them contrast with the background in both light and dark modes.
-$callout-themes: (
-  "highlight": (light: #ffae00, dark: #ffc641),
-  "important": (light: #005dc7, dark: #58a6ff),
-  "new":       (light: #00b734, dark: #3fb950),
-  "note":      (light: #4800cd, dark: #a25fff),
-  "warning":   (light: #e60110, dark: #ff3b48)
-);
+// $callout-themes: (
+//   "highlight": (light: #ffae00, dark: #ffc641),
+//   "important": (light: #005dc7, dark: #58a6ff),
+//   "new":       (light: #00b734, dark: #3fb950),
+//   "note":      (light: #4800cd, dark: #a25fff),
+//   "warning":   (light: #e60110, dark: #ff3b48)
+// );
 
-@each $name, $colors in $callout-themes {
+// @each $name, $colors in $callout-themes {
   
-  [data-theme="light"] p.#{$name},
-  [data-theme="light"] blockquote.#{$name} {
-    border-color: map-get($colors, light) !important;
-    border-left-color: map-get($colors, light) !important;
+//   [data-theme="light"] p.#{$name},
+//   [data-theme="light"] blockquote.#{$name} {
+//     border-color: map-get($colors, light) !important;
+//     border-left-color: map-get($colors, light) !important;
     
-    &::before {
-      color: map-get($colors, light) !important;
-    }
-  }
+//     &::before {
+//       color: map-get($colors, light) !important;
+//     }
+//   }
 
-  [data-theme="dark"] p.#{$name},
-  [data-theme="dark"] blockquote.#{$name} {
-    border-color: map-get($colors, dark) !important;
-    border-left-color: map-get($colors, dark) !important;
+//   [data-theme="dark"] p.#{$name},
+//   [data-theme="dark"] blockquote.#{$name} {
+//     border-color: map-get($colors, dark) !important;
+//     border-left-color: map-get($colors, dark) !important;
     
-    &::before {
-      color: map-get($colors, dark) !important;
-    }
-  }
-}
+//     &::before {
+//       color: map-get($colors, dark) !important;
+//     }
+//   }
+// }
 
 // Mermaid Diagram Edge Labels Light Mode
 [data-theme="light"] .edgeLabel {
