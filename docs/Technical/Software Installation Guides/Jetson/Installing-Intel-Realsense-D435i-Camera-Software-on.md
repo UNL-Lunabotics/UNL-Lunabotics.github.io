@@ -1,5 +1,5 @@
 ---
-title: Installing Intel REalsense D435i Camera Software
+title: Installing Intel Realsense D435i Camera Software
 parent: Jetson-Specific
 nav_order: 2
 ---
@@ -23,7 +23,7 @@ All information taken from the [JetsonHacks librealsense repository](https://git
 2. Then, cd into `jetson-orin-realsense`
 3. Once in the `jetson-orin-realsense` directory, follow the instructions in the README in the [JetsonHacks librealsense repository](https://github.com/jetsonhacks/jetson-orin-librealsense)
 
-Once finished with the instructions in the JetsonHacks librealsense repository, make sure your realsense-viewer application is working and on. Then, on the left, turn on Stero Module, RGB Camera, and Motion Module. Output should look like this:
+Once finished with the instructions in the JetsonHacks librealsense repository, make sure your realsense-viewer application is working and on. Then, on the left, turn on Stereo Module, RGB Camera, and Motion Module. Output should look like this:
 ![image]({% link attachments/Realsense-Output.png %})
 
 > Author: Caleb Hans (<https://github.com/caleb-hansolo>)
