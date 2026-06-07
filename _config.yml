@@ -44,6 +44,9 @@ callouts:
     title: Warning
     color: red
 
+mermaid:
+  version: "10.9.1"
+
 # Silences Deprecation Warnings (this is what the actual documentation says to do lmao)
 sass:
   quiet_deps: true

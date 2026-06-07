@@ -47,6 +47,18 @@
     "turtlebot",
     "turtlesim",
     "URDF",
+    "hitbox",
+    "Lunabotics",
+    "Newans",
+    "Onshape",
+    "premade",
+    "realsense",
+    "rgba",
+    "Rviz",
+    "Snapcraft",
+    "URDF",
+    "Xacro",
+    "Xacros",
     "Zenoh"
   ]
 }
