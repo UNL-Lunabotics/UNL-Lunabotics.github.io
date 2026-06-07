@@ -14,7 +14,7 @@ Xacro properties are equivalent to regular variables in any other programming la
 
 An example of using properties is shown here (taken from the xacro wiki):
 
-```XML
+```xml
 <xacro:property name="the_radius" value="2.1" />
 <xacro:property name="the_length" value="4.5" />
 
@@ -23,7 +23,7 @@ An example of using properties is shown here (taken from the xacro wiki):
 
 An example of using a property block is shown here (taken from the xacro wiki):
 
-```XML
+```xml
 <xacro:property name="front_left_origin">
   <origin xyz="0.3 0 0" rpy="0 0 0" />
 </xacro:property>
@@ -47,7 +47,7 @@ Math operators like *, /, +, and - are available.
 
 Xacro allows two conditional blocks: if and unless. If is a standard if conditional and unless executes if the given value is NOT true. These expresions accept values of 1, 0, true, or false.
 
-```XML
+```xml
 <xacro:if value="expression or var">
   <... some xml code here ...>
 </xacro:if>
@@ -68,13 +68,13 @@ Typically, they are declared in the main `urdf.xacro` file and can be used in an
 
 Additionally, one of the main uses for these rospack commands is to find meshes. You can use the find keyword in this context and then put a ros2 package file path. For example, if I have the ros2 package description and it has a folder named meshes/ with meshes inside of it, I could use the below argument to give the chassis its mesh. You have to preface this all with file:// which is the modern solution in Jazzy (older versions are different).
 
-```XML
+```xml
 <mesh filename="file://$(find rover_description)/meshes/chassis.STL"/>
 ```
 
 A full practical example of this is shown below:
 
-```XML
+```xml
 <collision>
     <origin xyz="0 0 0" rpy="0 0 0" />
     <geometry>
@@ -95,7 +95,7 @@ You can write out the code and only accept value params, or you can accept whole
 
 Here is an example using just value params:
 
-```XML
+```xml
 <!-- Create a simple box xacro object with params width height depth -->
 <xacro:macro name="box" params="width height depth">
   <link name="generated_link">
@@ -113,7 +113,7 @@ Here is an example using just value params:
 
 An example of using whole XML block params is given below:
 
-```XML
+```xml
 <!-- Create the macro (aka object) with params origin, content, and anothercontent -->
 <xacro:macro name="pr2_caster" params="suffix *origin **content **anothercontent">
   <joint name="caster_${suffix}_joint">
