@@ -1,7 +1,7 @@
 ---
 title: The Linter
-parent: How to Edit the Docs
-nav_order: 5
+parent: Administrative
+nav_order: 2
 ---
 
 ## The Linter
@@ -33,13 +33,13 @@ Please note that the author tag is not for the person who last revised the page 
 **One of the most important parts of having an author tag is to allow future communication with the author.** If someone wrote a document years ago and is no longer on the team, but you really need to know some more information, it is important to be able to know both 1. Who wrote that page and 2. How to contact them. For the most part, a GitHub account will be sufficient since most people will include their emails on their account. If you do not have your email on your account, please either add it or include additional contact information in your author tag
 
 Author tags will follow the following format and be included at the end of every document. The linter for this repository has been edited to make this a custom rule
-`> Author: Firstname Lastname (<github user link>)`
+`> Author: Firstname Lastname <github user link>`
 
 Or, if there are multiple authors,
 
 ```md
-> Author: Firstname Lastname (<github user link>)
-> Author: Firstname Lastname (<github user link>)
+> Author: Firstname Lastname <github user link>
+> Author: Firstname Lastname <github user link>
 > ... however many more authors
 ```
 
@@ -71,4 +71,4 @@ Custom linter rules will be JavaScript files stored inside `.vscode/markdownlint
   ]
 ```
 
-> Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
+> Author: Ella Moody <https://github.com/TheThingKnownAsKit>

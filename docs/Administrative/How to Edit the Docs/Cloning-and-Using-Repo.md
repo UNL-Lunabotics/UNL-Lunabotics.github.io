@@ -24,6 +24,12 @@ A folder should now be created in the directory the terminal is pointed to, name
 
 Now that the repository is cloned, you can use VSCode to edit it. Open VSCode and press the "Open Folder" button in the Get Started window. If no window pops up, navigate to `File > Open Folder` in the top navigation bar. Find the cloned folder and open it.
 
+### Downloading Suggested Extensions
+
+After opening the project in VSCode for the first time, you may be prompted to download some recommended extensions for the workspace. It is **highly** recommended that you download these as it includes the linter (which helps keep our formatting consistent) and some additional helpful Markdown tools.
+
+Opening the project in VSCode, you will be prompted to download the recommended extensions for the workspace. I highly recommend saying yes as it includes the linter that helps keep our formatting consistent, and it also includes some helpful markdown tools.
+
 Once opened, move on to [Editing the Repository]({% link docs/Administrative/How to Edit the Docs/Editing the Repository/index.md %}).
 
 > Author: Aiden Kimmerling <https://github.com/TheKing349>.

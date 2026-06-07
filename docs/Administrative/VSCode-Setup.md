@@ -1,7 +1,7 @@
 ---
 title: (OLD REMOVE LATER) VSCode Setup
 parent: Administrative
-nav_order: 1
+nav_order: 3
 ---
 
 ## VSCode Setup

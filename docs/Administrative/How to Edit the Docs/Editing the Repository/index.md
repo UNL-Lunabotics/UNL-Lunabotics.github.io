@@ -1,7 +1,7 @@
 ---
 title: Editing the Repository
 parent: How to Edit the Docs
-nav_order: 2
+nav_order: 1
 ---
 
 ## Editing the Repository
