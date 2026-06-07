@@ -20,7 +20,7 @@ Basically, ROS2 is just how we communicate and coordinate information and comman
 
 The basics concepts of ROS2 have shockingly good documentation that would be difficult to outdo, so for this part it will mostly be links to go do the tutorials yourself. Please [download ROS2]({% link 404.html %}) if you haven't already.
 
-Below are the links for the sections you should go through **IN ORDER**. The sub bullet points are the specific tutorials you should do, and the crossed out ones are not required though you can still do them if you want.
+Below are the links for the sections you should go through **IN ORDER**. The sub bullet points are the specific tutorials you should do.
 
 ### Beginning Concepts
 
@@ -58,7 +58,7 @@ What language you choose to write things in is up to you. You do not have to do 
 
 ### Intermediate
 
-This is where things start to get technical. Some of these sections are complicated enough to split into a more dedicated tutorial, so pay attention to which ones are crossed out as optional.
+This is where things start to get technical. Some of these may get their own dedicated tutorials here in the future.
 
 - [Intermediate](https://docs.ros.org/en/jazzy/Tutorials/Intermediate.html)
   - [Managing Dependencies with rosdep](https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Rosdep.html)
