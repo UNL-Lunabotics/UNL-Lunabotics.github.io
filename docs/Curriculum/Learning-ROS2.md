@@ -6,15 +6,15 @@ nav_order: 1
 
 ## Learning ROS2
 
-Robot Operating System (ROS) is a set of open source algorithms, hardware driver software and tools developed to develop robot control software. Even though it has operating system in its name it is not an operating system. It is
+Robot Operating System (ROS) is a set of open source algorithms, hardware driver software and tools developed to develop robot control software. Even though it has operating system in its name it is not an operating system. It is:
 
 - Communication System (Publish Subscribe and Remote Method Invocation),
 - Framework & Tools (Build system & dependency management, Visualization, Record and Replay)
 - Ecosystem (Language bindings, Drivers, libraries and simulation (Gazebo)).
 
-(Quoted from <https://medium.com/software-architecture-foundations/robot-operating-system-2-ros-2-architecture-731ef1867776>)
+*Quoted from [Robot Operating System 2 (ROS 2) Architecture](https://medium.com/software-architecture-foundations/robot-operating-system-2-ros-2-architecture-731ef1867776), by Huseyin Kutluca.*
 
-Basically, ROS2 is just how we communicate and coordinate information and commands throughout a large and complicated robotics system with a lot of moving parts
+Basically, ROS2 is just how we communicate and coordinate information and commands throughout a large and complicated robotics system with a lot of moving parts.
 
 ### The Basics
 
