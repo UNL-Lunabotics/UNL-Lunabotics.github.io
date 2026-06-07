@@ -46,3 +46,28 @@
 .language-mermaid span.nodeLabel {
   font-family: Verdana, sans-serif !important;
 }
+
+mark {
+  color: var(--body-text-color);
+  padding: 0em 0.2em;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+// Default is yellow
+mark         { background-color: #ffed8c; }
+mark.yellow  { background-color: #ffed8c; }
+mark.green   { background-color: #bcf5bc; }
+mark.blue    { background-color: #b0e0ff; }
+mark.pink    { background-color: #ffc4df; }
+mark.orange  { background-color: #ffcd94; }
+
+[data-theme="dark"] {
+  mark         { background-color: #5a4a00; }
+  mark.yellow  { background-color: #5a4a00; }
+  mark.green   { background-color: #1a3d1a; }
+  mark.blue    { background-color: #113557; }
+  mark.pink    { background-color: #5b1c38; }
+  mark.orange  { background-color: #5c3d1a; }
+}
