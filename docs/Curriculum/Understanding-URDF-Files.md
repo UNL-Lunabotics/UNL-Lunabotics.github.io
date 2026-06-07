@@ -17,7 +17,8 @@ By the end of this guide, you should have a basic model of a robot in URDF forma
 ![Render of Finished URDF]({% link attachments/urdf/Tootles-Finished.png %}){: width="49%" }
 ![Top-down Render of Finished URDF]({% link attachments/urdf/Tootles-Finished-Top.png %}){: width="49%" style="margin-left:1%;" }
 
-> Note: I am using Foxglove Studio to render the URDF for this tutorial, if you are using something else, your model may look slightly different, but the overall shape should be the same.
+{: .note}
+I am using Foxglove Studio to render the URDF for this tutorial, if you are using something else, your model may look slightly different, but the overall shape should be the same.
 
 ## What is a URDF?
 
@@ -322,7 +323,8 @@ Once you have all of this information defined, you should have a joint similar t
 </joint>
 ```
 
-Note that we could have made the `chassis_link` the parent, and a lot of robots will do this. We are using `base_link` as the parent link instead since the back wheels will be aligned with `base_link`, and we want all of our wheels to be defined consistently.  
+{: .note}
+We could have made the `chassis_link` the parent, and a lot of robots will do this. We are using `base_link` as the parent link instead since the back wheels will be aligned with `base_link`, and we want all of our wheels to be defined consistently.  
 
 Now we will define `front_left_wheel_link`. This will look almost completely identical to `chassis_link` with the exception of the naming differences, the geometry defining a cylinder (radius `0.05` and length `0.04`) instead of a box, and the inertial macro values being different. We are also using a unique color for the wheels to keep them visually distinct.
 
@@ -376,7 +378,8 @@ Once you have defined all of these links and joints, your robot should now be vi
 ![Tootles with Wheels]({% link attachments/urdf/Tootles-With-Wheels.png %}){: width="49%" }
 ![Top-down Render of Tootles with Wheels]({% link attachments/urdf/Tootles-With-Wheels-Top.png %}){: width="49%" style="margin-left:1%;" }
 
-> If you don't have any plans to try and run this robot in a physics engine with simulated sensors, which I strongly recommend you do, as it's good experience, then you can go ahead and skip to the [Exporters](#exporters) section.
+{: .important}
+If you don't have any plans to try and run this robot in a physics engine with simulated sensors, which I strongly recommend you do, as it's good experience, then you can go ahead and skip to the [Exporters](#exporters) section.
 
 ### Sensors
 
@@ -392,7 +395,8 @@ If you have made it this far, you should be fairly familiar with the process of 
 - Child: `lidar_link`
 - Origin: `xyz="0 0 0.1" rpy="0 0 0"`
 
-Note that because we want the LiDAR cylinder to lay flat, we are not rotating it in the `<origin>` tag.
+{: .note}
+Because we want the LiDAR cylinder to lay flat, we are not rotating it in the `<origin>` tag.
 
 ### `lidar_link`
 
