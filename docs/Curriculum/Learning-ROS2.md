@@ -18,11 +18,11 @@ Basically, ROS2 is just how we communicate and coordinate information and comman
 
 ### The Basics
 
-The basics concepts of ROS2 have shockingly good documentation that would be difficult to outdo, so for this part it will mostly be links to go do the tutorials yourself. Please [download ROS2]({% link 404.html %}) if you haven't already
+The basics concepts of ROS2 have shockingly good documentation that would be difficult to outdo, so for this part it will mostly be links to go do the tutorials yourself. Please [download ROS2]({% link 404.html %}) if you haven't already.
 
-Below are the links for the sections you should go through IN ORDER. The sub bullet points are the specific tutorials you should do, and the crossed out ones are not required though you can still do them if you want
+Below are the links for the sections you should go through **IN ORDER**. The sub bullet points are the specific tutorials you should do, and the crossed out ones are not required though you can still do them if you want.
 
-#### Beginning Concepts
+### Beginning Concepts
 
 The links below will teach you the basics concepts of ROS2. You can follow along with the turtlebot examples if that would help you, but feel free to just read through the sections
 
@@ -36,11 +36,11 @@ The links below will teach you the basics concepts of ROS2. You can follow along
   - [Understanding actions](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Actions/Understanding-ROS2-Actions.html)
   - [Launching nodes](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Launching-Multiple-Nodes/Launching-Multiple-Nodes.html)
 
-#### Coding the Basic Concepts
+### Coding the Basic Concepts
 
-These tutorials are when you actually start to get into programming these things. It is HIGHLY recommended that you set up a temporary repository and follow along with creating all this code. I personally recommend typing out the code yourself and adding more comments as you go rather than copy/pasting
+These tutorials are when you actually start to get into programming these things. It is HIGHLY recommended that you set up a temporary repository and follow along with creating all this code. I personally recommend typing out the code yourself and adding more comments as you go rather than copy/pasting.
 
-What language you choose to write things in is up to you. You do not have to do both the Python and C++ versions of tutorials, though it may be useful to do both
+What language you choose to write things in is up to you. You do not have to do both the Python and C++ versions of tutorials, though it may be useful to do both.
 
 - [Beginner: Client Libraries](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries.html)
   - [Using colcon to build packages](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html)
@@ -58,7 +58,7 @@ What language you choose to write things in is up to you. You do not have to do 
 
 ### Intermediate
 
-This is where things start to get technical. Some of these sections are complicated enough to split into a more dedicated tutorial, so pay attention to which ones are crossed out as optional
+This is where things start to get technical. Some of these sections are complicated enough to split into a more dedicated tutorial, so pay attention to which ones are crossed out as optional.
 
 - [Intermediate](https://docs.ros.org/en/jazzy/Tutorials/Intermediate.html)
   - [Managing Dependencies with rosdep](https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Rosdep.html)
@@ -74,8 +74,8 @@ This is where things start to get technical. Some of these sections are complica
 
 ### Advanced
 
-For the most part, advanced topics shouldn't be necessary for you to learn right now. It is recommended that you briefly look through what's in the list just to know the option to research it is there if needed, but you do not have to go through any of them in depth unless you feel like it
+For the most part, advanced topics shouldn't be necessary for you to learn right now. It is recommended that you briefly look through what's in the list just to know the option to research it is there if needed, but you do not have to go through any of them in depth unless you feel like it.
 
-<https://docs.ros.org/en/jazzy/Tutorials/Advanced.html>
+[Advanced Tutorials](https://docs.ros.org/en/jazzy/Tutorials/Advanced.html)
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
