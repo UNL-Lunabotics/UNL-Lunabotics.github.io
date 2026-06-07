@@ -10,7 +10,7 @@ To keep consistency and readability throughout documentation, a few rules are en
 
 ### Local Testing
 
-In addition to the rules in The Linter documentation, we also require local testing. This is important as testing your changes locally serves as a visual way of proofreading. EXPAND
+In addition to the rules in The Linter documentation, we also require local testing. This is important as testing your changes locally serves as a visual way of proofreading, which can help with readability, clarity, and consistency.
 
 ### Pull Requests
 
