@@ -25,16 +25,21 @@
     "colcon",
     "endraw",
     "Firstname",
+    "Huseyin",
     "keybind",
     "Kimmerling",
+    "Kutluca",
     "Lastname",
     "Lunabotics",
+    "microcontroller",
+    "microcontrollers",
     "rosdep",
     "Rviz",
     "Snapcraft",
     "subteam",
     "turtlebot",
     "turtlesim",
+    "URDF",
     "Zenoh"
   ]
 }
