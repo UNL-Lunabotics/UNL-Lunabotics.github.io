@@ -43,3 +43,8 @@ callouts:
   warning:
     title: Warning
     color: red
+
+# Silences Deprecation Warnings (this is what the actual documentation says to do lmao)
+sass:
+  quiet_deps: true
+  silence_deprecations: ['import']
