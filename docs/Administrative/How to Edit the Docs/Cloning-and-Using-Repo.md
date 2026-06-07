@@ -24,6 +24,6 @@ A folder should now be created in the directory the terminal is pointed to, name
 
 Now that the repository is cloned, you can use VSCode to edit it. Open VSCode and press the "Open Folder" button in the Get Started window. If no window pops up, navigate to `File > Open Folder` in the top navigation bar. Find the cloned folder and open it.
 
-Once opened, move on to [Editing the Repository]({% link docs/Administrative/How to Edit the Docs/Editing-Repository.md %}).
+Once opened, move on to [Editing the Repository]({% link docs/Administrative/How to Edit the Docs/Editing the Repository/index.md %}).
 
 > Author: Aiden Kimmerling <https://github.com/TheKing349>.

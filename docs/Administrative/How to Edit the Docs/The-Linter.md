@@ -1,7 +1,7 @@
 ---
 title: The Linter
 parent: How to Edit the Docs
-nav_order: 6
+nav_order: 5
 ---
 
 ## The Linter
