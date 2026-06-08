@@ -43,3 +43,6 @@ callouts:
   warning:
     title: Warning
     color: red
+
+mermaid:
+  version: "10.9.1"

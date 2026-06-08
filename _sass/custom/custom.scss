@@ -4,3 +4,34 @@
     width: calc((70% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
   }
 }
+
+// Mermaid Diagram Edge Labels Light Mode
+[data-theme="light"] .edgeLabel {
+  background-color: #ececff !important;
+  color: #333333 !important;
+  font-family: Verdana, sans-serif !important;
+}
+
+[data-theme="light"] .edgeLabel span {
+  color: #333333 !important;
+  background-color: #ececff !important;
+  font-family: Verdana, sans-serif !important;
+}
+
+// Mermaid Diagram Edge Labels Dark Mode
+[data-theme="dark"] .edgeLabel {
+  background-color: #27262b !important;
+  color: white !important;
+  font-family: Verdana, sans-serif !important;
+}
+
+[data-theme="dark"] .edgeLabel span {
+  color: white !important;
+  background-color: #27262b !important;
+  font-family: Verdana, sans-serif !important;
+}
+
+// Mermaid Diagram Node Labels
+.language-mermaid span.nodeLabel {
+  font-family: Verdana, sans-serif !important;
+}
