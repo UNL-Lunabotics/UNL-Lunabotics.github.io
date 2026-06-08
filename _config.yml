@@ -43,6 +43,9 @@ callouts:
   warning:
     title: Warning
     color: new_red
+  tip:
+    title: Tip
+    color: teal
 
 mermaid:
   version: "10.9.1"
