@@ -42,7 +42,7 @@ renders as such:
 {: .important}
 Super important text.
 
-Each of these callouts use a different color, also defined in the `_config.yml` file. For more information, refer to the just-the-docs [documentation](https://just-the-docs.com/docs/ui-components/callouts/)
+Each of these callouts use a different color, also defined in the `_config.yml` file. For more information, refer to the just-the-docs [documentation](https://just-the-docs.com/docs/ui-components/callouts/).
 
 ### Linking Media
 
@@ -56,7 +56,7 @@ For a basic hyperlink, follow the default Markdown syntax:
 [Text](https://google.com)
 ```
 
-This renders the following: [Text](https://google.com), where `Text` is the text that actually renders.
+This renders the following: [Text](https://google.com). The text in brackets is what is rendered on the website.
 
 #### Hyperlinking Documentation
 

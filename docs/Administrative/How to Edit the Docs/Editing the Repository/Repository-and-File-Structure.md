@@ -6,15 +6,13 @@ nav_order: 1
 
 ## Repository and File Structure
 
-There's a lot going on in this repository, so let's break it down.
+For this guide, it will be helpful to have the repository open as you read. There's a lot going on in this repository, so let's break it down.
 
 ### The docs Folder
 
 This is the main part of this repo, and where you will likely be spending the most time in. Within the docs folder, there's a specific structure just-the-docs uses:
 
-Each "Section" of the website has a folder associated with it, such as "Administrative" or "Curriculum". Within each of those folders, there are Markdown files. The `index.md` file is the main documentation and will create an entry in the Sidebar. Other files inside the folder will be treated as "children" of the Sidebar entry, and rendered **underneath** it.
-
-(**INCLUDE SIDE-BY-SIDE PICTURES HERE!!!!**)
+Each Section of this website has a folder associated with it in the repository, such as "Administrative" or "Curriculum". Within each of those folders, there are Markdown files. The `index.md` file is the main documentation and will create an entry in the Sidebar. Other files inside the folder will be treated as "children" of the Sidebar entry, and rendered **underneath** it.
 
 ### The attachments Folder
 

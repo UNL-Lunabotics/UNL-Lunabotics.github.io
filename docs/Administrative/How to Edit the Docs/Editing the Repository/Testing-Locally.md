@@ -10,7 +10,7 @@ While you're editing, it may be helpful to get a preview of the website. To loca
 
 ### Installing Dev Tools
 
-First, download and install all [prerequisites](https://jekyllrb.com/docs/installation/). Then install [jekyll](https://jekyllrb.com/docs/), a program suite used for GitHub Pages. Install it using the following command in a terminal:
+First, download and install all [prerequisites](https://jekyllrb.com/docs/installation/). Then, use the following command in a terminal to install [jekyll](https://jekyllrb.com/docs/), a program suite used for GitHub Pages:
 
 ```bash
 gem install jekyll bundler
@@ -46,10 +46,10 @@ Now, update your environment PATH, using the following:
 nano ~/.zshrc
 ```
 
-`nano` is a terminal text editor. Use arrow keys to move the cursor all the way to the bottom. Add the following:
-
 {: .note}
 On Linux, replace `.zshrc` with `.bashrc`.
+
+`nano` is a terminal text editor. Use arrow keys to move the cursor all the way to the bottom. Add the following:
 
 ```bash
 # Ruby and Gem Installs
