@@ -12,10 +12,12 @@ To keep consistency and readability throughout documentation, a few rules are en
 
 In addition to the rules in The Linter documentation, we also require local testing. This is important as testing your changes locally serves as a visual way of proofreading, which can help with readability, clarity, and consistency.
 
-### Pull Requests
+### Pull Requests and Branches
 
-Finally, this repository enforces a pull-request workflow instead of committing to main directly. All this means is that, in order for your changes to get pushed to the main website, it must be approved first. This ensures high quality documentation and is more akin to industry workflows.
+Finally, this repository enforces a pull-request workflow instead of committing to main directly, by creating a new branch. All this means is that, in order for your changes to get pushed to the main website, it must be approved first. This ensures high quality documentation and is more akin to industry workflows.
 
-Learn how to do a Pull Request [here]({% link docs/Administrative/How to Edit the Docs/How-to-Pull-Request.md %})
+It is also important to note that general convention is that you commit changes **regularly** on a branch. Do not have a giant commit. Rather, commit once a single "unit" or code is written. This helps keep commit history readable and helps if a revision or revert is needed.
+
+Learn how to push your changes using Pull Requests [here]({% link docs/Administrative/How to Edit the Docs/How-to-Push-Changes.md %})
 
 > Author: Aiden Kimmerling <https://github.com/TheKing349>
