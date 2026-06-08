@@ -47,6 +47,7 @@
   font-family: Verdana, sans-serif !important;
 }
 
+// Highlighter shape/size config
 mark {
   color: var(--body-text-color);
   padding: 0em 0.2em;
@@ -55,7 +56,7 @@ mark {
   -webkit-box-decoration-break: clone;
 }
 
-// Default is yellow
+// Colors for Highlighter. Default is yellow
 mark         { background-color: #ffed8c; }
 mark.yellow  { background-color: #ffed8c; }
 mark.green   { background-color: #bcf5bc; }
