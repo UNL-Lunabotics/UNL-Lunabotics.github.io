@@ -23,10 +23,13 @@ This will install jekyll on your system.
 Now open a new terminal in VSCode. Type the following command to run:
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload
 ```
 
 Then point your browser to <http://127.0.0.1:4000>. You should see the website. If any changes are made to the code, refresh the browser to show updates.
+
+{: .note}
+If you do not want the server to reload as you edit files, omit the `--livereload` flag
 
 ### Troubleshooting
 
