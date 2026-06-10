@@ -90,6 +90,66 @@ This renders the following:
 
 Be sure to set the Alt Text in brackets as it helps accessibility for screen readers.
 
+### Mermaid Diagrams
+
+This website has Mermaid support enabled, which allows you to create diagrams directly within the documentation using simple code blocks. If you have never used Mermaid before, I recommend looking at the Diagram Syntax section of the [Official Documentation](https://mermaid.ai/open-source/intro/syntax-reference.html). Unless you plan on creating really advanced diagrams, you probably only need to go over the syntax structure and the basic syntax for the different types of diagrams.
+
+To make a diagram render in the documentation, you write out the code inside a code block, just like how you would if you were writing out example code for documentation. Just-the-Docs will see that code and know to render it as a diagram instead of a block of code.
+
+For example, if I want to render a left $\rightarrow$ right flowchart, I would type something like this in the markdown file:
+
+````text
+```mermaid
+flowchart LR
+  first --> second -.-> third
+  style second stroke:#ff0000
+```
+````
+
+When you look through the website, that code will display like this:
+
+```mermaid
+flowchart LR
+  first --> second -.-> third
+  style second stroke:#ff0000
+
+```
+
+If you toggle your theme at the top of the webpage, you can see that the diagrams will automatically adapt to the theme to keep them readable. You can still customize the color of elements, however.
+
+You'll probably notice that the diagram always renders left-justified. If you want the diagram centered, you need to add the `{.text-center}` attribute to the bottom, which tells Just-the-Docs to center the item:
+
+````text
+<!-- markdownlint-disable MD031 -->
+```mermaid
+flowchart LR
+  first --> second -.-> third
+  style second stroke:#ff0000
+```
+{: .text-center }
+<!-- markdownlint-enable MD031 -->
+````
+
+{: .important}
+We have to disable the linter rule `MD031` specifically when centering Mermaid diagrams, because the `{.text-center}` attribute must be placed directly under the closing ticks of the code block, which triggers this linter warning.
+
+Adding this attribute will make the diagram render center-justified:
+
+<!-- markdownlint-disable MD031 -->
+```mermaid
+flowchart LR
+  first --> second -.-> third
+  style second stroke:#ff0000
+```
+{: .text-center }
+<!-- markdownlint-enable MD031 -->
+
+{: .note}
+You can use the `{.text-center}` attribute, as well as any other attributes on anything inside your documentation, including images, text, and code blocks.
+
+This is just a basic overview of how to include Mermaid diagrams in your documentation. It is strongly reccomended that you do more research in order to fully take advantage of their capabilities.
+
 Once you understand commonly used features, learn how to [locally test this repository]({% link docs/Administrative/How to Edit the Docs/Editing the Repository/Testing-Locally.md %}).
 
-> Author: Aiden Kimmerling <https://github.com/TheKing349>
+> Author: Aiden Kimmerling <https://github.com/TheKing349>  
+> Author: Jesse Mills <https://github.com/JesseMills0>
