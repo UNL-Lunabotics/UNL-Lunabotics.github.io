@@ -183,6 +183,6 @@ After you learn C, here is the W3Schools link for C++, though I personally find 
 
 Now that you have a basic understanding of programming, you can really go anywhere in the Non Programmer Friendly Zone. Specific questions that people have asked programming to explain will be listed in here, though for next steps I recommend going to [Introduction to ROS2]({% link docs/Non-Programmer Friendly Zone/Introduction-to-ROS2.md %})
 
-If you are on a mission to become a programming nerd, you will also need to know what VSCode is and how to set it up with everything you'll want, which you can find at [How to Use VSCode]({% link docs/Administrative/VSCode-Setup.md %})
+If you are on a mission to become a programming nerd, you will also need to know what VSCode is and how to set it up with everything you'll want, which you can find at [How to Use VSCode]({% link docs/Non-Programmer Friendly Zone/How-to-Use-VSCode.md %})
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
