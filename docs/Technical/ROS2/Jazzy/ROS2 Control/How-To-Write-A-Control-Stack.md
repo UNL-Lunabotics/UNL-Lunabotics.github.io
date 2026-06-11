@@ -45,6 +45,35 @@ This is not to say that there does not exist ANY documentation on the above item
 {: .warning}
 This is a highly technical guide, not a conceptual one. If you do not understand a concept written above, this documentation will in all likelihood will not explain it. You should consult the Curriculum section to learn more.
 
+1. Create the package
+2. Create the state interfaces in the URDF
+3. Create the controller header file with boilerplate
+4. Create the controller source file with boilerplate
+5. Create the config/ directory
+6. In config/ add the robot_controller.xml and the robot_controller.yaml and joystick.yaml
+7. Update the CMakeLists.txt and package.xml
+8. build the project, it should already compile with just the boilerplate in there. It might have some unused variable warnings but still should compile
+9. If you haven't already, it's time to do ConOps. Design the state machine flow. What does the robot do when? This should be compatible with teleop and autonomy. Keep in mind a manual mode for testing or recovery mid match
+10. If you haven't already, create the interfaces package and define a service for state changes
+11. In the control cpp package, create a new source file for the state_manager_client or whatever you want to call it. Write it to sub to joy, create a client for the set_state or change_state service, and write the whole thing and such
+12. colcon build again, it should all compile
+13. Fill out the controller header file specifics
+14. Fill in the easy controller functions in the controller source file (everything besides update). Build again, it should still compile
+15. Fill out the update function. Build again, it should still compile
+16. Create the launch file (wired assume and local network)
+17. Do extensive testing of the controller with a gamepad plugged in and echoing cmd_vel, once satisfied, move on
+18. Create the hwc header file with boilerplate
+19. Create the hwc source file with boilerplate
+20. In config/ add the hwc xml and link it in the URDF
+21. Update the CMakeLists.txt and package.xml
+22. Build the project, it should compile correctly and still run the controller fine
+23. Add in the prebuilt header files for can_comms (if needed) and microcontroller comms (if needed)
+24. Build the project and all that
+25. Fill out the easy hwc functions (everything besides read/write)
+26. Fill out read/write hwc functions
+27. Build and test everything with a microcontroller and/or can
+28. That's it :)
+
 ### 1. Creating the Control Package
 
 Read the documentation on [ROS2 Packages]({% link docs/Technical/ROS2/Jazzy/Packages/Creating-Packages.md %}) and create an ament_cmake package named control.
