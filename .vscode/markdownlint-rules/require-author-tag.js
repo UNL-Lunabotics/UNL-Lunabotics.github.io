@@ -1,7 +1,7 @@
 /** @type {import("markdownlint").Rule} */
 module.exports = {
   names: ["require-author-tag"],
-  description: "File must end with one or more '> Author: … (<github link>)' lines.",
+  description: "File must end with one or more '> Author: … <github link>' lines.",
   information: new URL(
     "https://unl-lunabotics.github.io/docs/Administrative/The-Linter.html#custom-rule-required-author-tag"
   ),
@@ -13,7 +13,7 @@ module.exports = {
     let idx = lines.length - 1;
     while (idx >= 0 && !lines[idx].trim()) idx--;
 
-    // > Author: First Last (<https://github.com/handle>)
+    // > Author: First Last <https://github.com/handle>
     const authorRx =
       /^>\s*Author:\s+[A-Z][\w.'-]*(?:\s+[A-Z][\w.'-]*)*\s+\(<https:\/\/github\.com\/[\w.-]+>\)$/;
 
@@ -26,7 +26,7 @@ module.exports = {
     const valid = footer.length > 0 && footer.every(l => authorRx.test(l));
 
     if (!valid) {
-      const template = `> Author: First Last (<https://github.com/your-handle>)`;
+      const template = `> Author: First Last <https://github.com/your-handle>`;
       const fixText = (idx < 0 ? "" : eol) + template + eol;
 
       onError({

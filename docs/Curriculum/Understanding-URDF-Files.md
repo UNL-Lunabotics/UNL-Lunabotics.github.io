@@ -30,7 +30,10 @@ The URDF file is also used to specify the location of any cameras and sensors on
 
 URDF files are effectively highly specialized XML files. They define a series of elements that go on to define components of your robot, with each individual element defining a different "part" of the robot (i.e. wheels, chassis, a robotic arm, cameras, sensors, etc.). Each element has its own configurations, and its own specified placement in the final model. Each of these elements come together when ROS2 builds your URDF to define a complete model of your robot, either for the purposes of simulation in software such as Gazebo or MuJoCo, or for use in managing an actual robot.
 
-All components of your robot specified in your URDF must follow a parent-child relationship. Basically, when you define a new element in your URDF, you need to specify what other part of the robot you "attach" it to. The URDF also treats the parent of a component as the origin for that component, so if you need to calculate coordinate displacement of a component, it needs to be done with reference to the component's parent. The only element in your URDF that is not a child of another component is the `base_link`. This is because the `base_link` is defined with the express purpose as acting as the parent to all other components in the URDF.
+All components of your robot specified in your URDF must follow a parent-child relationship. Basically, when you define a new element in your URDF, you need to specify what other part of the robot you "attach" it to. The URDF also treats the parent of a component as the origin for that component, so if you need to calculate coordinate displacement of a component, it needs to be done with reference to the component's parent.
+
+{: .important}
+The only element in your URDF that is not a child of another component is the **`base_link`**. This is because the `base_link` is defined with the express purpose as acting as the parent to all other components in the URDF.
 
 If you are struggling to visualize this concept, try thinking of it like a tree. The root of the tree is `base_link`, and every other link inside the URDF branches off of `base_link`, with all of the links being held together by joints. The next section will go over links and joints in more detail.
 
@@ -64,7 +67,10 @@ graph TD
 {: .text-center }
 <!-- markdownlint-enable MD031 -->
 
-> This tree visualization of a four-point linkage shows how it's not possible for one child (`coupler_link`), to have multiple parents (`left_pivot_joint` and `right_pivot_joint`). Think of how, on a real tree, the trunk will split off into many smaller branches, but those branches will never recombine.
+> This tree visualization of a four-point linkage shows how it's not possible for one child (`coupler_link`), to have multiple parents (`left_pivot_joint` and `right_pivot_joint`).  
+
+{: .tip}
+Think of how, on a real tree, the trunk will split off into many smaller branches, but those branches will never recombine.
 
 ## Links and Joints
 
@@ -78,7 +84,7 @@ The `<link>` tag is used to describe anything with inertia, visual features, and
   - `<geometry>`: This is the shape of the link. It can be a generic shape (`box`, `cylinder`, or `sphere` with size parameters), or it can be a `mesh`. If you use the `mesh` type, you have to link an associated 3d model file. Most geometry formats will at least render the visual shape, but additional compatibility (like textures) will vary between formats.
   - `<origin>`: Works the same as the joint origin, only it applies to the geometry, allowing you to offset the center of the visualized shape from the link origin.
   - `<material>`: Contains information about how a visualization software should make any given object look. Most often used to alter the color.
-- `<collision>`: This defines the "hitbox" of the link, and is especially important when doing physics simulation or any kind of autonomous navigation. Inside the collision tag, you define the geometry and the origin, just as you would for the visual tag. In fact, you can usually just copy and paste the visual properties into `<collision>`, excluding `<material>`, though this might cause some issues if you are using meshes for your visualization. If this is the case, consider replacing the collision with a similar looking basic shape.
+- `<collision>`: This defines the "hitbox" of the link, and is especially important when doing physics simulation or any kind of autonomous navigation. Inside the `<collision>` tag, you define the geometry and the origin, just as you would for the visual tag. In fact, you can usually just copy and paste the visual properties into `<collision>`, excluding `<material>`, though this might cause some issues if you are using meshes for your visualization. If this is the case, consider replacing the `<collision>` with a similar looking basic shape.
 
 - `<inertial>`: Defines the [rotational inertia matrix](https://en.wikipedia.org/wiki/Moment_of_inertia#Inertia_tensor), which describes how the distribution of mass affects rotation. This can be very confusing, so for the sake of this tutorial, we will be using a premade file with all the inertial tags we might need already defined. If you want to give it a try, though, you can look at this [list of matrices for common shapes](https://en.wikipedia.org/wiki/List_of_moments_of_inertia#List_of_3D_inertia_tensors). You can probably get a good estimate by approximating your links as simpler shapes. As for the actual inertial tag, there are three things you will need to specify:  
   - `<origin>`: Defines the center of mass of the link, works the same way as the other origin tags.
@@ -123,19 +129,19 @@ If you are defining something other than a `fixed` joint, you may have to specif
 There may be occasions where you see tags other than links and joints defined within your enclosing robot tag. These may include `<gazebo>`, `<material>`, and `<transmission>` tags. We already briefly mentioned `<material>` tags, but the next section will have a little more detail. The `<gazebo>` and `<transmission>` tags far exceed the scope of this tutorial, but we (plan to) have additional information on them in other guides.
 
 To learn more about Gazebo integration using the `<gazebo>` tag, see [Gazebo in URDF]({% link docs/Technical/ROS2/Jazzy/URDF/Gazebo-URDF.md %}).  
-TODO: Link Transmission Tutorial (not done yet)
+We do not currently have a Transmissions guide, but that should be coming in the near future!
 
 ## Building your URDF
 
-Before we start, it's important to note that while you can place all of your components into one large URDF file, this is generally not good practice, as they can get very large and difficult to manage relatively quickly. Instead, it's a good idea to use Xacro (XML Macros) to split your URDF into multiple smaller files that can be compiled together using special tags. For a detailed look at how to integrate xacro into your URDF, see [URDF with Xacro Templates]({% link docs/Technical/ROS2/Jazzy/URDF/URDF-With-Xacro-Templates.md %}). For an extensive look at the additional features xacro provides, see [URDF with Xacro Features]({% link docs/Technical/ROS2/Jazzy/URDF/URDF-With-Xacro-Features.md %}).
+Before we start, it's important to note that while you can place all of your components into one large URDF file, this is generally not good practice, as they can get very large and difficult to manage relatively quickly. Instead, it's a good idea to use Xacro (XML Macros) to split your URDF into multiple smaller files that can be compiled together using special tags. For a detailed look at how to integrate Xacro into your URDF, see [URDF with Xacro Templates]({% link docs/Technical/ROS2/Jazzy/URDF/URDF-With-Xacro-Templates.md %}). For an extensive look at the additional features Xacro provides, see [URDF with Xacro Features]({% link docs/Technical/ROS2/Jazzy/URDF/URDF-With-Xacro-Features.md %}).
 
-To get started with actually constructing your URDF, the first step is choosing a name for your robot. This name *must* be listed in the "main" URDF file. You can place it in your other files as well, but it is not necessary. For this tutorial, I named this robot "Tootles". The name is completely arbitrary. It doesn't matter what you choose, but you will want to keep it in mind for organizational purposes.  
+To get started with actually constructing your URDF, the first step is choosing a name for your robot. This name *must* be defined inside your URDF. For this tutorial, I named this robot "Tootles". The name is completely arbitrary. It doesn't matter what you choose, but you will want to keep it in mind for organizational purposes.  
 
-Now, to actually get started constructing the robot model, I like to first create the xacro files I will need, so that I can build the main URDF xacro. Every robot following this convention will have at least two xacro files. The first file, `robotName.urdf.xacro` (replace `robotName` with the name you chose for your robot), will be where you combine all of your xacro files together using `include` tags. This is also where you will define your robot's name and the `base_link`.  
+Now, to actually get started constructing the robot model, I like to first create the `xacro` files I will need, so that I can build the main URDF `xacro`. Every robot following this convention will have at least two `xacro` files. The first file, `robotName.urdf.xacro` (replace `robotName` with the name you chose for your robot), will be where you combine all of your `xacro` files together using `include` tags. This is also where you will define your robot's name and the `base_link`.  
 
-The second file, `robotName_core.xacro`, is where you will define the core body of your robot. For our purposes, this will just consist of the robot's chassis, and the wheels, but for more complex robots, this file can easily grow quite large. If necessary, you can further break up your core file into smaller xacro files.  
+The second file, `robotName_core.xacro`, is where you will define the core body of your robot. For our purposes, this will just consist of the robot's chassis, and the wheels, but for more complex robots, this file can easily grow quite large. If necessary, you can further break up your core file into smaller `xacro` files.  
 
-Optionally, you can also include xacro files for various other aspects of your robot, or anything inside your ROS2 package that requires URDF components to function. If you want to simulate your robot in Gazebo, you will need to include SDF references in your URDF (see [Gazebo in URDF]({% link docs/Technical/ROS2/Jazzy/URDF/Gazebo-URDF.md %})). If you want to integrate ros2_control into your robot, either for simulation or actual control, you will need URDF components for each of the joints you want to send or receive information from (see [ROS2 Control in URDF]({% link docs/Technical/ROS2/Jazzy/URDF/ROS2-Control-URDF.md %})). For this project, I will be including two additional files. The first, called `colors.xacro` simply contains a few colors I can assign to different parts of the robot. Feel free to copy these or [download]({% link attachments/urdf/colors.xacro %}) the file for use as you follow along.  
+Optionally, you can also include `xacro` files for various other aspects of your robot, or anything inside your ROS2 package that requires URDF components to function. If you want to simulate your robot in Gazebo, you will need to include SDF references in your URDF (see [Gazebo in URDF]({% link docs/Technical/ROS2/Jazzy/URDF/Gazebo-URDF.md %})). If you want to integrate ros2_control into your robot, either for simulation or actual control, you will need URDF components for each of the joints you want to send or receive information from (see [ROS2 Control in URDF]({% link docs/Technical/ROS2/Jazzy/URDF/ROS2-Control-URDF.md %})). For this project, I will be including two additional files. The first, called `colors.xacro` simply contains a few colors I can assign to different parts of the robot. Feel free to copy these or [download]({% link attachments/urdf/colors.xacro %}) the file for use as you follow along.  
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -165,15 +171,18 @@ If you think back to our list of link attributes, the `material` tag contains in
 
 The second additional file I'm including is a little more complicated, so I strongly suggest you just [download]({% link attachments/urdf/inertial_macros.xacro %}) it if you are following this tutorial. This file, called `inertial_macros.xacro` basically contains a bunch of pre-made inertia calculations that will be necessary to include if you want to simulate this bot in something like Gazebo. While simulation is outside the scope of this tutorial, I will be showing you how to include inertial data in your link elements. To use these macros, all you have to do is plug in some information and it will fill in those values for the calculations. You don't need to make a separate file for this, but inertia can be confusing if you aren't familiar with the physics behind it, and you generally shouldn't ever need to do your own inertia calculations when making a URDF, so having a bunch of pre-defined options is helpful. Credit for this file goes to [Josh Newans](https://github.com/joshnewans/articubot_one/blob/main/description/inertial_macros.xacro) of Articulated Robotics.
 
-Okay, now that we have made all of the files we will need, we can get started by building our main URDF file (`robotName.urdf.xacro`). These first couple of steps are also documented in [URDF with Xacro Templates]({% link docs/Technical/ROS2/Jazzy/URDF/URDF-With-Xacro-Templates.md %}#in-file-structure), but for the sake of simplicity I will explain these concepts again here. 
+Okay, now that we have made all of the files we will need, we can get started by building our main URDF file (`robotName.urdf.xacro`). These first couple of steps are also documented in [URDF with Xacro Templates]({% link docs/Technical/ROS2/Jazzy/URDF/URDF-With-Xacro-Templates.md %}#in-file-structure), but for the sake of simplicity I will explain these concepts again here.
 
-The first thing you need to do in every single xacro file is define the XML version and the UTF encoding you will be using. For URDF, you will always use XML Version 1.0 and UTF-8 encodings. Therefore, the first line on every single xacro you make should be:
+The first thing you need to do in every single `xacro` in your package is define the XML version and the UTF encoding you will be using. For URDF, you will always use XML Version 1.0 and UTF-8 encodings. Therefore, the first line on every single URDF `xacro` you make should be:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 ```
 
-Next, you need to declare the `robot` tag and import xacro, so that your system will recognize that we are using xacro syntax. The `robot` tag will contain *everything* else you write in the URDF. All of your xacro files need to have an enclosing `robot` tag. Remember, your main `robotName.urdf.xacro` file *must* declare the name of the robot. The rest of your xacro files will still need the `robot` tag and xacro import, but the inclusion of the name is completely optional.  
+Next, you need to declare the `robot` tag and import `xacro`, so that your system will recognize that we are using `xacro` syntax. The `robot` tag will contain *everything* else you write in the URDF. All of your `xacro` files need to have an enclosing `robot` tag. Remember, your main `robotName.urdf.xacro` file *must* declare the name of the robot.
+
+{: .note}
+You can include the name inside the `robot` tag for your other files too, but it is not required. You do still need to include the xacro import though.
 
 ```xml
 <robot name="Tootles" xmlns:xacro="http://www.ros.org/wiki/xacro">
@@ -181,14 +190,14 @@ Next, you need to declare the `robot` tag and import xacro, so that your system 
 </robot>
 ```  
 
-Now, with our basic structure in place, we will want to add the `include` tags that will allow our main URDF file to see everything. This is a fairly simple process. For each additional xacro file in the directory storing your xacro files, you will want to add a new line like this:
+Now, with our basic structure in place, we will want to add the `include` tags that will allow our main URDF file to see everything. This is a fairly simple process. For each additional `xacro` file in the directory storing your `xacro` files, you will want to add a new line like this:
 
 ```xml
 <!-- Replace "file_name.xacro" with whatever file you want to include. -->
 <xacro:include filename="file_name.xacro"/>
 ```  
 
-Remember that in order for xacro to parse all of the files, they need to be placed in the same directory. Typically this is something like `ros2/packageName/description/urdf` inside your robot directory. Once you have included all of your xacro files, you will now want to declare your `base_link`. Because `base_link` simply serves as the "origin" of the robot and the point from which all other components are attached, it doesn't actually need any additional properties. Once you have all of the contents of your main URDF constructed, you should have something like this.  
+Remember that in order for `xacro` to parse all of the files, they need to be placed in the same directory. Typically this is something like `ros2/packageName/description/urdf` inside your robot directory. Once you have included all of your xacro files, you will now want to declare your `base_link`. Because `base_link` simply serves as the "origin" of the robot and the point from which all other components are attached, it doesn't actually need any additional properties. Once you have all of the contents of your main URDF constructed, you should have something like this.  
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -206,7 +215,7 @@ Remember that in order for xacro to parse all of the files, they need to be plac
 
 For all links and joints, we will follow the naming convention `partName_link` and `partName_joint` respectively. This is so that it is easy to make out each link-joint pair.
 
-Now that we have set up the main URDF file, we will move on to defining the visible parts of the robot. Open up your "core" xacro file (for me it's `tootles_core.xacro`), add the XML and encoding versions, and declare your `robot` tag. These first steps should look identical to the first couple steps in your main URDF file, with the exception of the name declaration not being necessary.  
+Now that we have set up the main URDF file, we will move on to defining the visible parts of the robot. Open up your "core" `xacro` file (for me it's `tootles_core.xacro`), add the XML and encoding versions, and declare your `robot` tag. These first steps should look identical to the first couple steps in your main URDF file, with the exception of the name declaration not being necessary.  
 
 Now we can write the links and joints that will make up our robot. Generally speaking, it is a good idea to create a link-joint pair for the following situations:
 
@@ -225,7 +234,7 @@ First, we need to define the joint that will anchor the chassis to our `base_lin
 </joint>
 ```
 
-We set `chassis_joint` to `fixed` because we never want the chassis to move independently of the rest of the robot.
+We set `chassis_joint` to **`fixed`** because we never want the chassis to move independently of the rest of the robot.
 
 Now we can work on the properties within `chassis_joint`. Because this is a `fixed` joint, we only need to specify the `<parent>`, `<child>`, and the `<origin>`. The parent is `base_link`, since we want the chassis to be oriented relative to the robot's origin. The child is `chassis_link`, which we will define next. The origin of `chassis_joint` depends on what you want your `base_link` to represent. A lot of the time the `base_link` will just represent the center of the robot, in which case the origin of `chassis_joint` is simply `xyz="0 0 0"`.
 
@@ -239,9 +248,9 @@ For this robot, however, we will be using `base_link` to represent the axis of r
 </joint>
 ```
 
-This syntax will remain relatively identical for all of the `joint` tags. Refer back to this when working on your other joints. If there are additional properties we need to specify, I will note what they are and how to write them.  
+This syntax will remain relatively identical for all of the `<joint>` tags. Refer back to this when working on your other joints. If there are additional properties we need to specify, I will note what they are and how to write them.  
 
-Now we will take a look at constructing our `chassis_link`. Start by creating the link tag. It is done the same way you made defined `chassis_joint` but you use `<link>` instead, and change the name accordingly. Once you have done that, we can begin filling in the visual properties. Create a `<visual>` tag inside the link. Inside that, you will define the origin as `xyz="0 0 0"` since we don't want any offset from the joint. Then we need to create a `<geometry>` tag inside `<visual>` where we can define the shape as a `<box>` with `size` dimensions `"0.4 0.3 0.15"`. After that you will define a `<material>` by simply using one of the colors from the `colors.xacro` file. It should look something like this:  
+Now we will take a look at constructing our `chassis_link`. Start by creating the link tag. It is done the same way you made defined `chassis_joint` but you use `<link>` instead, and change the name accordingly. Once you have done that, we can begin filling in the visual properties. Create a visual tag inside the link. Inside that, you will define the origin as `xyz="0 0 0"` since we don't want any offset from the joint. Then we need to create a geometry tag inside visual where we can define the shape as a box with size dimensions `"0.4 0.3 0.15"`. After that you will define a material by simply using one of the colors from the `colors.xacro` file. It should look something like this:  
 
 ```xml
 <link name="chassis_link">
@@ -257,7 +266,7 @@ Now we will take a look at constructing our `chassis_link`. Start by creating th
 </link>
 ```  
 
-Next, we need to specify the `<collision>`. This is pretty straightforward. The only thing we need to include in the collision tag is the geometry data from our visual tag:  
+Next, we need to specify the `<collision>`. This is pretty straightforward. The only thing we need to include in the `<collision>` tag is the geometry data from our visual tag:  
 
 ```xml
 <link name="chassis_link">
@@ -293,24 +302,24 @@ This simple box will serve as the main body of our robot. If we visualize the or
 
 ![Tootles Chassis / base_link relationship]({% link attachments/urdf/Tootles-Chassis-Base-Link.png %}){: style="width: 60%; display: block; margin: 0 auto;" }
 
-> For Reference: The red arrow represents the X axis, the green arrow represents the Y axis, and the blue arrow (not shown here) represents the Z axis.
+> Red = X axis, Green = Y axis, Blue = Z axis (not shown)
 
 ### Wheels
 
 Now we will add wheels to our robot. The links and joints of every wheel will be identical, with the only difference being the way we rotate them and the coordinate offset from `base_link`. We will start by going over how to do the front left wheel, then I will provide the unique values that you will use to make the other three.
 
-Defining the joint for the front left wheel only has a few notable differences from when you defined `chassis_joint`. First, since we will be defining the wheel as a cylinder, and cylinders in URDF lay flat by default, you will need to rotate the cylinder 90 degrees in one direction to make it stand like a wheel. This is done inside the `<origin>` tag by modifying the `rpy` (roll, pitch, yaw) value. For our left wheels, we will want to rotate the wheel by `-π/2` radians in the roll direction, so that the z-axis faces outward and the x-axis matches `base_link`. For the right wheels, we will need to rotate them in the opposite direction (`π/2` radians) to achieve the same effect.
+Defining the joint for the front left wheel only has a few notable differences from when you defined `chassis_joint`. First, since we will be defining the wheel as a cylinder, and cylinders in URDF lay flat by default, you will need to rotate the cylinder 90 degrees in one direction to make it stand like a wheel. This is done inside the `<origin>` tag by modifying the `rpy` *(roll, pitch, yaw)* value. For our left wheels, we will want to rotate the wheel by `-π/2` radians in the roll direction, so that the z-axis faces outward and the x-axis matches `base_link`. For the right wheels, we will need to rotate them in the opposite direction (`π/2` radians) to achieve the same effect.
 
 ![Wheel Rotation Illustration]({% link attachments/urdf/Wheel-Rotation.png %}){: style="width: 75%; display: block; margin: 0 auto;" }
 
 {: style="text-align: center;" }
 *Image sourced from [Articulated Robotics](https://articulatedrobotics.xyz/tutorials/mobile-robot/concept-design/concept-urdf)*
 
-Second, you will want to set the `type` to `continuous`, as we need our wheels to be able to spin indefinitely. 
+Second, you will want to set the `type` to `continuous`, as we need our wheels to be able to spin indefinitely.
 
-Next, you need to specify the offset. For the front left wheel, the offset with reference to its parent (`base_link`) should be `xyz="0.25 0.175 0"`. This will place the wheel just next to the chassis on the front half. Remember to also rotate the wheel by modifying the `rpy` value as shown below. 
+Next, you need to specify the offset. For the front left wheel, the offset with reference to its parent (`base_link`) should be `xyz="0.25 0.175 0"`. This will place the wheel just next to the chassis on the front half. Remember to also rotate the wheel by modifying the `rpy` value as shown below.
 
-Finally, you will need to define the`<axis>` on which the wheel is allowed to rotate. This tag takes in an `xyz` string, just like the `<origin>` tag, so you will simply set the axis you want the wheel to rotate on to `1`, and set the rest to`0`. For the right wheels you will use `-1` instead. 
+Finally, you will need to define the`<axis>` on which the wheel is allowed to rotate. This tag takes in an `xyz` string, just like the `<origin>` tag, so you will simply set the axis you want the wheel to rotate on to `1`, and set the rest to`0`. For the right wheels you will use `-1` instead.
 
 Once you have all of this information defined, you should have a joint similar to this:
 
@@ -347,7 +356,8 @@ Now we will define `front_left_wheel_link`. This will look almost completely ide
 </link>
 ```
 
-Something unusual I have done here that you might notice is that instead of making the `<collision>` tag an exact copy of `<visual>`, I instead made the wheel hitbox a `sphere`  with the same radius. This is because when running the robot in a physics simulator (or at least in Gazebo), using cylinder collision can create some weird traction issues that cause the robot to move at a different rate from what open-loop odometry reports. This issue is minimized by using spheres instead.
+{: .note}
+You might notice that instead of directly copying the `<visual>` tag for `<collision>`, I made the wheel collision a sphere. This is done to fix a common issue with traction when running the robot in a physics simulator (Or at least in Gazebo) that results from using cylinder collision for your wheels.
 
 If we visualize the collision geometry in our previewer of choice, we can see how the collision geometry looks:
 
@@ -385,12 +395,13 @@ If you don't have any plans to try and run this robot in a physics engine with s
 
 Now we will work on creating basic shapes to represent two sensors our robot might use in a real environment. These are needed if you want to simulate the sensors in something like Gazebo, because you will have to tell the simulator where on the robot the sensor data is coming from. You will want to define these parts in a new file, named something like `sensors.xacro`, and make sure to include this new file in your main `robotName.urdf.xacro` file. If your bot has a lot of sensors, you might consider creating individual files for each kind of sensor you use, but for our purposes one file will be enough.
 
-Just like every other part of our robot, we will need to declare a link-joint pair for each of our sensors. For this tutorial, we will create models to represent two types of sensors, those being a 2D LiDAR and a camera. Both of these will be represented using very simple shapes. The LiDAR will be represented by a `cylinder` sitting on top of the chassis, and the camera will be a small `box` mounted on the front of the chassis. Since neither of these components need to move, they will both be `fixed`.
+Just like every other part of our robot, we will need to declare a link-joint pair for each of our sensors. For this tutorial, we will create models to represent two types of sensors, those being a 2D LiDAR and a camera. Both of these will be represented using very simple shapes. The LiDAR will be represented by a cylinder sitting on top of the chassis, and the camera will be a small box mounted on the front of the chassis. Since neither of these components need to move, they will both be fixed.
 
 If you have made it this far, you should be fairly familiar with the process of creating new parts for your model, so I will just provide you with the necessary information to build your components. If you get lost at any point, refer back to the examples earlier in the tutorial, as the process should look nearly identical.
 
 ### `lidar_joint`
 
+- Type: `fixed`
 - Parent: `chassis_link`
 - Child: `lidar_link`
 - Origin: `xyz="0 0 0.1" rpy="0 0 0"`
@@ -407,6 +418,7 @@ Because we want the LiDAR cylinder to lay flat, we are not rotating it in the `<
 
 ### `camera_joint`
 
+- Type: `fixed`
 - Parent: `chassis_link`
 - Child: `camera_link`
 - Origin: `xyz="0.205 0 0" rpy="0 0 0"`
@@ -433,7 +445,7 @@ So then, you might ask, why did you have to go through this entire guide before 
 
 First, not all of these exporters are perfect. The URDF exporter for SolidWorks, for example, hasn't been updated since 2021, and gets a lot of information wrong when exporting the file, often not even producing a functional URDF. Because of this, if you do use this exporter, as we have in the past, you will have to go in and make a significant amount of changes to make the URDF function as intended. On the opposite end of the spectrum, the built-in Onshape exporter is almost too good at its job; you get the entire, fully detailed model when you export. This might result in you working with an enormous file containing a lot of assets you don't need in your visualization. Rendering these may cause significant performance issues. If this happens, you may need to experiment with removing certain elements from your URDF to improve performance.
 
-Another common issue is that many of these exporters will not (or cannot) split up your URDF using Xacro. This means your entire robot might be defined one sprawling XML file, which can be very difficult to parse through, especially if you do need to make changes. If you use an exporter, it will almost certainly be worthwhile to split your resulting URDF up into smaller Xacro files.
+Another common issue is that many of these exporters will not (or cannot) split up your URDF using Xacro. This means your entire robot might be defined one sprawling XML file, which can be very difficult to parse through, especially if you do need to make changes. If you use an exporter, it will almost certainly be worthwhile to split your resulting URDF up into smaller `xacro` files.
 
 Finally, there is the subject of sensor placement. If you don't render your sensors in your modeling software, and you plan on using your URDF to simulate your robot in a physics engine, you will need to go in and manually create assets that you can assign your simulated sensors to. This can fairly easily be done with basic shapes like we did in this guide, but you may also find better models online that you can use, like the RealSense camera models available on the [realsense-ros](https://github.com/realsenseai/realsense-ros) Github.
 

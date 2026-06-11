@@ -6,21 +6,21 @@ nav_order: 1
 
 ## Learning ROS2
 
-Robot Operating System (ROS) is a set of open source algorithms, hardware driver software and tools developed to develop robot control software. Even though it has operating system in its name it is not an operating system. It is
+Robot Operating System (ROS) is a set of open source algorithms, hardware driver software and tools developed to develop robot control software. Even though it has operating system in its name it is not an operating system. It is:
 
 - Communication System (Publish Subscribe and Remote Method Invocation),
 - Framework & Tools (Build system & dependency management, Visualization, Record and Replay)
 - Ecosystem (Language bindings, Drivers, libraries and simulation (Gazebo)).
 
-(Quoted from <https://medium.com/software-architecture-foundations/robot-operating-system-2-ros-2-architecture-731ef1867776>)
+*Quoted from [Robot Operating System 2 (ROS 2) Architecture](https://medium.com/software-architecture-foundations/robot-operating-system-2-ros-2-architecture-731ef1867776), by Huseyin Kutluca.*
 
-Basically, ROS2 is just how we communicate and coordinate information and commands throughout a large and complicated robotics system with a lot of moving parts
+Basically, ROS2 is just how we communicate and coordinate information and commands throughout a large and complicated robotics system with a lot of moving parts.
 
 ### The Basics
 
-The basics concepts of ROS2 have shockingly good documentation that would be difficult to outdo, so for this part it will mostly be links to go do the tutorials yourself. Please [download ROS2]({% link 404.html %}) if you haven't already
+The basics concepts of ROS2 have shockingly good documentation that would be difficult to outdo, so for this part it will mostly be links to go do the tutorials yourself. Please [download ROS2]({% link 404.html %}) if you haven't already.
 
-Below are the links for the sections you should go through IN ORDER. The sub bullet points are the specific tutorials you should do, and the crossed out ones are not required though you can still do them if you want
+Below are the links for the sections you should go through **IN ORDER**. The sub bullet points are the specific tutorials you should do.
 
 #### Beginning Concepts
 
@@ -38,9 +38,9 @@ The links below will teach you the basics concepts of ROS2. You can follow along
 
 #### Coding the Basic Concepts
 
-These tutorials are when you actually start to get into programming these things. It is HIGHLY recommended that you set up a temporary repository and follow along with creating all this code. I personally recommend typing out the code yourself and adding more comments as you go rather than copy/pasting
+These tutorials are when you actually start to get into programming these things. It is HIGHLY recommended that you set up a temporary repository and follow along with creating all this code. I personally recommend typing out the code yourself and adding more comments as you go rather than copy/pasting.
 
-What language you choose to write things in is up to you. You do not have to do both the Python and C++ versions of tutorials, though it may be useful to do both
+What language you choose to write things in is up to you. You do not have to do both the Python and C++ versions of tutorials, though it may be useful to do both.
 
 - [Beginner: Client Libraries](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries.html)
   - [Using colcon to build packages](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html)
@@ -58,7 +58,7 @@ What language you choose to write things in is up to you. You do not have to do 
 
 ### Intermediate
 
-This is where things start to get technical. Some of these sections are complicated enough to split into a more dedicated tutorial, so pay attention to which ones are crossed out as optional
+This is where things start to get technical. Some of these may get their own dedicated tutorials here in the future.
 
 - [Intermediate](https://docs.ros.org/en/jazzy/Tutorials/Intermediate.html)
   - [Managing Dependencies with rosdep](https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Rosdep.html)
@@ -74,8 +74,8 @@ This is where things start to get technical. Some of these sections are complica
 
 ### Advanced
 
-For the most part, advanced topics shouldn't be necessary for you to learn right now. It is recommended that you briefly look through what's in the list just to know the option to research it is there if needed, but you do not have to go through any of them in depth unless you feel like it
+For the most part, advanced topics shouldn't be necessary for you to learn right now. It is recommended that you briefly look through what's in the list just to know the option to research it is there if needed, but you do not have to go through any of them in depth unless you feel like it.
 
-<https://docs.ros.org/en/jazzy/Tutorials/Advanced.html>
+[Advanced Tutorials](https://docs.ros.org/en/jazzy/Tutorials/Advanced.html)
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)

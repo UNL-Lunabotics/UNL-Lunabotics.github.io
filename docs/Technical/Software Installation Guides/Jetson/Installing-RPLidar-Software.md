@@ -96,7 +96,7 @@ ls -l /dev | grep ttyUSB
 
 If your LiDAR appears on one of the ports, you may proceed
 
-***WRITE THIS PORT DOWN!** it will be important when giving priveleges when running the docker container*
+***WRITE THIS PORT DOWN!** it will be important when giving privileges when running the docker container*
 
 ### Setup Steps
 
@@ -132,7 +132,7 @@ If your LiDAR appears on one of the ports, you may proceed
     && chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
 
    # ------------------------------------------------------------
-   # 3. Enable passwordless sudo
+   # 3. Enable password-less sudo
    # ------------------------------------------------------------
    RUN echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USERNAME} \
     && chmod 0440 /etc/sudoers.d/${USERNAME}
