@@ -14,7 +14,7 @@ This page will describe the different components of a `ros2_control.xacro` file 
 
 Taken from URDF with Xacro, here is a basic scaffolding for the file that we will be expanding on in the rest of this page.
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
@@ -60,7 +60,7 @@ Taken from URDF with Xacro, here is a basic scaffolding for the file that we wil
 
 Let's dive into the real robot ROS2 Control information section. This is the part that the hardware component and controllers will need. Gazebo does not access this part. A lot of this information was pulled from the [Hardware Component Overview](https://control.ros.org/rolling/doc/getting_started/getting_started.html#overview-hardware-components) ROS2 Control wiki page. Unfortunately, there is very little documentation on what the controllers need from this section.
 
-```XML
+```xml
 <!-- Load the real robot ROS2 Control information -->
 <xacro:unless value="$(arg sim_mode)">
     <!-- Almost everything should go in this ros2_control tag -->
@@ -88,7 +88,7 @@ The hardware tag contains all the information needed for the hardware component.
 
 The joint declarations are just taking any joint from the base URDF that will move and giving it interfaces and limits. For example,
 
-```XML
+```xml
 <joint name="Wheel">
     <command_interface name="velocity">
     <param name="min">-10</param>
@@ -105,7 +105,7 @@ Command interfaces are inputs that this joint can receive. For the above example
 
 Now, let's examine the second half of the example URDF. A lot of the boilerplate below should not change from project to project. The plugin will be the same for every robot (in this version of ROS2 and Gazebo) and the setup for the gazebo plugin will also be the same.
 
-```XML
+```xml
 <!-- Load the ROS2 Control information for just sim purposes -->
 <xacro:if value="$(arg use_sim)">
     <ros2_control name="name" type="system">

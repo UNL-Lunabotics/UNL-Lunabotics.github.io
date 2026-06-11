@@ -5,6 +5,17 @@
   }
 }
 
+// Makes the body text color black in light mode.
+[data-theme="light"] .main-content p,
+[data-theme="light"] .main-content li,
+[data-theme="light"] .main-content td {
+  color: #323232 !important;
+}
+
+// TODO (Maybe):
+// I want to increase the contrast of the codeblocks in light mode to make them stand out a little more, 
+// but I can't figure out how to do it without it looking really messed up
+
 // Mermaid Diagram Edge Labels Light Mode
 [data-theme="light"] .edgeLabel {
   background-color: #ececff !important;
@@ -34,4 +45,30 @@
 // Mermaid Diagram Node Labels
 .language-mermaid span.nodeLabel {
   font-family: Verdana, sans-serif !important;
+}
+
+// Highlighter shape/size config
+mark {
+  color: var(--body-text-color);
+  padding: 0em 0.2em;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+// Colors for Highlighter. Default is yellow
+mark         { background-color: #ffed8c; }
+mark.yellow  { background-color: #ffed8c; }
+mark.green   { background-color: #bcf5bc; }
+mark.blue    { background-color: #b0e0ff; }
+mark.pink    { background-color: #ffc4df; }
+mark.orange  { background-color: #ffcd94; }
+
+[data-theme="dark"] {
+  mark         { background-color: #5a4a00; }
+  mark.yellow  { background-color: #5a4a00; }
+  mark.green   { background-color: #1a3d1a; }
+  mark.blue    { background-color: #113557; }
+  mark.pink    { background-color: #5b1c38; }
+  mark.orange  { background-color: #5c3d1a; }
 }

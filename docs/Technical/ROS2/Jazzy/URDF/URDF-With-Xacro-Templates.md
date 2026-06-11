@@ -35,7 +35,7 @@ Inside the `description/` folder, there will also be another folder for meshes. 
 
 Your final file structure should be something like
 
-```txt
+```text
 description/
     urdf/
         robotname.urdf.xacro
@@ -54,7 +54,7 @@ First, you should always specify which version of XML and what UTF encodings it 
 
 Next, you need to declare the robot tag and import xacro. The robot tag is kind of like a class tag, EVERYTHING goes inside it. You should do this in every file no matter if it's specifically for ROS2 Control or the regular robot description.
 
-```XML
+```xml
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     your stuff goes here :)
 </robot>
@@ -66,7 +66,7 @@ If you want to read more about the technical details for how to implement link/j
 
 ### Example: robotname.urdf.xacro
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="placeholder" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
@@ -101,7 +101,7 @@ If you want to read more about the technical details for how to implement link/j
 
 Notably, this example also works if you split the robot core into separate files (for example, one of chassis and multiple for manipulators). Basically, any comment block in the below example could be its own file if you wanted. **Keep the chassis in robotname_core.xacro**.
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
@@ -118,7 +118,7 @@ Notably, this example also works if you split the robot core into separate files
 
 This is basically identical to `robotname_core.xacro`. You should view the specific documentation (there is a separate page) on specifically how to define sensors.
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
@@ -129,7 +129,7 @@ This is basically identical to `robotname_core.xacro`. You should view the speci
 
 ### Example: ros2_control.xacro
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
@@ -173,7 +173,7 @@ This is basically identical to `robotname_core.xacro`. You should view the speci
 
 ### Example: gazebo.xacro
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 

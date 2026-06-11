@@ -10,7 +10,12 @@ nav_order: 2
 
 VSCode is something called an Integrated Development Environment (IDE). Basically, this is the programming equivalent of Microsoft Word or Google Docs. In order to write code, programmers need an application they can actually type in. Theoretically, you can write code in Google Docs if you really wanted to, but the nice thing about IDEs is that they are INTEGRATED. Not only can you type code in them, they also provide tools to help you format code, run the code, detect errors, and more.
 
-There are many IDEs out there, but the nice thing about VSCode is that 1. It's available on every operating system 2. It is very simple and not cluttered with a billion different tools and menus that no one knows how to use (think of the difference between how many menus Word has vs Google Docs) 3. It supports every language you can program in 4. And most importantly, it's free!
+There are many IDEs out there, but the nice thing about VSCode is that:
+
+- It's available on every operating system
+- It is very simple and not cluttered with a billion different tools and menus that no one knows how to use (think of the difference between how many menus Word has vs Google Docs)
+- It supports every language you can program in
+- Most importantly, it's free!
 
 ### Downloading VSCode
 
