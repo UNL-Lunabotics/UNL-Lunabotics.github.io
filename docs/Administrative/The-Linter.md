@@ -1,7 +1,7 @@
 ---
 title: The Linter
 parent: Administrative
-nav_order: 3
+nav_order: 2
 ---
 
 ## The Linter
@@ -35,25 +35,18 @@ Please note that the author tag is not for the person who last revised the page 
 
 Author tags will follow the following format and be included at the end of every document. The linter for this repository has been edited to make this a custom rule.
 
-```md
-> Author: Firstname Lastname (<github user link>)
-```
+Author tags will follow the following format and be included at the end of every document. The linter for this repository has been edited to make this a custom rule
+`> Author: Firstname Lastname <github user link>`
 
 Or, if there are multiple authors,
 
 ```md
-> Author: Firstname Lastname (<github user link>)
-> Author: Firstname Lastname (<github user link>)
+> Author: Firstname Lastname <github user link>
+> Author: Firstname Lastname <github user link>
 > ... however many more authors
 ```
 
-The order for the author tags does not indicate importance in writing a page, it is usually just in chronological order (though no strict ordering rules will be enforced).
-
-### Custom Rule: Ignore Files Starting with an Underscore
-
-This custom rule makes the linter ignore files that are prepended with an underscore. This is almost entirely here just to make the linter ignore the navigation sidebar, which is named _Sidebar.md. The Sidebar does not need to follow linting rules as it is not a regular page. Additionally, this will make the linter ignore all introduction pages, each named `index.md`. There is one of these for each subsection and since they're so short they do not require normal linting.
-
-Unlike regular custom rules, this one is not implemented via a JavaScript file. This is enforced in two locations that accomplish two different things. Firstly, there is a setting listed in `settings.json` inside the `markdownlint.lintWorkspaceGlobs` that adds `!**/_*.md` as a filter. This prevents files that start with an underscore from being processed by the command "Lint all Markdown files in the workspace with markdownlint". Secondly, in the root of the workspace there is a `.markdownlint-cli2.jsonc` file. All this file does is declare "**/_*.md" as something that should be ignored when the linter runs normally (via saving a file).
+The order for the author tags does not indicate importance in writing a page, it is usually just in chronological order (though no strict ordering rules will be enforced)
 
 ### Editing the Linter
 
@@ -75,4 +68,4 @@ Custom linter rules will be JavaScript files stored inside `.vscode/markdownlint
   ]
 ```
 
-> Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
+> Author: Ella Moody <https://github.com/TheThingKnownAsKit>

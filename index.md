@@ -24,9 +24,7 @@ This repository is split into subsections with a specific purpose and specific a
 
 ## How to Edit
 
-It is HIGHLY recommended doing any writing more complicated than grammar or spelling edits within VSCode rather than the browser editor. Firstly, it is just easier to navigate and edit a lot of files in VSCode rather than the browser. You can work on multiple pages at once before having to do one commit and the GitHub repository includes folder organization for convenience. Additionally, VSCode will also include the recommended extensions for this repository, **including the linter that we use and some convenience features for editing in Markdown**.
-
-If you would like to learn how to set up VSCode to edit this repository, please see [VSCode Setup]({% link docs/Administrative/VSCode-Setup.md %})
+To learn how to edit these docs, refer to the [How to Edit the Docs]({% link docs/Administrative/How to Edit the Docs/index.md %}) documentation.
 
 ## Subsection Breakdown
 
