@@ -22,4 +22,8 @@ It is also important to note that general convention is that you commit changes 
 
 Now that you know all the rules, move on to how to [Push your Changes]({% link docs/Administrative/How to Edit the Docs/How-to-Push-Changes.md %}).
 
+### AI Policy
+
+It is the firm belief of the programming team leadership that generative AI, while sometimes helpful, can be easily overused and end up creating slop that's more damaging than helpful. Additionally, the process of writing documentation and explaining it to people helps build knowledge, understanding, communication skills, and looks better on a resume. Because of these reasons, writing documentation with generative AI is prohibited. It is acceptable to use generative AI as a research aid, or to assist in creating example code or graphs (it's pretty good at mermaid). No text should be written by AI. At minimum, information gathered with the use of generative AI should be paraphrased after thoughtful review of what it's actually telling you, as it is frequently wrong or misleading.
+
 > Author: Aiden Kimmerling <https://github.com/TheKing349>
