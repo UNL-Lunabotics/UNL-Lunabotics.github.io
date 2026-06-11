@@ -58,3 +58,5 @@ You should also see that a solid blue light has lit up on the board itself. This
 Each time your PC/computer gets turned off and back on, or each time the adapter gets unplugged and the re-plugged in, it will not get the `can0` interface up by default (only the red and green lights will be solid). This means that you **MUST** run the command above after each time the computer turns back on or the adapter is re-plugged in! It may be wise to include this command in a .bashrc script or as a service on startup.
 
 You are now ready to use the adapter to communicate with the devices on your CAN bus!
+
+> Author: Caleb Hans (https://github.com/caleb-hansolo)

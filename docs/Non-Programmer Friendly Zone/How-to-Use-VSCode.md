@@ -14,7 +14,7 @@ There are many IDEs out there, but the nice thing about VSCode is that:
 
 - It's available on every operating system
 - It is very simple and not cluttered with a billion different tools and menus that no one knows how to use (think of the difference between how many menus Word has vs Google Docs)
-- It supports every language you can program in 4. 
+- It supports every language you can program in
 - Most importantly, it's free!
 
 ### Downloading VSCode

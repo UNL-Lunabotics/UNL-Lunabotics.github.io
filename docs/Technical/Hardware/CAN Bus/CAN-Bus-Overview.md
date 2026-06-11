@@ -11,3 +11,5 @@ For our 2025-2026 rover, Tibble, we use CAN bus to communicate with our two driv
 So far, we only use our single CAN bus to communicate with our two drivetrain motors. However, it is possible to place more devices on this bus to communicate with each of them simultaneously.
 
 The other guides in this folder will outline the more technical setup of how to wire, install software for, and set up our CAN communications.
+
+> Author: Caleb Hans (https://github.com/caleb-hansolo)
