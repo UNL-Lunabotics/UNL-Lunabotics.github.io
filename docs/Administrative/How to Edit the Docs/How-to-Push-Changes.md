@@ -20,6 +20,9 @@ For more information about what a Pull Request is, look at the official GitHub [
 
 To create a Pull Request, go to this repository on GitHub and follow the official GitHub [documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
+{: .note}
+There is a VSCode extension named GitHub Pull Requests author GitHub that allows you to create/review PR's in the IDE. This is the recommended way to review PR's as it lets more easily see code changes and use the markdown preview functionality and website preview abilities.
+
 Once the Pull Request is submitted, it will be reviewed by other programmers. They will accept it or give suggestions or improvements to make the code and result better.
 
 After your Pull Request is accepted, your changes will be merged to the main branch. If you plan to keep making edits, feel free to keep this branch up and active, and submit a new Pull Request if needed. Otherwise, if the feature or fix is complete, you may delete the branch on GitHub.
