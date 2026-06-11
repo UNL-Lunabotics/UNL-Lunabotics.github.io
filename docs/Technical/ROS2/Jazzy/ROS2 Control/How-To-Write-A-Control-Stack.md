@@ -1,7 +1,7 @@
 ---
 title: How to Write a Control Stack
 parent: Jazzy
-nav_order: 2
+nav_order: 1
 ---
 
 ## How to Write a Control Stack
@@ -45,8 +45,8 @@ This is not to say that there does not exist ANY documentation on the above item
 {: .warning}
 This is a highly technical guide, not a conceptual one. If you do not understand a concept written above, this documentation will in all likelihood will not explain it. You should consult the Curriculum section to learn more.
 
-### Creating the Control Package
+### 1. Creating the Control Package
 
-
+Read the documentation on [ROS2 Packages]({% link docs/Technical/ROS2/Jazzy/Packages/Creating-Packages.md %}) and create an ament_cmake package named control.
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
