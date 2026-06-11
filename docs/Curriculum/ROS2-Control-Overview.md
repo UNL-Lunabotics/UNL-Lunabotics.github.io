@@ -49,6 +49,16 @@ Hardware components are exactly what they sound like, the hardware component of 
 
 Notably, this hardware component communicates with the microcontroller for the system via serial ports. The microcontroller is what ultimately has to read encoder values and send PWM signals to motors, it is a middleman between the hardware component and the actual hardware since the computers cannot communicate on a low enough level.
 
-## ROS2 Control's Weird Unit Handling
+## Putting it All Together
+
+Some extra things that might be confusing can include: where the rest of the robot description is coming from, and how the robot receives commands.
+
+Firstly, the state interfaces are declared as part of the rest of the robot URDF. You can read [Understanding URDF Files]({% link docs/Curriculum/Understanding-URDF-Files.md %}) to read up on what a URDF is and you can read about more specific technical details at [ROS2 Control URDF]({% link docs/Technical/ROS2/Jazzy/URDF/ROS2-Control-URDF.md %}).
+
+Secondly, the robot will receive commands through one of two options. During teleoperations, a driver using a controller (we specifically use something similar to an XBox controller) will send the robot commands by moving the joysticks, pressing buttons, pull triggers, etc. There is a separate piece of software that listens for controller input, and when it receives it, sends it to the ROS2 controller (as in the piece of software). It is up to the ROS2 Controller to decide what to do with that input. During autonomy, the navigation stack replaces the gamepad in this equation as the thing sending commands to the ROS2 Controller. The navigation stack will determine that right now, the robot should drive straight forward, and send that command to the ROS2 Controller.
+
+Putting it all together, you have state interfaces in the robot URDF that describe what we are even controlling, a custom ROS2 Controller that accepts commands and executes them, and a hardware component that communicates these commands to the motors. This pipeline also works in reverse to send things like encoder feedback from the motors all the way back up the chain from the hardware component to the ROS2 Controller and lastly to whatever is giving it commands.
+
+If you would like to read about how to do this with more technical details and sample code, there is an entire folder dedicated to it in the Technical section of the documentation. You can find it at [ROS2 Control]({% link docs/Technical/ROS2/Jazzy/ROS2 Control/index.md %}).
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
