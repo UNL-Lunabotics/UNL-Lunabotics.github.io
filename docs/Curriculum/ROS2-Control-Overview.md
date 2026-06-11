@@ -41,7 +41,7 @@ Controllers can be for a whole robot or for specific parts of the robot. For exa
 
 There are also a vast amount of pre-made controllers that you don't even have to write, but those are really easy to look up and there is extremely little documentation on how to write custom controllers, so we will be talking about custom controllers the entire time.
 
-More details on controllers (including actual code examples) can be found at [Controllers]({% link docs/Technical/ROS2/Jazzy/ROS2 Control/Controllers.md %})
+More details on controllers (including actual code examples) can be found at [Controllers]({% link docs/Technical/ROS2/Jazzy/ROS2 Control/Custom-Controllers.md %})
 
 ## Hardware Components
 

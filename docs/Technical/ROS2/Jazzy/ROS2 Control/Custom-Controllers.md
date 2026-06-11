@@ -1,12 +1,10 @@
 ---
-title: Controllers
+title: Custom Controllers
 parent: ROS2 Control
 nav_order: 2
 ---
 
 ## Introduction
-
-You can find a list of already existing ROS2 Controllers on the [ros2_controllers](https://control.ros.org/jazzy/doc/ros2_controllers/doc/controllers_index.html) page. The rest of this guide will concern making a custom controller.
 
 All controller logic will be written in C++, including extensive use of header files. If you are not familiar with C++, I recommend either crying or going to [LEARN C++](https://www.learncpp.com/) and doing some tutorials.
 
