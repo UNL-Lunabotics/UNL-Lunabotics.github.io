@@ -30,19 +30,27 @@ gh_edit_view_mode: "tree"
 callouts_level: normal
 callouts:
   highlight:
-    color: yellow
+    color: new_yellow
   important:
     title: Important
-    color: blue
+    color: new_blue
   new:
     title: New
-    color: green
+    color: new_green
   note:
     title: Note
-    color: purple
+    color: new_purple
   warning:
     title: Warning
-    color: red
+    color: new_red
+  tip:
+    title: Tip
+    color: teal
 
 mermaid:
   version: "10.9.1"
+
+# Silences Deprecation Warnings (this is what the actual documentation says to do lmao)
+sass:
+  quiet_deps: true
+  silence_deprecations: ['import']

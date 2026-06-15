@@ -1,18 +1,8 @@
 {
-  "config": {
-    "require-author-tag": true,
-    "MD033": {
-      "allowed_elements": ["s", "u", "details", "summary"]
-    },
-    "MD034": false,
-    "MD047": false,
-    "MD025": false,
-    "MD059": false,
-  },
-  "customRules": [
+  "markdownlint.customRules": [
     "./.vscode/markdownlint-rules/require-author-tag.js"
   ],
-  "ignores": [
+  "markdownlint.ignore": [
     "**/bower_components",
     "**/node_modules",
     "**/vendor",
@@ -21,18 +11,50 @@
   ],
   "cSpell.words": [
     "colcon",
+    "Aiden",
+    "Anson",
+    "Caleb",
+    "colcon",
+    "Dockerfiles",
+    "Ella",
+    "endraw",
+    "Firstname",
+    "Hans",
     "hitbox",
+    "Huseyin",
+    "Jesse",
+    "Jetpack",
+    "Jetson",
+    "keybind",
+    "Kimmerling",
+    "Kutluca",
+    "Lastname",
+    "librealsense",
+    "lsusb",
     "Lunabotics",
+    "microcontroller",
+    "microcontrollers",
+    "Mills",
+    "Moody",
     "Newans",
     "Onshape",
     "premade",
+    "Raegan",
+    "Realsense",
     "realsense",
     "rgba",
+    "rosdep",
     "Rviz",
+    "Scheet",
     "Snapcraft",
+    "subteam",
+    "subteams",
+    "Tibble",
+    "turtlebot",
+    "turtlesim",
     "URDF",
     "Xacro",
     "Xacros",
-    "Zenoh"
+    "Zenoh",
   ]
 }

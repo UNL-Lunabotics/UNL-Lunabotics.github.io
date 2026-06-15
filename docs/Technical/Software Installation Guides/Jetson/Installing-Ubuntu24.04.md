@@ -4,7 +4,11 @@ parent: Jetson-Specific
 nav_order: 1
 ---
 
-## Installing Ubuntu24.04
+## Installing Ubuntu 24.04 (Noble Numbat)
+
+{: .warning}
+If your Jetson does not support Ubuntu 24.04 (Like how the Jetson Orin Nano doesn't at the time of writing), then following this tutorial will **somehow** result in you installing Ubuntu 22.04 (Jammy Jellyfish) instead, which makes absolutely zero sense but hey thats Nvidia for you.
+{: .mt-4 }
 
 ### Prerequisites
 

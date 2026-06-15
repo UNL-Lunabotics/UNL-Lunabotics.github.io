@@ -28,7 +28,7 @@ Additionally, **almost all examples are using depreciated SDF formats**. For exa
 
 This is the easy part. Let's look at the example given in the URDF with Xacro page. Because Gazebo is determined to use SDF in everything, it will convert any Gazebo related URDF to this. You basically have to write your URDF with SDF in mind, which also makes finding documentation for this part really annoying. Imagine you are writing an SDF wrapper.
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
@@ -49,7 +49,7 @@ The first part, adding Gazebo references, is really easy. There is basically onl
 
 You do not need to use most of the tags available to you in a reference link. A common example of a Gazebo reference link is given below:
 
-```XML
+```xml
 <!-- Old and bad depreciated version -->
 <gazebo reference="wheel">
     <material>Gazebo/Blue</material>
@@ -100,7 +100,7 @@ There are well over 40 different types of sensors available, which you can see a
 
 The recommended tag to use for a LiDAR is "gpu_lidar" (there is just a plain "lidar" option that will run on the CPU but why would you want that) and cameras have several different cameras you can choose. The basic "camera" tag is just for RGB images, the "depth_camera" tag is for cameras that ONLY produce depth information, and "rgbd_camera" is for cameras that have RGB and depth output. You will likely be using both "gpu_lidar" and "rgbd_camera".
 
-```XML
+```xml
 <!-- GPU Lidar example with some common values -->
 <gazebo reference="lidar_example_link">
     <sensor name="lidar_example" type="gpu_lidar">
