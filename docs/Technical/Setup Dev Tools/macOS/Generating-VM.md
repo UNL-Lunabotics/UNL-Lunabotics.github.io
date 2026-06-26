@@ -28,21 +28,22 @@ Lastly, we need to download [UTM](https://mac.getutm.app/). UTM is a fully open-
 
 ### Download the Script
 
-{: .warning}
-This documentation is not complete yet. The download for the script is not public, and therefore cannot be downloaded. Please update this documentation when this is finalized...
+Now that everything is installed, you can download the script. Open a new terminal and type `cd ~/Desktop && git clone https://github.com/unl-lunabotics/scripts_and_prebuilts/`. Once cloned, go into Finder and locate the `script_and_prebuilts` directory on your Desktop. Then navigate to the `scripts` folder. Copy the `macOS Ubuntu VM` folder to your Desktop. Then open this directory. You can delete the `scripts_and_prebuilts` folder if you want.
 
-Now that everything is installed, you can download the script [here](LINK_HERE). This will include three files. The first one is `build-vm.sh`, the main script you will be running. There are also two config files. One is to tell UTM (a virtual machine hypervisor -- more on this later) how the VM should run. The second is a file that tells the virtual machine what tools to install. Feel free to poke around these. There are comments telling what each part does. You are free to modify any part of the script, though you shouldn't need to.
+ This will include three files. The first one is `build-vm.sh`, the main script you will be running. There are also two config files. One is to tell UTM (a virtual machine hypervisor -- more on this later) how the VM should run. The second config file tells the virtual machine what tools to install. Feel free to poke around these. There are comments telling what each part does. You are free to modify any part of the script, though you shouldn't need to.
 
 {: .note}
-I recommend putting this script somewhere other than your Downloads folder for better organization. When we run the script, the virtual machine will be created inside the folder where the script lives. You are able to move the generated VM file wherever you'd like, however
+I recommend putting this script somewhere other than your Downloads folder for better organization. When we run the script, the virtual machine will be created inside the folder where the script lives. You are able to move the generated VM file wherever you'd like.
 
 ### Running the Script
 
-To run the script, go into your terminal, and point it to wherever the script is located: `cd ~/Downloads/FOLDER_HERE??`. Then `chmod +x build-vm.sh` to give it permission to run. Finally, run the script using `./build-vm.sh`. This will download the Ubuntu 24.04 Live Server Image for ARM64, generate the finalized config files, and export it to a `.utm` file.
+To run the script, go into your terminal, and point it to wherever the script is located (e.g. `cd ~/Desktop/"macOS Ubuntu VM"`). Then type `sudo chmod +x build-vm.sh` and type in your Mac password to give it permission to run. Finally, run the script using `./build-vm.sh`. This will download the Ubuntu 24.04 Live Server Image for ARM64, generate the finalized config files, and export it to a `.utm` file.
 
 ### Customization
 
-The script is very customizable. You can modify the name of the VM, the Display Resolution, amount of memory, and which Ubuntu version to use. For more information, look at the documentation header inside `build-vm.sh`.
+The script is very customizable. You can modify the default password, the name of the VM, the Display Resolution, amount of memory, and which Ubuntu version to use. For more information, look at the documentation header inside `build-vm.sh`.
+
+A recommended configuration is to add a password to the user. By default, the user created will not have a password. To do this, run `./build-vm.sh noble "Ubuntu 24.04 ARM64" [PASSWORD_HERE]`, replacing `[PASSWORD_HERE]` with a good password.
 
 {: .note}
 Most of these customizations can be made after-the-fact, so you are not 'locked in' to how it is configured by default.

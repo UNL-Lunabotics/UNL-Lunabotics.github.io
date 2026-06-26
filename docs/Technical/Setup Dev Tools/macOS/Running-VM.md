@@ -14,7 +14,7 @@ The initial setup will take a while. On my machine it took ~20 minutes to fully 
 
 After everything is configured, starting the virtual machine should only take ~30 seconds.
 
-The default password for the user `workstation` is `INSERTUNL'SDEFAULTPASSWORDASKIFYOUDONTKNOWIT`. If you changed this in script, the password will be whatever you set.
+Unless configured, there is no default password for the user `workstation`. Just press on the user and you should automatically be logged in. Refer to the [Changing Username or Password](#changing-username-or-password) to add or change a password.
 
 {: .note}
 If you ran this on Ubuntu 22.04, some items don't get configured, even after it goes to the login screen. Instead, manually restart the virtual machine. This will trigger some items to be installed.
@@ -23,7 +23,7 @@ The last thing to do is to go into `Settings > Display` and change the Resolutio
 
 ### Applications
 
-Once you are logged in, you will see a few apps on the sidebar. The first one is [Zen](https://zen-browser.app/), which is my preferred browser. Of course, are able to install a different one if you so choose.
+Once you are logged in, you will see a few apps on the sidebar. The first one is [Zen](https://zen-browser.app/), which is a preferred browser. Of course, are able to install a different one if you so choose.
 
 Open Zen at least once, and make sure you enable it as the default browser in the setup.
 
@@ -49,7 +49,12 @@ Avoid using `Cmd+Q` or the Power button on UTM itself, unless the virtual machin
 
 ### Changing Username or Password
 
-If you want to change the username or password, go into `Settings > System > Users` and press "Unlock" on the top-right. Enter the password of `INSERTUNL'SDEFAULTPASSWORDASKIFYOUDONTKNOWIT`. Now, change the username or password.
+If you want to change the username or password, go into `Settings > System > Users` and press "Unlock" on the top-right. If a password has not been configured, it should prompt for a password to be added. Otherwise, type in your password, and change as needed.
+
+{: .note}
+> Doing this may not change the `sudo` password used in terminals. To change this, type `sudo passwd` in a terminal. Type in your old password (if one exists), then type a new password.
+>
+> Similarly, you can type `passwd` to change your local password if you want.
 
 ### Configuring the Virtual Machine
 
@@ -57,9 +62,9 @@ There are various items we can configure in the virtual machine.
 
 #### Changing Display Resolution
 
-By default, the virtual machine is configured to display at `3456x2160`, the resolution of my 2024 MacBook Pro 16-inch. Look up your specific Mac model and find your display resolution. If they don't match, you'll have to change it in the virtual machine.
+By default, the virtual machine is configured to display at `3456x2160`, the resolution of my 2024  16-inch MacBook Pro. Look up your specific Mac model and find your display resolution. If they don't match, you'll have to change it in the virtual machine.
 
-To do this, start the virtual machine and log in. Then type the following in a terminal: `sudo nano /etc/default/grub`. Type in the password (`INSERTUNL'SDEFAULTPASSWORDASKIFYOUDONTKNOWIT` by default), then find the line that says `GRUB_CMDLINE_LINUX_DEFAULT="console=tty0 video=3456x2160@120"`. Use your arrow keys to change the location of your cursor, and replace the `3456x2160` to your resolution. You **MUST** keep the `@120`.
+To do this, start the virtual machine and log in. Then type the following in a terminal: `sudo nano /etc/default/grub`. Type in your password (or none by default), then find the line that says `GRUB_CMDLINE_LINUX_DEFAULT="console=tty0 video=3456x2160@120"`. Use your arrow keys to change the location of your cursor, and replace the `3456x2160` to your resolution. You **MUST** keep the `@120`.
 
 To save the configuration file, you'll do `Ctrl+X`, and `Enter` to save. Then, to load your new changes, type `sudo update-grub`, and then `sudo reboot`.
 
@@ -67,11 +72,11 @@ Log in again, go into `Settings > Displays` and locate your resolution in the `R
 
 #### Changing VM Resources
 
-As discussed before, the VM will use more battery as it is a full operating system. To fix this, you can give the VM less of your computer resources, at the cost of performance.
+As discussed before, the VM will use more battery as it is a full operating system. To fix this, you can give the VM less of your computer resources, at the cost of VM performance.
 
 To do this, go into the main UTM app, and right-click on the VM and click "Edit". Then go into "System". Here you can modify how much RAM to give the VM, as well as how many CPU cores to allocate to it.
 
-To reduce power consumption, lower these numbers. To increase performance on the VM, increase those numbers.
+To reduce power consumption, lower these numbers. To increase performance on the VM, increase those numbers. Usually, CPU has the biggest impact on performance.
 
 #### Passing a USB device through
 
