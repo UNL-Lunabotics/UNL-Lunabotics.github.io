@@ -22,7 +22,18 @@ Now that you know a little about how the process works, let's make sure you have
 2. A computer to set up the USB Drive
 3. Download [Ubuntu 24.04 Desktop](https://releases.ubuntu.com/24.04.3/ubuntu-24.04.3-desktop-amd64.iso)
 4. Download [Ventoy](https://www.ventoy.net/en/download.html)
-5. Download the [Ventoy configuration]({% link attachments/ventoy-configuration.zip %})
+5. Clone the [scripts_and_prebuilts](https://github.com/UNL-Lunabotics/scripts_and_prebuilts/tree/main) repo
+
+### Running the Script (CHANGE LATER)
+
+Once the [scripts_and_prebuilts](https://github.com/UNL-Lunabotics/scripts_and_prebuilts/tree/main) repo is cloned, open the folder and navigate to the `scripts` folder. Copy the `Mini PC Setup` folder to your Desktop.
+
+{: note}
+This script was made for Linux and macOS. On Windows, you can still run this using [WSL](https://learn.microsoft.com/en-us/windows/wsl/) or [Git Bash](https://git-scm.com/install/windows).
+
+Then, open the copied folder, and you will want to run the `mini_pc_setup.sh`. To do this, open a terminal and type `chmod +x mini_pc_setup.sh` and then `./mini_pc_setup.sh`. This script will then run and prompt you different things.
+
+The first will be the name of the ISO image you downloaded. By default, it should be `ubuntu-24.04.3-desktop-amd64.iso`. It will then prompt for the Ubuntu codename and ROS2 codename. At the time of writing, this should be set to `noble` and `jazzy`, respectively. Lastly, this script will prompt you for a password. Refer to the programming team lead for what this password should be. The script will then generate files inside the `ventoy configuration` folders.
 
 ### Preparing the USB Drive
 
@@ -30,15 +41,17 @@ If you're running Windows, open the `Ventoy2Disk.exe` program. If on Linux, run 
 
 Once Ventoy is open, choose the USB Drive. Make sure it is the correct one and all data on the drive is backed up as it will erase anything off the drive. Then click 'Install' and confirm.
 
-Next, go to your Files app and open the 'Ventoy' drive. Copy the `ubuntu-24.04.3-desktop-amd64.iso` onto this drive. Then unzip the `ventoy-configuration.zip` and copy the `ventoy` and `scripts` folder onto the drive. The structure should look as follows:
+Next, go to your Files app and open the 'Ventoy' drive. Copy the `ubuntu-24.04.3-desktop-amd64.iso` onto this drive. Then copy the `ventoy` and `scripts` folder from the `ventoy configuration` folder onto the drive. The structure should look as follows:
 
 ```bash
 Ventoy Drive
 ├── isos
 │   └── ubuntu-24.04.3-desktop-amd64.iso
 ├── scripts
+│   └── ubuntu-autoinstall-template.yaml
 │   └── ubuntu-autoinstall.yaml
 └── ventoy
+    └── ventoy-template.json
     └── ventoy.json
 ```
 
@@ -79,7 +92,7 @@ Once the terminal says 'Connected', go back to the installer, click Next and the
 
 Ubuntu and other packages (ROS2, VSCode, etc.) will now install which may take a while.
 
-Once installed, click 'Reboot' and the PC will reboot into Ubuntu. There should be a user created named `workstation` and has the password of `INSERTUNL'SDEFAULTPASSWORDASKIFYOUDONTKNOWIT`.
+Once installed, click 'Reboot' and the PC will reboot into Ubuntu. There should be a user created named `workstation`. Type in the password you put for the script.
 
 Log in and ensure ROS2 is installed correctly. Go to a terminal and type `ros2`. If installed, there should be text displayed.
 
