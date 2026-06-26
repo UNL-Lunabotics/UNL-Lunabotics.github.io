@@ -28,7 +28,7 @@ You can look at the official documentation for [ROS2 Packages](https://docs.ros.
 
 When you create your CMake package, you'll end up with a file structure like this:
 
-```file tree
+```
 package_name\
    \include\package_name
    \src
@@ -42,7 +42,7 @@ You are allowed to delete the include folder if you wish (do not do that if you 
 {: .important}
 The `CMakeLists.txt` and `package.xml` files are what tells colcon how to build and compile this package.
 
-The `package.xml` file lists all the library imports this package needs, as well as telling colcon what it's build type even is and defining the package name under the hood. The `CMakeLists.txt` defines how to compile the package, where to find the source files, and where to put the compiled files.
+The `package.xml` file lists all the library imports this package needs, as well as telling colcon what its build type even is and defining the package name under the hood. The `CMakeLists.txt` defines how to compile the package, where to find the source files, and where to put the compiled files.
 
 #### package.xml for CMake
 
@@ -100,7 +100,7 @@ Then, read the official [ament_cmake ROS2 documentation](https://docs.ros.org/en
 
 When you create your Python package, you'll end up with a file structure like this:
 
-```file tree
+```
 package_name\
    resource\
       package_name
