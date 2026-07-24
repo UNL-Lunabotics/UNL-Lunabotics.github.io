@@ -4,20 +4,16 @@ parent: macOS Setup
 nav_order: 2
 ---
 
-## Runing the Ubuntu Virtual Machine
+## Running the Ubuntu Virtual Machine
 
-Now that the virtual machine is created, we need to actually run it.
+Once the script completes, UTM will open and the virtual machine will start to run. It will initially boot, then will open to a desktop environment. A window will appear and, after preparing, will prompt you for a password. You are welcome to change any fields you would like, but a password is required to continue.
 
-To do this, open Finder and navigate to where the script is. You should be a new file titled `Ubuntu 24.04 ARM64.utm`(or another name if changed). Double-click on it. This will launch UTM and add a new VM entry. Run the virtual machine by pressing the Play button.
+Once a password is entered, "Next" and then "Install". This will download and install core Ubuntu and ROS2 packages, reboot, then do a post-install setup.
 
-The initial setup will take a while. On my machine it took ~20 minutes to fully configure. This is because it is installing needed packages and applications on the fly when it's run for the first time. The VM will restart and configure some more things. Eventually, you shoud be met with a login screen.
+{: .important}
+The initial setup will take a while. On a tested machine, it took ~15 minutes to fully configure, as it is downloading and installing a lot of packages.
 
-After everything is configured, starting the virtual machine should only take ~30 seconds.
-
-Unless configured, there is no default password for the user `workstation`. Just press on the user and you should automatically be logged in. Refer to the [Changing Username or Password](#changing-username-or-password) to add or change a password.
-
-{: .note}
-If you ran this on Ubuntu 22.04, some items don't get configured, even after it goes to the login screen. Instead, manually restart the virtual machine. This will trigger some items to be installed.
+Once rebooted, log in using the password you set.
 
 The last thing to do is to go into `Settings > Display` and change the Resolution to `3456x2160` (default). I also like the scale set to `200%`. To change the resolution setting, see [Changing Display Resolution](#changing-display-resolution)
 
@@ -37,22 +33,22 @@ Because you are on a "separate" operating system, some keybinds have changed.
 
 Most notably, the `Command` key on your keyboard **ONLY** acts as the 'Windows' button (Meta Key), opening the Ubuntu App Launcher. It is **NOT** like macOS where you can do `Cmd+S` to save in Ubuntu.
 
-Instead, the `Control` key is what you use, like you would on a Windows computer. So, use `Ctrl+S`, `Ctrl+A`, etc. You can change this in UTM Settings. To do this, go into `Menu Bar > UTM > Settings > Input` and toggle the "Swap Control and Command keys" near the bottom.
+Instead, the `Control` key is what you use, like you would on a Windows computer. So, use `Ctrl+S`, `Ctrl+A`, etc. You can change this in UTM Settings. If you would like, go into `Menu Bar > UTM > Settings > Input` and toggle the "Swap Control and Command keys" near the bottom.
 
 However, `Cmd+Q` **will** still force-quit the application, forcibly shutting down the Virtual Machine.
 
 ### Closing the Virtual Machine
 
-To safely quit the virtual machine, you'll do a soft-shutdown inside the VM. To do this, click the System Menu on the very top-right corner, with the volume and power icons. Then, click the Power icon, and click "Power off".
+To safely quit the virtual machine, you'll do a soft-shutdown inside the VM. To do this, click the System Menu in the top-right corner, with the volume and power icons. Then, click the Power icon, and click "Power off".
 
 Avoid using `Cmd+Q` or the Power button on UTM itself, unless the virtual machine is unresponsive. This is because the virtual machine may get corrupted if doing important tasks (i.e. running a command, etc.)
 
 ### Changing Username or Password
 
-If you want to change the username or password, go into `Settings > System > Users` and press "Unlock" on the top-right. If a password has not been configured, it should prompt for a password to be added. Otherwise, type in your password, and change as needed.
+If you want to change the username or password, go into `Settings > System > Users` and press "Unlock" on the top-right. Type in your current password, then type a new password.
 
 {: .note}
-> Doing this may not change the `sudo` password used in terminals. To change this, type `sudo passwd` in a terminal. Type in your old password (if one exists), then type a new password.
+> Doing this may not change the `sudo` password used in the terminal. To change this, type `sudo passwd` in a terminal. Type in your current password, then type a new password.
 >
 > Similarly, you can type `passwd` to change your local password if you want.
 
@@ -62,11 +58,18 @@ There are various items we can configure in the virtual machine.
 
 #### Changing Display Resolution
 
-By default, the virtual machine is configured to display at `3456x2160`, the resolution of my 2024  16-inch MacBook Pro. Look up your specific Mac model and find your display resolution. If they don't match, you'll have to change it in the virtual machine.
+By default, the virtual machine is configured to display at `3456x2160`, the resolution of my 2024 16-inch MacBook Pro. Look up your specific Mac model and find your display resolution. If they don't match, you may want to change it in the virtual machine.
 
-To do this, start the virtual machine and log in. Then type the following in a terminal: `sudo nano /etc/default/grub`. Type in your password (or none by default), then find the line that says `GRUB_CMDLINE_LINUX_DEFAULT="console=tty0 video=3456x2160@120"`. Use your arrow keys to change the location of your cursor, and replace the `3456x2160` to your resolution. You **MUST** keep the `@120`.
+To do this, start the virtual machine and log in. Then type the following in a terminal:
 
-To save the configuration file, you'll do `Ctrl+X`, and `Enter` to save. Then, to load your new changes, type `sudo update-grub`, and then `sudo reboot`.
+```bash
+sed -i /etc/default/grub -e 's/GRUB_CMDLINE_LINUX_DEFAULT=".*/GRUB_CMDLINE_LINUX_DEFAULT="console=tty0 video=[DISP_RES]@120"/'
+```
+
+Be sure to change `[DISP_RES]` at the end of this command to your desired resolution. You **MUST** keep the `@120` at the end. Example:
+`... "console tty=0 video=3456x2160@120"/'`
+
+Finally, update the changes by typing `sudo update-grub`, and then `sudo reboot`.
 
 Log in again, go into `Settings > Displays` and locate your resolution in the `Resolution` dropdown. I also recommend doing `200%` scale. Then click "Apply" in the top-right corner.
 
@@ -74,17 +77,17 @@ Log in again, go into `Settings > Displays` and locate your resolution in the `R
 
 As discussed before, the VM will use more battery as it is a full operating system. To fix this, you can give the VM less of your computer resources, at the cost of VM performance.
 
-To do this, go into the main UTM app, and right-click on the VM and click "Edit". Then go into "System". Here you can modify how much RAM to give the VM, as well as how many CPU cores to allocate to it.
+To do this, power down the virtual machine, then go into the main UTM app. Right-click on the VM and click "Edit", then go into "System". Here you can modify how much RAM to give the VM, as well as how many CPU cores to allocate to it.
 
-To reduce power consumption, lower these numbers. To increase performance on the VM, increase those numbers. Usually, CPU has the biggest impact on performance.
+To reduce power consumption, lower these numbers. To increase performance on the VM, increase those numbers. Usually, CPU has the biggest impact on performance and battery.
 
 #### Passing a USB device through
 
-To pass a USB device, first plug in the controller, and turn on the VM if you haven't already. Then, in the top-right corner on UTM's Menu Bar, there should be a USB icon. Click on it, find your device, and click "Connect". Try running `evtest` or launch `jstest-gtk` and verify it works.
+To pass a USB device, first plug in the device and turn on the VM. Then, in the top-right corner on UTM's Menu Bar, there should be a USB icon. Click on it, find your device, and click "Connect". Try running `lsusb` to confirm the device exists. If the USB device is a controller, you can type `sudo evtest` or `jstest-gtk` to see controller inputs.
 
 #### Enabling a Shared Directory
 
-If you find you need to share files/folders across your VM and macOS, follow the official UTM [guide](https://docs.getutm.app/guest-support/linux/#virtfs). Note that it is a little technical but should be doable.
+If you find you need to share files/folders across your VM and macOS, follow the official UTM [guide](https://docs.getutm.app/guest-support/linux/#virtfs). Note that it is a little technical but should be doable. Also note that `spice-vdagent` is already installed, so you may skip this step.
 
 That's it! Everything else works just like Ubuntu Linux. You are able to develop just as you would on native hardware.
 

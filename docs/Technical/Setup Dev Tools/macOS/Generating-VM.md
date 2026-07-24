@@ -6,46 +6,43 @@ nav_order: 1
 
 ## Generating the Ubuntu Virtual Machine
 
-On macOS, there is currently no way to get a fully working DevContainer with device passthrough. [Apple's Hypervisor Virtualization Framework](https://developer.apple.com/documentation/virtualizatio) only recently added support for device passthrough, but Docker has not implemented it yet. For more information, see the open [docker issue](https://github.com/docker/roadmap/issues/511).
+On macOS, there is currently no way to get a fully working Docker with device pass-through. [Apple's Hypervisor Virtualization Framework](https://developer.apple.com/documentation/virtualization) only recently added support for device pass-through, but Docker has not implemented it yet. For more information, see the open [issue](https://github.com/docker/roadmap/issues/511).
 
-Instead, we will be setting up a robust virtual machine running Ubuntu Linux.
+Instead, we will be setting up a robust virtual machine running Ubuntu Linux by running a script to generate it.
 
 {: .note}
-This will consume more power and battery than a DevContainer as the VM is a full operating system. Later, this guide will show you how to tune the VM's settings to be more power-efficient if needed.
+This will consume more power and battery than a Docker setup, as the VM is a full operating system. Later, this guide will show you how to tune the VM's settings to be more power-efficient if needed.
 
-To set up the VM, we will be running a script, made by me, to generate a VM.
+### Install UTM
 
-### Install Prereqs
+[UTM](https://mac.getutm.app/) is a fully open-source virtual machine hypervisor that we will be using. Download it and then open the `UTM.dmg`. Then, drag-and-drop the `UTM.app` to the `Applications` folder.
 
-To run these scripts, we need to install some command-line tools. First we will install [Homebrew](https://brew.sh/), a package manager for macOS. To do this, run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-
-Next, install `qemu` and `cdrtools`: `brew install qemu && brew install cdrtools`
-
-{: .important}
-These commands may require admin privileges. If it prompts for a password, use the same password you would to log onto your machine.
-
-Lastly, we need to download [UTM](https://mac.getutm.app/). UTM is a fully open-source virtual machine hypervisor that we will be using. Download using the link above. Open the downloaded `UTM.dmg` and drag-and-drop the `UTM.app` to the `Applications` folder.
+UTM does not need to be open yet, but does need to be downloaded for the script to run.
 
 ### Download the Script
 
-Now that everything is installed, you can download the script. Open a new terminal and type `cd ~/Desktop && git clone https://github.com/unl-lunabotics/scripts_and_prebuilts/`. Once cloned, go into Finder and locate the `script_and_prebuilts` directory on your Desktop. Then navigate to the `scripts` folder. Copy the `macOS Ubuntu VM` folder to your Desktop. Then open this directory. You can delete the `scripts_and_prebuilts` folder if you want.
+Now that UTM is installed, you can download a script that creates a new virtual machine for you.
 
- This will include three files. The first one is `build-vm.sh`, the main script you will be running. There are also two config files. One is to tell UTM (a virtual machine hypervisor -- more on this later) how the VM should run. The second config file tells the virtual machine what tools to install. Feel free to poke around these. There are comments telling what each part does. You are free to modify any part of the script, though you shouldn't need to.
+Download the [scripts_and_prebuilts](https://github.com/UNL-Lunabotics/scripts_and_prebuilts/archive/refs/heads/main.zip) repository, and extract and open the folder. Then, navigate to the `scripts` folder. Copy the `macOS Ubuntu VM` folder to your Desktop. You can delete the `scripts_and_prebuilts` folder if you want.
 
-{: .note}
-I recommend putting this script somewhere other than your Downloads folder for better organization. When we run the script, the virtual machine will be created inside the folder where the script lives. You are able to move the generated VM file wherever you'd like.
+This will include five files. The first one is `build_vm.sh`, the main script you will be running. There are 2 helper scripts which tell UTM to generate and configure the vm. There are also 2 config files, which tells the virtual machine what programs to install. Feel free to poke around these. There are comments telling what each part does. You are free to modify any part of the script, though it is not recommended to.
 
-### Running the Script
+### Prepare the Script
 
-To run the script, go into your terminal, and point it to wherever the script is located (e.g. `cd ~/Desktop/"macOS Ubuntu VM"`). Then type `sudo chmod +x build-vm.sh` and type in your Mac password to give it permission to run. Finally, run the script using `./build-vm.sh`. This will download the Ubuntu 24.04 Live Server Image for ARM64, generate the finalized config files, and export it to a `.utm` file.
+Now that the script is installed, you need to give it permission to run. To do this, go into your terminal and point it to wherever the script is located (e.g. `cd ~/Desktop/"macOS Ubuntu VM"`). Then type `sudo chmod +x build_vm.sh` and type in your Mac password to give it permission to run.
 
-### Customization
+{: .important}
+UTM **MUST** be downloaded for the script to run. The helper script communicates with UTM directly and will error out if UTM is not installed. UTM does not need to be running for the script to work.
 
-The script is very customizable. You can modify the default password, the name of the VM, the Display Resolution, amount of memory, and which Ubuntu version to use. For more information, look at the documentation header inside `build-vm.sh`.
+### Run the Script
 
-A recommended configuration is to add a password to the user. By default, the user created will not have a password. To do this, run `./build-vm.sh noble "Ubuntu 24.04 ARM64" [PASSWORD_HERE]`, replacing `[PASSWORD_HERE]` with a good password.
+Ensure the script can run by typing `./build_vm.sh --help`. This should result in documentation on how to use this script. As you may see, this script is fairly customizable, letting you modify a lot of variables. If needed, add any configuration you would like, though the default should be good.
 
-{: .note}
-Most of these customizations can be made after-the-fact, so you are not 'locked in' to how it is configured by default.
+Most of these configurations can be edited after-the-fact, so you are not 'locked in' to the configuration made by this script, except for the Ubuntu/ROS version.
+
+Run the script using `./build_vm.sh`, optionally extending it with configuration (e.g. `./build_vm.sh --username bob`). This will download the Ubuntu 24.04 Desktop Image for ARM64, generate the finalized config file, make the virtual machine, then start running it with UTM.
+
+{: .important}
+The script may prompt for permission to access UTM. Allow these permissions, otherwise the script will fail.
 
 > Author: Aiden Kimmerling (<https://github.com/TheKing349>)
