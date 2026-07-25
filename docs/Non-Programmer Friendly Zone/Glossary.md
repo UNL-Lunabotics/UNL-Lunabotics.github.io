@@ -153,5 +153,5 @@ nav_order: 4
 
 ### Z
 
-> Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
+> Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)  
 > Author: Jesse Mills (<https://github.com/JesseMills0>)

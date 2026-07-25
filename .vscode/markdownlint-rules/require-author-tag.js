@@ -23,8 +23,8 @@ module.exports = {
       footer.unshift(lines[i]);
     }
 
-    const valid = footer.length > 0 && footer.every(l => authorRx.test(l));
-
+    const valid = footer.length > 0 && footer.every(l => authorRx.test(l.trimEnd()));
+    
     if (!valid) {
       const template = `> Author: First Last <https://github.com/your-handle>`;
       const fixText = (idx < 0 ? "" : eol) + template + eol;
