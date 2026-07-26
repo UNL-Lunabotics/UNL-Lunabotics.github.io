@@ -28,7 +28,7 @@ You can look at the official documentation for [ROS2 Packages](https://docs.ros.
 
 When you create your CMake package, you'll end up with a file structure like this:
 
-```
+```text
 package_name\
    \include\package_name
    \src
@@ -100,7 +100,7 @@ Then, read the official [ament_cmake ROS2 documentation](https://docs.ros.org/en
 
 When you create your Python package, you'll end up with a file structure like this:
 
-```
+```text
 package_name\
    resource\
       package_name

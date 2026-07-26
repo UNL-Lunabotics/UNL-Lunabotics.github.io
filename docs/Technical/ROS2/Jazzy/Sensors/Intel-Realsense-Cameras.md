@@ -12,6 +12,6 @@ The setup for most of the Realsense camera family should be relatively the same.
 
 1. Ensure the required software library for ROS2 is installed: `sudo apt install ros-jazzy-realsense2-camera`.
 
-TODO FINISH
+TODO: FINISH
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)

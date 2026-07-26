@@ -66,4 +66,4 @@ Now, press `CTRL+X` and `y` to save. Go back to VSCode and close the current ter
 
 Now that you know the basics about creating and editing documentation, please read the additional conventions and [Rules]({% link docs/Administrative/How to Edit the Docs/Rules.md %}) we enforce.
 
-> Author: Aiden Kimmerling <https://github.com/TheKing349>
+> Author: Aiden Kimmerling (<https://github.com/TheKing349>)

@@ -147,9 +147,9 @@ flowchart LR
 {: .note}
 You can use the `{.text-center}` attribute, as well as any other attributes on anything inside your documentation, including images, text, and code blocks.
 
-This is just a basic overview of how to include Mermaid diagrams in your documentation. It is strongly reccomended that you do more research in order to fully take advantage of their capabilities.
+This is just a basic overview of how to include Mermaid diagrams in your documentation. It is strongly recommended that you do more research in order to fully take advantage of their capabilities.
 
 Once you understand commonly used features, learn how to [locally test this repository]({% link docs/Administrative/How to Edit the Docs/Editing the Repository/Testing-Locally.md %}).
 
-> Author: Aiden Kimmerling <https://github.com/TheKing349>  
-> Author: Jesse Mills <https://github.com/JesseMills0>
+> Author: Aiden Kimmerling (<https://github.com/TheKing349>)  
+> Author: Jesse Mills (<https://github.com/JesseMills0>)
