@@ -2,25 +2,41 @@
   "markdownlint.customRules": [
     "./.vscode/markdownlint-rules/require-author-tag.js"
   ],
-  "markdownlint.ignore": [
-    "**/bower_components",
-    "**/node_modules",
-    "**/vendor",
-    "**/_*.md",
-    "**/index.md"
+  "cSpell.languageSettings": [
+    {
+      "languageId": "markdown",
+      "patterns": [
+        {
+          "name": "MarkdownCodeBlock",
+          "pattern": "/^\\s*```[\\s\\S]*?^\\s*```/gm"
+        },
+        {
+          "name": "MarkdownInlineCode",
+          "pattern": "/`([^`\\r\\n]+?)`/g"
+        }
+      ],
+      "ignoreRegExpList": [
+        "MarkdownCodeBlock",
+        "MarkdownInlineCode"
+      ]
+    }
   ],
   "cSpell.words": [
-    "colcon",
     "Aiden",
     "Anson",
+    "Beelink",
+    "buildtool",
     "Caleb",
     "colcon",
+    "CSCE",
     "Dockerfiles",
+    "eduroam",
     "Ella",
     "endraw",
     "Firstname",
     "Hans",
     "hitbox",
+    "hombrew",
     "Huseyin",
     "Jesse",
     "Jetpack",
@@ -29,8 +45,6 @@
     "Kimmerling",
     "Kutluca",
     "Lastname",
-    "librealsense",
-    "lsusb",
     "Lunabotics",
     "microcontroller",
     "microcontrollers",
@@ -40,21 +54,25 @@
     "Onshape",
     "premade",
     "Raegan",
-    "Realsense",
     "realsense",
-    "rgba",
+    "Realsense",
+    "RGBA",
     "rosdep",
     "Rviz",
     "Scheet",
+    "sidenotes",
     "Snapcraft",
+    "subfolders",
     "subteam",
     "subteams",
     "Tibble",
     "turtlebot",
     "turtlesim",
+    "unitless",
     "URDF",
     "Xacro",
     "Xacros",
     "Zenoh",
+    "Zigbee"
   ]
 }
