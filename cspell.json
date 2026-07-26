@@ -1,0 +1,103 @@
+{
+  "version": "0.2",
+  "ignorePaths": [
+    "vendor/**",
+    "node_modules/**",
+    "**/_*.md"
+  ],
+  "languageSettings": [
+    {
+      "languageId": "markdown",
+      "patterns": [
+        {
+          "name": "markdown-fenced-code",
+          "pattern": "/^\\s*```[\\s\\S]*?^\\s*```/gm"
+        },
+        {
+          "name": "markdown-inline-code",
+          "pattern": "/`([^`\\r\\n]+?)`/g"
+        }
+      ],
+      "ignoreRegExpList": [
+        "markdown-fenced-code",
+        "markdown-inline-code"
+      ]
+    }
+  ],
+  "words": [
+    "Aiden",
+    "Anson",
+    "Arducam",
+    "Beelink",
+    "bootable",
+    "bringup",
+    "buildtool",
+    "Caleb",
+    "colcon",
+    "CSCE",
+    "cuda",
+    "Dockerfiles",
+    "dpkg",
+    "eduroam",
+    "Ella",
+    "endraw",
+    "Firstname",
+    "Hans",
+    "hitbox",
+    "hombrew",
+    "Huseyin",
+    "Jesse",
+    "Jetpack",
+    "Jetson",
+    "keybind",
+    "keybinds",
+    "Kimmerling",
+    "Kutluca",
+    "Lastname",
+    "librealsense",
+    "Lunabotics",
+    "microcontroller",
+    "microcontrollers",
+    "Mills",
+    "MOGI",
+    "Moody",
+    "Newans",
+    "Onshape",
+    "osrf",
+    "prebuilts",
+    "premade",
+    "Raegan",
+    "RCLCPP",
+    "realsense",
+    "Realsense",
+    "RGBA",
+    "RGBD",
+    "rgbd",
+    "rosdep",
+    "roslaunch",
+    "Rospack",
+    "rospack",
+    "rplidar",
+    "Rviz",
+    "Scheet",
+    "sidenotes",
+    "Snapcraft",
+    "subfolders",
+    "subteam",
+    "subteams",
+    "teleop",
+    "Tibble",
+    "turtlebot",
+    "turtlesim",
+    "UART",
+    "unitless",
+    "unlrobot",
+    "URDF",
+    "usbipd",
+    "Ventoy",
+    "Xacro",
+    "Xacros",
+    "Zenoh",
+    "Zigbee"
+  ]
+}
