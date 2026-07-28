@@ -26,11 +26,11 @@ nav_order: 4
 
 ### C
 
-- Compiler: A compiler is software that acts as a sort of translator that translates (or compiles) code from one programming language to another. It is most often used to convert code written in a [high-level language](#h) to a [low-level language](#l).  
+- Compiler: A compiler is software that acts as a sort of translator that translates (or compiles) code from one programming language to another. It is most often used to convert code written in a [high-level language](#h) to a [low-level language](#l). Languages like C, C++, and Rust require a compiler to run code.
 - Control Flow: The process of how the execution of code progresses from one command to the next.
 - Class: A class is an entity structure in many programming languages used to create [objects](#o). The features of a class can vary in different programming languages, but they generally consist of states and behaviors associated with the object.
 - Call: A Call is an instruction that tells a program to execute a particular function or other subroutine.
-- Camel Case: A writing format where each word in a phrase is capitalized and no spaces or punctuation are used. Often stylized as "CamelCase" or "camelCase". Camel Case is a common convention for writing multi-word [identifier](#i) in computer programs.
+- Camel Case: A writing format where each word in a phrase is capitalized and no spaces or punctuation are used. Often stylized as "CamelCase" or "camelCase". Camel Case is a common convention for writing multi-word [identifiers](#i) in computer programs.
 - Client-Side: Refers to the Client end of the [client-server model](https://en.wikipedia.org/wiki/Client%E2%80%93server_model). The client side of the model usually refers to software running on an end user's system, which connects to the [server-side](#s) as necessary to perform certain operations.
 - Command-Line Interface (CLI): The CLI is a means of interacting with software by executing written commands in a terminal. It is also sometimes called a command-line shell, or simply, shell.
 - Callback: A callback function is a function that can be passed as a parameter into another function. That function can then call upon the callback function inside its own definition.
@@ -59,40 +59,41 @@ nav_order: 4
 
 ### H
 
-- High level language:
+- High level language: Programming languages designed with the intention of being human-readable. These languages often hide a lot of the complex details of a program's functionality behind an easier to understand [abstraction](#a) layer.
 
 ### I
 
-- IDE
-- Inheritance:
-- Interpreter:
+- Integrated Development Environment (IDE): An IDE is a category of software that provides a comprehensive set of tools for software development. These platforms bundle various individual tools (i.e. [compilers](#c), [linters](#l), etc.) together to ensure compatibility between them and improve the productivity of software developers.
+- Inheritance:The mechanism of basing an [object](#o) or [class](#c), known as a subclass upon another object or class, known as a superclass. The subclass will retain all of the attributes of the superclass, in addition to any new attributes specified in the subclass.
+- Interpreter: An interpreter is a kind of software that executes code without first [compiling](#c) it into [machine code](#m). Python and JavaScript are two popular languages that directly interpret code without relying on a compiler.
 - Instance:
-- IntelliSense:
-- Identifier:
+- IntelliSense: Intellisense is Microsoft's implementation of intelligent code-completion in VSCode and Visual Studio. It (attempts to) speed up the development process by predicting what code needs to be written and providing a shortcut for autocompleting that line or block of code.
+- Identifier: Any character, symbol, or other lexical token that denotes entities within a programming language. These entities can include variables, functions, objects, and other data types.
 
 ### J
 
 ### K
 
-- Kebab Case:
+- Kebab case: Also sometimes called dash case, this is a grammar convention used in many programming languages charactarized by the use of lowercase letters and hyphen characters in place of whitespace for multi-word phrases. Often stylized as `kebab-case`.
 
 ### L
 
-- Low level language:
-- Lambda function:
+- Low level language: Programming languages are considered low-level if they provide little to no [abstraction](#a) from the computer's raw instruction set. These languages allow the programmer to exert full control over the programs they write, with the tradeoff of being far more difficult to work with and the risk of error being significantly higher. Examples of low-level languages include Assembly and raw machine code.
+- Lambda function: A block of code that is not bound to any [identifier](#i). Also sometimes called an anonymous function.
+- Linter: A series of programming tools that check for code style consistency and formatting errors.
 
 ### M
 
-- Multi-threading:
+- Multithreading: Multithreading is a programming model that allows for multiple process to be executed at once utilizing a multithreaded central-processing unit (CPU). This is especially useful for complex computations that would take a very long time if each step had to be executed one after the other.
 
 ### N
 
-- Node [ROS2]:
-- Nav2:
+- Node [ROS2]: An element in a ROS2 system that serves a single, modular purpose, such as controlling wheels or publishing sensor data (Source: [ROS2 Docs](https://docs.ros.org/en/rolling/ROS-Framework/nodes/Working-with-nodes/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)).
+- Nav2: Nav2 is a robotics navigation framework that provides various autonomous functions to a robot. It allows robots to navigate through complex environmebnts and complete user-defined application tasks (Source: [Nav2 Docs](https://docs.nav2.org)).
 
 ### O
 
-- Object:
+- Object: An entity in many programming languages that has state, behavior, and identity. Objects represent an individual, identifiable item, unit, or entity, real or abstract, with a defined role in the system (Source: [Wikipedia](https://en.wikipedia.org/wiki/Object_(computhttps://en.wikipedia.org/wiki/Object_(computer_science)er_science))).
 
 ### P
 
