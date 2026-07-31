@@ -16,7 +16,7 @@ nav_order: 4
 - Application-Programmer Interface (API): An API,is a connection between two or more computers or computer programs. APIs are not intended to be used by humans directly, instead being used almost exclusively by computers to send or receive data from other computers.
 - Asynchronous: Asynchronous programming is a technique that allows events to occur independently of the program's main [control flow](#c). This allows multiple tasks to run concurrently without blocking the execution of other tasks.
 - Agile: A software development philosophy that focuses on an iterative process and places strong emphasis on teams performing regular demonstrations of the in-development project.
-- Action [ROS2]: One of the three communication types in ROS2, and is intended for long running tasks. They consist of three parts: a goal, feedback, and a result.
+- Action [[ROS2](#r)]: One of the three communication types in ROS2, and is intended for long running tasks. They consist of three parts: a goal, feedback, and a result.
 
 ### B
 
@@ -52,10 +52,13 @@ nav_order: 4
 - Graphical User Interface (GUI): A form of [user interface](#u) that uses graphical icons and visual indicators to make interacting with software easier than the classic [command-line interface](#c).
 - Git: Git is an open-source [version control](#v) system that allows developers to keep track of changes made to a project and seamlessly collaborate on development from multiple systems. For more information, see [Git for Non-Developers: A 10-Minute Guide](https://medium.com/@avnishyadav25/git-for-non-developers-a-10-minute-guide-614690c87126), by Avnish Yadav.
 - GitHub: GitHub is a Microsoft-owned proprietary developer platform that allows developers to create, store, manage, and share their code using Git. (Source: [Wikipedia](https://en.wikipedia.org/wiki/GitHub))
-- GitLab: GitLab is a developer platform similar to GitHub that allows developers to create, store, manage, and share their code using Git. Unlike GitHub, GitLab provides the option for developers to self-host their repositories, rather than relying on the cloud.
+- GitLab: GitLab is a deSubmit guess
+
+Logos designed by Eno.B Art. Background by Okkoinu.
+Taveloper platform similar to GitHub that allows developers to create, store, manage, and share their code using Git. Unlike GitHub, GitLab provides the option for developers to self-host their repositories, rather than relying on the cloud.
 - Garbage collection: A feature in some programming languages that attempts to automatically reclaim memory that is no longer being used by the program. This relieves the developer from having to manually manage the memory used by their program.  
 - GNU Compiler Collection (GCC): A collection of [compilers](#c) that support multiple programming languages, CPU architectures, and operating systems.  
-- Gazebo: An open-source robotics simulator developed by Open Robotics, the same parent company that owns [ROS2](#r). There are two versions of Gazebo. The original Gazebo, now known as Gazebo Classic, was discontinued in January 2025. The modern Gazebo, formerly known as Gazebo Ignition, sometimes called New Gazebo, is the currently supported version.
+- Gazebo: An open-source robotics simulator developed by Open Robotics, the same parent company that owns [[ROS2](#r)]. There are two versions of Gazebo. The original Gazebo, now known as Gazebo Classic, was discontinued in January 2025. The modern Gazebo, formerly known as Gazebo Ignition, sometimes called New Gazebo, is the currently supported version.
 
 ### H
 
@@ -88,7 +91,7 @@ nav_order: 4
 
 ### N
 
-- Node [ROS2]: An element in a ROS2 system that serves a single, modular purpose, such as controlling wheels or publishing sensor data (Source: [ROS2 Docs](https://docs.ros.org/en/rolling/ROS-Framework/nodes/Working-with-nodes/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)).
+- Node [[ROS2](#r)]: An element in a ROS2 system that serves a single, modular purpose, such as controlling wheels or publishing sensor data (Source: [ROS2 Docs](https://docs.ros.org/en/rolling/ROS-Framework/nodes/Working-with-nodes/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html)).
 - Nav2: Nav2 is a robotics navigation framework that provides various autonomous functions to a robot. It allows robots to navigate through complex environmebnts and complete user-defined application tasks (Source: [Nav2 Docs](https://docs.nav2.org)).
 
 ### O
@@ -97,24 +100,23 @@ nav_order: 4
 
 ### P
 
-- Paradigm:
-- Parameter:
-- Pointers:
-- Package [ROS2]:
-- Parse:
-- Pipeline:
-- Pseudocode:
-- Publisher [ROS2]:
-- Pascal Case:
+- Paradigm: A programming paradigm refers to the approach or style that dictates how a computer program is designed and implemented. Some programming languages are designed with a particular programming paradigm in mind, but many of the most popular programming languages are designed in such a way that the developer can decide for themselves what paradigm they want to design their software around.
+- Parameter: Also known as a formal argument, a parameter is an [identifier](#i) that is passed into a function. The function's definition defines what kind of parameters it can take.
+- Pointer: A pointer is a type of object or variable (depending on the programming language) that stores a memory address. The memory address can "point" to other data types stored by the program, effectively allowing you to refer to that value without directly interacting with its [identifier](#i). See the article [Pointer in programming](https://www.geeksforgeeks.org/dsa/pointer-in-programming/) by GeeksforGeeks if you want to learn more, as pointers can be a pretty complex topic to grasp.
+- Package [[ROS2](#r)]: A directory that contains files and folders pertaining to a ROS2 project. One bot might have multiple packages with each one responsible for a particular function of the bot (Source: [Automatic Addison](https://automaticaddison.com/organizing-files-and-folders-inside-a-ros-2-package)).
+- Parse: The process of breaking up an input, such as a string of text, and breaking it into structured parts as defined by the specified grammar rules.
+- Pipeline: A data pipeline is a set of data processing stages where the output of one stage is the input of the next stage. Think of an assembly line in a factory, one step of building the product is completed before the product is sent to the next station for the next stage of construction.
+- Pseudocode: A way of writing non-functional code with the goal of being translatable into any programming language. This is most often used to describe the steps in an algorithm. The goal of psuedocode is to be as human readable as possible while maintaining a structure that makes it easy to implement.
+- Publisher [[ROS2](#r)]: The publisher [node](#n) sends data collected from one or more [topics](#t) to one or more [subscriber](s) nodes.
 
 ### Q
 
 ### R
 
-- ROS2:
-- Runtime:
-- Race condition:
-- ROS2 Control:
+- Robot Operating System 2 (ROS2): An open-source middleware suite that provides various tools for deploying, running, and maintaining robotic applications. Despite its name, ROS2 is not an operating system, but rather a series of frameworks, libraries, and other tools.
+- Runtime: The period of time in which a program is being executed.
+- Race condition: A type of error that occurs when multiple processes attempt to modify the same shared data at the same time, resulting in unpredictable behavior such as bugs, corruption, or security vulnerabilities.
+- ROS2 Control: A framework that enables the real-time control of your robot using a standardized interface built for [ROS2](#r).
 
 ### S
 
@@ -123,8 +125,8 @@ nav_order: 4
 - Server-Side:
 - Syntax:
 - SSH:
-- Subscriber [ROS2]:
-- Service [ROS2]:
+- Subscriber [[ROS2](#r)]:
+- Service [[ROS2](#r)]:
 - Snake Case:
 
 ### T
@@ -136,12 +138,13 @@ nav_order: 4
 
 ### V
 
+- Variable:
 - Virtual machine (VM):
 - Version Control:
 
 ### W
 
-- Workspace [ROS2]:
+- Workspace [[ROS2](#r)]:
 
 ### X
 
