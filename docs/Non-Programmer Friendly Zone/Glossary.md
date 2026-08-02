@@ -52,11 +52,8 @@ nav_order: 4
 - Graphical User Interface (GUI): A form of [user interface](#u) that uses graphical icons and visual indicators to make interacting with software easier than the classic [command-line interface](#c).
 - Git: Git is an open-source [version control](#v) system that allows developers to keep track of changes made to a project and seamlessly collaborate on development from multiple systems. For more information, see [Git for Non-Developers: A 10-Minute Guide](https://medium.com/@avnishyadav25/git-for-non-developers-a-10-minute-guide-614690c87126), by Avnish Yadav.
 - GitHub: GitHub is a Microsoft-owned proprietary developer platform that allows developers to create, store, manage, and share their code using Git. (Source: [Wikipedia](https://en.wikipedia.org/wiki/GitHub))
-- GitLab: GitLab is a deSubmit guess
-
-Logos designed by Eno.B Art. Background by Okkoinu.
-Taveloper platform similar to GitHub that allows developers to create, store, manage, and share their code using Git. Unlike GitHub, GitLab provides the option for developers to self-host their repositories, rather than relying on the cloud.
-- Garbage collection: A feature in some programming languages that attempts to automatically reclaim memory that is no longer being used by the program. This relieves the developer from having to manually manage the memory used by their program.  
+- GitLab: GitLab is a platform similar to GitHub that allows developers to create, store, manage, and share their code using Git. Unlike GitHub, GitLab provides the option for developers to self-host their repositories, rather than relying on the cloud.
+- Garbage collection: A feature in some programming languages that attempts to automatically reclaim memory that is no longer being used by the program. This relieves the developer from having to manually manage the memory used by their program.
 - GNU Compiler Collection (GCC): A collection of [compilers](#c) that support multiple programming languages, CPU architectures, and operating systems.  
 - Gazebo: An open-source robotics simulator developed by Open Robotics, the same parent company that owns [[ROS2](#r)]. There are two versions of Gazebo. The original Gazebo, now known as Gazebo Classic, was discontinued in January 2025. The modern Gazebo, formerly known as Gazebo Ignition, sometimes called New Gazebo, is the currently supported version.
 
@@ -106,8 +103,8 @@ Taveloper platform similar to GitHub that allows developers to create, store, ma
 - Package [[ROS2](#r)]: A directory that contains files and folders pertaining to a ROS2 project. One bot might have multiple packages with each one responsible for a particular function of the bot (Source: [Automatic Addison](https://automaticaddison.com/organizing-files-and-folders-inside-a-ros-2-package)).
 - Parse: The process of breaking up an input, such as a string of text, and breaking it into structured parts as defined by the specified grammar rules.
 - Pipeline: A data pipeline is a set of data processing stages where the output of one stage is the input of the next stage. Think of an assembly line in a factory, one step of building the product is completed before the product is sent to the next station for the next stage of construction.
-- Pseudocode: A way of writing non-functional code with the goal of being translatable into any programming language. This is most often used to describe the steps in an algorithm. The goal of psuedocode is to be as human readable as possible while maintaining a structure that makes it easy to implement.
-- Publisher [[ROS2](#r)]: The publisher [node](#n) sends data collected from one or more [topics](#t) to one or more [subscriber](s) nodes.
+- Pseudocode: A way of writing non-functional code with the goal of being translatable into any programming language. This is most often used to describe the steps in an algorithm. The goal of pseudocode is to be as human readable as possible while maintaining a structure that makes it easy to implement.
+- Publisher [[ROS2](#r)]: The publisher node sends messages on a specific [topic](#t), allowing [subscriber](#s) nodes on that topic to receive the messages. A publisher node can also publish messages from multiple topics.
 
 ### Q
 
@@ -120,20 +117,20 @@ Taveloper platform similar to GitHub that allows developers to create, store, ma
 
 ### S
 
-- Script:
-- SDK:
-- Server-Side:
-- Syntax:
-- SSH:
-- Subscriber [[ROS2](#r)]:
-- Service [[ROS2](#r)]:
-- Snake Case:
+- Script: A relatively short and simple set of instructions that typically automate an otherwise manual process (Source: Wikipedia). Whereas a computer program might be capable of performing a wide variety of tasks, a script is typically intended to perform few tasks.
+- Software Development Kit (SDK): A collection of software development tools bundled into one installable package. These kids are generally platform/operating system specific, as different platforms will have different tools for developing software.
+- Server-Side: Refers to the Server end of the [client-server model](https://en.wikipedia.org/wiki/Client%E2%80%93server_model). The server is the "central" system that sends information to [clients](#c) as it is requested.
+- Syntax: Just like natural language, each computer programming language has its own set of grammar and rules the programmer has to follow when writing code. These rules are known as the syntax of the language. If a developer attempts to run a program with incorrect syntax, the program will most likely return a syntax error.
+- Secure Shell Protocol (SSH): A secure communication protocol most often used to allow a user to access and control a computer remotely over a network.
+- Subscriber [[ROS2](#r)]: A node that listens for messages published on a specific topic and processes the received data. A subscriber node can "subscribe" to multiple topics in a system to receive information from multiple sources simultaneously.
+- Service [[ROS2](#r)]: One of the three forms of communication between [nodes](#n) in ROS2. Services follow a call-and-response model, where information is only provided to the caller (or [client](#c)) upon request from the [server](#s) (Source: [ROS2 Docs](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Services/Understanding-ROS2-Services.html)). This distinguishes it from [topics](#t), wherein information is constantly being provided and received via publishers and subscribers.
+- Snake Case: A naming convention common in programming characterized by each space in a multiword phrase being replaced by an underscore. Often stylized as `snake_case`.
 
 ### T
 
 ### U
 
-- URDF:
+- Unified Robot Description Format (URDF):
 - User Interface:
 
 ### V
@@ -156,6 +153,14 @@ Taveloper platform similar to GitHub that allows developers to create, store, ma
 - YAML:
 
 ### Z
+
+- Publisher [[ROS2](#r)]: The publisher node sends messages on a specific [topic](#t), allowing [subscriber](#s) nodes on that topic to receive the messages. A publisher node can also publish messages from multiple topics.
+
+### Q
+
+### R
+
+- Robot Operating System 2 (ROS2): An open-source middleware suite that provides various tools for deploying, running, and maintaining robotic applications. Despite its name,
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)  
 > Author: Jesse Mills (<https://github.com/JesseMills0>)
