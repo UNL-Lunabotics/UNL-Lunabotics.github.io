@@ -1,7 +1,7 @@
 ---
 title: Gazebo
-parent: Jazzy
-nav_order: 4
+parent: Simulation
+nav_order: 2
 ---
 
 ## Gazebo
