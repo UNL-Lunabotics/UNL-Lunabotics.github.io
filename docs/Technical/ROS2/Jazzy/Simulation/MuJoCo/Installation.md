@@ -1,7 +1,7 @@
 ---
 title: MuJoCo ROS2 Control Installation
 parent: MuJoCo
-nav_order: 1
+nav_order: 2
 ---
 
 ## MuJoCo ROS2 Control Installation
