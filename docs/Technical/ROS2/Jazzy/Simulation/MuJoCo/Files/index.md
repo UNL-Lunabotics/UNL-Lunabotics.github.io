@@ -6,4 +6,4 @@ nav_order: 2
 
 ## Files
 
-TODO
+There are different files used to get MuJoCo ROS2 Control working properly, from URDF to configuration and launch files. See the Table of Contents to get started.
