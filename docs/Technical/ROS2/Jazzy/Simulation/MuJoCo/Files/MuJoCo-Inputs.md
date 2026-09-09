@@ -33,7 +33,6 @@ Raw inputs define any arbitrary MJCF that will be copied into the generated MJCF
     <actuator>
       <velocity name="front_left_wheel_joint" joint="front_left_wheel_joint" />
       <velocity name="front_right_wheel_joint" joint="front_right_wheel_joint"/>
-      ...
     </actuator>
     
     <!-- Only required for LiDAR setup -->
@@ -56,7 +55,7 @@ Raw inputs define any arbitrary MJCF that will be copied into the generated MJCF
   </raw_inputs>
 ```
 
-Here, we set visual and collision groups inside a `<default>` tag. Without this, MuJoCo ROS2 Control erros out with a segmentation fault.
+Here, we set visual and collision groups inside a `<default>` tag. Without this, MuJoCo ROS2 Control errors out with a segmentation fault.
 
 Then, `<actuator>` tags are defined, which should match the `<joint>` tags in the ROS2 Control section.
 

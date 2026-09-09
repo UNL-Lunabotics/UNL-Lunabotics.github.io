@@ -6,7 +6,7 @@ nav_order: 1
 
 ## Overview
 
-MuJoCo ROS2 Control, as the name suggests, is a ROS2 Control hardware interface, that bridges ROS2 topics and configuration to something that MuJoCo can work with. This hardware interface defines robot movement, sensor input, and optional plugins. There are three main steps to get a MuJoCo simulation running:
+MuJoCo ROS2 Control, as the name suggests, is a ROS2 Control hardware interface that bridges ROS2 topics and configuration to something that MuJoCo can work with. This hardware interface defines robot movement, sensor input, and optional plugins. There are three main steps to get a MuJoCo simulation running:
 
 1. Define and configure the ROS2 Control hardware interface
 2. Define and configure preprocessing on certain joints and sensors

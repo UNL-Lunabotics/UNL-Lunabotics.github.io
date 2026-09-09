@@ -6,7 +6,7 @@ nav_order: 4
 
 ## Simulation Launch File
 
-The launch file will need two different `Node`s in order to work.
+The launch file will need two different Nodes in order to work.
 
 ### Converting Robot Description to MJCF
 

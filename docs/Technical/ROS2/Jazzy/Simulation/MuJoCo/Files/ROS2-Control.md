@@ -36,6 +36,6 @@ The `mujoco_model_topic` parameter is different from the main Robot State Publis
 There are other configuration parameters that can be set. See the [MuJoCo ROS2 Control Hardware Interfaces](https://control.ros.org/jazzy/doc/mujoco_ros2_control/mujoco_ros2_control/docs/hardware_interface.html) documentation for further configuration.
 
 {: .note}
-Currently, the documentation says to configure `<sensor>` tags inside the ROS2 Control configuration. This has begun to be deprecated in favor of a separate plugin setup (more on this later). Unless there is no other way, do not define any `<sensor>` tags here.
+Currently, the documentation says to configure `<sensor>` tags inside the ROS2 Control hardware interface. This has begun to be deprecated in favor of a separate plugin setup (more on this later). Unless there is no other way, do not define any `<sensor>` tags here.
 
 > Author: Aiden Kimmerling <https://github.com/TheKing349>
