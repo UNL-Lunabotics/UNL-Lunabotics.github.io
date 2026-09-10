@@ -4,13 +4,13 @@ parent: Virtual Machine Setup
 nav_order: 2
 ---
 
-## Runing the Ubuntu Virtual Machine
+## Running the Ubuntu Virtual Machine
 
 Now that the virtual machine is created, we need to actually run it.
 
 To do this, open Finder and navigate to where the script is. You should be a new file titled `Ubuntu 24.04 ARM64.utm`(or another name if changed). Double-click on it. This will launch UTM and add a new VM entry. Run the virtual machine by pressing the Play button.
 
-The initial setup will take a while. On my machine it took ~20 minutes to fully configure. This is because it is installing needed packages and applications on the fly when it's run for the first time. The VM will restart and configure some more things. Eventually, you shoud be met with a login screen.
+The initial setup will take a while. On my machine it took ~20 minutes to fully configure. This is because it is installing needed packages and applications on the fly when it's run for the first time. The VM will restart and configure some more things. Eventually, you should be met with a login screen.
 
 After everything is configured, starting the virtual machine should only take ~30 seconds.
 

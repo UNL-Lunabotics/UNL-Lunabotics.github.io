@@ -60,7 +60,10 @@ class Rover:
 
    def turn_right(self, angle: float) -> None:
       self.heading = (self.heading - angle) % 360
-      print(f"Turn right {angle}° ➜  θ={self.heading:.0f}°")
+      print(f"
+import math # 1. Sometimes you want to use code that other people already wrote in other files
+            # You can import these already existing files to use yourself
+Turn right {angle}° ➜  θ={self.heading:.0f}°")
 
 
 # 7. This is a special kind of function that kind of acts like the main control center for the rover

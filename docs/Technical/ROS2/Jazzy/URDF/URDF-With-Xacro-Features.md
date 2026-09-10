@@ -39,13 +39,13 @@ The above example actually utilizes a macro, which is expanded upon later in [Ma
 
 When using xacro and inside a tag, you can do `"${math equation}"` in order to do evaluate that value. This could be something like `"${pi/2}"`. This is extremely helpful when calculating a LOT of things, especially rotations and inertia.
 
-Xacro (in recent veresions) specifically uses the [Python math module](https://docs.python.org/3/library/math.html) in order to compute this, so anything available there is available inside a `"${math equation}"` expression. This includes a lot of functions and constants like pi, e, inf, and nan.
+Xacro (in recent versions) specifically uses the [Python math module](https://docs.python.org/3/library/math.html) in order to compute this, so anything available there is available inside a `"${math equation}"` expression. This includes a lot of functions and constants like pi, e, inf, and nan.
 
 Math operators like *, /, +, and - are available.
 
 ## Conditional Blocks
 
-Xacro allows two conditional blocks: if and unless. If is a standard if conditional and unless executes if the given value is NOT true. These expresions accept values of 1, 0, true, or false.
+Xacro allows two conditional blocks: if and unless. If is a standard if conditional and unless executes if the given value is NOT true. These expression accept values of 1, 0, true, or false.
 
 ```xml
 <xacro:if value="expression or var">
