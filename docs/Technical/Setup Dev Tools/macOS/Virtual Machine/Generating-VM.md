@@ -1,6 +1,6 @@
 ---
 title: Generating the Ubuntu Virtual Machine
-parent: macOS Setup
+parent: Virtual Machine Setup
 nav_order: 1
 ---
 
