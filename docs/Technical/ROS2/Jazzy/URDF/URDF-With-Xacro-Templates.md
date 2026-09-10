@@ -64,7 +64,7 @@ It is REQUIRED to give the robot a name. You only need to do it in one file, but
 
 If you want to read more about the technical details for how to implement link/joint pairs by hand (which you shouldn't have to do since we use an exporter), then the best documentation is available at the [Nav2 URDF Setup Guide](https://docs.nav2.org/setup_guides/urdf/setup_urdf.html).
 
-### Example: robotname.urdf.xacro
+### Example: `robotname.urdf.xacro`
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -97,9 +97,9 @@ If you want to read more about the technical details for how to implement link/j
 </robot>
 ```
 
-### Example: robotname_core.xacro
+### Example: `robotname_core.xacro`
 
-Notably, this example also works if you split the robot core into separate files (for example, one of chassis and multiple for manipulators). Basically, any comment block in the below example could be its own file if you wanted. **Keep the chassis in robotname_core.xacro**.
+Notably, this example also works if you split the robot core into separate files (for example, one of chassis and multiple for manipulators). Basically, any comment block in the below example could be its own file if you wanted. **Keep the chassis in `robotname_core.xacro`**.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

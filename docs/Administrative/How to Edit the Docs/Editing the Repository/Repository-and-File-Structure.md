@@ -111,4 +111,4 @@ This is *another* subsection.
 
 Once you feel comfortable with how the project and files are laid out, move on to specific [just-the-docs features]({% link docs/Administrative/How to Edit the Docs/Editing the Repository/Just-the-Docs-Features.md %}).
 
-> Author: Aiden Kimmerling <https://github.com/TheKing349>
+> Author: Aiden Kimmerling (<https://github.com/TheKing349>)

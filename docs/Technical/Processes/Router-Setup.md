@@ -23,8 +23,8 @@ Ensure the router is configured to the specifications of [WiFi Requirements]({% 
 
 1. Ensure that SSH is installed (it does not come pre-installed on Ubuntu fun fact). `sudo apt install openssh-server`.
 2. Ensure the SSH server is running with `sudo systemctl status ssh`.
-3. You can SSH into this machine with `ssh <username>@<ip>.
-4. You can find the IP by doing `ip a` and finding either the wlp3s0, wlan, wlp, wlp2s0, or similar connection and looking at the inet address. **Note that the IP address of the computer while connected to the router and while connected to eduroam or something will be different.**
+3. You can SSH into this machine with `ssh <username>@<ip>`.
+4. You can find the IP by doing `ip a` and finding either the `wlp3s0`, `wlan`, `wlp`, `wlp2s0`, or similar connection and looking at the inet address. **Note that the IP address of the computer while connected to the router and while connected to eduroam or something will be different.**
 5. The username will just be the username you see when running commands in the terminal. Terminal commands follow the format `<user>@<computername>:~$`.
 
 ## Router + Antenna Use During Competition
@@ -33,7 +33,7 @@ Ensure the router is configured to the specifications of [WiFi Requirements]({% 
 
 Setting up the Antenna:
 
-1. You can run the command `nmcli device` in the Mini PC terminal to see what device it is using. Ones that say connected are currently in use. The built-in Beelink SER5 Max device is named wlp3s0 and the antenna's will be something like wlx<hex>. The wlx device should be the one connected and wlp3s0 should be disconnected. If it is, you can stop here. If it is not, continue.
+1. You can run the command `nmcli device` in the Mini PC terminal to see what device it is using. Ones that say connected are currently in use. The built-in Beelink SER5 Max device is named `wlp3s0` and the antenna's will be something like `wlx<hex>`. The wlx device should be the one connected and `wlp3s0` should be disconnected. If it is, you can stop here. If it is not, continue.
 2. Disable the internal wifi card with `sudo nmcli device disconnect wlp3s0`. This is undone by a PC reboot. These are all temporary commands.
 3. Enable the antenna as the wifi device with `sudo nmcli device wifi connect "Team_##" password "wifipassword" ifname <antenna_device_name>`. Replace ## with the actual wifi band name, replace the wifi password with the real password, and replace the antenna device name with the name found in step 1.
    1. If you're wondering why we can't just connect the antenna device without the wifi specifications, it's because the previous wifi saved profiles are really weird. It might connect to another wifi network on accident instead of what was previously connected to. This is just safer and more reliable.

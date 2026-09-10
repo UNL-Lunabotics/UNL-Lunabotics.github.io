@@ -27,13 +27,13 @@ sudo nano /etc/apt/sources.list.d/ctr<year>.list
 
 You will see this
 
-```
+```text
 deb [signed-by=/usr/share/keyrings/ctr-pubkey.gpg] https://deb.ctr-electronics.com/tools stable main
 ```
 
 Inside the square brackets you must include the statement `arch=amd64`, since that will resolve an architecture mismatch when running `sudo apt update`. You do **NOT** need to change anything else. The correct .list file should look like this:
 
-```
+```text
 deb [arch=amd64 signed-by=/usr/share/keyrings/ctr-pubkey.gpg] https://deb.ctr-electronics.com/tools stable main
 ```
 
@@ -43,3 +43,5 @@ Once you have made this change, you should be good to run
 sudo apt update
 sudo apt install phoenix6
 ```
+
+> Author: Raegan Scheet (<https://github.com/raedotzip>)
