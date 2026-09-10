@@ -23,9 +23,17 @@ To install Docker Desktop, click [here](https://docs.docker.com/desktop/setup/in
 
 ### Installing Required Apps
 
-There are two applications required for macOS Docker. The first one is [XQuartz](https://www.xquartz.org/index.html). This will let Linux apps run on macOS. You can either install it from the link, or use `brew install xquartz` if [Homebrew](https://brew.sh/) is installed.
+There are two applications required for macOS Docker. The first one is [XQuartz](https://www.xquartz.org/index.html). This will let Linux apps run on macOS. You can either install it from the link, or use the following if [Homebrew](https://brew.sh/) is installed:
 
-The second program needed is [VirtualGL](https://virtualgl.org/). This will pass any graphics calls from Docker to macOS. You can either install it from the link, or use `brew install virtualgl`.
+```bash
+brew install xquartz
+```
+
+The second program needed is [VirtualGL](https://virtualgl.org/). This will pass any graphics calls from Docker to macOS. You can either install it from the link, or use:
+
+```bash
+brew install virtualgl
+```
 
 ### Cloning Repository
 
@@ -56,7 +64,7 @@ Change `<docker-container-name>` with the "name" from the main `compose.yaml` fi
 {: .important}
 The file **MUST** be named `compose.override.yaml`, with the correct service name. It will not work without.
 
-### Runing the Setup Script
+### Running the Setup Script
 
 The last thing to do before starting the container itself is to run a script. The repository should have a `scripts/docker_setup.sh`. If at the root of the repository, run the following command to trigger the script:
 
