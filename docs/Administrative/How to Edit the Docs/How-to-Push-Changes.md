@@ -31,4 +31,4 @@ After your Pull Request is accepted, your changes will be merged to the main bra
 
 Congratulations! You have successfully edited the documentation and pushed your changes using Pull Requests! If you have any questions, comments, or concerns, feel free to hesitate to any programming (or non-programming!) member for assistance. We are always here to help you learn and grow wherever we can! Have fun documenting!
 
-> Author: Aiden Kimmerling <https://github.com/TheKing349>
+> Author: Aiden Kimmerling (<https://github.com/TheKing349>)

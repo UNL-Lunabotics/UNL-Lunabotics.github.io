@@ -15,7 +15,7 @@ This will consume more power and battery than a DevContainer as the VM is a full
 
 To set up the VM, we will be running a script, made by me, to generate a VM.
 
-### Install Prereqs
+### Install Prerequisites
 
 To run these scripts, we need to install some command-line tools. First we will install [Homebrew](https://brew.sh/), a package manager for macOS. To do this, run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 

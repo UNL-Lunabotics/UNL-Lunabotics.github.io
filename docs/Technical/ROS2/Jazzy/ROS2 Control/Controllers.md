@@ -78,7 +78,7 @@ namespace robot_controller
 
 **1.4:** This is where you declare the functions that will configure the state and command interfaces of the system. This is just a function declaration, implementation will be in the cpp file. Note that controller_interface is a ROS2 import.
 
-**1.5:** This is where the main functions of the file get declared. The init, configure, activate, deactive, and update functions will be where the bulk of the controller is written. Here, we just declare functions, override the default ones, and follow the template required for them as outlined in [Writing a New Controller](https://control.ros.org/jazzy/doc/ros2_controllers/doc/writing_new_controller.html).
+**1.5:** This is where the main functions of the file get declared. The init, configure, activate, deactivate, and update functions will be where the bulk of the controller is written. Here, we just declare functions, override the default ones, and follow the template required for them as outlined in [Writing a New Controller](https://control.ros.org/jazzy/doc/ros2_controllers/doc/writing_new_controller.html).
 
 **1.6:** This is where things can vary the most from the templates. Typically, the main thing that will go into the private section is state machine structs, helper functions, subs and pubs, parameters from the URDF, and any other local variables.
 
