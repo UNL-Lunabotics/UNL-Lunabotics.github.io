@@ -8,12 +8,15 @@ module.exports = {
   tags: ["credit"],
   parser: "none",
   function: (params, onError) => {
+    const path = require("path");
+    if (path.basename(params.name) === "index.md") return;
+
     const { lines, eol = "\n" } = params;
 
     let idx = lines.length - 1;
     while (idx >= 0 && !lines[idx].trim()) idx--;
 
-    // > Author: First Last <https://github.com/handle>
+    // > Author: First Last (<https://github.com/handle>)
     const authorRx =
       /^>\s*Author:\s+[A-Z][\w.'-]*(?:\s+[A-Z][\w.'-]*)*\s+\(<https:\/\/github\.com\/[\w.-]+>\)$/;
 
@@ -23,10 +26,10 @@ module.exports = {
       footer.unshift(lines[i]);
     }
 
-    const valid = footer.length > 0 && footer.every(l => authorRx.test(l));
+    const valid = footer.length > 0 && footer.every(l => authorRx.test(l.trimEnd()));
 
     if (!valid) {
-      const template = `> Author: First Last <https://github.com/your-handle>`;
+      const template = `> Author: First Last (<https://github.com/your-handle>)`;
       const fixText = (idx < 0 ? "" : eol) + template + eol;
 
       onError({

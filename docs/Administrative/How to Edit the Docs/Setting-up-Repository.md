@@ -66,4 +66,4 @@ Note that this view is more limiting than raw git commands, but using this view 
 
 Once the repository is set up, learn how to [Edit the Repository]({% link docs/Administrative/How to Edit the Docs/Editing the Repository/index.md %}).
 
-> Author: Aiden Kimmerling <https://github.com/TheKing349>.
+> Author: Aiden Kimmerling (<https://github.com/TheKing349>)

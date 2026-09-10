@@ -59,4 +59,4 @@ Each time your PC/computer gets turned off and back on, or each time the adapter
 
 You are now ready to use the adapter to communicate with the devices on your CAN bus!
 
-> Author: Caleb Hans (https://github.com/caleb-hansolo)
+> Author: Caleb Hans (<https://github.com/caleb-hansolo>)
