@@ -13,9 +13,9 @@ Note: In this text and in other documentation online, the terms "Foxglove" and "
 
 Foxglove Studio is an application for observing robotics data. It provides an extensive selection of highly configurable tools for visualizing and understanding what the robot is doing, all in real time. Most tools available in Foxglove support visualizing ROS2 topics in some form. Effectively, it is a much more customizable and reliable alternative to Rviz.
 
-At the time of writing, Foxglove Studio is available as a downloadable application for Windows, MacOS, and Debian-based Linux distributions via the official [download page](foxglove.dev/download). It is also available to download on [Canonical Snapcraft](https://snapcraft.io/foxglove-studio). While this version should theoretically be usable on other, non debian-based distributions, we have not had success getting this to work.
+At the time of writing, Foxglove Studio is available as a downloadable application for Windows, MacOS, and Debian-based Linux distributions via the official [download page](../docs_2/Technical/ROS2/Jazzy/Launch/Foxglove/foxglove.dev/download). It is also available to download on [Canonical Snapcraft](https://snapcraft.io/foxglove-studio). While this version should theoretically be usable on other, non debian-based distributions, we have not had success getting this to work.
 
-If you can't (or don't want to) use the downloadable version, you can also access Foxglove as a [web application](app.foxglove.dev).  
+If you can't (or don't want to) use the downloadable version, you can also access Foxglove as a [web application](../docs_2/Technical/ROS2/Jazzy/Launch/Foxglove/app.foxglove.dev).  
 
 Disclaimers:  
 

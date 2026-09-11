@@ -202,7 +202,7 @@ You may be wondering, what and why is an optical link. This is yet another misma
 
 The optical link is just a child of the regular camera link and all it does is rotate the URDF version a little bit so it's aligned with what Gazebo expects. That is it. Keep it in mind when using cameras and Gazebo.
 
-![Articulated Robotics Example](../../../../../attachments/ros_vs_gazebo_coords.png)
+![Articulated Robotics Example](../attachments/ros_vs_gazebo_coords.png)
 
 [Image credit](https://articulatedrobotics.xyz/tutorials/mobile-robot/hardware/camera/#coordinate-frames)
 

@@ -54,7 +54,7 @@ It is important to note that the folder name and structure is separate from the 
 
 This also means that you will **need** to add the YAML header to a Markdown file for the website to render it. Similarly, a page will render at the root of the Sidebar unless a `parent` tag is set.
 
-For additional information, refer to the just-for-docs [documentation]([LINK](https://just-the-docs.com/docs/navigation/)).
+For additional information, refer to the just-for-docs [documentation](<../docs_2/Administrative/How to Edit the Docs/Editing the Repository/[LINK](https:/just-the-docs.com/docs/navigation/)>).
 
 #### Headings and Subheadings
 
