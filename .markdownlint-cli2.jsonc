@@ -1,0 +1,8 @@
+{
+  "ignores": [
+    "**/bower_components",
+    "**/node_modules",
+    "**/vendor",
+    "**/_*.md"
+  ]
+}

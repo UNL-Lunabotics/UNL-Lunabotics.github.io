@@ -6,4 +6,6 @@ nav_order: 3
 
 ## Hardware Components
 
-TODO FINISH
+TODO: FINISH
+
+> Author: First Last (<https://github.com/your-handle>)

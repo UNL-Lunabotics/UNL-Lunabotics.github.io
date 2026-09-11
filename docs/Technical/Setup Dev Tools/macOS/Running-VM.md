@@ -5,6 +5,7 @@ nav_order: 2
 ---
 
 ## Running the Ubuntu Virtual Machine
+## Running the Ubuntu Virtual Machine
 
 Once the script completes, UTM will open and the virtual machine will start to run. It will initially boot, then will open to a desktop environment. A window will appear and, after preparing, will prompt you for a password. You are welcome to change any fields you would like, but a password is required to continue.
 
