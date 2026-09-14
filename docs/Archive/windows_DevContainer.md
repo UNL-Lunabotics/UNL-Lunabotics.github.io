@@ -32,7 +32,7 @@ Before starting the DevContainer, add the following lines of code to `.devContai
 
 ### Starting the DevContainer
 
-Then do `Ctr+Shift+P` and type `Rebuild and Reopen in Container`. This will launch the DevContainer.
+Then do `Ctrl+Shift+P` and type `Rebuild and Reopen in Container`. This will launch the DevContainer.
 
 {: .note }
 Rebuilding the DevContainer is only needed if any changes are made to the files in the `./devContainer/` folder. After this is run, you may use `Reopen in Container` instead.

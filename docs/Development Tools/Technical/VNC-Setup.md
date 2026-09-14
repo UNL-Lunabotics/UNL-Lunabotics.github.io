@@ -1,6 +1,6 @@
 ---
 title: VNC Setup
-parent: Remote Setup
+parent: Technical
 nav_order: 2
 ---
 

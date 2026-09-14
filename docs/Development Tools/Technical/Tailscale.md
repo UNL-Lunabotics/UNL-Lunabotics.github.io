@@ -1,7 +1,7 @@
 ---
-title: Tailscale Setup
-parent: Remote Setup
-nav_order: 1
+title: Tailscale
+parent: Technical
+nav_order: 4
 ---
 
 ## Tailscale Setup

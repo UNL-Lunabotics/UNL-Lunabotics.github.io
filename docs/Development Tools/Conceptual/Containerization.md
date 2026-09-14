@@ -1,7 +1,7 @@
 ---
-title: Understanding Docker
-parent: Curriculum
-nav_order: 5
+title: Containerization
+parent: Conceptual
+nav_order: 1
 ---
 
 ## Understanding Docker
@@ -45,5 +45,7 @@ In robotics, Docker containers are often used when the host operating system isn
 For integration with your robotics systems, ROS2 has official documentation regarding how to set up your Docker images and containers at [Setup ROS 2 with VSCode and Docker](https://docs.ros.org/en/rolling/How-To-Guides/Setup-ROS-2-with-VSCode-and-Docker-Container.html).
 
 As described in the documentation linked above, another useful tool that is also used often with ROS2 Docker development is the VSCode extension called [Dev Containers](https://code.visualstudio.com/docs/devcontainers/create-dev-container). This extension allows you to develop directly in your Docker container in the VSCode IDE. Dev Containers also allows you to install VSCode extensions, mount workspaces/directories, edit privileges, and run commands inside your container environment. It is a very powerful tool greatly simplifies ROS2 Docker development.
+
+@TheThingKnownAsKit TODO, FIX LINKS
 
 > Author: Caleb Hans (<https://github.com/caleb-hansolo>)
