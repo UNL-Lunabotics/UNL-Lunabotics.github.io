@@ -1,6 +1,6 @@
 ---
 title: URDF Standards
-parent: URDF
+parent: Administrative
 nav_order: 1
 ---
 

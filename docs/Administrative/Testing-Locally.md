@@ -1,6 +1,6 @@
 ---
 title: Testing Locally
-parent: Editing the Repository
+parent: Administrative
 nav_order: 3
 ---
 

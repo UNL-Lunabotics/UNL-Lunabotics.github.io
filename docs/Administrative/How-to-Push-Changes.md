@@ -1,6 +1,6 @@
 ---
 title: How to Push Changes
-parent: How to Edit the Docs
+parent: Administrative
 nav_order: 6
 ---
 

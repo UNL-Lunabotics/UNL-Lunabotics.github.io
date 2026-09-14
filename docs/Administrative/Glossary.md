@@ -1,6 +1,6 @@
 ---
 title: Glossary
-parent: Non-Programmer Friendly Zone
+parent: Administrative
 nav_order: 4
 ---
 

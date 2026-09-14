@@ -1,6 +1,6 @@
 ---
 title: Introduction to Programming
-parent: Non-Programmer Friendly Zone
+parent: Administrative
 nav_order: 1
 ---
 

@@ -68,4 +68,6 @@ Custom linter rules will be JavaScript files stored inside `.vscode/markdownlint
   ]
 ```
 
+@TheThingKnownAsKit UPDATE THIS
+
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)

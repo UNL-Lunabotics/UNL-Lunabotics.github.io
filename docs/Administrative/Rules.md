@@ -1,6 +1,6 @@
 ---
 title: Rules
-parent: How to Edit the Docs
+parent: Administrative
 nav_order: 3
 ---
 

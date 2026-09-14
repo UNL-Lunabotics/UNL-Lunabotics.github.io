@@ -1,6 +1,6 @@
 ---
 title: Just-the-Docs Features
-parent: Editing the Repository
+parent: Administrative
 nav_order: 2
 ---
 
