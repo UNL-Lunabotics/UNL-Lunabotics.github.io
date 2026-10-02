@@ -24,7 +24,7 @@ This repository is split into subsections with a specific purpose and specific a
 
 ## How to Edit
 
-To learn how to edit these docs, refer to the [How to Edit the Docs]({% link docs/Administrative/How to Edit the Docs/index.md %}) documentation.
+To learn how to edit these docs, refer to the [How to Edit the Docs]({% link docs/Administrative/Editing-the-Docs.md %}) documentation.
 
 ## Subsection Breakdown
 
