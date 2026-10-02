@@ -21,7 +21,7 @@ It is **highly** recommended using VSCode to edit. Firstly, it is just easier to
 
 To make changes on any lunabotics repository, you will need to set it up locally by cloning it. Cloning, if unfamiliar, just means to copy the repository to your local machine. You will then make changes on that copy, and push them up to the [UNL-Lunabotics GitHub](https://github.com/unl-lunabotics) organization.
 
-Before we clone the documentation, ensure you have followed the [Setup Guide for VSCode]({% link docs/Non-Programmer Friendly Zone/How-to-Use-VSCode.md %})<!-- #TODO: broken link after restructure -->.
+Before we clone the documentation, ensure you have followed the [Setup Guide for VSCode]({% link docs/Administrative/How-to-Use-VSCode.md %}).
 
 ### Cloning
 
@@ -77,7 +77,7 @@ You can also do more advanced interactions by hovering the mouse over the "Chang
 {: .important}
 Note that this view is more limiting than raw git commands, but using this view can simplify basic interactions with git, such as tracking and committing changes.
 
-Once the repository is set up, learn how to [Edit the Repository]({% link docs/Administrative/How to Edit the Docs/Editing the Repository/index.md %})<!-- #TODO: broken link after restructure.
+Once the repository is set up, learn how to [Edit the Repository]({% link docs/Administrative/Docs-Reference.md %}).
 
 ## Testing Locally
 
@@ -139,8 +139,6 @@ Replace `PATH_GOES_HERE` with the copied output from earlier. Example:
 
 Now, press `CTRL+X` and `y` to save. Go back to VSCode and close the current terminal. Open a new one and try running `bundle exec jekyll serve` again.
 
-Now that you know the basics about creating and editing documentation, please read the additional conventions and [Rules]({% link docs/Administrative/How to Edit the Docs/Rules.md %})<!-- #TODO: broken link after restructure--> we enforce.
-
 ## Rules
 
 To keep consistency and readability throughout documentation, a few rules are enforced. Most of the rules are explained in [The Linter]({% link docs/Administrative/The-Linter.md %}) documentation.
@@ -149,15 +147,13 @@ To keep consistency and readability throughout documentation, a few rules are en
 
 In addition, we also require local testing. This is important as testing your changes locally serves as a visual way of proofreading, which can help with readability, clarity, and consistency.
 
-If needed, refer back to the [Testing Locally]({% link docs/Administrative/How to Edit the Docs/Editing the Repository/Testing-Locally.md %}) documentation.
+If needed, refer back to the [Testing Locally](#local-testing) documentation.
 
 ### Pull Requests and Branches
 
 Finally, this repository enforces a pull-request workflow instead of committing to main directly, by creating a new branch. All this means is that, in order for your changes to get pushed to the main website, it must be approved first. This ensures high quality documentation and is more akin to industry workflows.
 
 It is also important to note that general convention is that you commit changes **regularly** on a branch. Do not have a giant commit. Rather, commit once a single "unit" or code is written. This helps keep commit history readable and helps if a revision or revert is needed.
-
-Now that you know all the rules, move on to how to [Push your Changes]({% link docs/Administrative/How to Edit the Docs/How-to-Push-Changes.md %}).
 
 ### AI Policy
 

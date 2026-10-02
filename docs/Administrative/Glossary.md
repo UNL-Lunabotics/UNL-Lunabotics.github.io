@@ -151,7 +151,7 @@ nav_order: 5
 
 ### U
 
-- **Unified Robot Description Format (URDF)**: An [XML](#x) based file format that represents the physical model of a robot. It is the standard ROS2 uses for representing robots and is also used by other tools like [RViz](#r) and [Gazebo](#g) sim. For further reading, see [Understanding URDF Files]({% link docs/Curriculum/Understanding-URDF-Files.md %})<!-- #TODO: broken link after restructure (old target: docs/Curriculum/Understanding-URDF-Files.md) -->.
+- **Unified Robot Description Format (URDF)**: An [XML](#x) based file format that represents the physical model of a robot. It is the standard ROS2 uses for representing robots and is also used by other tools like [RViz](#r) and [Gazebo](#g) sim. For further reading, see [Understanding URDF Files]({% link docs/Controls/Conceptual/Understanding-URDF-Files.md %}).
 - **User Interface (UI)**: The user interface refers to the space in a program where the interaction between humans (users) and the machine occur. Most often, a program will either use a [graphical user interface](#g) (GUI), a [terminal user interface](#t) (TUI), or a [command-line interface](#c) (CLI).
 
 ### V

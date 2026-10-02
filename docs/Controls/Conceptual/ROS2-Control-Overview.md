@@ -23,7 +23,7 @@ All of these parts are managed by the Controller Manager, which is mostly releva
 
 Interfaces are a really important concept both in URDF design and in understanding how ROS2 Control views the system. You will not find a whole page dedicated to interfaces in the ROS2 Control docs, so we are explaining them in detail here.
 
-Interfaces are attributes that you give to joints that are controlled by motors, servos, or otherwise move in the ROS2 Control URDF. Generally, to determine what joints need interfaces, ask yourself what you actually need to control on the robot. More details can be found at [ROS2 Control URDF]({% link docs/Technical/ROS2/Jazzy/URDF/ROS2-Control-URDF.md %})<!-- #TODO: broken link after restructure -->. There are two kinds of interfaces: command interfaces and state interfaces. An example is given below:
+Interfaces are attributes that you give to joints that are controlled by motors, servos, or otherwise move in the ROS2 Control URDF. Generally, to determine what joints need interfaces, ask yourself what you actually need to control on the robot. More details can be found at [ROS2 Control URDF]({% link docs/Controls/Technical/ROS2-Control-URDF.md %}). There are two kinds of interfaces: command interfaces and state interfaces. An example is given below:
 
 ```xml
 <joint name="Wheel">
@@ -48,11 +48,11 @@ Controllers can be for a whole robot or for specific parts of the robot. For exa
 
 There are also a vast amount of pre-made controllers that you don't even have to write, but those are really easy to look up and there is extremely little documentation on how to write custom controllers, so we will be talking about custom controllers the entire time.
 
-More details on controllers (including actual code examples) can be found at [Controllers]({% link docs/Technical/ROS2/Jazzy/ROS2 Control/Controllers.md %})<!-- #TODO: broken link after restructure -->
+More details on controllers (including actual code examples) can be found at [Controllers]({% link docs/Controls/Technical/Controllers.md %})
 
 ## Hardware Components
 
-Hardware components are exactly what they sound like, the hardware component of this control stack. The hardware component is the abstraction layer between the controllers and the actual hardware of the robot. It is the thing that reads from encoders, tells the motors how fast to spin, and more. There will be a lot more going on with this, so you can read more about it at [Hardware Components]({% link docs/Technical/ROS2/Jazzy/ROS2 Control/Hardware-Components.md %})<!-- #TODO: broken link after restructure -->.
+Hardware components are exactly what they sound like, the hardware component of this control stack. The hardware component is the abstraction layer between the controllers and the actual hardware of the robot. It is the thing that reads from encoders, tells the motors how fast to spin, and more. There will be a lot more going on with this, so you can read more about it at [Hardware Components]({% link docs/Controls/Technical/Hardware-Components.md %}).
 
 Notably, this hardware component communicates with the microcontroller for the system via serial ports. The microcontroller is what ultimately has to read encoder values and send PWM signals to motors, it is a middleman between the hardware component and the actual hardware since the computers cannot communicate on a low enough level.
 

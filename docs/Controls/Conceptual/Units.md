@@ -9,13 +9,13 @@ nav_order: 2
 
 If you are getting started writing a controller or hardware component, you might be thinking to yourself, "what units does ROS2 Control send commands in? I can't find documentation on this anywhere." Correct! There isn't really documentation on this (that is easily accessible), because ROS2 Control is unit-agnostic. It is up to the programmer to convert its values into real units for the program to use.
 
-The [controller]({% link docs/Technical/ROS2/Jazzy/ROS2 Control/Controllers.md %})<!-- #TODO: broken link --> for the ROS2 Control stack is what determines the units of everything. However, **this is not as open as it sounds like.** There are certain standards of units associated with types of joints in the URDF.
+The [controller]({% link docs/Controls/Technical/Controllers.md %}) for the ROS2 Control stack is what determines the units of everything. However, **this is not as open as it sounds like.** There are certain standards of units associated with types of joints in the URDF.
 
 - **revolute/continuous joints should be radians and radians/second**
 - **prismatic joints should be meters and meters/second**
 - Fixed does not have any relevance
 
-You should convert these metric units to more hardware specific units like PWM or 0-127 or encoder positions or whatever the hardware demands in the [hardware component]({% link docs/Technical/ROS2/Jazzy/ROS2 Control/Hardware-Components.md %})<!-- #TODO: broken link -->. These values should then be forwarded to the microcontroller where it will blindly accept them as the right units to control the motors.
+You should convert these metric units to more hardware specific units like PWM or 0-127 or encoder positions or whatever the hardware demands in the [hardware component]({% link docs/Controls/Technical/Hardware-Components.md %}). These values should then be forwarded to the microcontroller where it will blindly accept them as the right units to control the motors.
 
 ## Control Stack Unit Walkthrough
 

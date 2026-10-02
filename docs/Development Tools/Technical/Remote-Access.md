@@ -10,7 +10,7 @@ nav_order: 4
 
 ## Remote Setup
 
-Because ROS2 requires Ubuntu to run properly, this guide shows how to remotely connect to one of our Mini PC's that is already set up on Ubuntu with ROS2. For more information about ROS2, see [Learning ROS2]({% link docs/Curriculum/Learning-ROS2.md %})<!-- #TODO: broken link -->.
+Because ROS2 requires Ubuntu to run properly, this guide shows how to remotely connect to one of our Mini PC's that is already set up on Ubuntu with ROS2. For more information about ROS2, see [Learning ROS2]({% link docs/Administrative/Learning-ROS2.md %}).
 
 ## Tailscale Setup
 
@@ -48,11 +48,11 @@ VNC requires a 'client' or a program that utilizes the VNC protocol. I would rec
 
 Before you can use VNC, there's a script you need to run on the Mini PC to get a VNC 'session'. To do this, we will use SSH, a protocol to allow a computer's terminal to connect to another.
 
-To do this, open your terminal and type in the following command: `ssh workstation@TAILSCALE_IP_HERE`, where `TAILSCALE_IP_HERE` is the IP Address that Tailscale copied to your clipboard in the [previous step]({% link docs/Technical/Setup Dev Tools/Remote/Tailscale-Setup.md %}#using-tailscale). Then type `INSERTUNL'SDEFAULTPASSWORDASKIFYOUDONTKNOWIT` for the password when it asks.<!-- #TODO: mentions an old section name that no longer exists -->
+To do this, open your terminal and type in the following command: `ssh workstation@TAILSCALE_IP_HERE`, where `TAILSCALE_IP_HERE` is the IP Address that Tailscale copied to your clipboard in the [previous step](#using-tailscale). Then type `INSERTUNL'SDEFAULTPASSWORDASKIFYOUDONTKNOWIT` for the password when it asks.<!-- #TODO: mentions an old section name that no longer exists -->
 
 ### Run the Script
 
-I made a script to be able to easily create an isolated VNC instance. If you want to learn more about how the script works or how I got there, follow [this]({% link docs/Technical/Processes/Mini-PC-Remote-Connect.md %})<!-- #TODO: broken link --> link.
+I made a script to be able to easily create an isolated VNC instance. If you want to learn more about how the script works or how I got there, follow [this](#mini-pc-remote-connection) link.
 
 The script should be run as follows: `sudo ./connect-vnc.sh USERNAME_HERE`, where `USERNAME_HERE` is whatever username you want to use. The username you put doesn't matter, it just has to be unique (the script will error out if you input a username that already exists). When it asks for a password, type in `INSERTUNL'SDEFAULTPASSWORDASKIFYOUDONTKNOWIT`.
 

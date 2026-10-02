@@ -8,7 +8,7 @@ nav_order: 6
 
 This guide will give a basic introduction to the major concepts of programming, go over some simple examples, and then redirect you to more comprehensive sources for learning more if you would like to continue exploring program. The main purpose of this guide is to equip you with enough information to be able to communicate with a programmer, not to teach you how to program
 
-If you would like to learn more about the terms used here, please reference the [glossary]({% link docs/Non-Programmer Friendly Zone/Glossary.md %})<!-- #TODO: broken link after restructure (old target: docs/Non-Programmer Friendly Zone/Glossary.md) -->
+If you would like to learn more about the terms used here, please reference the [glossary]({% link docs/Administrative/Glossary.md %}).
 
 ### Programming Concepts
 
@@ -184,8 +184,8 @@ After you learn C, here is the W3Schools link for C++, though I personally find 
 
 ### Where to Go Next
 
-Now that you have a basic understanding of programming, you can really go anywhere in the Non Programmer Friendly Zone. Specific questions that people have asked programming to explain will be listed in here, though for next steps I recommend going to [Introduction to ROS2]({% link docs/Non-Programmer Friendly Zone/Introduction-to-ROS2.md %})<!-- #TODO: broken link after restructure and mentions old sections that no longer exist -->
+Now that you have a basic understanding of programming, you can really go anywhere in the Non Programmer Friendly Zone. Specific questions that people have asked programming to explain will be listed in here, though for next steps I recommend going to [Introduction to ROS2]({% link docs/Administrative/Learning-ROS2.md %})<!-- #TODO: broken link after restructure and mentions old sections that no longer exist -->
 
-If you are on a mission to become a programming nerd, you will also need to know what VSCode is and how to set it up with everything you'll want, which you can find at [How to Use VSCode]({% link docs/Non-Programmer Friendly Zone/How-to-Use-VSCode.md %})
+If you are on a mission to become a programming nerd, you will also need to know what VSCode is and how to set it up with everything you'll want, which you can find at [How to Use VSCode]({% link docs/Administrative/How-to-Use-VSCode.md %})
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)

@@ -17,10 +17,10 @@ Most importantly, it will include tutorials on how to do things that programming
 
 It will also include a glossary to explain whatever nonsense programmers are talking about!
 
-Before anything else, I recommend that you go straight to [Introduction to Programming]({% link docs/Non-Programmer Friendly Zone/Introduction-to-Programming.md %})<!-- #TODO: broken link after restructure (old target: docs/Non-Programmer Friendly Zone/Introduction-to-Programming.md) --> if you have minimal or no exposure to programming, OR if you want to find links for resources on learning how to program.
+Before anything else, I recommend that you go straight to [Introduction to Programming]({% link docs/Administrative/Introduction-to-Programming.md %}) if you have minimal or no exposure to programming, OR if you want to find links for resources on learning how to program.
 
 ## Curriculum
 
-If you are brand new to the programming subteam, it will be best to start at [Learning ROS2]({% link docs/Curriculum/Learning-ROS2.md %}).
+If you are brand new to the programming subteam, it will be best to start at [Learning ROS2]({% link docs/Administrative/Learning-ROS2.md %}).
 
-Once you finish with that, it is recommended that you start tackling some of the more difficult concepts like TF2 and URDF. Please note that **most of the guides in here are conceptual** with a few examples. If you want detailed tutorials on how to do something, you will probably find better information in [Technical Documentation]({% link docs/Technical/index.md %}).
+Once you finish with that, it is recommended that you start tackling some of the more difficult concepts like TF2 and URDF. Please note that **most of the guides in here are conceptual** with a few examples.

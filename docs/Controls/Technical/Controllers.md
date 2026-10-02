@@ -125,13 +125,13 @@ namespace robot_controller
 } // namespace robot_controller
 ```
 
-Basically, this is just where you just claim the state and command interfaces declared in the [ROS2 Control URDF]({% link docs/Technical/ROS2/Jazzy/URDF/ROS2-Control-URDF.md %})<!-- #TODO: broken link after restructure (old target: docs/Technical/ROS2/Jazzy/URDF/ROS2-Control-URDF.md) -->. All of this is boiler plate except the names of the joints you are claiming, those will have to be changed.
+Basically, this is just where you just claim the state and command interfaces declared in the [ROS2 Control URDF]({% link docs/Controls/Technical/ROS2-Control-URDF.md %}). All of this is boilerplate except the names of the joints you are claiming, those will have to be changed.
 
 **You should declare your joint names as variables in the header file**. This means if they change you can just change that one variable in the header file and not have to change it in the MANY places it will be used throughout the source file.
 
 ### The on_init() Function
 
-This function runs when you first run your launch file and the robot needs to be initialized with the node parameters. It's main purpose is to parse variables set in the [ROS2 Control URDF]({% link docs/Technical/ROS2/Jazzy/URDF/ROS2-Control-URDF.md %})<!-- #TODO: broken link after restructure (old target: docs/Technical/ROS2/Jazzy/URDF/ROS2-Control-URDF.md) --> and map them to local variables declared in the header file.
+This function runs when you first run your launch file and the robot needs to be initialized with the node parameters. It's main purpose is to parse variables set in the [ROS2 Control URDF]({% link docs/Controls/Technical/ROS2-Control-URDF.md %}) and map them to local variables declared in the header file.
 
 In the example below, we use auto_declare, which is part of the ros2 control framework and this function is allowed to use since it inherits controller_interface::ControllerInterface. It registers the parameters and passes them off to the nodes circling around in the ROS2 Control soup. Put the type in the `<>` followed by `("param", "default value")`.
 

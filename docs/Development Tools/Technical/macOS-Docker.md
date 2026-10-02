@@ -1,7 +1,7 @@
 ---
 title: macOS Docker Setup
 parent: Technical
-nav_order: 2
+nav_order: 3
 ---
 
 ## macOS Docker Setup
@@ -9,11 +9,11 @@ nav_order: 2
 The easiest way to set up development tools for macOS is using our existing Docker setup.
 
 {: .note}
-Docker on macOS does **not** currently support USB passthrough. If USB passthrough is required, you must use the [Virtual Machine Setup]({% link docs/Technical/Setup Dev Tools/macOS/Virtual Machine/index.md %})<!-- #TODO: broken link -->. See the [open docker issue](https://github.com/docker/roadmap/issues/511) to learn more.
+Docker on macOS does **not** currently support USB passthrough. If USB passthrough is required, you must use the [Virtual Machine Setup]({% link docs/Development Tools/Technical/macOS-Virtual-Machine.md %}). See the [open docker issue](https://github.com/docker/roadmap/issues/511) to learn more.
 
 ### Overview
 
-[Docker](https://www.docker.com/) is a containerization software that is used to get an isolated environment to program in. For more information about how Docker works, see our [documentation]({% link docs/Curriculum/Understanding-Docker.md %})<!-- #TODO: broken link after restructure -->.
+[Docker](https://www.docker.com/) is a containerization software that is used to get an isolated environment to program in. For more information about how Docker works, see our [documentation]({% link docs/Development Tools/Conceptual/Understanding-Docker.md %}).
 
 While Docker works out-of-the-box in Linux on our repositories, that is not the case with macOS. macOS cannot natively run graphical apps on Docker. For this, we will use two programs on macOS to bridge GUI apps from Docker to macOS, along with special configuration in Docker to link it all together.
 
