@@ -34,8 +34,6 @@ On Windows or macOS there should now be a system tray entry for Tailscale. Open 
 
 On Linux, type `sudo tailscale up` and then `tailscale status | grep tagged` and you should see information about the Mini PC. Copy and IP Address shown as you will need this later on.
 
-> Author: Aiden Kimmerling (<https://github.com/TheKing349>)
-
 ## VNC Setup
 
 Virtual Network Computing (VNC) is a protocol that allows one computer to attach a desktop to another through an IP Address. For our use, this means we can use the Mini PC as a desktop that is visible on your computer through the Tailscale IP Address.
@@ -76,8 +74,6 @@ The created user is **temporary**. This means that any files or folders saved in
 Apart from just closing VNC client, you'll also need to stop the script, which stops the VNC instance. To do this, go back to the terminal running the script and do the keybind `Ctrl+C`. Once the script exits, you can type `exit` to exit from SSH and are free to close the terminal.
 
 That's it! You are able to connect and develop on the Mini PC remotely! Have fun developing!
-
-> Author: Aiden Kimmerling (<https://github.com/TheKing349>)
 
 ## Mini PC Remote Connection
 

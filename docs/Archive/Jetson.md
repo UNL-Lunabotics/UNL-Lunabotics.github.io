@@ -105,8 +105,6 @@ The system should boot up as normal for any Ubuntu installation. To connect the 
 
 After basic Ubuntu setup is done, make sure to install Jetpack. `sudo apt update && sudo apt upgrade -y && sudo apt install nvidia-jetpack`
 
-> Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
-
 ## Installing Intel RealSense D435i Camera Software
 
 ### Setup
@@ -128,8 +126,6 @@ All information taken from the [JetsonHacks librealsense repository](https://git
 
 Once finished with the instructions in the JetsonHacks librealsense repository, make sure your realsense-viewer application is working and on. Then, on the left, turn on Stereo Module, RGB Camera, and Motion Module. Output should look like this:
 ![image]({% link attachments/Realsense-Output.png %})
-
-> Author: Caleb Hans (<https://github.com/caleb-hansolo>)
 
 ## RPLidar Initial Setup (no Docker)
 
@@ -405,8 +401,6 @@ If your LiDAR appears on one of the ports, you may proceed
 
    The LiDAR data should be under the fixed frame titled "laser" and should appear automatically.
 
-> Author: Caleb Hans (<https://github.com/caleb-hansolo>)
-
 ## Installing OV9281 Global Shutter UVC Camera Software
 
 ### Setup Steps
@@ -473,4 +467,5 @@ Make sure that ROS2 is installed first!!
    If using Rviz to visualize, select `Add` on the bottom left to add an image, go to the topics tab, find the `/image_raw topic`, and then select `Image`, and press `OK`. Rviz should look something like this, with the live video stream in the bottom left corner.
    ![image]({% link attachments/Camera-Software-RVIZ.png %})
 
+> Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
 > Author: Caleb Hans (<https://github.com/caleb-hansolo>)

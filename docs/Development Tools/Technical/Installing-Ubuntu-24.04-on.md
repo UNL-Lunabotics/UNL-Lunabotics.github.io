@@ -28,7 +28,7 @@ Now that you know a little about how the process works, let's make sure you have
 
 1. An 8GB+ USB Drive
 2. A computer to set up the USB Drive
-3. Download [Ubuntu 24.04 Desktop](https://releases.ubuntu.com/24.04.3/ubuntu-24.04.3-desktop-amd64.iso)
+3. Download [Ubuntu 24.04 Desktop](https://releases.ubuntu.com/noble/)
 4. Download [Ventoy](https://www.ventoy.net/en/download.html)
 5. Clone the [scripts_and_prebuilts](https://github.com/UNL-Lunabotics/scripts_and_prebuilts/tree/main) repo
 

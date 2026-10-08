@@ -69,5 +69,5 @@ Once everything is installed, type `realsense-viewer` into a new terminal. A win
 Then, on the left, turn on Stereo Module, RGB Camera, and Motion Module. Output should look like this:
 ![image]({% link attachments/Realsense-Output.png %})
 
-> Author: Aiden Kimmerling (<https://github.com/TheKing349>)
+> Author: Aiden Kimmerling (<https://github.com/TheKing349>)  
 > Author: Raegan Scheet (<https://github.com/cscheet2>)

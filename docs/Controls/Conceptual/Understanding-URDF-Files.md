@@ -129,7 +129,7 @@ If you are defining something other than a `fixed` joint, you may have to specif
 
 There may be occasions where you see tags other than links and joints defined within your enclosing robot tag. These may include `<mujoco>`, `<material>`, and `<actuator>` tags. We already briefly mentioned `<material>` tags, but the next section will have a little more detail. The `<mujoco>` and `<actuator>` tags far exceed the scope of this tutorial, but we have additional information on them in other guides.
 
-To learn more about MuJoCo integration using the `<mujoco>` tag, see [MuJoCo in URDF]({% link docs/Simulation/Technical/MuJoCo-Config-Files.md %}).  
+To learn more about MuJoCo integration using the `<mujoco>` tag, see [MuJoCo Config Files]({% link docs/Simulation/Technical/MuJoCo-Config-Files.md %}).  
 We do not currently have a Transmissions guide, but that should be coming in the near future!
 
 ## Building your URDF
@@ -142,7 +142,7 @@ Now, to actually get started constructing the robot model, I like to first creat
 
 The second file, `robotName_core.xacro`, is where you will define the core body of your robot. For our purposes, this will just consist of the robot's chassis, and the wheels, but for more complex robots, this file can easily grow quite large. If necessary, you can further break up your core file into smaller `xacro` files.  
 
-Optionally, you can also include `xacro` files for various other aspects of your robot, or anything inside your ROS2 package that requires URDF components to function. If you want to simulate your robot in MuJoCo, you will need to include MuJoCo references in your URDF (see [MuJoCo in URDF]({% link docs/Simulation/Technical/MuJoCo-Config-Files.md %}#mujoco-inputs)). If you want to integrate ros2_control into your robot, either for simulation or actual control, you will need URDF components for each of the joints you want to send or receive information from (see [ROS2 Control in URDF]({% link docs/Controls/Technical/ROS2-Control-URDF.md %})). For this project, I will be including two additional files. The first, called `colors.xacro` simply contains a few colors I can assign to different parts of the robot. Feel free to copy these or [download]({% link attachments/urdf/colors.xacro %}) the file for use as you follow along.  
+Optionally, you can also include `xacro` files for various other aspects of your robot, or anything inside your ROS2 package that requires URDF components to function. If you want to simulate your robot in MuJoCo, you will need to include MuJoCo references in your URDF (see [MuJoCo Config Files]({% link docs/Simulation/Technical/MuJoCo-Config-Files.md %}#mujoco-inputs)). If you want to integrate ros2_control into your robot, either for simulation or actual control, you will need URDF components for each of the joints you want to send or receive information from (see [ROS2 Control in URDF]({% link docs/Controls/Technical/ROS2-Control-URDF.md %})). For this project, I will be including two additional files. The first, called `colors.xacro` simply contains a few colors I can assign to different parts of the robot. Feel free to copy these or [download]({% link attachments/urdf/colors.xacro %}) the file for use as you follow along.  
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

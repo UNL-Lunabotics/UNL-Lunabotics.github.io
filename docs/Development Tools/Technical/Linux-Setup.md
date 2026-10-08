@@ -10,4 +10,4 @@ nav_order: 2
 
 ## Linux Setup
 
-WRITE ME
+TODO: WRITE ME

@@ -103,5 +103,5 @@ sudo apt update
 sudo apt install phoenix6
 ```
 
-> Author: Caleb Hans (<https://github.com/caleb-hansolo>)
+> Author: Caleb Hans (<https://github.com/caleb-hansolo>)  
 > Author: Raegan Scheet (<https://github.com/raedotzip>)

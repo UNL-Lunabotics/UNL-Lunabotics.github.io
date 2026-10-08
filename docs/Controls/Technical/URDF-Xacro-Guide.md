@@ -31,8 +31,6 @@ Most important to note:
 2. The world fixed coordinate frame for odometry is `odom`
 3. ROS uses a right hand coordinate system where X forward, Y left, and Z up.
 
-> Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
-
 ## Xacro
 
 xacro is just a way to do XML Macros. It works with URDF and is HIGHLY recommended. It allows you to do things like write your URDF across multiple files instead of only one, have conditionals, use variables, evaluate mathematical expressions, and accept launch parameters. There is no good reason not to use xacro just use it.
@@ -244,8 +242,6 @@ This is basically identical to `robotname_core.xacro`. You should view the speci
 
 </robot>
 ```
-
-> Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
 
 ## Tags
 

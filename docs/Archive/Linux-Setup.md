@@ -59,8 +59,6 @@ Once the DevContainer launches, you are done setting up the dev tools! Have fun 
 {: .important }
 If running on an ARM-based system, you **must** use new Gazebo. Gazebo Classic does not have an executable for ARM as far as I know.
 
-> Author: Aiden Kimmerling (<https://github.com/TheKing349>)
-
 ## Bare Metal Setup
 
 If you do not want to use a DevContainer, you can try running everything on your installation of Linux itself. Note that this is not the recommended way to develop and mileage may vary.

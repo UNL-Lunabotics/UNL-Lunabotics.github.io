@@ -22,7 +22,7 @@ Basically, ROS2 is just how we communicate and coordinate information and comman
 
 ### The Basics
 
-The basics concepts of ROS2 have shockingly good documentation that would be difficult to outdo, so for this part it will mostly be links to go do the tutorials yourself. Please [download ROS2]({% link 404.html %}) if you haven't already.
+The basics concepts of ROS2 have shockingly good documentation that would be difficult to outdo, so for this part it will mostly be links to go do the tutorials yourself. Please [download ROS2](https://docs.ros.org/en/jazzy/Installation.html) if you haven't already.
 
 Below are the links for the sections you should go through **IN ORDER**. The sub bullet points are the specific tutorials you should do.
 

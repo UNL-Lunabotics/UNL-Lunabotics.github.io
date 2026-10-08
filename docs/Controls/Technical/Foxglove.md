@@ -21,9 +21,9 @@ Note: In this text and in other documentation online, the terms "Foxglove" and "
 
 Foxglove Studio is an application for observing robotics data. It provides an extensive selection of highly configurable tools for visualizing and understanding what the robot is doing, all in real time. Most tools available in Foxglove support visualizing ROS2 topics in some form. Effectively, it is a much more customizable and reliable alternative to Rviz.
 
-At the time of writing, Foxglove Studio is available as a downloadable application for Windows, MacOS, and Debian-based Linux distributions via the official [download page](foxglove.dev/download). It is also available to download on [Canonical Snapcraft](https://snapcraft.io/foxglove-studio). While this version should theoretically be usable on other, non debian-based distributions, we have not had success getting this to work.
+At the time of writing, Foxglove Studio is available as a downloadable application for Windows, MacOS, and Debian-based Linux distributions via the official [download page](https://foxglove.dev/download). It is also available to download on [Canonical Snapcraft](https://snapcraft.io/foxglove-studio). While this version should theoretically be usable on other, non debian-based distributions, we have not had success getting this to work.
 
-If you can't (or don't want to) use the downloadable version, you can also access Foxglove as a [web application](app.foxglove.dev).  
+If you can't (or don't want to) use the downloadable version, you can also access Foxglove as a [web application](https://app.foxglove.dev).  
 
 Disclaimers:  
 
@@ -140,10 +140,6 @@ Note: UNL Lunabotics already has a Foxglove account set up. If you are working o
 
 Well Done! You should now have foxglove set up and ready to begin using.  
 The next section will go over some basic usage of the Foxglove User Interface, since it can be a little bit overwhelming to get used to.
-
-## Using Foxglove
-
-This page will describe some of the key elements of Foxglove's UI that you can take advantage of when visualizing robot data from ROS2 Topics. This is by no means a comprehensive overview of all of Foxglove's features, but it should serve a general overview of the most important visualization tools Foxglove offers. If you haven't already, it is *strongly* recommended that you read through the Foxglove Setup documentation so that you have Foxglove properly set up and are ready to continue with this tutorial.  
 
 ## UI Overview
 
