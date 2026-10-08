@@ -1,7 +1,7 @@
 ---
 title: The Linter
 parent: Administrative
-nav_order: 2
+nav_order: 3
 ---
 
 ## The Linter
