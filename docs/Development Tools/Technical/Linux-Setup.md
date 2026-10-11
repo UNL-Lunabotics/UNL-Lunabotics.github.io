@@ -1,0 +1,16 @@
+---
+title: Linux Setup
+parent: Technical
+grand_parent: Development Tools
+nav_order: 2
+---
+
+## Table of Contents
+
+{:toc}
+
+## Linux Setup
+
+TODO: WRITE ME
+
+> Author: Firstname Lastname (<https://github.com/UNL-Lunabotics>)
