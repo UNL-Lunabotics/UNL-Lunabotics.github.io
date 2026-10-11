@@ -67,7 +67,7 @@ If you do not want to use a DevContainer, you can try running everything on your
 
 ### Installing ROS2
 
-Follow the [ROS2 Install](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) guide, and make sure to select the correct version of ROS2. At the time of writing, we are using `ROS2 Jazzy`, but this may change. You will also want to install the desktop variant of ROS2.<!-- #TODO: time-sensitive statement; verify it is still current -->
+Follow the [ROS2 Install](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) guide, and make sure to select the correct version of ROS2. At the time of writing, we are using `ROS2 Jazzy`, but this may change. You will also want to install the desktop variant of ROS2.
 
 After ROS2 is installed, you'll want to add an entry into the `~/.bashrc`. This will ensure the `ros2` command is recognized any time you open a terminal. Type `sudo nano ~/.bashrc`. Using your arrow keys, navigate until you reach the end of the script. Then, add the following entry: `source /opt/ros/jazzy/setup.bash`.
 

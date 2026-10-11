@@ -5,13 +5,15 @@ grand_parent: Controls
 nav_order: 4
 ---
 
+<!-- This page still talks about Gazebo integration, which is no longer needed since we don't use Gazebo anymore. -->
+
 ## Table of contents
 
 {:toc}
 
 ## URDF
 
-This folder contains information on implementing a URDF in a Jazzy framework. Notably, it will cover implementing things for all the other dependencies as well (like making it Gazebo ready or ROS2 Control ready).<!-- #TODO: refers to the old folder structure -->
+This folder contains information on implementing a URDF in a Jazzy framework. Notably, it will cover implementing things for all the other dependencies as well (like making it Gazebo ready or ROS2 Control ready).
 
 ## Conventions
 

@@ -4,8 +4,6 @@ parent: Administrative
 nav_order: 1
 ---
 
-<!-- #TODO: update for new folder layout and broken links -->
-
 ## Table of contents
 
 {:toc}

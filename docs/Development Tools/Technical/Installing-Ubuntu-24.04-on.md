@@ -33,8 +33,9 @@ Now that you know a little about how the process works, let's make sure you have
 4. Download [Ventoy](https://www.ventoy.net/en/download.html)
 5. Clone the [scripts_and_prebuilts](https://github.com/UNL-Lunabotics/scripts_and_prebuilts/tree/main) repo
 
-<!-- #TODO: existing 'CHANGE LATER' marker in source -->
-### Running the Script (CHANGE LATER)
+<!-- #TODO: Verify this is accurate still -->
+
+### Running the Script
 
 Once the [scripts_and_prebuilts](https://github.com/UNL-Lunabotics/scripts_and_prebuilts/tree/main) repo is cloned, open the folder and navigate to the `scripts` folder. Copy the `Mini PC Setup` folder to your Desktop.
 
@@ -43,7 +44,7 @@ This script was made for Linux and macOS. On Windows, you can still run this usi
 
 Then, open the copied folder, and you will want to run the `mini_pc_setup.sh`. To do this, open a terminal and type `chmod +x mini_pc_setup.sh` and then `./mini_pc_setup.sh`. This script will then run and prompt you different things.
 
-The first will be the name of the ISO image you downloaded. By default, it should be `ubuntu-24.04.3-desktop-amd64.iso`. It will then prompt for the Ubuntu codename and ROS2 codename. At the time of writing, this should be set to `noble` and `jazzy`, respectively. Lastly, this script will prompt you for a password. Refer to the programming team lead for what this password should be. The script will then generate files inside the `ventoy configuration` folders.<!-- #TODO: time-sensitive statement; verify it is still current -->
+The first will be the name of the ISO image you downloaded. By default, it should be something like `ubuntu-24.04.3-desktop-amd64.iso`. It will then prompt for the Ubuntu codename and ROS2 codename. At the time of writing, this should be set to `noble` and `jazzy`, respectively. Lastly, this script will prompt you for a password. Refer to the programming team lead for what this password should be. The script will then generate files inside the `ventoy configuration` folders.
 
 ### Preparing the USB Drive
 

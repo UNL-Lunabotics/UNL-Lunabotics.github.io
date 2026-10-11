@@ -4,7 +4,7 @@ parent: Administrative
 nav_order: 2
 ---
 
-<!-- #TODO: Repository-and-File-Structure describes the OLD section names and layout update for the new structure also the links are broken -->
+<!-- TODO: Add a section that explains what grand_parent tags are for and how to use them. -->
 
 ## Table of contents
 
@@ -26,7 +26,7 @@ For this guide, it will be helpful to have the repository open as you read. Ther
 
 This is the main part of this repo, and where you will likely be spending the most time in. Within the docs folder, there's a specific structure just-the-docs uses:
 
-Each Section of this website has a folder associated with it in the repository, such as "Administrative" or "Curriculum". Within each of those folders, there are Markdown files. The `index.md` file is the main documentation and will create an entry in the Sidebar. Other files inside the folder will be treated as "children" of the Sidebar entry, and rendered **underneath** it.<!-- #TODO: mentions an old section name that no longer exists -->
+Each Section of this website has a folder associated with it in the repository, such as "Administrative" or "Development Tools". Within each of those folders, there are Markdown files. The `index.md` file is the main documentation and will create an entry in the Sidebar. Other files inside the folder will be treated as "children" of the Sidebar entry, and rendered **underneath** it.
 
 ### The attachments Folder
 

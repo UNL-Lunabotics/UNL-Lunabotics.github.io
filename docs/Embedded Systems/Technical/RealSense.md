@@ -11,7 +11,7 @@ nav_order: 2
 
 ## Sensors
 
-This folder contains information needed to incorporate different sensors (like cameras and LiDAR) into the codebase and use it.<!-- #TODO: refers to old, reword -->
+This page contains information needed to incorporate different sensors (like cameras and LiDAR) into the codebase and use it.
 
 ## Intel Realsense Cameras
 

@@ -55,7 +55,7 @@ Download [this](https://github.com/TheKing349/WSL2-Linux-Kernel/releases/latest/
 Next, unzip the downloaded `vmlinux+modules.zip` file.
 Then, create a new folder at `C:\Users\[YOUR_USER]\wsl`, where `[YOUR_USER]` is replaced with your username.
 
-Then, put the `vmlinux` and `modules.vhdx` files to this folder: `C:\Users\[YOUR_USER]\wsl`<!-- #TODO: refers to the old folder structure; reword for the new layout -->
+Then, put the `vmlinux` and `modules.vhdx` files to this folder: `C:\Users\[YOUR_USER]\wsl`
 
 Then, make a new configuration file located here: `C:\Users\[YOUR_USER]\.wsl.config`. Put the following inside the file:
 

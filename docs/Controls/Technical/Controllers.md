@@ -15,7 +15,7 @@ You can find a list of already existing ROS2 Controllers on the [ros2_controller
 
 All controller logic will be written in C++, including extensive use of header files. If you are not familiar with C++, I recommend either crying or going to [LEARN C++](https://www.learncpp.com/) and doing some tutorials.
 
-Anywhere you see the word robot in these guides, you should probably replace it with the name of your root unless it is obvious that you shouldn't. Robot is just the placeholder we are using.<!-- #TODO: refers to the old folder structure -->
+Anywhere you see the word robot in these guides, you should probably replace it with the name of your root unless it is obvious that you shouldn't. Robot is just the placeholder we are using.
 
 ## Architecture of a Custom Controller
 

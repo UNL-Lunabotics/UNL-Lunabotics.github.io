@@ -3,7 +3,7 @@ title: Administrative
 nav_order: 1
 ---
 
-<!-- #TODO: update text for new folder structure and broken links -->
+<!-- TODO: Move the Non-Programmer Friendly Zone and/or Curriculum to an Onboarding section. Remove references to STL -> URDF tutorial since that was for Solidworks. -->
 
 ## Administrative
 
