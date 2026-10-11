@@ -46,7 +46,7 @@ Before running this node make sure to run the command `export RMW_IMPLEMENTATION
 - Can fix segfaults, dropped frames, and unresponsive nodes
 
 #### Composable Nodes
-
+<!-- TODO: Rewrite to use built in node -->
 A **composable node** is a ROS2 node designed to be loaded into a single process with another composable node. Instead of running each node as a separate executable, multiple composable nodes share a shared process. This allows ROS2 to do a zero-copy, intra-process communication between the nodes automatically.
 
 When two nodes are inside the same container process, ROS2 can pass messages by reference, so you can avoid the process of sending the data over the network, which is often our greatest bottle neck.
@@ -70,4 +70,4 @@ Then, on the left, turn on Stereo Module, RGB Camera, and Motion Module. Output 
 ![image]({% link attachments/Realsense-Output.png %})
 
 > Author: Aiden Kimmerling (<https://github.com/TheKing349>)  
-> Author: Raegan Scheet (<https://github.com/cscheet2>)
+> Author: Raegan Scheet (<https://github.com/raedotzip>)

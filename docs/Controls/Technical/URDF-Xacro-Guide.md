@@ -89,7 +89,7 @@ Next, you need to declare the robot tag and import xacro. The robot tag is kind 
 
 It is REQUIRED to give the robot a name. You only need to do it in one file, but you can optionally include the name in every file if you want. It is recommended to put the name in the main xacro file.
 
-If you want to read more about the technical details for how to implement link/joint pairs by hand (which you shouldn't have to do since we use an exporter), then the best documentation is available at the [Nav2 URDF Setup Guide](https://docs.nav2.org/setup_guides/urdf/setup_urdf.html).
+If you want to read more about the technical details for how to implement link/joint pairs by hand (which you shouldn't have to do since we use an exporter), then the best documentation is available at the [Nav2 URDF Setup Guide](https://docs.nav2.org/rolling/configuration_and_development/first_time_robot_setup_guide/urdf/setup_urdf/).
 
 ### Example: `robotname.urdf.xacro`
 

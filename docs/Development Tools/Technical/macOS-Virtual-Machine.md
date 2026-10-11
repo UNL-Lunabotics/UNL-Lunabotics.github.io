@@ -74,7 +74,7 @@ Once you are logged in, you will see a few apps on the sidebar. The first one is
 
 Open Zen at least once, and make sure you enable it as the default browser in the setup.
 
-You will also see [VSCode](https://code.visualstudio.com/), which is the IDE of choice. For more information, see [How to Use VSCode](https://github.com/UNL-Lunabotics/lunabotics-documentation/wiki/How-to-Use-VSCode).
+You will also see [VSCode](https://code.visualstudio.com/), which is the IDE of choice. For more information, see For more information, see [How to Use VSCode]({% link docs/Administrative/How-to-Use-VSCode.md %}).
 
 To clone any `UNL-Lunabotics` repository, I recommend using `gh auth login` and signing in with your GitHub account. Then, use `git clone [REPOSITORY_HERE]` where `[REPOSITORY_HERE]` is the URL of the `UNL-Lunabotics` GitHub page. You can also clone using VSCode if you want.
 

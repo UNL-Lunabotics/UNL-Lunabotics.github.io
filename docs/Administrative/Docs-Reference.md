@@ -268,7 +268,7 @@ You can use the `{.text-center}` attribute, as well as any other attributes on a
 
 This is just a basic overview of how to include Mermaid diagrams in your documentation. It is strongly recommended that you do more research in order to fully take advantage of their capabilities.
 
-Once you understand commonly used features, learn how to [locally test this repository]({% link docs/Administrative/Editing-the-Docs.md %}#Testing Locally).
+Once you understand commonly used features, learn how to [locally test this repository]({% link docs/Administrative/Editing-the-Docs.md %}#testing-locally).
 
 > Author: Aiden Kimmerling (<https://github.com/TheKing349>)  
 > Author: Jesse Mills (<https://github.com/JesseMills0>)
