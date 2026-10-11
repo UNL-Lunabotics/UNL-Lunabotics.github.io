@@ -1,6 +1,7 @@
 ---
 title: Foxglove
 parent: Technical
+grand_parent: Controls
 nav_order: 5
 ---
 

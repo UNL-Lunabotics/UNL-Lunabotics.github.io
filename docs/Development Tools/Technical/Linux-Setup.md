@@ -1,6 +1,7 @@
 ---
 title: Linux Setup
 parent: Technical
+grand_parent: Development Tools
 nav_order: 2
 ---
 

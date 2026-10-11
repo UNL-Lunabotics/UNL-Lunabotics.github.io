@@ -1,6 +1,7 @@
 ---
 title: WiFi Requirements
 parent: Conceptual
+grand_parent: Networking
 nav_order: 1
 ---
 

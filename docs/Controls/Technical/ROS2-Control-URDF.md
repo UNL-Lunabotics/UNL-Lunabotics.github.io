@@ -1,6 +1,7 @@
 ---
 title: ROS2 Control in URDF
 parent: Technical
+grand_parent: Controls
 nav_order: 3
 ---
 

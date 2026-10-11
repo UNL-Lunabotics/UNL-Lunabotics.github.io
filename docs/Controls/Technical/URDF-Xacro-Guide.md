@@ -1,6 +1,7 @@
 ---
 title: URDF with Xacro
 parent: Technical
+grand_parent: Controls
 nav_order: 4
 ---
 

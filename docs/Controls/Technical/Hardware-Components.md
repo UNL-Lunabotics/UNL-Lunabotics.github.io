@@ -1,6 +1,7 @@
 ---
 title: Hardware Components
 parent: Technical
+grand_parent: Controls
 nav_order: 2
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: macOS Virtual Machine Setup
 parent: Technical
+grand_parent: Development Tools
 nav_order: 4
 ---
 

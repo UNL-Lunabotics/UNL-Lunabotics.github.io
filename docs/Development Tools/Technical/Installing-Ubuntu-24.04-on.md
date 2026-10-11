@@ -1,6 +1,7 @@
 ---
 title: Installing Ubuntu 24.04 + ROS2
 parent: Technical
+grand_parent: Development Tools
 nav_order: 5
 ---
 

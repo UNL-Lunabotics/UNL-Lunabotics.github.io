@@ -1,6 +1,7 @@
 ---
 title: MuJoCo Config Files
 parent: Technical
+grand_parent: Simulation
 nav_order: 2
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: CAN Bus Setup
 parent: Technical
+grand_parent: Embedded Systems
 nav_order: 1
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: MuJoCo Setup and Troubleshooting
 parent: Technical
+grand_parent: Simulation
 nav_order: 1
 ---
 
