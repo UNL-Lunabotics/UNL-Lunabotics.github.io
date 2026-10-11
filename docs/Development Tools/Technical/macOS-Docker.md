@@ -72,7 +72,7 @@ The last thing to do before starting the container itself is to run a script. Th
 ./scripts/docker_setup.sh -m
 ```
 
-This script will initailize and start XQuartz and VirtualGL.
+This script will initialize and start XQuartz and VirtualGL.
 
 ### Starting the Docker Container
 

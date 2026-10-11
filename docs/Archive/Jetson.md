@@ -221,7 +221,7 @@ If your LiDAR appears on one of the ports, you may proceed
 
 ***WRITE THIS PORT DOWN!** it will be important when giving privileges when running the docker container*
 
-### Setup Steps
+### LiDAR Setup
 
 1. Plug in the LiDAR to the Orin via USB. If you are using the `RPLidar S2M1-R2`, there will be a UART to Serial bridge (likely a CP2102) that you will need to connect the LiDAR to first before plugging the USB end of the bridge into the Orin. Drivers for the bridge should be automatically installed on recent Linux Kernels. This setup does not account for plugging the LiDAR directly into the Orin's GPIO pins.
 
@@ -403,7 +403,7 @@ If your LiDAR appears on one of the ports, you may proceed
 
 ## Installing OV9281 Global Shutter UVC Camera Software
 
-### Setup Steps
+### Camera Setup
 
 Additional Documentation for this camera can be found on the [Arducam Wiki](https://docs.arducam.com/UVC-Camera/Appilcation-Note/External-Trigger-Mode/OV9281-Global-Shutter/).
 

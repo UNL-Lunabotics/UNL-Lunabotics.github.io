@@ -4,9 +4,11 @@ parent: Archive
 nav_order: 1
 ---
 
-## Table of contents
+<!-- markdownlint-disable MD022 -->
+## Table of Contents
 {: .no_toc .text-delta }
 
+<!-- markdownlint-enable MD022 -->
 1. TOC
 {:toc}
 
@@ -34,7 +36,7 @@ If you get an error saying `Got permission denied while trying to connect to the
 
 DevContainers will use Docker to create the virtual environment mentioned before.
 
-#### Cloning the Repository
+#### Cloning the Repository (DevContainer)
 
 If comfortable with `git` and the terminal (recommended), sign into GitHub and type `git clone https://github.com/UNL-Lunabotics/terrence_2.0`
 
@@ -86,7 +88,7 @@ sudo apt-get install -y python3 python3-pip ros-dev-tools \
     joystick jstest-gtk evtest ros-${ROS_CODENAME}-slam-toolbox libserial-dev \
 ```
 
-### Cloning the Repository
+### Cloning the Repository (Bare Metal)
 
 If comfortable with `git` and the terminal (recommended), sign into GitHub and type `git clone https://github.com/UNL-Lunabotics/terrence_2.0`
 

@@ -63,7 +63,7 @@ Each time your PC/computer gets turned off and back on, or each time the adapter
 
 You are now ready to use the adapter to communicate with the devices on your CAN bus!
 
-## Installing the Phoenix6 API ##
+## Installing the Phoenix6 API
 
 To control the Kraken X60 motors over CAN bus, the Phoenix6 API (C++, C#, Java, or Python) is required. We primarily use the C++ API.
 

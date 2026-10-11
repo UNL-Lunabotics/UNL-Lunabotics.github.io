@@ -11,3 +11,5 @@ nav_order: 2
 ## Linux Setup
 
 TODO: WRITE ME
+
+> Author: Firstname Lastname (<https://github.com/UNL-Lunabotics>)
