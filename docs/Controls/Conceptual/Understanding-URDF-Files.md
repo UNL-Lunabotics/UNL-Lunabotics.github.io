@@ -38,6 +38,7 @@ The only element in your URDF that is not a child of another component is the **
 
 If you are struggling to visualize this concept, try thinking of it like a tree. The root of the tree is `base_link`, and every other link inside the URDF branches off of `base_link`, with all of the links being held together by joints. The next section will go over links and joints in more detail.
 
+<!-- markdownlint-disable MD031 -->
 ```mermaid
 graph TD
     base_link -->|chassis_joint| chassis_link
@@ -49,6 +50,8 @@ graph TD
     chassis_link -->|laser_joint| laser_link
     chassis_link -->|camera_joint| camera_link
 ```
+{: .text-center }
+<!-- markdownlint-enable MD031 -->
 
 > This is a tree diagram representation of the robot we will be modeling later on. Keep in mind that this is a very simple model; URDFs of real robots will very likely be much more complicated than this, but they should maintain the same basic structure.
 
