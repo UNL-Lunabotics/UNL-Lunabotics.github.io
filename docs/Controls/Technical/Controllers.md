@@ -5,17 +5,20 @@ grand_parent: Controls
 nav_order: 1
 ---
 
-## Table of contents
-
-{:toc}
-
-## Introduction
+# Controllers
+{: .no_toc }
 
 You can find a list of already existing ROS2 Controllers on the [ros2_controllers](https://control.ros.org/jazzy/doc/ros2_controllers/doc/controllers_index.html) page. The rest of this guide will concern making a custom controller.
 
 All controller logic will be written in C++, including extensive use of header files. If you are not familiar with C++, I recommend either crying or going to [LEARN C++](https://www.learncpp.com/) and doing some tutorials.
 
 Anywhere you see the word robot in these guides, you should probably replace it with the name of your root unless it is obvious that you shouldn't. Robot is just the placeholder we are using.
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{:toc}
 
 ## Architecture of a Custom Controller
 

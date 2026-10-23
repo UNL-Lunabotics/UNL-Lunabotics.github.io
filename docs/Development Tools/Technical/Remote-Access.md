@@ -5,13 +5,16 @@ grand_parent: Development Tools
 nav_order: 4
 ---
 
-## Table of contents
-
-{:toc}
-
-## Remote Setup
+# Remote Access
+{: .no_toc }
 
 Because ROS2 requires Ubuntu to run properly, this guide shows how to remotely connect to one of our Mini PC's that is already set up on Ubuntu with ROS2. For more information about ROS2, see [Learning ROS2]({% link docs/Administrative/Learning-ROS2.md %}).
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{:toc}
 
 ## Tailscale Setup
 
@@ -76,7 +79,7 @@ Apart from just closing VNC client, you'll also need to stop the script, which s
 
 That's it! You are able to connect and develop on the Mini PC remotely! Have fun developing!
 
-## Mini PC Remote Connection
+## Process
 
 This goes over the process of being able to remote connect to the Mini PC using VNC. This idea sounds simple, but required a lot of workarounds and hack-y solutions, but we got there.
 

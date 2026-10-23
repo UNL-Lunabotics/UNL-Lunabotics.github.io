@@ -5,18 +5,16 @@ grand_parent: Controls
 nav_order: 5
 ---
 
-## Table of contents
+# Foxglove
+{: .no_toc }
 
+This contains all of the information needed to get started with Foxglove, including a basic overview of what Foxglove is, an installation tutorial, and a guide to utilizing some key UI features Foxglove Offers. This is by no means a comprehensive overview, but it should give you an idea of how to navigate the UI and visualize important data from your bot.
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
 {:toc}
-
-## Foxglove
-
-This folder contains all of the information needed to get started with Foxglove, including a basic overview of what Foxglove is, an installation tutorial, and a guide to utilizing some of the key UI features Foxglove Offers. This is by no means a comprehensive overview, but it should give you an idea of how to navigate the UI and visualize important data from your bot.
-
-## Foxglove Setup  
-
-This page will go over the basics of what Foxglove is, how to set it up with your project.
-Note: In this text and in other documentation online, the terms "Foxglove" and "Foxglove Studio" are used largely interchangeably. They effectively mean the same thing.
 
 ## What is Foxglove?
 
@@ -140,7 +138,7 @@ Note: UNL Lunabotics already has a Foxglove account set up. If you are working o
    If you did not add an autostart node, you will need to manually start foxglove once your ROS2 launch file is executing.
 
 Well Done! You should now have foxglove set up and ready to begin using.  
-The next section will go over some basic usage of the Foxglove User Interface, since it can be a little bit overwhelming to get used to.
+The next section will go over some basic usage of the Foxglove User Interface, since it can be a little overwhelming to get used to.
 
 ## UI Overview
 

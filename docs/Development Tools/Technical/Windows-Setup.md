@@ -5,15 +5,19 @@ grand_parent: Development Tools
 nav_order: 1
 ---
 
-## Table of contents
-
-{:toc}
-
-## Windows Setup
+# Windows Setup
+{: .no_toc }
 
 Here you will find how to get set up with development tools for Windows.
 
 First, [Install VSCode]({% link docs/Administrative/How-to-Use-VSCode.md %}), then go through the Table of Contents.
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{:toc}
+
 
 ## Installing Docker
 

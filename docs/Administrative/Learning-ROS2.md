@@ -4,11 +4,8 @@ parent: Administrative
 nav_order: 7
 ---
 
-## Table of contents
-
-{:toc}
-
-## Learning ROS2
+# Learning ROS2
+{: .no_toc }
 
 Robot Operating System (ROS) is a set of open source algorithms, hardware driver software and tools developed to develop robot control software. Even though it has operating system in its name it is not an operating system. It is:
 
@@ -20,13 +17,19 @@ Robot Operating System (ROS) is a set of open source algorithms, hardware driver
 
 Basically, ROS2 is just how we communicate and coordinate information and commands throughout a large and complicated robotics system with a lot of moving parts.
 
-### The Basics
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{:toc}
+
+## The Basics
 
 The basics concepts of ROS2 have shockingly good documentation that would be difficult to outdo, so for this part it will mostly be links to go do the tutorials yourself. Please [download ROS2](https://docs.ros.org/en/jazzy/Installation.html) if you haven't already.
 
 Below are the links for the sections you should go through **IN ORDER**. The sub bullet points are the specific tutorials you should do.
 
-#### Beginning Concepts
+### Beginning Concepts
 
 The links below will teach you the basics concepts of ROS2. You can follow along with the turtlebot examples if that would help you, but feel free to just read through the sections
 
@@ -40,7 +43,7 @@ The links below will teach you the basics concepts of ROS2. You can follow along
   - [Understanding actions](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Actions/Understanding-ROS2-Actions.html)
   - [Launching nodes](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Launching-Multiple-Nodes/Launching-Multiple-Nodes.html)
 
-#### Coding the Basic Concepts
+### Coding the Basic Concepts
 
 These tutorials are when you actually start to get into programming these things. It is HIGHLY recommended that you set up a temporary repository and follow along with creating all this code. I personally recommend typing out the code yourself and adding more comments as you go rather than copy/pasting.
 
@@ -60,7 +63,7 @@ What language you choose to write things in is up to you. You do not have to do 
   - [Using parameters in a class (Python)](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Using-Parameters-In-A-Class-Python.html)
   - [Creating and using plugins (C++)](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Pluginlib.html)
 
-### Intermediate
+## Intermediate
 
 This is where things start to get technical. Some of these may get their own dedicated tutorials here in the future.
 
@@ -76,12 +79,10 @@ This is where things start to get technical. Some of these may get their own ded
   - [Launch](https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Launch/Launch-Main.html)
   - [RViz](https://docs.ros.org/en/jazzy/Tutorials/Intermediate/RViz/RViz-Main.html)
 
-### Advanced
+## Advanced
 
 For the most part, advanced topics shouldn't be necessary for you to learn right now. It is recommended that you briefly look through what's in the list just to know the option to research it is there if needed, but you do not have to go through any of them in depth unless you feel like it.
 
 [Advanced Tutorials](https://docs.ros.org/en/jazzy/Tutorials/Advanced.html)
-
-## Introduction to ROS2
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)

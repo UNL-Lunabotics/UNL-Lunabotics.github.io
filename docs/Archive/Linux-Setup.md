@@ -4,21 +4,20 @@ parent: Archive
 nav_order: 1
 ---
 
-<!-- markdownlint-disable MD022 -->
-## Table of Contents
-{: .no_toc .text-delta }
-
-<!-- markdownlint-enable MD022 -->
-1. TOC
-{:toc}
-
-## Linux Setup
+# Linux Setup
+{: .no_toc }
 
 Here you will find how to get set up with development tools for Linux.
 
 First, [Install VSCode]({% link docs/Administrative/How-to-Use-VSCode.md %}).
 
 You will find two setups. The DevContainer Setup is recommended, but you can install everything on your Linux operating system if you want to.
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{:toc}
 
 ## DevContainer Setup
 

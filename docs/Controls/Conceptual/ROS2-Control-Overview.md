@@ -5,9 +5,18 @@ grand_parent: Controls
 nav_order: 1
 ---
 
-## ROS2 Control Overview
+# ROS2 Control Overview
+{: .no_toc }
 
 ROS2 Control is a library for exactly what it sounds like, controlling the robot. It handles things from kinematics to joystick input to communicating with the microcontrollers and other hardware. It is a large topic to tackle, kind of complicated, and the documentation on the topic is also not very good at all when it comes to actual implementation. The conceptual explanations for ROS2 Control are well done.
+
+## Table of Contents
+{: .no_toc .text-delta}
+
+- Table of Contents
+{:toc}
+
+## Overview
 
 Firstly, read this documentation page starting at [Architecture](https://control.ros.org/jazzy/doc/getting_started/getting_started.html#architecture) and ending before the Hardware Description in URDF section.
 

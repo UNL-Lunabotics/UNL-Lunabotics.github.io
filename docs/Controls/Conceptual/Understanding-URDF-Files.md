@@ -5,7 +5,8 @@ grand_parent: Controls
 nav_order: 3
 ---
 
-## Understanding URDF Files
+# Understanding URDF Files
+{: .no_toc }
 
 Unified Robot Description Format (URDF) is the standard for representing a robot in ROS2. It serves as a machine-readable blueprint that allows ROS2 programs to "visualize" your robot in order to carry out its various tasks, such as control, sensing, and autonomy.
 
@@ -20,6 +21,12 @@ By the end of this guide, you should have a basic model of a robot in URDF forma
 
 {: .note}
 I am using Foxglove Studio to render the URDF for this tutorial, if you are using something else, your model may look slightly different, but the overall shape should be the same.
+
+## Table of Contents
+{: .no_toc .text-delta}
+
+- Table of Contents
+{:toc}
 
 ## What is a URDF?
 

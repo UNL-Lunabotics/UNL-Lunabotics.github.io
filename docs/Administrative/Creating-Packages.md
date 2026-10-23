@@ -4,13 +4,16 @@ parent: Administrative
 nav_order: 4
 ---
 
-## Table of contents
-
-{: toc}
-
-## Packages
+# Creating Packages
+{: .no_toc }
 
 This section will explain how to make, write, and configure ROS2 Packages, as well as some best practices. This will include both compiled and Python ROS2 packages. This will also include general cases and specialized cases.
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{: toc}
 
 ## Creating Packages
 

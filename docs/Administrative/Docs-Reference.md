@@ -6,8 +6,13 @@ nav_order: 2
 
 <!-- TODO: Add a section that explains what grand_parent tags are for and how to use them. -->
 
-## Table of contents
+# Docs Reference
+{: .no_toc }
 
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
 {: toc}
 
 ## Editing the Repository

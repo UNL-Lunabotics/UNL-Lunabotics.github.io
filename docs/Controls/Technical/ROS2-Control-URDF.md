@@ -5,11 +5,18 @@ grand_parent: Controls
 nav_order: 3
 ---
 
-## ROS2 Control with Xacro
+# ROS2 Control with Xacro
+{: .no_toc }
 
 A LOT of ROS2 Control depends on having a solid URDF to base it on. This URDF is used by the hardware component, the controllers, and Gazebo. If you don't know what that means, visit the ROS2 Control technical document.
 
 This page will describe the different components of a `ros2_control.xacro` file and the different ways you can go about structuring it.
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{:toc}
 
 ## Basic Structure
 

@@ -5,15 +5,18 @@ grand_parent: Simulation
 nav_order: 2
 ---
 
-## Table of contents
-
-{:toc}
-
-## Files
+# MuJoCo Config Files
+{: .no_toc}
 
 There are different files used to get MuJoCo ROS2 Control working properly, from URDF to configuration and launch files.
 
 See the Table of Contents to get started.
+
+## Table of Contents
+{: .no_toc .text-delta}
+
+- Table of Contents
+{:toc}
 
 ## ROS2 Control File
 

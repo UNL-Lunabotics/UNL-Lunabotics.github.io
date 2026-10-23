@@ -5,8 +5,13 @@ grand_parent: Embedded Systems
 nav_order: 1
 ---
 
-## Table of contents
+# CAN Bus Setup
+{: .no_toc }
 
+## Table of Contents
+{: .no_toc .text-delta}
+
+- Table of Contents
 {:toc}
 
 ## CAN Adapter Board Setup

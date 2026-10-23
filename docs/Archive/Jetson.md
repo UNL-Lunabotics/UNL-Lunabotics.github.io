@@ -4,13 +4,16 @@ parent: Archive
 nav_order: 4
 ---
 
-## Table of contents
-
-{:toc}
-
-## Jetson-Specific
+# Jetson
+{: .no_toc }
 
 If for some reason you like suffering, you can browse these explanations on how to make Jetson Orin Nano's work.
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{:toc}
 
 ## Installing Ubuntu 24.04 (Noble Numbat)
 

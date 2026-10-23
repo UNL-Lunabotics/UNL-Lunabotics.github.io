@@ -5,8 +5,13 @@ grand_parent: Controls
 nav_order: 2
 ---
 
-## Table of contents
+# Hardware Components
+{: .no_toc}
 
+## Table of Contents
+{: .no_toc .text-delta}
+
+- Table of Contents
 {:toc}
 
 ## Hardware Components

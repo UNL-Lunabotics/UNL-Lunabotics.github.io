@@ -5,24 +5,31 @@ grand_parent: Development Tools
 nav_order: 3
 ---
 
-## macOS Docker Setup
+# macOS Docker Setup
+{: .no_toc }
 
 The easiest way to set up development tools for macOS is using our existing Docker setup.
 
 {: .note}
 Docker on macOS does **not** currently support USB passthrough. If USB passthrough is required, you must use the [Virtual Machine Setup]({% link docs/Development Tools/Technical/macOS-Virtual-Machine.md %}). See the [open docker issue](https://github.com/docker/roadmap/issues/511) to learn more.
 
-### Overview
+## Table of Contents
+{: .no_toc .text-delta}
+
+- Table of Contents
+{:toc}
+
+## Overview
 
 [Docker](https://www.docker.com/) is a containerization software that is used to get an isolated environment to program in. For more information about how Docker works, see our [documentation]({% link docs/Development Tools/Conceptual/Understanding-Docker.md %}).
 
 While Docker works out-of-the-box in Linux on our repositories, that is not the case with macOS. macOS cannot natively run graphical apps on Docker. For this, we will use two programs on macOS to bridge GUI apps from Docker to macOS, along with special configuration in Docker to link it all together.
 
-### Downloading Docker Desktop
+## Downloading Docker Desktop
 
 To install Docker Desktop, click [here](https://docs.docker.com/desktop/setup/install/mac-install/) to download. Then run the installer.
 
-### Installing Required Apps
+## Installing Required Apps
 
 There are two applications required for macOS Docker. The first one is [XQuartz](https://www.xquartz.org/index.html). This will let Linux apps run on macOS. You can either install it from the link, or use the following if [Homebrew](https://brew.sh/) is installed:
 
@@ -36,7 +43,7 @@ The second program needed is [VirtualGL](https://virtualgl.org/). This will pass
 brew install virtualgl
 ```
 
-### Cloning Repository
+## Cloning Repository
 
 Once all the required programs are installed, you'll want to clone a repository that uses our docker setup. Type the following in to clone the repository:
 
@@ -46,7 +53,7 @@ git clone https://github.com/UNL-Lunabotics/<repo-name-here>
 
 Change `<repo-name-here>` with the name of the repository you want to work with.
 
-### Adding Overrides
+## Adding Overrides
 
 Before starting the Docker Container, we will need to add a file in the repository, which will let Docker pass information to XQuartz and VirtualGL. To do this, create a file with the following name and content `compose.override.yaml`:
 
@@ -65,7 +72,7 @@ Change `<docker-container-name>` with the "name" from the main `compose.yaml` fi
 {: .important}
 The file **MUST** be named `compose.override.yaml`, with the correct service name. It will not work without.
 
-### Running the Setup Script
+## Running the Setup Script
 
 The last thing to do before starting the container itself is to run a script. The repository should have a `scripts/docker_setup.sh`. If at the root of the repository, run the following command to trigger the script:
 
@@ -75,7 +82,7 @@ The last thing to do before starting the container itself is to run a script. Th
 
 This script will initialize and start XQuartz and VirtualGL.
 
-### Starting the Docker Container
+## Starting the Docker Container
 
 Now that everything is set up, we can finally start the docker container. If at the root of the repository, use the following command:
 
@@ -107,7 +114,7 @@ docker exec -it <docker-container-name> bash
 >
 > Again, changing the names to the correct one.
 
-### Running GUI Apps
+## Running GUI Apps
 
 Now that the container is running and in a shell, you can start GUI apps. Normally, if running a launch file, you may do `ros2 launch sim sim.launch.py`. Instead, use the following for any app that has a GUI:
 
@@ -117,7 +124,7 @@ vglrun ros2 launch sim sim.launch.py
 
 Here, `vglrun` tells graphics calls to pass over to macOS. If you do not use `vglrun`, the program will error out. This is required for Gazebo, MuJoCo, RViZ, or any other application that requires a GUI.
 
-### Stopping the Container
+## Stopping the Container
 
 To stop the docker container, open a new terminal and type the following, if at the root of the repository:
 

@@ -5,17 +5,16 @@ grand_parent: Development Tools
 nav_order: 5
 ---
 
-## Table of contents
+# Installing Ubuntu 24.04 + ROS2
+{: .no_toc }
 
+This was written specifically for a BeeLink SER5 Max but should work with any all AMD and Ubuntu Mini PC. This guide goes through setting up a new Mini PC with Ubuntu 24, ROS2 and various development tools.
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
 {:toc}
-
-## Mini PC
-
-This was written specifically for a BeeLink SER5 Max but should work with any all AMD and Ubuntu Mini PC.
-
-## Installing Ubuntu 24.04 + ROS2
-
-This guide goes through setting up a new Mini PC with Ubuntu 24, ROS2 and various development tools.
 
 ### Explanation
 

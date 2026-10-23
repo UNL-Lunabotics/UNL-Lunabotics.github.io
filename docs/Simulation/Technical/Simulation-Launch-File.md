@@ -5,11 +5,18 @@ grand_parent: Simulation
 nav_order: 3
 ---
 
-## Simulation Launch File
+# Simulation Launch File
+{: .no_toc }
 
 The launch file will need two different Nodes in order to work.
 
-### Converting Robot Description to MJCF
+## Table of Contents
+{: .no_toc .text-delta}
+
+- Table of Contents
+{:toc}
+
+## Converting Robot Description to MJCF
 
 MuJoCo, as mentioned before, cannot work with ROS2 topics directly. Instead, a conversion script creates a MJCF, which MuJoCo can interact with. This conversion script converts the URDF (or `/robot_description` topic) into an MJCF (or `/mujoco_robot_description` topic), and optionally combines it with a given scene. Below is an example:
 
@@ -41,7 +48,7 @@ This script is also responsible for going through the optional `mujoco_inputs.xa
 
 For more information, see the [URDF to MJCF Conversion](https://control.ros.org/jazzy/doc/mujoco_ros2_control/mujoco_ros2_control/docs/tools.html) documentation.
 
-### Start the ROS2 Control Node
+## Start the ROS2 Control Node
 
 Once conversion completes, we can start the MuJoCo ROS2 Control Node. Below is an example:
 

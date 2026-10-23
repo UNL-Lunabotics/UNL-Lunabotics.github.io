@@ -5,8 +5,13 @@ grand_parent: Simulation
 nav_order: 1
 ---
 
-## Table of contents
+# MuJoCo Setup and Troubleshooting
+{: .no_toc}
 
+## Table of Contents
+{: .no_toc .text-delta}
+
+- Table of Contents
 {:toc}
 
 ## MuJoCo ROS2 Control Installation

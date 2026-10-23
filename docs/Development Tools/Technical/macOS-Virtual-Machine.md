@@ -5,15 +5,18 @@ grand_parent: Development Tools
 nav_order: 4
 ---
 
-## Table of contents
-
-{:toc}
-
-## macOS Virtual Machine Setup
+# macOS Virtual Machine Setup
+{: .no_toc }
 
 For more advanced configuration, a virtual machine may be required, such as for USB input passthrough.
 
 Follow the Table of Contents to get started.
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{:toc}
 
 ## Generating the Ubuntu Virtual Machine
 

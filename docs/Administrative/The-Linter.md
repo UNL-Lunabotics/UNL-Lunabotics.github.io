@@ -4,7 +4,8 @@ parent: Administrative
 nav_order: 3
 ---
 
-## The Linter
+# The Linter
+{: .no_toc }
 
 In order to help keep the formatting clear and consistent, this repository utilizes a markdown linter. A linter is a tool that flags any format violations for the writer to fix. For example, the linter we use flags not starting a file with a title as a violation of the formatting guidelines. Please note that it does not catch spelling or grammar mistakes, just formatting. We are using a VSCode extension named markdownlint by David Anson. Documentation for this linter can be found at <https://github.com/DavidAnson/markdownlint/tree/main>.
 
@@ -14,7 +15,13 @@ Most of these are pretty basic rules, but we do have some custom settings (discu
 
 **Usually, the linter will only lint the current file that you have open, NOT the whole repository.** If you would like it to lint the whole repository, open VSCode commands (with either CTRL/CMD + SHIFT + P or just by clicking on the top center bar and adding a `>`) and run the "Lint all Markdown files in the workspace with markdownlint" command. It should highlight any file containing a violation in red.
 
-### Disabled Rules
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{:toc}
+
+## Disabled Rules
 
 There are a number of default rules in markdownlint, and we have a few of them disabled:
 
@@ -28,7 +35,7 @@ There are a number of default rules in markdownlint, and we have a few of them d
 The list of all default rules can be found here:  
 <https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md>
 
-### Custom Rule: Required Author Tag
+## Custom Rule: Required Author Tag
 
 Maintaining this GitHub Pages is going to be a lot of work for everyone involved. It requires a lot of technical experience to write detailed guides and good information, and it takes a lot of time and effort to acquire that knowledge. It is important to credit every page with its author to acknowledge them.
 
@@ -51,7 +58,7 @@ Or, if there are multiple authors,
 
 The order for the author tags does not indicate importance in writing a page, it is usually just in chronological order (though no strict ordering rules will be enforced)
 
-### Editing the Linter
+## Editing the Linter
 
 The general settings for the linter can be found in `.vscode/settings.json`.
 
@@ -75,7 +82,7 @@ Custom linter rules will be JavaScript files stored inside `.vscode/markdownlint
 
 [HTML-Proofer](https://github.com/gjtorikian/html-proofer) is a testing suite designed to validate HTML output. We primarily use it here to check for dead/nonfunctional links in the documentation. It has to be run from the command line, and it scans the built HTML code for errors.
 
-`bundle exec jekyll build` compiles the written markdown files into a full HTML website inside the `_site/` folder. This is the folder HTML-Proofer checks, so the build command needs to be run first. 
+`bundle exec jekyll build` compiles the written markdown files into a full HTML website inside the `_site/` folder. This is the folder HTML-Proofer checks, so the build command needs to be run first.
 
 To check every single link in the project, run:
 

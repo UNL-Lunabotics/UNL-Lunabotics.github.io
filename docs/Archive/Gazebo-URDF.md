@@ -4,13 +4,16 @@ parent: Archive
 nav_order: 3
 ---
 
-## Table of contents
+# Gazebo in URDF
+{: .no_toc }
 
+This contains all the information necessary to get a Gazebo simulation working. It assumes you already know how to make a URDF and will just specify when certain actions need to occur. If you don't know how to make a proper URDF, see the URDF folder. It will include details on making an SDF or .world file.
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
 {:toc}
-
-## Gazebo
-
-This folder will contain all the information necessary to get a Gazebo simulation working. It assumes you already know how to make a URDF and will just specify when certain actions need to occur. If you don't know how to make a proper URDF, see the URDF folder. It will include details on making an SDF or .world file.
 
 ## Introducing the Gazebo Headache
 

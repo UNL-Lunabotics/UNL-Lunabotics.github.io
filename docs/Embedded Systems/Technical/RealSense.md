@@ -5,13 +5,16 @@ grand_parent: Embedded Systems
 nav_order: 2
 ---
 
-## Table of contents
-
-{:toc}
-
-## Sensors
+# RealSense
+{: .no_toc}
 
 This page contains information needed to incorporate different sensors (like cameras and LiDAR) into the codebase and use it.
+
+## Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{:toc}
 
 ## Intel Realsense Cameras
 

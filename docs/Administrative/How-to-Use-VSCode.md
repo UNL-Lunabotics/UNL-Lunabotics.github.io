@@ -4,9 +4,9 @@ parent: Administrative
 nav_order: 8
 ---
 
-## How to Use VSCode
+# How to Use VSCode
 
-### What is VSCode?
+## What is VSCode?
 
 VSCode is something called an Integrated Development Environment (IDE). Basically, this is the programming equivalent of Microsoft Word or Google Docs. In order to write code, programmers need an application they can actually type in. Theoretically, you can write code in Google Docs if you really wanted to, but the nice thing about IDEs is that they are INTEGRATED. Not only can you type code in them, they also provide tools to help you format code, run the code, detect errors, and more.
 
@@ -17,11 +17,11 @@ There are many IDEs out there, but the nice thing about VSCode is that:
 - It supports every language you can program in
 - Most importantly, it's free!
 
-### Downloading VSCode
+## Downloading VSCode
 
 Go to [this](https://code.visualstudio.com/Download) link and download the correct installer for your computer. Please note that you can ignore the small blue buttons underneath each operating system, and instead you can just click the big blue button directly under the logos. After that, open the installer and follow the steps.
 
-### Getting Started with VSCode
+## Getting Started with VSCode
 
 The important thing to know about VSCode is that it is technically just a text editor. However, it has this feature called extensions. If you open the extensions menu and search for whatever programming language you want to use, you can find the corresponding extension that will enable you to run the code. **You HAVE to install the language's extension to be able to use it (most of the time)**.
 
