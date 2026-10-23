@@ -1,7 +1,6 @@
 ---
 title: Remote Access
-parent: Technical
-grand_parent: Development Tools
+parent: Archive
 nav_order: 4
 ---
 
