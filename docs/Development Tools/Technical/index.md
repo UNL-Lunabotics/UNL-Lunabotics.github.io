@@ -4,7 +4,7 @@ parent: Development Tools
 nav_order: 2
 ---
 
-# Technical
+# Development Tools Technical
 
 This folder contains tutorials on how to set up development tools for most platforms. To get started, follow the tutorial for your operating system.
 
