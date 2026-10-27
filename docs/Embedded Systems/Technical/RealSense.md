@@ -20,17 +20,15 @@ This page contains information needed to incorporate different sensors (like cam
 
 The setup for most of the Realsense camera family should be relatively the same. At the time of writing this, UNL Lunabotics uses the Intel Realsense D435i's. These cameras are depth-sensing and have a built in IMU.
 
-## Installation
+### Installation
 
 Ensure the required software library for ROS2 is installed: `sudo apt install ros-jazzy-realsense2-camera`.
 
-## Introduction
+### Introduction
 
 RealSense2 cameras are an important part of our setup since they allow us to get image data, imu data, and depth data without the use of an internal compass or GPS. Due to this these cameras are ideal for autonomy and teleop use.
 
 RealSense2 cameras have excellent documentation and have header libraries that can be used in both C++ and Python code snippets. We are just going to focus on C++ usage because the Python library is just a C++ wrapper.
-
-## Setup & Calibration
 
 ### Calibration
 
@@ -57,7 +55,7 @@ When two nodes are inside the same container process, ROS2 can pass messages by 
 
 So if a node needs to read the camera data frequently, consider composing the nodes in order avoid the network overhead. Read more on the [ROS2 Jazzy Documentation](https://docs.ros.org/en/jazzy/Tutorials/Demos/Intra-Process-Communication.html)
 
-## How To Use
+### How To Use
 
 An example of how to use this code is in this [repo](https://github.com/UNL-Lunabotics/scripts_and_prebuilts/blob/main/prebuilts/camera/src/realsense_node.cpp). Essential to use this you are going to want to run this node which frequently publishes the data for every node to use.
 
