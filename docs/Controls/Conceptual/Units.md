@@ -5,7 +5,7 @@ grand_parent: Controls
 nav_order: 2
 ---
 
-## ROS2 Control's Weird Units
+# ROS2 Control's Weird Units
 
 If you are getting started writing a controller or hardware component, you might be thinking to yourself, "what units does ROS2 Control send commands in? I can't find documentation on this anywhere." Correct! There isn't really documentation on this (that is easily accessible), because ROS2 Control is unit-agnostic. It is up to the programmer to convert its values into real units for the program to use.
 

@@ -3,7 +3,7 @@ title: Controls
 nav_order: 4
 ---
 
-## ROS2 Control
+# ROS2 Control
 
 This folder will contain all the information necessary for getting ROS2 Control up and running, primarily on a bare metal robot. These guides assume you are writing custom everything unless otherwise specified.
 

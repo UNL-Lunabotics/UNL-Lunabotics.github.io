@@ -5,13 +5,13 @@ grand_parent: Networking
 nav_order: 1
 ---
 
-## WiFi Requirements
+# WiFi Requirements
 
 These are specifically the requirements to be in compliance with NASA rule specifications (as of 2025-2026 year. **Edit this document as years go.**).
 
 This document was written when the team was using the [tp-link Archer AX80](https://www.tp-link.com/us/home-networking/wifi-router/archer-ax80/) router.
 
-Official requirements:
+## Official Requirements
 
 1. The router must support both 2.4G and 5G bands.
 2. The router must have the ability to turn off the 2.4 band (will be proven in Proof of Life).
