@@ -2,9 +2,8 @@
 title: Technical
 parent: Autonomy
 nav_order: 2
-has_children: true
 ---
 
-## Nav2
+# Autonomy Technical
 
-<!-- #TODO: write me -->
+This folder contains tutorials on how to set up our autonomy stack. Follow the Table of Contents to get started.
