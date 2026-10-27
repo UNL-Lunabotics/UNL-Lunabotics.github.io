@@ -4,4 +4,6 @@ parent: Simulation
 nav_order: 2
 ---
 
-TODO WRITE ME
+# Simulation Technical
+
+This folder contains tutorials on how to set up the simulation. Follow the Table of Contents to get started
