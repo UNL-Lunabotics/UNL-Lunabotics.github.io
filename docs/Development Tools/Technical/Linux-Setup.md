@@ -5,8 +5,6 @@ grand_parent: Development Tools
 nav_order: 2
 ---
 
-<!-- TODO: Clarify compose.override.yaml is in a repo -- Tell user to clone a repo -->
-
 # Linux Setup
 {: .no_toc }
 
