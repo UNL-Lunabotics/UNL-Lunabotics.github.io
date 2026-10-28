@@ -85,6 +85,9 @@ Replace `<CONTAINER_NAME>` with the "name" from the main `compose.yaml` file.
 >    environment:
 >      - DISPLAY=host.docker.internal:0
 >      - VGL_DISPLAY=egl
+>
+>    extra_hosts:
+>      - "host.docker.internal:host-gateway"
 > ```
 >
 > Replace `<CONTAINER_NAME>` and `<PROFILE_NAME>` with their respective names.
