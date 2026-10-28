@@ -11,7 +11,7 @@ nav_order: 3
 The easiest way to set up development tools for macOS is using our existing Docker setup.
 
 {: .note}
-Docker on macOS does **not** currently support USB passthrough. If USB passthrough is required, you must use the [Virtual Machine Setup]({% link docs/Development Tools/Technical/macOS-Virtual-Machine.md %}). See the [open docker issue](https://github.com/docker/roadmap/issues/511) to learn more.
+Docker on macOS does **not** currently support USB passthrough. If USB passthrough is required, you must use the [Virtual Machine Setup]({% link docs/Development Tools/Technical/macOS-Virtual-Machine.md %}). See the [open Docker issue](https://github.com/docker/roadmap/issues/511) to learn more.
 
 ## Table of Contents
 {: .no_toc .text-delta}
@@ -51,7 +51,7 @@ brew install virtualgl
 
 ## Cloning Repository
 
-Once all the required programs are installed, you'll want to clone a repository that uses our docker setup. Type the following in to clone the repository:
+Once all the required programs are installed, you'll want to clone a repository that uses our Docker setup. Type the following in to clone the repository:
 
 ```bash
 git clone https://github.com/UNL-Lunabotics/<REPOSITORY_NAME>
