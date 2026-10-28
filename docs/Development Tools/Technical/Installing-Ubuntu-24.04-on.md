@@ -26,7 +26,7 @@ The way this works is through [cloud-init](https://cloudinit.readthedocs.io/en/l
 
 Now that you know a little about how the process works, let's make sure you have everything needed for installation:
 
-1. An 8GB+ USB Drive
+1. An 8 GB+ USB Drive
 2. A computer to set up the USB Drive
 3. Download [Ubuntu 24.04 Desktop](https://releases.ubuntu.com/noble/)
 4. Download [Ventoy](https://www.ventoy.net/en/download.html)
@@ -74,7 +74,7 @@ The boot options button changes from computer to computer. On the Mini PC we cur
 
 Once booted into Ventoy you should see an entry named `ubuntu-24.04.3-desktop-amd64.iso`. If you do not, verify that the USB Drive is configured [properly](#preparing-the-usb-drive).
 
-Press Enter to select the Ubuntu iso. Press Enter again to select `Boot in normal mode`, and Enter again to select `Boot with scripts/ubuntu-autoinstall.yaml`.
+Press Enter to select the Ubuntu ISO. Press Enter again to select `Boot in normal mode`, and Enter again to select `Boot with scripts/ubuntu-autoinstall.yaml`.
 
 Now Ubuntu will start booting, and you'll need to press Enter to select `Try or Install Ubuntu`.
 
