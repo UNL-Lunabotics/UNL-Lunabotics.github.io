@@ -40,22 +40,57 @@ Open Docker Desktop. It may prompt questions for initial setup. Note that you ca
 
 Git is needed to clone the repository needed. You can download it at [Git Windows Install](https://git-scm.com/install/windows), and run the installer. Note that there are a lot of prompts, but just keep selecting "Next" and use the recommended settings. You do not need to open Git Bash once installed.
 
-## Enabling Device Passthrough for Windows
+## Cloning the Repository
 
-Enabling Device Passthrough will allow you to pass a USB device, such as a controller, to the Docker container. There are two ways to do this. It is **HIGHLY** recommended to use the script, as it will automate a lot of steps. However, for completeness, the manual guide is here too.
-
-{: .important}
-This process, whether you do it manually or through the script, requires a custom WSL kernel. This means that we are no longer using the official Microsoft WSL, which may break compatibility for certain apps. Everything done here is reversible.
-
-### Cloning Repository
-
-Before we can enable Device Passthrough, you'll want to clone a repository that uses our Docker setup. Type the following in to clone the repository:
+Once all the required programs are installed, you'll want to clone a repository that uses our Docker setup. Type the following in to clone the repository:
 
 ```bash
 git clone https://github.com/UNL-Lunabotics/<REPOSITORY_NAME>
 ```
 
 Change `<REPOSITORY_NAME>` with the name of the repository you want to work with.
+
+Then, open the repository in VSCode.
+
+## NVIDIA GPUs
+
+{: .note}
+Devices with AMD GPUs can skip this step.
+
+By default, NVIDIA GPUs do not get passed through into the Docker container. So, we will need to manually tell it to bridge the GPU.
+
+To do this, inside the repository, create a `compose.override.yaml` inside the `docker` folder. Add the following content:
+
+{: .important}
+The file **MUST** be named `compose.override.yaml`, with the correct service name. The override will not be applied otherwise.
+
+```yaml
+services:
+  <CONTAINER_NAME>:
+    gpus: all
+```
+
+Replace `<CONTAINER_NAME>` with the "name" from the main `compose.yaml` file.
+
+{: .note}
+> If using profiles, use the following template instead:
+>
+> ```yaml
+> services:
+>  <CONTAINER_NAME>_<PROFILE_NAME>:
+>    gpus: all
+> ```
+>
+> Replace `<CONTAINER_NAME>` and `<PROFILE_NAME>` with their respective names.
+
+Now, the NVIDIA GPU should be passed through properly, and you are able to run GUI apps within the Docker container.
+
+## Enabling Device Passthrough for Windows
+
+Enabling Device Passthrough will allow you to pass a USB device, such as a controller, to the Docker container. There are two ways to do this. It is **HIGHLY** recommended to use the script, as it will automate a lot of steps. However, for completeness, the manual guide is here too.
+
+{: .important}
+This process, whether you do it manually or through the script, requires a custom WSL kernel. This means that we are no longer using the official Microsoft WSL, which may break compatibility for certain apps. Everything done here is reversible.
 
 ### Script Setup
 
