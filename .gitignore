@@ -6,3 +6,4 @@ vendor
 Gemfile.lock
 .bundle/
 .vscode/
+docker/compose.override.yaml
