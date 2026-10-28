@@ -144,6 +144,8 @@ To pass a USB device, first plug in the device and turn on the VM. Then, in the 
 
 If you find you need to share files/folders across your VM and macOS, follow the official UTM [guide](https://docs.getutm.app/guest-support/linux/#virtfs). Note that it is a little technical but should be doable. Also note that `spice-vdagent` is already installed, so you may skip this step.
 
-That's it! Everything else works just like Ubuntu Linux. You are able to develop just as you would on native hardware.
+## Conclusion
+
+That's it! Everything else works just like Ubuntu Linux. You are able to develop just as you would on native hardware. Move on to [Using the Docker Setup]({% link docs/Development Tools/Technical/Using-Docker-Setup.md %}).
 
 > Author: Aiden Kimmerling (<https://github.com/TheKing349>)
