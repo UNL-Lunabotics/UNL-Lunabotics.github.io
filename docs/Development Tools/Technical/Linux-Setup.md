@@ -5,9 +5,7 @@ grand_parent: Development Tools
 nav_order: 2
 ---
 
-<!-- TODO: Finish -->
-
-<!-- TODO NVIDIA GPU nvidia-container-toolkit setup -->
+<!-- TODO: Clarify compose.override.yaml is in a repo -- Tell user to clone a repo -->
 
 # Linux Setup
 {: .no_toc }
@@ -38,7 +36,17 @@ The NVIDIA Container Toolkit allows Docker (and other containerization software)
 
 First, [Install the Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation), selecting your Linux distro and package manager.
 
-Then, [Configure Docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker). Ensure you restart the docker daemon, otherwise changes will not be applied.
+Then, [Configure Docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#configuring-docker). Ensure you restart the Docker daemon, otherwise changes will not be applied.
+
+### Cloning Repository
+
+Once all the required programs are installed, you'll want to clone a repository that uses our Docker setup. Type the following in to clone the repository:
+
+```bash
+git clone https://github.com/UNL-Lunabotics/<REPOSITORY_NAME>
+```
+
+Change `<REPOSITORY_NAME>` with the name of the repository you want to work with.
 
 ### Docker Compose Override
 
