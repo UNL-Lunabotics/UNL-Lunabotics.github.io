@@ -3,7 +3,7 @@ title: Administrative
 nav_order: 1
 ---
 
-<!-- TODO: Move the Non-Programmer Friendly Zone and/or Curriculum to an Onboarding section. Remove references to STL -> URDF tutorial since that was for Solidworks. -->
+<!-- TODO: Move the Non-Programmer Friendly Zone and/or Curriculum to an Onboarding section. -->
 
 ## Administrative
 
@@ -13,7 +13,7 @@ This section will mostly include documents on how to maintain the programming su
 
 This will primarily consist of high level overview and simplified tutorials for anyone looking to learn a little more about programming. It will include resources for how to learn your first programming language, as well as understand the basic structure of our programming architecture.
 
-Most importantly, it will include tutorials on how to do things that programming will need from the mechanical teams. For example, we will need URDF files for every major part of the robot, so there will be a tutorial here on how to convert from STL $\rightarrow$ URDF.
+Most importantly, it will include tutorials on how to do things that programming will need from the mechanical teams. For example, we will need URDF files for every major part of the robot, so there will be a tutorial here on how to convert from Onshape $\rightarrow$ URDF.
 
 It will also include a glossary to explain whatever nonsense programmers are talking about!
 
