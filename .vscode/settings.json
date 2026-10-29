@@ -1,9 +1,17 @@
 {
   "markdownlint.customRules": [
-    "./.vscode/markdownlint-rules/footer/require-author-tag.js",
-    "./.vscode/markdownlint-rules/footer/require-last-reviewed-tag.js",
     "./.vscode/markdownlint-rules/footer/require-footer.js",
+    "./.vscode/markdownlint-rules/footer/require-author-tag.js",
+    "./.vscode/markdownlint-rules/footer/last-reviewed/require-last-reviewed-tag.js",
+    "./.vscode/markdownlint-rules/footer/last-reviewed/warn-stale-review.js"
   ],
+  "markdownlint.config": {
+    "warn-stale-review": {
+      "severity": "warning",
+      "maxAgeDays": 182 // expires after half a year 
+    }
+  },
+  "markdownlint.severityForWarning": "Warning",
   "markdownlint.ignore": [
     "**/bower_components",
     "**/node_modules",
