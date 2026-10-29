@@ -1,6 +1,8 @@
 {
   "markdownlint.customRules": [
-    "./.vscode/markdownlint-rules/require-author-tag.js"
+    "./.vscode/markdownlint-rules/footer/require-author-tag.js",
+    "./.vscode/markdownlint-rules/footer/require-last-reviewed-tag.js",
+    "./.vscode/markdownlint-rules/footer/require-footer.js",
   ],
   "markdownlint.ignore": [
     "**/bower_components",
