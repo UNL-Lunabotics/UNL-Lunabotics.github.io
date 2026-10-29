@@ -35,47 +35,64 @@ There are a number of default rules in markdownlint, and we have a few of them d
 The list of all default rules can be found here:  
 <https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md>
 
-## Custom Rule: Required Author Tag
+## Custom Rules
 
-Maintaining this GitHub Pages is going to be a lot of work for everyone involved. It requires a lot of technical experience to write detailed guides and good information, and it takes a lot of time and effort to acquire that knowledge. It is important to credit every page with its author to acknowledge them.
+Maintaining this repository is a lot of work for everyone involved. It requires a lot of technical experience to write detailed guides and good information. It takes a lot of time and effort to acquire that knowledge. Because of this, we have a couple of custom rules to ensure everyone gets credit and that it is up-to-date.
 
-Please note that the author tag is not for the person who last revised the page (GitHub Pages should show revision histories for you), it is for the original author of the information behind the page. Small edits do not give authorship, but large edits should be credited by adding more than one author to the list. It is okay for a page to have many authors, but if at any point the original page's information has been edited so much that the original author should no longer be on there, it is probably the time to make a new page and archive the old one rather than continually updating the same one.
+### Required Author Tag
+
+It is important to credit every page with its author to acknowledge them.
+
+Please note that the author tag is not for the person who last revised the page (git history does this already). It is for the original author of the information behind the page. Small edits do not give authorship, but large edits should be credited by adding more than one author to the list. It is okay for a page to have many authors, but if at any point the original page's information has been edited so much that the original author should no longer be on there, it is probably time to make a new page and archive the old one rather than continually updating the same one.
 
 **One of the most important parts of having an author tag is to allow future communication with the author.** If someone wrote a document years ago and is no longer on the team, but you really need to know some more information, it is important to be able to know both who wrote that page and how to contact them. For the most part, a GitHub account will be sufficient since most people will include their emails on their account. If you do not have your email on your account, please either add it or include additional contact information in your author tag.
 
 Author tags will follow the following format and be included at the end of every document. The linter for this repository has been edited to make this a custom rule.
 
-Author tags will follow the following format and be included at the end of every document. The linter for this repository has been edited to make this a custom rule
-`> Author: Firstname Lastname <github user link>`
+```md
+> Author: Firstname Lastname (<github user link>)
+```
 
 Or, if there are multiple authors,
 
 ```md
-> Author: Firstname Lastname <github user link>
-> Author: Firstname Lastname <github user link>
+> Author: Firstname Lastname (<github user link>)
+> Author: Firstname Lastname (<github user link>)
 > ... however many more authors
 ```
 
 The order for the author tags does not indicate importance in writing a page, it is usually just in chronological order (though no strict ordering rules will be enforced)
 
+### Last Reviewed Tag
+
+In addition to the author tag, we also have a last reviewed tag. The purpose of this is to ensure documentation is up-to-date. Last reviewed tags will follow the following format and be included **after** the author tag. The linter for this repository has been edited to make this a custom rule.
+
+```md
+> Last Reviewed: YYYY-MM-DD
+```
+
+After editing a document, this tag should be updated.
+
+Finally, the linter enforces documentation to be reviewed after 6 months. This ensures documentation is still accurate and up-to-date months later.
+
+Once the linter flags documentation for review, anyone can read and update it. If during review, it is found that a documentation is no longer applicable, it is recommended to put the out-of-date file(s) in the Archive, then make a new file. For minor revisions, it may instead be sufficient to update small parts of the existing file.
+
 ## Editing the Linter
 
-The general settings for the linter can be found in `.vscode/settings.json`.
-
-Most of the linter configurations will be under the `markdownlint.config` block. This includes disabling specific rules and allowing certain HTML elements. Rule MD033 is the one that disallows any HTML tags, and to add allowed elements to it, you just add "element" into the allowed_elements list shown below.
+Most of the linter configurations will in the `.markdownlint.json` file. This includes disabling specific rules and allowing certain HTML elements. Rule MD033 is the one that disallows any HTML tags, and to add allowed elements to it, you just add "element" into the allowed_elements list shown below.
 
 ```json
 "MD033": {
-            "allowed_elements": ["example"]
-        }
+  "allowed_elements": ["example"]
+}
 ```
 
-Custom linter rules will be JavaScript files stored inside `.vscode/markdownlint-rules`. Details on how to write a custom rule are located at <https://github.com/DavidAnson/markdownlint/blob/main/doc/CustomRules.md>. Once the JavaScript is written, you can add it to the custom rules import inside settings.json. You will just add the path to the custom rule inside the `markdownlint.customRules` block (note that this is a top-level block. It does NOT go inside `markdownlint.config`).
+Custom linter rules are JavaScript files stored inside `.vscode/markdownlint-rules`. Details on how to write a custom rule are located at <https://github.com/DavidAnson/markdownlint/blob/main/doc/CustomRules.md>. Once the JavaScript is written, you can add it to the custom rules import inside `.markdownlint-cli2.jsonc`. You will just add the path to the custom rule inside the `customRules` block.
 
 ```json
-"markdownlint.customRules": [
-    "./.vscode/markdownlint-rules/custom-rule.js"
-  ]
+"customRules": [
+  "./.vscode/./markdownlint-rules/custom-rule.js",
+]
 ```
 
 ## HTML-Proofer
@@ -145,3 +162,4 @@ bundle exec htmlproofer ./_site --ignore-urls "/example\.com/,/another\.com/"
 
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)  
 > Author: Jesse Mills (<https://github.com/JesseMills0>)
+> Author: Aiden Kimmerling (<https://github.com/TheKing349>)
