@@ -24,7 +24,7 @@ In order to edit the router, you have to connect to its network and go to its da
 
 **Regular setup guides and even the dashboard will be complaining constantly or be contradictory because we are not using this router for it's usual purpose.** Most setup guides call for connecting the router to ethernet or a modem. You can ignore these steps.
 
-Ensure the router is configured to the specifications of [Wi-Fi Requirements]({% link docs/Networking/Conceptual/WiFi-Requirements.md %}). The recommended settings (Advanced -> Wireless -> Wireless Settings) are below (in addition to smart connect being off):
+Ensure the router is configured to the specifications of [Wi-Fi Requirements]({% link docs/Programming Documentation/Networking/Conceptual/WiFi-Requirements.md %}). The recommended settings (Advanced -> Wireless -> Wireless Settings) are below (in addition to smart connect being off):
 ![alt text](/attachments/image.png)
 
 ## Setting up SSH Connection

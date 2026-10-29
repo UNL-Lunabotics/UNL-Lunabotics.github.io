@@ -11,7 +11,7 @@ nav_order: 3
 The easiest way to set up development tools for macOS is using our existing Docker setup.
 
 {: .note}
-Docker on macOS does **not** currently support USB passthrough. If USB passthrough is required, you must use the [Virtual Machine Setup]({% link docs/Development Tools/Technical/macOS-Virtual-Machine.md %}). See the [open Docker issue](https://github.com/docker/roadmap/issues/511) to learn more.
+Docker on macOS does **not** currently support USB passthrough. If USB passthrough is required, you must use the [Virtual Machine Setup]({% link docs/Programming Documentation/Development Tools/Technical/macOS-Virtual-Machine.md %}). See the [open Docker issue](https://github.com/docker/roadmap/issues/511) to learn more.
 
 ## Table of Contents
 {: .no_toc .text-delta}
@@ -21,7 +21,7 @@ Docker on macOS does **not** currently support USB passthrough. If USB passthrou
 
 ## Overview
 
-[Docker](https://www.docker.com/) is a containerization software that is used to get an isolated environment to program in. For more information about how Docker works, see our [documentation]({% link docs/Development Tools/Conceptual/Understanding-Docker.md %}).
+[Docker](https://www.docker.com/) is a containerization software that is used to get an isolated environment to program in. For more information about how Docker works, see our [documentation]({% link docs/Programming Documentation/Development Tools/Conceptual/Understanding-Docker.md %}).
 
 While Docker works (mostly) out-of-the-box in Linux on our repositories, that is not the case with macOS. macOS cannot natively run graphical apps on Docker. For this, we will use two programs on macOS to bridge GUI apps from Docker to macOS, along with special configuration in Docker to link it all together.
 
@@ -112,6 +112,6 @@ Here, `vglrun` tells graphics calls to pass over to macOS. If you do not use `vg
 
 ## Moving On
 
-Now that the Docker setup is finished, move on to [Using the Docker Setup]({% link docs/Development Tools/Technical/Using-Docker-Setup.md %})
+Now that the Docker setup is finished, move on to [Using the Docker Setup]({% link docs/Programming Documentation/Development Tools/Technical/Using-Docker-Setup.md %})
 
 > Author: Aiden Kimmerling (<https://github.com/TheKing349>)

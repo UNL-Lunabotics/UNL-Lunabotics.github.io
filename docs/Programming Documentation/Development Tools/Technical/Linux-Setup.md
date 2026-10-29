@@ -22,7 +22,7 @@ Follow the [Docker Guide](https://docs.docker.com/engine/install/) to install Do
 
 If you get an error saying `Got permission denied while trying to connect to the Docker daemon socket` then view the [Post-Installation Guide](https://docs.docker.com/engine/install/linux-postinstall) provided by Docker.
 
-If not using an NVIDIA GPU, then you are done with the installation. Move on to [Using the Docker Setup]({% link docs/Development Tools/Technical/Using-Docker-Setup.md %}).
+If not using an NVIDIA GPU, then you are done with the installation. Move on to [Using the Docker Setup]({% link docs/Programming Documentation/Development Tools/Technical/Using-Docker-Setup.md %}).
 
 ## NVIDIA GPUs
 
@@ -74,6 +74,6 @@ Replace `<CONTAINER_NAME>` with the "name" from the main `compose.yaml` file.
 
 Now, the NVIDIA GPU should be passed through properly, and you are able to run GUI apps within the Docker container.
 
-Move on to [Using the Docker Setup]({% link docs/Development Tools/Technical/Using-Docker-Setup.md %}).
+Move on to [Using the Docker Setup]({% link docs/Programming Documentation/Development Tools/Technical/Using-Docker-Setup.md %}).
 
 > Author: Aiden Kimmerling (<https://github.com/TheKing349>)

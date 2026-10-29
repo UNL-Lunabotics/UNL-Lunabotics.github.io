@@ -104,7 +104,7 @@ Open the repository in VSCode, then open a new terminal. Type the following in:
 
 This will download and install the custom kernel, and then load it in.
 
-This will set everything up for you. Now, move on to [Using the Docker Setup]({% link docs/Development Tools/Technical/Using-Docker-Setup.md %}).
+This will set everything up for you. Now, move on to [Using the Docker Setup]({% link docs/Programming Documentation/Development Tools/Technical/Using-Docker-Setup.md %}).
 
 ### Manual Setup
 
@@ -167,7 +167,7 @@ This will 'connect' your controller to WSL, which should allow input to work ins
 
 ## Using the Docker Setup
 
-From here, it may be helpful to know how to use the Docker setup before continuing. View the [Using the Docker Setup]({% link docs/Development Tools/Technical/Using-Docker-Setup.md %}) documentation, then return here to test controller input.
+From here, it may be helpful to know how to use the Docker setup before continuing. View the [Using the Docker Setup]({% link docs/Programming Documentation/Development Tools/Technical/Using-Docker-Setup.md %}) documentation, then return here to test controller input.
 
 ## Testing Controller
 

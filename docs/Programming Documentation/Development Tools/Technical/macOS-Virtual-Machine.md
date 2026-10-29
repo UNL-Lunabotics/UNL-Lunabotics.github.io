@@ -146,6 +146,6 @@ If you find you need to share files/folders across your VM and macOS, follow the
 
 ## Conclusion
 
-That's it! Everything else works just like Ubuntu Linux. You are able to develop just as you would on native hardware. Move on to [Using the Docker Setup]({% link docs/Development Tools/Technical/Using-Docker-Setup.md %}).
+That's it! Everything else works just like Ubuntu Linux. You are able to develop just as you would on native hardware. Move on to [Using the Docker Setup]({% link docs/Programming Documentation/Development Tools/Technical/Using-Docker-Setup.md %}).
 
 > Author: Aiden Kimmerling (<https://github.com/TheKing349>)
