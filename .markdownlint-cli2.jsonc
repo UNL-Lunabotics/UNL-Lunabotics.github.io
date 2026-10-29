@@ -1,4 +1,16 @@
 {
+  "customRules": [
+    ".vscode/./markdownlint-rules/require-author-tag.js",
+    ".vscode/./markdownlint-rules/require-last-reviewed-tag.js",
+    ".vscode/./markdownlint-rules/require-footer.js",
+    ".vscode/./markdownlint-rules/warn-stale-review.js"
+  ],
+  "config": {
+    "warn-stale-review": {
+      "severity": "warning",
+      "maxAgeDays": 182
+    }
+  },
   "ignores": [
     "**/bower_components",
     "**/node_modules",

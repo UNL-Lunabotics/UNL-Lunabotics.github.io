@@ -1,12 +1,5 @@
 {
-  "markdownlint.configFile": "${workspaceFolder}/.vscode/.markdownlint-cli2.jsonc",
-  "markdownlint.ignore": [
-    "**/bower_components",
-    "**/node_modules",
-    "**/vendor",
-    "**/_*.md",
-    "**/index.md"
-  ],
+  "markdownlint.configFile": "${workspaceFolder}/.markdownlint-cli2.jsonc",
   "cSpell.words": [
     "Aiden",
     "Anson",
