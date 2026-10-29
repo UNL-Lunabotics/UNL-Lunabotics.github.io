@@ -2,7 +2,7 @@
 const {
   getFooterInfo,
   createFooterTagFix
-} = require("../footer-utils");
+} = require("./footer-utils");
 
 /** @type {import("markdownlint").Rule} */
 module.exports = {
