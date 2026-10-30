@@ -1,3 +1,9 @@
+const {
+  getFooterInfo,
+  createFooterTagFix,
+  replaceLineFix
+} = require("./footer-utils");
+
 /** @type {import("markdownlint").Rule} */
 module.exports = {
   names: ["require-author-tag"],
@@ -11,46 +17,42 @@ module.exports = {
     const path = require("path");
     if (path.basename(params.name) === "index.md") return;
 
-    const { lines, eol = "\n" } = params;
-
-    let idx = lines.length - 1;
-    while (idx >= 0 && !lines[idx].trim()) idx--;
+    const { lines } = params;
+    const info = getFooterInfo(params);
 
     // > Author: First Last (<https://github.com/handle>)
     const authorRx =
       /^>\s*Author:\s+[A-Z][\w.'-]*(?:\s+[A-Z][\w.'-]*)*\s+\(<https:\/\/github\.com\/[\w.-]+>\)$/;
 
-    // Collect contiguous block-quote footer
-    const footer = [];
-    for (let i = idx; i >= 0 && lines[i].trim().startsWith(">"); i--) {
-      footer.unshift(lines[i]);
-    }
+    const template = "> Author: First Last (<https://github.com/your-handle>)";
 
-    const valid = footer.length > 0 && footer.every(l => authorRx.test(l.trimEnd()));
+    const validIndex = info.footerIndices.find(i =>
+      authorRx.test(lines[i].trim())
+    );
 
-    if (!valid) {
-      const template = `> Author: First Last (<https://github.com/your-handle>)`;
-      const fixText = (idx < 0 ? "" : eol) + template + eol;
+    if (validIndex !== undefined) return;
+
+    if (info.authorTagIndex !== undefined) {
+      const i = info.authorTagIndex;
 
       onError({
-        lineNumber: Math.max(idx + 1, 1),
-        detail: "Missing or malformed author footer.",
-        context: lines[Math.max(idx, 0)] || "",
-        fixInfo: footer.length
-          ? {
-              editColumn: 1,
-              deleteCount: -1,
-              insertText: template
-            }
-          : {
-              lineNumber: Math.max(lines.length, 1),
-              editColumn: lines.length
-                ? lines[lines.length - 1].length + 1
-                : 1,
-              deleteCount: 0,
-              insertText: fixText
-            }
+        lineNumber: i + 1,
+        detail: "Malformed author footer.",
+        context: lines[i],
+        fixInfo: replaceLineFix(i, template)
       });
+
+      return;
     }
+
+    // The combined rule handles a document with neither tag.
+    if (!info.hasAnyTag) return;
+
+    onError({
+      lineNumber: Math.max(info.end + 1, 1),
+      detail: "Missing author footer.",
+      context: lines[Math.max(info.end, 0)] || "",
+      fixInfo: createFooterTagFix(params, "author", template)
+    });
   }
 };

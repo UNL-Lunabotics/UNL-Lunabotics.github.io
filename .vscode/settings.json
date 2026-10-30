@@ -1,14 +1,5 @@
 {
-  "markdownlint.customRules": [
-    "./.vscode/markdownlint-rules/require-author-tag.js"
-  ],
-  "markdownlint.ignore": [
-    "**/bower_components",
-    "**/node_modules",
-    "**/vendor",
-    "**/_*.md",
-    "**/index.md"
-  ],
+  "markdownlint.configFile": "${workspaceFolder}/.markdownlint-cli2.jsonc",
   "cSpell.words": [
     "Aiden",
     "Anson",

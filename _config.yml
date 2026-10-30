@@ -19,7 +19,7 @@ aux_links:
   "Toggle Light/Dark Theme":
     - "javascript:toggleTheme()"
   "UNL-Lunabotics on GitHub":
-    - "//github.com/unl-lunabotics"
+    - "https://github.com/unl-lunabotics"
 
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub"
