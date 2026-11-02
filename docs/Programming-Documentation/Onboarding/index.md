@@ -4,7 +4,16 @@ parent: Programming Documentation
 nav_order: 1
 ---
 
-# Getting Started
+# Onboarding
+{: .no_toc }
+
+# Table of Contents
+{: .no_toc .text-delta }
+
+- Table of Contents
+{:toc }
+
+## Getting Started
 
 Welcome to the team! This onboarding page will mostly be a collection of hyperlinks to other pages that explain what you should learn and in what order.
 
@@ -13,22 +22,22 @@ This is a LOT of reading. If you prefer to throw yourself into projects and lear
 
 If you need help or run into issues, reach out to the programming Discord channel or your lead!
 
-# 1. Development Tools
+## 1. Learning Development Tools
 
-Before you can begin programming, you need to set up a few development tools. This includes downloading things like VSCode, Docker, Python, etc. To get set up with these tools, proceed to [Development Tools]({% link docs/Programming-Documentation/Onboarding/Development-Tools.md %}).
+Before you can begin programming, you need to set up a few development tools. This includes downloading things like VSCode, Docker, Python, etc. To get set up with these tools, proceed to [Learning Development Tools]({% link docs/Programming-Documentation/Onboarding/Learning-Development-Tools.md %}).
 
-# 2. Learning Languages
+## 2. Learning Languages
 
 This club primarily uses Python and C++ for actual programming languages and a few other configuration languages. If you don't know either of these and want to learn, proceed to [Learning Languages]({% link docs/Programming-Documentation/Onboarding/Learning-Languages.md %}).
 
-# 3. Learning ROS2
+## 3. Learning ROS2
 
 The Robot Operating System (ROS) is the software that we use to help organize the flow of information and commands to the robot. You will need to at least understand the basics of it to work with most anything in the codebase. To learn more, proceed to [Learning ROS2]({% link docs/Programming-Documentation/Onboarding/Learning-ROS2.md %}).
 
-# 4. Specialties
+## 4. Specialties
 
 At this point, what you need to learn next depends on what you want to focus in. You can focus in more than one thing and can always change your mind if a specialty isn't what you were hoping it was. Specialties include: Autonomy, controls, making development tools, embedded systems, networking, documentation, and simulation work. These specialties all have their own pages in Programming Documentation that you should visit for more information.
 
-# 5. Learning Documentation
+## 5. Learning Documentation
 
 Finally, when you start working on your own projects, we require documentation for anything running on the robot. To learn more about how to document things and what the process is like, proceed to [Learning Documentation]({% link docs/Programming-Documentation/Onboarding/Learning-Documentation.md %}).

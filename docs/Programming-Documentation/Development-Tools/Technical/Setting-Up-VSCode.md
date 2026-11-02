@@ -1,10 +1,11 @@
 ---
-title: How to Use VSCode
-parent: Administrative
-nav_order: 8
+title: Setting Up VSCode
+parent: Technical
+grand_parent: Development Tools
+nav_order: 1
 ---
 
-# How to Use VSCode
+# Setting Up VSCode
 
 ## What is VSCode?
 
@@ -31,4 +32,16 @@ For example, if I wanted to install the Python extension, I would navigate to th
 
 After you have the language extension installed and the SDK (or compiler) downloaded, you can begin coding!
 
+## Setting up Profiles
+
+VSCode profiles let you separate what extensions you want to use in each repository. This is really useful so you don't have to have every extension enabled in every single repository even when it's not relevant.
+
+You can create a profile by doing `CTRL/CMD + SHIFT + P` and then `Profiles: New Profile...`. I recommend at least creating a profile for Lunabotics work and Documentation since they use dramatically different extensions.
+
+## Installing Recommended Extensions
+
+Repositories from our team always come with a `extensions.json` that gives you extensions it recommends you install. Shockingly, we do actually recommend you install these. There should be a pop-up when you open the repository and all you should have to do is click yes.
+
 > Author: Ella Moody (<https://github.com/TheThingKnownAsKit>)
+>
+> Last Reviewed: 2026-11-02

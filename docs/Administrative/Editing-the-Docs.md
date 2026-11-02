@@ -22,7 +22,7 @@ It is **highly** recommended using VSCode to edit. Firstly, it is just easier to
 
 To make changes on any lunabotics repository, you will need to set it up locally by cloning it. Cloning, if unfamiliar, just means to copy the repository to your local machine. You will then make changes on that copy, and push them up to the [UNL-Lunabotics GitHub](https://github.com/unl-lunabotics) organization.
 
-Before we clone the documentation, ensure you have followed the [Setup Guide for VSCode]({% link docs/Administrative/How-to-Use-VSCode.md %}).
+Before we clone the documentation, ensure you have followed the [Setup Guide for VSCode]({% link docs/Programming-Documentation/Development-Tools/Technical/Setting-Up-VSCode.md %}).
 
 ### Cloning
 

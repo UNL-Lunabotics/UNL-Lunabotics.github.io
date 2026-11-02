@@ -10,7 +10,7 @@ nav_order: 1
 
 Here you will find how to get set up with development tools for Windows.
 
-First, [Install VSCode]({% link docs/Administrative/How-to-Use-VSCode.md %}), then go through the Table of Contents.
+First, [Install VSCode]({% link docs/Programming-Documentation/Onboarding/Learning-Development-Tools.md %}), then go through the Table of Contents.
 
 ## Table of Contents
 {: .no_toc .text-delta }
