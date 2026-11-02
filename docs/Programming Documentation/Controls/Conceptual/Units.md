@@ -21,8 +21,6 @@ You should convert these metric units to more hardware specific units like PWM o
 
 joystick movement -> joy node (unitless floats ranging from -1.0 to 1.0 representing stick's axis) -> teleop_twist_joy or similar multiplies the unitless -1.0 to 1.0 by maximum speed -> publishes this to cmd_vel in m/s or rad/s -> controller manager is running the robot_controller and subscribes to cmd_vel -> controller takes m/s and rad/s and applies kinematics (now in joint specific units, like how many meters this specific LA should extend) -> controller writes results into resource manager variables like left_wheel/velocity -> the hardware component executes the write() loop, which reads from the resource manager memory and converts it to things like PWM or RPM or position, etc -> Teensy forwards commands blindly to motors
 
-(TODO: make a diagram for that nonsense)
-
 Basically the joystick pipeline outputs **desired units**, the controller pipeline outputs the **necessary units (joint SI units) to achieve desired units**, and lastly the hardware component pipeline outputs the **necessary raw hardware units to achieve desired units**.
 
 The joystick output of -1.0 to 1.0 is an EFFORT value, so when you multiply it by its maximum speed, you get the actual speed it should be going. So, if you want to go 50% speed, you just multiply 0.50 x max_speed. **This is where the initial SI conversion happens**. It is a REP standard (specifically REP 103) that requires the joysticks max speed to be defined in SI units, so multiply this effort value by the max speed in SI units is where everything actually gets a unit. This is why when the controller gets it, it is already in SI, and it can go straight to calculating kinematics.
