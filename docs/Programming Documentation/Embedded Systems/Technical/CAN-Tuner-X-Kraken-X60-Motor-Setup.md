@@ -82,23 +82,23 @@ Once your `diag_server.py` script is running on the robot controller PC, navigat
 
 Once you have connected Tuner X to your robot controller PC, you should see your motor(s) on the `Devices` page.
 
-![Tuner X Devices]{% link attachments/tuner-x/tuner-x-devices.png %}{: style="width: 75%; display: block; margin: 0 auto;" }
+![Tuner X Devices]({% link attachments/tuner-x/tuner-x-devices.png %}){: style="width: 75%; display: block; margin: 0 auto;" }
 
 {: style="text-align: center;" }
 
 Click into your motor(s) on Tuner X. You will be greeted with a variety of options. On the `Info` tab, you have the ability to view (and change) your motor ID, motor name, and you can update your motor's firmware as well. Tuner X will prompt you to update the firmware if it detects that your motor is using an outdated firmware. I recommend updating unless you have a good reason not to.
 
-![Tuner X Motor info tab]{% link attachments/tuner-x/tuner-x-info.png %}{: style="width: 75%; display: block; margin: 0 auto;" }
+![Tuner X Motor info tab]({% link attachments/tuner-x/tuner-x-info.png %}){: style="width: 75%; display: block; margin: 0 auto;" }
 
 {: style="text-align: center;" }
 
-![Tuner X Motor info tab, updating firmware]{% link attachments/tuner-x/tuner-x-update-firmware.png %}{: style="width: 75%; display: block; margin: 0 auto;" }
+![Tuner X Motor info tab, updating firmware]({% link attachments/tuner-x/tuner-x-update-firmware.png %}){: style="width: 75%; display: block; margin: 0 auto;" }
 
 {: style="text-align: center;" }
 
 If you navigate to the `Control` tab, you can test the motors by controlling their speed and direction directly. **ENSURE THAT YOU HAVE CLICKED ENABLE AT THE TOP OR ELSE THIS WON'T WORK!!** In the picture below, I have selected the `Differential Duty Cycle` Control Mode and set the `AverageOutput` to 1. This turns our motor forward at full speed. you can set `AverageOutput` to 0 to stop it, and to -1 for full speed in the opposite direction. Vary the speed by choosing a decimal value in between -1 and 0 ot 0 and 1. This is a surefire method for testing the speed performance of your motors.
 
-![Tuner X Control Tab]{% link attachments/tuner-x/tuner-x-control.png %}{: style="width: 75%; display: block; margin: 0 auto;" }
+![Tuner X Control Tab]({% link attachments/tuner-x/tuner-x-control.png %}){: style="width: 75%; display: block; margin: 0 auto;" }
 
 {: style="text-align: center;" }
 
