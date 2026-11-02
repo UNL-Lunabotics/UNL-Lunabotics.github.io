@@ -15,7 +15,7 @@ If you need help or run into issues, reach out to the programming Discord channe
 
 # 1. Development Tools
 
-Before you can begin programming, you need to set up a few development tools. This includes downloading things like VSCode, Docker, Python, etc. To get set up with these tools, proceed to [Development Tools]({% link docs/Programming-Documentation/Onboarding/Development-Tools.md %})
+Before you can begin programming, you need to set up a few development tools. This includes downloading things like VSCode, Docker, Python, etc. To get set up with these tools, proceed to [Development-Tools]({% link docs/Programming-Documentation/Onboarding/Development-Tools.md %})
 
 # 2. Learning Languages
 

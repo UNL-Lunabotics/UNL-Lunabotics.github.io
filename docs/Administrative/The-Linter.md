@@ -137,7 +137,7 @@ For the Links > Internal check, the following failures were found:
 
 For the Links > External check, the following failures were found:
 
-* At ./_site/docs/Embedded Systems/Technical/RealSense.html:1:
+* At ./_site/docs/Embedded-Systems/Technical/RealSense.html:1:
 
   External link https://github.com/cscheet2 failed (status code 404)
 ```

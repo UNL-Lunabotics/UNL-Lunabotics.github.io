@@ -17,7 +17,7 @@ Since Tuner X only has a GUI on Windows, this process will assume you have a com
 
 For this, you need a PC or laptop with Windows 11 (I'm so sorry), and your robot controller PC.
 
-You must have already set up the [CAN Adapter Board]({% link docs/Programming Documentation/Embedded Systems/Technical/CAN-Bus-Setup.md %}) and must have already run the CAN adapter bringup commands described in that documentation page. Your CAN Adapter Board must be plugged into your robot controller PC and that must be plugged into your CAN network with your motors on it. And please remember to power your motors.
+You must have already set up the [CAN Adapter Board]({% link docs/Programming-Documentation/Embedded-Systems/Technical/CAN-Bus-Setup.md %}) and must have already run the CAN adapter bringup commands described in that documentation page. Your CAN Adapter Board must be plugged into your robot controller PC and that must be plugged into your CAN network with your motors on it. And please remember to power your motors.
 
 You must install **Phoenix 6 Tuner X** by following the instructions from [this link](https://v6.docs.ctr-electronics.com/en/stable/docs/tuner/index.html) or by downloading if from the [Github page](https://github.com/CrossTheRoadElec/Phoenix-Releases/releases).
 
@@ -72,7 +72,7 @@ With the virtual environment active, install the phoenix6 API with this command
 `python3 -m pip install phoenix6`
 For more information, please visit the official [Phoenix 6 documentation page](https://v6.docs.ctr-electronics.com/en/stable/docs/installation/installation-nonfrc.html).
 
-Run the python script with `python diag_server.py`. Once you have this running, if you are using the same CAN adapter boards as described in [CAN Adapter Board]({% link docs/Programming Documentation/Embedded Systems/Technical/CAN-Bus-Setup.md %}), you should see all lights (red, blue, and green) light up on the board, and the motor indication LEDs should be glowing (or blinking) solid orange.
+Run the python script with `python diag_server.py`. Once you have this running, if you are using the same CAN adapter boards as described in [CAN Adapter Board]({% link docs/Programming-Documentation/Embedded-Systems/Technical/CAN-Bus-Setup.md %}), you should see all lights (red, blue, and green) light up on the board, and the motor indication LEDs should be glowing (or blinking) solid orange.
 
 Refer to [this link](https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/talonfx/index.html) to understand the status LED codes on your own motors.
 
