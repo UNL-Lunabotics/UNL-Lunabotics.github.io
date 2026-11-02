@@ -1,5 +1,6 @@
 ---
 title: Embedded Systems
+parent: Programming Documentation
 nav_order: 7
 ---
 

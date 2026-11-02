@@ -1,5 +1,6 @@
 ---
 title: Controls
+parent: Programming Documentation
 nav_order: 4
 ---
 
