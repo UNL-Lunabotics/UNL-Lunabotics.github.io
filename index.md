@@ -4,15 +4,15 @@ nav_order: 0
 layout: home
 ---
 
-## Home
+# Home
 
-### What and Why?
+## What and Why?
 
 Welcome to the lunabotics documentation GitHub Pages! This was started in 2025 over the summer as our subteams' first big push towards proper documentation.
 
 In the 2024-2025 competition season, programming ran into a LOT of issues. In the past, the programming subteam had basically just been one guy doing everything and communicating nothing to anyone. Because of this, that year we were essentially a brand-new programming team and all of our members were starting from scratch. This caused massive issues with getting things up and running and contributed to our robot not moving at UCF.
 
-### How to Navigate
+## How to Navigate
 
 **You will navigate via the sidebar on the left side of the screen**.
 
@@ -24,7 +24,7 @@ This repository is split into subsections with a specific purpose and specific a
 
 ## How to Edit
 
-To learn how to edit these docs, refer to the [How to Edit the Docs]({% link docs/Administrative/How to Edit the Docs/index.md %}) documentation.
+To learn how to edit these docs, refer to the [How to Edit the Docs]({% link docs/Administrative/Editing-the-Docs.md %}) documentation.
 
 ## Subsection Breakdown
 

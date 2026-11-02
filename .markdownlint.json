@@ -1,6 +1,7 @@
 {
   "require-author-tag": true,
   "MD013": false,
+  "MD022": false,
   "MD033": {
     "allowed_elements": ["s", "u", "details", "summary", "mark"]
   },

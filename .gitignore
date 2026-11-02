@@ -5,4 +5,5 @@ _site/
 vendor
 Gemfile.lock
 .bundle/
-.vscode/
+.DS_STORE
+docker/compose.override.yaml
