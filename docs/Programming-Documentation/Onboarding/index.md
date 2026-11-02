@@ -15,16 +15,20 @@ If you need help or run into issues, reach out to the programming Discord channe
 
 # 1. Development Tools
 
-Before you can begin programming, you need to set up a few development tools. This includes downloading things like VSCode, Docker, Python, etc. To get set up with these tools, proceed to [Development-Tools]({% link docs/Programming-Documentation/Onboarding/Development-Tools.md %})
+Before you can begin programming, you need to set up a few development tools. This includes downloading things like VSCode, Docker, Python, etc. To get set up with these tools, proceed to [Development Tools]({% link docs/Programming-Documentation/Onboarding/Development-Tools.md %}).
 
 # 2. Learning Languages
 
-This club primarily uses Python and C++ for actual programming languages and a few other configuration languages. If you don't know either of these and want to learn, proceed to
+This club primarily uses Python and C++ for actual programming languages and a few other configuration languages. If you don't know either of these and want to learn, proceed to [Learning Languages]({% link docs/Programming-Documentation/Onboarding/Learning-Languages.md %}).
 
 # 3. Learning ROS2
 
-The Robot Operating System (ROS) is the software that we use to help organize the flow of information and commands to the robot. You will need to at least understand the basics of it to work with most anything in the codebase. To learn more, proceed to 
+The Robot Operating System (ROS) is the software that we use to help organize the flow of information and commands to the robot. You will need to at least understand the basics of it to work with most anything in the codebase. To learn more, proceed to [Learning ROS2]({% link docs/Programming-Documentation/Onboarding/Learning-ROS2.md %}).
 
 # 4. Specialties
 
 At this point, what you need to learn next depends on what you want to focus in. You can focus in more than one thing and can always change your mind if a specialty isn't what you were hoping it was. Specialties include: Autonomy, controls, making development tools, embedded systems, networking, documentation, and simulation work. These specialties all have their own pages in Programming Documentation that you should visit for more information.
+
+# 5. Learning Documentation
+
+Finally, when you start working on your own projects, we require documentation for anything running on the robot. To learn more about how to document things and what the process is like, proceed to [Learning Documentation]({% link docs/Programming-Documentation/Onboarding/Learning-Documentation.md %}).
