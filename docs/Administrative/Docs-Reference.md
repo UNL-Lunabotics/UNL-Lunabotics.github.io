@@ -60,7 +60,7 @@ nav_order: 4
 
 In this example, the name of the page is "My Awesome Documentation", defined by the `title` tag. This is the name that shows up on the Sidebar.
 
-Then, it is a part of the "Conceptual" page, as marked by the `parent`. The grandparent is defined as "Onboarding". This is very important because our documentation structure contains repeated names. Most directories have both a conceptual and a technical folder, so if you don't give them a grandparent, Just the Docs gets confused on where to actually put them. Giving them a grandparent means there is no confusing where they should go. This is unnecessary if it's an entirely unique folder name.
+Then, it is a part of the "Conceptual" page, as marked by the `parent`. The `grand_parent` is defined as "Onboarding". This is very important because our documentation structure contains repeated names. Most directories have both a conceptual and a technical folder, so if you don't give them a grandparent, Just the Docs gets confused on where to actually put them. Giving them a grandparent means there is no confusing where they should go. This is unnecessary if it's an entirely unique folder name.
 
 Lastly, it has a `nav_order` of 4. This means it will be the 4th entry under the parent "Administrative" page.
 
