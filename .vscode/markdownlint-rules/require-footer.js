@@ -1,4 +1,3 @@
-
 const {
   getFooterInfo,
   createCompleteFooterFix
@@ -7,7 +6,7 @@ const {
 /** @type {import("markdownlint").Rule} */
 module.exports = {
   names: ["require-footer"],
-  description: "Add both footer tags in one fix when neither exists.",
+  description: "Check footer formatting and add both tags when missing.",
   information: new URL(
     "https://unl-lunabotics.github.io/docs/Administrative/The-Linter.html#custom-rule-required-footer-tags"
   ),
@@ -18,6 +17,25 @@ module.exports = {
     if (path.basename(params.name) === "index.md") return;
 
     const info = getFooterInfo(params);
+
+    // Every author line must be followed by a standalone ">" line.
+    const authorIndices = info.footerIndices.filter(i =>
+      /^>\s*Author:/.test(params.lines[i].trim())
+    );
+
+    const missingSpacerIndex = authorIndices.find(i =>
+      params.lines[i + 1]?.trim() !== ">"
+    );
+
+    if (missingSpacerIndex !== undefined) {
+      onError({
+        lineNumber: missingSpacerIndex + 1,
+        detail: "Missing '>' separator after author footer.",
+        context: params.lines[missingSpacerIndex]
+      });
+
+      return;
+    }
 
     // The individual rules handle cases where either tag exists.
     if (info.hasAnyTag) return;
