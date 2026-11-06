@@ -26,20 +26,26 @@ module.exports = {
 
     const template = "> Author: First Last (<https://github.com/your-handle>)";
 
-    const validIndex = info.footerIndices.find(i =>
+    const authorIndices = info.footerIndices.filter(i =>
+      /^>\s*Author:/.test(lines[i].trim())
+    );
+
+    const validIndices = authorIndices.filter(i =>
       authorRx.test(lines[i].trim())
     );
 
-    if (validIndex !== undefined) return;
+    if (authorIndices.length > 0 && validIndices.length === authorIndices.length) return;
 
-    if (info.authorTagIndex !== undefined) {
-      const i = info.authorTagIndex;
+    if (authorIndices.length > 0) {
+      const invalidIndex = authorIndices.find(i =>
+        !authorRx.test(lines[i].trim())
+      );
 
       onError({
-        lineNumber: i + 1,
+        lineNumber: invalidIndex + 1,
         detail: "Malformed author footer.",
-        context: lines[i],
-        fixInfo: replaceLineFix(i, template)
+        context: lines[invalidIndex],
+        fixInfo: replaceLineFix(invalidIndex, template)
       });
 
       return;
