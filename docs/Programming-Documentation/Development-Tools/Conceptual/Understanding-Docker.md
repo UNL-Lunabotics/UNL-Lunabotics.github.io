@@ -31,11 +31,7 @@ More information about Dockerfiles can be found at [Writing a Dockerfile](https:
 
 ## How do I Install Docker?
 
-For Windows, see [Installing Docker]({% link docs/Programming-Documentation/Development-Tools/Technical/Windows-Setup.md %}#installing-docker).
-
-For Linux, see [Linux Setup]({% link docs/Programming-Documentation/Development-Tools/Technical/Linux-Setup.md %})
-
-For macOS, see [macOS Docker Setup]({% link docs/Programming-Documentation/Development-Tools/Technical/macOS-Docker.md %})
+To install Docker, visit the [Ultimate Docker Guide]({% link docs/Programming-Documentation/Development-Tools/Technical/Ultimate-Docker-Guide.md %})
 
 ## Further Research
 
